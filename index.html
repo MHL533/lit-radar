@@ -45,7 +45,7 @@ h1{font-family:var(--f-display);font-weight:700;font-size:clamp(24px,4vw,32px);m
 .panel .row>*{min-width:0}
 .row{display:flex;flex-wrap:wrap;gap:6px 8px;align-items:center}
 .row .lab{font-size:12px;color:var(--muted);min-width:3.2em}
-input[type=search],input[type=text],select{font:inherit;font-size:14px;padding:7px 10px;border:1px solid var(--line);border-radius:6px;background:var(--surface);color:var(--fg);min-width:0}
+input[type=search],input[type=text],input[type=email],input[type=password],select{font:inherit;font-size:14px;padding:7px 10px;border:1px solid var(--line);border-radius:6px;background:var(--surface);color:var(--fg);min-width:0}
 input[type=search]{flex:1 1 240px}
 select{max-width:100%;text-overflow:ellipsis}
 #journal{flex:1 1 220px;width:100%}
@@ -114,6 +114,12 @@ h3 a:hover{color:var(--accent);text-decoration:underline;text-underline-offset:3
 .checks label{display:flex;gap:8px;align-items:center;font-size:14px}
 .profiles{display:flex;flex-wrap:wrap;gap:6px}
 .dlg .row{justify-content:flex-end}
+.dlg input[type=email],.dlg input[type=password],.dlg input[type=text]{width:100%}
+.fgroup{display:grid;gap:4px;margin-bottom:8px}
+.glab{font-size:12px;color:var(--muted);font-weight:600}
+.msg{min-height:1.2em;color:var(--z1)!important}
+#authTabs{justify-self:start}
+#scope{flex:0 1 auto}
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
 </style>
 </head>
@@ -122,7 +128,7 @@ h3 a:hover{color:var(--accent);text-decoration:underline;text-underline-offset:3
   <header>
     <div>
       <h1>膜科研文献雷达</h1>
-      <p class="sub" id="subline">中科院分区 2 区及以上期刊新论文，每天 7:50、11:50、18:50 自动更新</p>
+      <p class="sub" id="subline">中科院分区 2 区及以上期刊新论文，按研究领域每天 7:50、11:50、18:50 自动更新</p>
     </div>
     <div class="headr">
       <button class="btn" id="loginBtn" type="button">登录</button>
@@ -138,7 +144,7 @@ h3 a:hover{color:var(--accent);text-decoration:underline;text-underline-offset:3
         <button type="button" id="vList" aria-pressed="false" title="列表视图"><svg viewBox="0 0 16 16" aria-hidden="true"><rect x="1" y="2" width="14" height="2" rx="1"/><rect x="1" y="7" width="14" height="2" rx="1"/><rect x="1" y="12" width="14" height="2" rx="1"/></svg>列表</button>
       </div>
     </div>
-    <div class="row" id="fieldRow"><span class="lab">方向</span></div>
+    <div class="row" id="fieldRow"><span class="lab">领域</span><select id="scope" aria-label="选择领域"></select></div>
     <div class="row" id="dateRow"><span class="lab">日期</span>
       <select id="month" aria-label="按月份筛选"><option value="">按月份</option></select>
     </div>
@@ -167,10 +173,17 @@ h3 a:hover{color:var(--accent);text-decoration:underline;text-underline-offset:3
 <div class="scrim" id="scrim" hidden>
   <div class="dlg" role="dialog" aria-modal="true" aria-labelledby="dlgTitle">
     <h2 id="dlgTitle">登录</h2>
-    <p>选择你关注的研究方向，登录后默认只显示这些方向，收藏和已读按账户分开保存。当前为本机账户，数据保存在这台设备的浏览器里。</p>
+    <p id="dlgIntro"></p>
+    <div class="seg" id="authTabs" role="group" aria-label="登录或注册">
+      <button type="button" id="tLogin" aria-pressed="true">登录</button>
+      <button type="button" id="tReg" aria-pressed="false">注册</button>
+    </div>
+    <label id="lEmail">邮箱<input type="email" id="email" autocomplete="email" placeholder="name@example.com"></label>
+    <label id="lPass">密码<input type="password" id="pass" autocomplete="current-password" placeholder="至少 6 位"></label>
     <div class="profiles" id="profiles"></div>
-    <label>昵称<input type="text" id="uname" maxlength="20" placeholder="例如：纳滤课题组"></label>
-    <div class="checks" id="ufields"></div>
+    <label id="lName">昵称<input type="text" id="uname" maxlength="20" placeholder="例如：微塑料课题组"></label>
+    <div id="lFields"><div class="glab">关注方向</div><div id="ufields"></div></div>
+    <p class="msg" id="msg" role="status"></p>
     <div class="row">
       <button class="btn" id="logout" type="button" hidden>退出登录</button>
       <button class="btn" id="cancel" type="button">取消</button>
@@ -179,6 +192,8 @@ h3 a:hover{color:var(--accent);text-decoration:underline;text-underline-offset:3
   </div>
 </div>
 
+<script src="config.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.js"></script>
 <script>
 const SOURCES = [
   "https://raw.githubusercontent.com/MHL533/lit-radar/main/papers.json",
@@ -192,31 +207,87 @@ const store = {
   get(k, d){ try { const v = localStorage.getItem(k); return v == null ? d : JSON.parse(v); } catch { return d; } },
   set(k, v){ try { localStorage.setItem(k, JSON.stringify(v)); } catch {} }
 };
-
-let FIELDS = DEFAULT_FIELDS, JOURNALS = {}, ALL = [];
-let users = store.get("lr-users", {}), current = store.get("lr-current", null);
-if (current && !users[current]) current = null;
-const state = { q: "", fields: new Set(), date: "all", month: "", journal: "", zone: "", inst: "", key: false, star: false, unread: false,
-  view: store.get("lr-view", "card"), shown: PAGE, loaded: false };
-
 function el(tag, cls, text){ const e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; }
 function safeUrl(u){ try { const x = new URL(u); return /^https?:$/.test(x.protocol) ? x.href : null; } catch { return null; } }
-function marksKey(){ return "lr-marks:" + (current || "_guest"); }
-let marks = store.get(marksKey(), store.get("lit-radar-marks", {}));
+
+let FIELDS = DEFAULT_FIELDS, GROUPS = [{ id: "membrane", name: "膜分离与催化膜", fields: Object.keys(DEFAULT_FIELDS), default: true }], JOURNALS = {}, ALL = [];
+const state = { q: "", scope: store.get("lr-scope", ""), fields: new Set(), date: "all", month: "", journal: "", zone: "", inst: "",
+  key: false, star: false, unread: false, view: store.get("lr-view", "card"), shown: PAGE, loaded: false };
+
+/* ---------- accounts: cloud (Supabase) or local fallback ---------- */
+const CFG = window.LR_CONFIG || {};
+let sb = null;
+try { if (CFG.supabaseUrl && CFG.supabaseAnonKey && window.supabase) sb = window.supabase.createClient(CFG.supabaseUrl, CFG.supabaseAnonKey); } catch {}
+const auth = { user: null, profile: null };            // cloud: Supabase user + {nickname, fields}
+let localUsers = store.get("lr-users", {}), localCurrent = store.get("lr-current", null);
+if (localCurrent && !localUsers[localCurrent]) localCurrent = null;
+let marks = {};
+
+function who(){ return sb ? (auth.user ? auth.profile?.nickname || auth.user.email : null) : localCurrent; }
+function myFields(){
+  const f = sb ? auth.profile?.fields : (localCurrent ? localUsers[localCurrent]?.fields : null);
+  return (f || []).filter(x => FIELDS[x]);
+}
+function loadLocalMarks(){ marks = store.get("lr-marks:" + (localCurrent || "_guest"), store.get("lit-radar-marks", {})); }
+async function loadCloudMarks(){
+  marks = {};
+  if (!sb || !auth.user) { marks = store.get("lr-marks:_guest", {}); return; }
+  const { data, error } = await sb.from("marks").select("paper_id,starred,read");
+  if (!error) for (const r of data || []) marks[r.paper_id] = { starred: r.starred, read: r.read };
+}
+async function saveMark(id, m){
+  if (sb && auth.user){
+    const { error } = await sb.from("marks").upsert({ user_id: auth.user.id, paper_id: id, starred: !!m.starred, read: !!m.read, updated_at: new Date().toISOString() });
+    if (error) showNote("收藏同步失败：" + error.message);
+  } else store.set("lr-marks:" + (sb ? "_guest" : (localCurrent || "_guest")), marks);
+}
+async function loadProfile(){
+  auth.profile = null; if (!auth.user) return;
+  const { data } = await sb.from("profiles").select("nickname,fields").eq("id", auth.user.id).maybeSingle();
+  if (data) { auth.profile = data; return; }
+  const meta = auth.user.user_metadata || {};            // first login after sign-up: create the profile row
+  const prof = { id: auth.user.id, nickname: meta.nickname || auth.user.email.split("@")[0], fields: meta.fields || [] };
+  const { error } = await sb.from("profiles").insert(prof);
+  auth.profile = { nickname: prof.nickname, fields: prof.fields };
+  if (error) showNote("保存账户资料失败：" + error.message);
+}
+async function afterAuthChange(){
+  if (sb) { await loadProfile(); await loadCloudMarks(); } else loadLocalMarks();
+  applyMarks(); state.scope = who() ? "mine" : (state.scope === "mine" ? "" : state.scope);
+  renderLogin(); renderScope(); reset();
+}
+
+/* ---------- helpers ---------- */
 function zoneOf(p){ return String((JOURNALS[p.journal] || {}).cas_zone || p.cas_zone || ""); }
 function ifOf(p){ const v = (JOURNALS[p.journal] || {}).if; return v == null ? null : v; }
 function abbrOf(p){ return (JOURNALS[p.journal] || {}).abbr || p.journal || ""; }
+function showNote(t){ const n = $("note"); n.hidden = false; n.textContent = t; }
+function scopeFields(){
+  if (state.scope === "mine") return myFields();
+  if (state.scope === "all") return Object.keys(FIELDS);
+  const g = GROUPS.find(x => x.id === state.scope) || GROUPS.find(x => x.default) || GROUPS[0];
+  return g ? g.fields : Object.keys(FIELDS);
+}
 
 /* ---------- filters UI ---------- */
 function chip(label, pressed, onClick){
   const b = el("button", "chip", label); b.type = "button"; b.setAttribute("aria-pressed", String(pressed));
   b.addEventListener("click", onClick); return b;
 }
+function renderScope(){
+  const s = $("scope"); s.replaceChildren();
+  if (who()) s.append(new Option("我的方向", "mine"));
+  for (const g of GROUPS) s.append(new Option(g.name, g.id));
+  s.append(new Option("全部领域", "all"));
+  if (![...s.options].some(o => o.value === state.scope)) state.scope = who() ? "mine" : ((GROUPS.find(x => x.default) || GROUPS[0] || {}).id || "all");
+  s.value = state.scope; state.fields.clear(); renderFieldChips();
+}
 function renderFieldChips(){
   const row = $("fieldRow"); row.querySelectorAll(".chip").forEach(c => c.remove());
+  const fs = scopeFields();
   row.append(chip("全部", state.fields.size === 0, () => { state.fields.clear(); renderFieldChips(); reset(); }));
-  for (const [k, v] of Object.entries(FIELDS))
-    row.append(chip(v, state.fields.has(k), () => { state.fields.has(k) ? state.fields.delete(k) : state.fields.add(k); renderFieldChips(); reset(); }));
+  for (const k of fs) if (FIELDS[k])
+    row.append(chip(FIELDS[k], state.fields.has(k), () => { state.fields.has(k) ? state.fields.delete(k) : state.fields.add(k); renderFieldChips(); reset(); }));
 }
 const DATES = [["all","全部"],["7","近 7 天"],["30","近 30 天"],["90","近 3 个月"],["365","近 1 年"]];
 function renderDateChips(){
@@ -245,10 +316,11 @@ $("q").addEventListener("input", e => { state.q = e.target.value.trim().toLowerC
 $("inst").addEventListener("input", e => { state.inst = e.target.value.trim().toLowerCase(); reset(); });
 $("journal").addEventListener("change", e => { state.journal = e.target.value; reset(); });
 $("zone").addEventListener("change", e => { state.zone = e.target.value; reset(); });
+$("scope").addEventListener("change", e => { state.scope = e.target.value; if (state.scope !== "mine") store.set("lr-scope", state.scope); state.fields.clear(); renderFieldChips(); reset(); });
 $("month").addEventListener("change", e => { state.month = e.target.value; if (state.month) state.date = "all"; renderDateChips(); reset(); });
 $("reset").addEventListener("click", () => {
   Object.assign(state, { q: "", date: "all", month: "", journal: "", zone: "", inst: "", key: false, star: false, unread: false });
-  state.fields = new Set(current && users[current] ? users[current].fields : []);
+  state.fields.clear();
   ["q","inst"].forEach(i => $(i).value = ""); ["journal","zone","month"].forEach(i => $(i).value = "");
   ["keyonly","staronly","unreadonly"].forEach(i => $(i).setAttribute("aria-pressed","false"));
   renderFieldChips(); renderDateChips(); reset();
@@ -261,17 +333,19 @@ function reset(){ state.shown = PAGE; render(); }
 
 /* ---------- marks ---------- */
 function mark(id, data){
-  marks[id] = { ...(marks[id] || {}), ...data }; store.set(marksKey(), marks);
+  marks[id] = { ...(marks[id] || {}), ...data };
   ALL = ALL.map(p => p._id === id ? { ...p, ...data } : p); render();
+  saveMark(id, marks[id]);
 }
 function applyMarks(){ ALL = ALL.map(p => ({ ...p, starred: !!(marks[p._id] || {}).starred, read: !!(marks[p._id] || {}).read })); }
 
 /* ---------- filtering ---------- */
 function filtered(){
-  const now = new Date(); const today = now.toISOString().slice(0, 10);
+  const now = new Date();
   const since = state.date === "all" ? "" : new Date(now - Number(state.date) * 864e5).toISOString().slice(0, 10);
-  const q = state.q, inst = state.inst;
+  const q = state.q, inst = state.inst, scope = new Set(scopeFields());
   return ALL.filter(p =>
+    scope.has(p.field) &&
     (state.fields.size === 0 || state.fields.has(p.field)) &&
     (!since || String(p.published) >= since) &&
     (!state.month || String(p.published).startsWith(state.month)) &&
@@ -340,11 +414,12 @@ function lrow(p){
 }
 function renderStats(){
   const s = $("stats"); s.replaceChildren();
+  const scope = new Set(scopeFields()); const mine = ALL.filter(p => scope.has(p.field));
   const add = (k, v) => { const sp = el("span"); sp.append(document.createTextNode(k + " "), el("b", null, String(v))); s.append(sp); };
-  const today = new Date().toISOString().slice(0, 10), wk = new Date(Date.now() - 7 * 864e5).toISOString().slice(0, 10);
-  add("累计", ALL.length); add("近 7 天", ALL.filter(p => String(p.published) >= wk).length);
-  add("1 区", ALL.filter(p => zoneOf(p).startsWith("1")).length); add("重点", ALL.filter(p => p.key).length);
-  add("收藏", ALL.filter(p => p.starred).length);
+  const wk = new Date(Date.now() - 7 * 864e5).toISOString().slice(0, 10);
+  add("累计", mine.length); add("近 7 天", mine.filter(p => String(p.published) >= wk).length);
+  add("1 区", mine.filter(p => zoneOf(p).startsWith("1")).length); add("重点", mine.filter(p => p.key).length);
+  add("收藏", mine.filter(p => p.starred).length);
 }
 function render(){
   renderStats();
@@ -353,8 +428,9 @@ function render(){
   const empty = $("empty");
   if (!rows.length){
     empty.hidden = false; empty.replaceChildren();
-    empty.append(el("strong", null, state.loaded ? "没有符合当前筛选的文献" : "正在加载文献…"));
-    if (state.loaded) empty.append(document.createTextNode("可以放宽日期、期刊或单位条件，或点“清除筛选”。"));
+    const scope = new Set(scopeFields()); const none = state.loaded && !ALL.some(p => scope.has(p.field));
+    empty.append(el("strong", null, !state.loaded ? "正在加载文献…" : none ? "这个领域还没有文献" : "没有符合当前筛选的文献"));
+    if (state.loaded) empty.append(document.createTextNode(none ? "新领域的论文会从下一次自动推送（每天 7:50、11:50、18:50）开始收录。" : "可以放宽日期、期刊或单位条件，或点“清除筛选”。"));
     $("moreBox").hidden = true; return;
   }
   empty.hidden = true;
@@ -365,49 +441,101 @@ function render(){
   $("moreBox").hidden = rows.length <= state.shown;
 }
 
-/* ---------- login (local profiles) ---------- */
+/* ---------- login dialog ---------- */
+let mode = "login";      // login | register | profile | local
 function renderLogin(){
-  const b = $("loginBtn");
-  b.textContent = current ? "账户：" + current : "登录";
-  b.title = current ? "切换账户或修改关注方向" : "登录后按你的方向筛选";
+  const n = who(); const b = $("loginBtn");
+  b.textContent = n ? "账户：" + n : "登录";
+  b.title = n ? "修改关注方向或退出登录" : "登录后按你的方向浏览，收藏跨设备同步";
 }
-function openLogin(){
+function fieldChecks(selected){
   const box = $("ufields"); box.replaceChildren();
-  const mine = current && users[current] ? users[current].fields : Object.keys(FIELDS);
-  for (const [k, v] of Object.entries(FIELDS)){
-    const lab = el("label"); const cb = document.createElement("input"); cb.type = "checkbox"; cb.value = k; cb.checked = mine.includes(k);
-    lab.append(cb, document.createTextNode(v)); box.append(lab);
+  for (const g of GROUPS){
+    const sec = el("div", "fgroup"); sec.append(el("div", "glab", g.name));
+    const cks = el("div", "checks");
+    for (const k of g.fields) if (FIELDS[k]){
+      const lab = el("label"); const cb = document.createElement("input"); cb.type = "checkbox"; cb.value = k; cb.checked = selected.includes(k);
+      lab.append(cb, document.createTextNode(FIELDS[k])); cks.append(lab);
+    }
+    sec.append(cks); box.append(sec);
   }
-  $("uname").value = current || "";
-  const pf = $("profiles"); pf.replaceChildren();
-  for (const n of Object.keys(users)) pf.append(chip(n, n === current, () => { $("uname").value = n;
-    box.querySelectorAll("input").forEach(cb => cb.checked = users[n].fields.includes(cb.value)); }));
-  $("logout").hidden = !current; $("save").textContent = current ? "保存" : "登录";
-  $("scrim").hidden = false; $("uname").focus();
 }
+function chosenFields(){ return [...$("ufields").querySelectorAll("input:checked")].map(c => c.value); }
+function setMode(m){
+  mode = m; $("msg").textContent = "";
+  const cloud = !!sb;
+  $("authTabs").hidden = !(cloud && (m === "login" || m === "register"));
+  $("tLogin").setAttribute("aria-pressed", String(m === "login")); $("tReg").setAttribute("aria-pressed", String(m === "register"));
+  $("lEmail").hidden = $("lPass").hidden = !(m === "login" || m === "register");
+  $("lName").hidden = !(m === "register" || m === "profile" || m === "local");
+  $("lFields").hidden = !(m === "register" || m === "profile" || m === "local");
+  $("profiles").hidden = m !== "local";
+  $("logout").hidden = !(m === "profile" || (m === "local" && localCurrent));
+  $("pass").autocomplete = m === "register" ? "new-password" : "current-password";
+  const titles = { login: "登录", register: "注册账户", profile: "我的账户", local: "登录" };
+  $("dlgTitle").textContent = titles[m];
+  $("save").textContent = { login: "登录", register: "注册", profile: "保存", local: localCurrent ? "保存" : "登录" }[m];
+  $("dlgIntro").textContent = {
+    login: "用注册时的邮箱和密码登录，任何设备都能看到你的方向和收藏。",
+    register: "选择你关注的研究方向，登录后默认只显示这些方向。",
+    profile: (auth.user ? auth.user.email + " · " : "") + "可以修改昵称和关注方向。",
+    local: "云端账户尚未开通，当前为本机账户：数据只保存在这台设备的浏览器里。"
+  }[m];
+  if (m === "register") { $("uname").value = ""; fieldChecks([]); }
+  if (m === "profile") { $("uname").value = auth.profile?.nickname || ""; fieldChecks(myFields()); }
+  if (m === "local") {
+    $("uname").value = localCurrent || ""; fieldChecks(localCurrent ? myFields() : (GROUPS.find(g => g.default) || GROUPS[0]).fields);
+    const pf = $("profiles"); pf.replaceChildren();
+    for (const n of Object.keys(localUsers)) pf.append(chip(n, n === localCurrent, () => { $("uname").value = n; fieldChecks(localUsers[n].fields); }));
+  }
+}
+function openLogin(){ setMode(sb ? (auth.user ? "profile" : "login") : "local"); $("scrim").hidden = false; ( $("email").offsetParent ? $("email") : $("uname") ).focus(); }
 function closeLogin(){ $("scrim").hidden = true; $("loginBtn").focus(); }
-function switchTo(name){
-  current = name; store.set("lr-current", current);
-  marks = store.get(marksKey(), {}); applyMarks();
-  state.fields = new Set(current && users[current] ? users[current].fields : []);
-  renderLogin(); renderFieldChips(); reset();
-}
 $("loginBtn").addEventListener("click", openLogin);
+$("tLogin").addEventListener("click", () => setMode("login"));
+$("tReg").addEventListener("click", () => setMode("register"));
 $("cancel").addEventListener("click", closeLogin);
 $("scrim").addEventListener("click", e => { if (e.target === $("scrim")) closeLogin(); });
 document.addEventListener("keydown", e => { if (e.key === "Escape" && !$("scrim").hidden) closeLogin(); });
-$("save").addEventListener("click", () => {
-  const name = $("uname").value.trim(); if (!name){ $("uname").focus(); $("uname").placeholder = "请先填写昵称"; return; }
-  const fields = [...$("ufields").querySelectorAll("input:checked")].map(c => c.value);
-  users[name] = { fields: fields.length ? fields : Object.keys(FIELDS), created: (users[name] || {}).created || new Date().toISOString() };
-  store.set("lr-users", users); closeLogin(); switchTo(name);
+const ERR = { "Invalid login credentials": "邮箱或密码不正确", "Email not confirmed": "邮箱还没有验证，请先点击验证邮件里的链接", "User already registered": "这个邮箱已经注册过，请直接登录" };
+$("save").addEventListener("click", async () => {
+  const msg = $("msg"), btn = $("save"); msg.textContent = "";
+  const email = $("email").value.trim(), pass = $("pass").value, name = $("uname").value.trim(), fields = chosenFields();
+  try {
+    btn.disabled = true;
+    if (mode === "login"){
+      if (!email || !pass) { msg.textContent = "请填写邮箱和密码"; return; }
+      const { error } = await sb.auth.signInWithPassword({ email, password: pass });
+      if (error) { msg.textContent = ERR[error.message] || error.message; return; }
+      closeLogin();
+    } else if (mode === "register"){
+      if (!email || pass.length < 6) { msg.textContent = "请填写邮箱，密码至少 6 位"; return; }
+      if (!fields.length) { msg.textContent = "请至少选择一个关注方向"; return; }
+      const { data, error } = await sb.auth.signUp({ email, password: pass, options: { data: { nickname: name || email.split("@")[0], fields } } });
+      if (error) { msg.textContent = ERR[error.message] || error.message; return; }
+      if (!data.session) { msg.textContent = "注册成功。请到邮箱点击验证链接，然后回来登录。"; setTimeout(() => setMode("login"), 2500); return; }
+      closeLogin();
+    } else if (mode === "profile"){
+      if (!fields.length) { msg.textContent = "请至少选择一个关注方向"; return; }
+      const prof = { nickname: name || auth.profile?.nickname || "", fields, updated_at: new Date().toISOString() };
+      const { error } = await sb.from("profiles").update(prof).eq("id", auth.user.id);
+      if (error) { msg.textContent = "保存失败：" + error.message; return; }
+      auth.profile = { nickname: prof.nickname, fields }; closeLogin(); state.scope = "mine"; renderLogin(); renderScope(); reset();
+    } else {
+      if (!name) { msg.textContent = "请先填写昵称"; $("uname").focus(); return; }
+      localUsers[name] = { fields: fields.length ? fields : (GROUPS.find(g => g.default) || GROUPS[0]).fields };
+      store.set("lr-users", localUsers); localCurrent = name; store.set("lr-current", name); closeLogin(); afterAuthChange();
+    }
+  } finally { btn.disabled = false; }
 });
-$("logout").addEventListener("click", () => { closeLogin(); switchTo(null); });
+$("logout").addEventListener("click", async () => {
+  closeLogin();
+  if (sb) await sb.auth.signOut(); else { localCurrent = null; store.set("lr-current", null); afterAuthChange(); }
+});
 
 /* ---------- boot ---------- */
-renderLogin(); renderFieldChips(); renderDateChips(); setView(state.view);
+renderLogin(); renderDateChips(); setView(state.view);
 (async () => {
-  const note = $("note");
   try {
     const get = u => { const c = new AbortController(); const t = setTimeout(() => c.abort(), 6000);
       return fetch(u + (u.startsWith("http") ? "?t=" + Date.now() : ""), { cache: "no-store", signal: c.signal })
@@ -416,13 +544,18 @@ renderLogin(); renderFieldChips(); renderDateChips(); setView(state.view);
     if (!got.length) throw new Error("no source");
     const j = got.sort((a, b) => String(b.updated || "").localeCompare(String(a.updated || "")))[0];
     FIELDS = j.fields || DEFAULT_FIELDS; JOURNALS = j.journals || {};
-    ALL = j.papers || []; applyMarks();
-    state.fields = new Set(current && users[current] ? users[current].fields.filter(f => FIELDS[f]) : []);
-    if (j.updated){ note.hidden = false; note.textContent = "数据更新于 " + j.updated + "。影响因子为 JCR 最新年度值，分区为中科院 2025 年版。"; }
+    if (Array.isArray(j.groups) && j.groups.length) GROUPS = j.groups;
+    ALL = j.papers || [];
+    if (j.updated) showNote("数据更新于 " + j.updated + "。影响因子为 JCR 最新年度值，分区为中科院 2025 年版。");
   } catch (e) {
-    note.hidden = false; note.textContent = "文献数据暂时加载失败，请检查网络后刷新页面。";
+    showNote("文献数据暂时加载失败，请检查网络后刷新页面。");
   }
-  state.loaded = true; renderFieldChips(); fillSelects(); render();
+  state.loaded = true; fillSelects();
+  if (sb){
+    const { data } = await sb.auth.getSession(); auth.user = data?.session?.user || null;
+    sb.auth.onAuthStateChange((ev, session) => { const u = session?.user || null; if ((u && u.id) !== (auth.user && auth.user.id)) { auth.user = u; afterAuthChange(); } });
+  }
+  await afterAuthChange();
 })();
 </script>
 </body>

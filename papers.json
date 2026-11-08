@@ -4,8 +4,51 @@
   "pa-nf": "聚酰胺纳滤膜",
   "cat-mem": "催化膜",
   "heo": "高熵氧化物催化",
-  "ml-mem": "机器学习+膜"
+  "ml-mem": "机器学习+膜",
+  "mp": "微塑料",
+  "mp-ml": "微塑料机器学习识别",
+  "mp-stain": "微塑料染色与标记",
+  "aop-water": "水相高级氧化",
+  "aop-gas": "气相高级氧化",
+  "sac": "单原子催化",
+  "dac": "双原子催化",
+  "mof": "MOF 材料",
+  "cof": "COF 材料"
  },
+ "groups": [
+  {
+   "id": "membrane",
+   "name": "膜分离与催化膜",
+   "fields": [
+    "pa-nf",
+    "cat-mem",
+    "heo",
+    "ml-mem"
+   ],
+   "default": true
+  },
+  {
+   "id": "microplastics",
+   "name": "微塑料",
+   "fields": [
+    "mp",
+    "mp-ml",
+    "mp-stain"
+   ]
+  },
+  {
+   "id": "aop",
+   "name": "高级氧化与催化材料",
+   "fields": [
+    "aop-water",
+    "aop-gas",
+    "sac",
+    "dac",
+    "mof",
+    "cof"
+   ]
+  }
+ ],
  "journals": {
   "Journal of Membrane Science": {
    "abbr": "J. Membr. Sci.",

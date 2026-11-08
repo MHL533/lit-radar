@@ -58060,6 +58060,36 @@
    ]
   },
   {
+   "_id": "10.1016_j.envres.2026.125106",
+   "title": "Plastic mulching and crop type govern the vertical distribution and composition of microplastics in a major agricultural irrigation system",
+   "journal": "Environmental Research",
+   "cas_zone": "2区",
+   "field": "mp",
+   "published": "2026-06-27",
+   "pushed": "2026-06-27",
+   "doi": "10.1016/j.envres.2026.125106",
+   "url": "https://doi.org/10.1016/j.envres.2026.125106",
+   "summary_zh": "",
+   "source_type": "官方",
+   "source_name": "ScienceDirect",
+   "source_url": "https://doi.org/10.1016/j.envres.2026.125106",
+   "key": false,
+   "auto": true,
+   "affils": [
+    "Beihang University",
+    "Capital University of Economics and Business",
+    "Chinese Academy of Sciences",
+    "Research Center for Eco-Environmental Sciences",
+    "University of Chinese Academy of Sciences",
+    "Inner Mongolia Agricultural University",
+    "Beijing Academy of Agriculture and Forestry Sciences",
+    "Universidade Politécnica de Coimbra"
+   ],
+   "corr_affils": [
+    "Beihang University"
+   ]
+  },
+  {
    "_id": "10.1016_j.envpol.2026.128648",
    "title": "Dietary exposure to polystyrene microplastics impairs muscle growth via gut microbiota dysbiosis and hepatic oxidative stress along the gut-liver-muscle axis in Qihe gibel carp (Carassius gibelio var. Qihe)",
    "journal": "Environmental Pollution",
@@ -73062,6 +73092,29 @@
    "corr_affils": [
     "Chongqing University",
     "Neijiang Normal University"
+   ]
+  },
+  {
+   "_id": "10.1016_j.jhazmat.2026.142508",
+   "title": "Horizontal and vertical distributions of microplastics and their water–sediment partitioning in a macrotidal estuarine embayment: Implications for coastal sequestration potential",
+   "journal": "Journal of Hazardous Materials",
+   "cas_zone": "1区",
+   "field": "mp",
+   "published": "2026-05-24",
+   "pushed": "2026-05-24",
+   "doi": "10.1016/j.jhazmat.2026.142508",
+   "url": "https://doi.org/10.1016/j.jhazmat.2026.142508",
+   "summary_zh": "",
+   "source_type": "官方",
+   "source_name": "ScienceDirect",
+   "source_url": "https://doi.org/10.1016/j.jhazmat.2026.142508",
+   "key": false,
+   "auto": true,
+   "affils": [
+    "Incheon National University"
+   ],
+   "corr_affils": [
+    "Incheon National University"
    ]
   },
   {
@@ -113639,6 +113692,30 @@
    ]
   },
   {
+   "_id": "10.1016_j.jece.2026.121885",
+   "title": "The vertical distribution characteristics and influencing factors of microplastics in soils around the Linhuan Industrial Park",
+   "journal": "Journal of Environmental Chemical Engineering",
+   "cas_zone": "2区",
+   "field": "mp",
+   "published": "2026-02-19",
+   "pushed": "2026-02-19",
+   "doi": "10.1016/j.jece.2026.121885",
+   "url": "https://doi.org/10.1016/j.jece.2026.121885",
+   "summary_zh": "",
+   "source_type": "官方",
+   "source_name": "ScienceDirect",
+   "source_url": "https://doi.org/10.1016/j.jece.2026.121885",
+   "key": false,
+   "auto": true,
+   "affils": [
+    "Anhui University",
+    "Huaibei Mining (China)"
+   ],
+   "corr_affils": [
+    "Anhui University"
+   ]
+  },
+  {
    "_id": "10.1016_j.jece.2026.121879",
    "title": "From adsorption to algorithms: Materials and machine learning strategies for microplastic detection and control",
    "journal": "Journal of Environmental Chemical Engineering",
@@ -129080,6 +129157,29 @@
    ],
    "corr_affils": [
     "Universidade Federal de São Paulo"
+   ]
+  },
+  {
+   "_id": "10.1016_j.marpolbul.2026.119229",
+   "title": "Microplastic accumulation and vertical distribution in the Delaware Estuary estuarine turbidity maximum",
+   "journal": "Marine Pollution Bulletin",
+   "cas_zone": "2区",
+   "field": "mp",
+   "published": "2026-01-15",
+   "pushed": "2026-01-15",
+   "doi": "10.1016/j.marpolbul.2026.119229",
+   "url": "https://doi.org/10.1016/j.marpolbul.2026.119229",
+   "summary_zh": "",
+   "source_type": "官方",
+   "source_name": "ScienceDirect",
+   "source_url": "https://doi.org/10.1016/j.marpolbul.2026.119229",
+   "key": false,
+   "auto": true,
+   "affils": [
+    "University of Delaware"
+   ],
+   "corr_affils": [
+    "University of Delaware"
    ]
   },
   {

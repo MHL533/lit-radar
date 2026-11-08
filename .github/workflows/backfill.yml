@@ -4,7 +4,7 @@ name: Backfill papers
 on:
   push:
     branches: [main]
-    paths: [scripts/backfill.json, scripts/backfill.py]
+    paths: [scripts/backfill.json]
   workflow_dispatch:
 
 permissions:

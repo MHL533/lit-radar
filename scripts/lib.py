@@ -42,7 +42,7 @@ def load_journals():
         for r in csv.DictReader(fh):
             issns = r["issn"].split("|")
             info = {"cas_name": r["journal"], "cat": r["category"], "zone": r["cas_zone"], "top": r["top"] == "1",
-                    "if": float(r["if_jcr2025"]) if re.fullmatch(r"[\d.]+", r["if_jcr2025"]) else None, "issn": issns[0]}
+                    "if": float(r["if_jcr2025"]) if re.fullmatch(r"[\d.]+", r["if_jcr2025"]) else None, "issn": issns[0], "issns": issns}
             for i in issns:
                 by_issn[i] = info
     return by_issn
@@ -178,6 +178,30 @@ def build_meta():
     return meta
 
 
+def reclassify():
+    """Re-run the title rules over the whole library (hand-curated papers, which carry a Chinese summary, keep their first field).
+
+    Papers that no longer match any field are dropped. All shards are rewritten.
+    """
+    by_issn = load_journals()
+    cat = {name: by_issn[i]["cat"] for i, name in load_names().items() if i in by_issn}
+    recs = load_all()
+    out, dropped = {}, 0
+    for k, p in recs.items():
+        f = rules.classify(p["t"], cat.get(p["j"]))
+        if p.get("s") or p.get("k"):
+            f = [p["f"][0]] + [x for x in f if x != p["f"][0]]
+        if not f:
+            dropped += 1
+            continue
+        p["f"] = f
+        out[k] = p
+    for path in all_shards():
+        os.remove(path)
+    save_records(out)
+    print(f"reclassified {len(out)} papers, dropped {dropped}")
+
+
 # ---------------------------------------------------------------- Crossref
 SELECT = "DOI,title,container-title,short-container-title,ISSN,published-online,published-print,issued,created,type"
 
@@ -190,6 +214,8 @@ def get_json(url, tries=5):
                 return json.load(r)
         except Exception as e:  # network hiccup or rate limit: back off and retry
             print("  retry", attempt, str(e)[:120], flush=True)
+            if getattr(e, "code", None) in (400, 404):
+                return None
             time.sleep(8 * (attempt + 1))
     return None
 
@@ -279,7 +305,9 @@ class Collector:
         self.new[key] = rec
 
     def scan_journal(self, issn, date_filter):
-        for it in crossref_pages(f"https://api.crossref.org/journals/{issn}/works", {"filter": date_filter + ",type:journal-article", "rows": 1000}):
+        issns = self.by_issn[issn]["issns"] if issn in self.by_issn else [issn]
+        flt = ",".join("issn:" + i for i in issns) + "," + date_filter + ",type:journal-article"
+        for it in crossref_pages("https://api.crossref.org/works", {"filter": flt, "rows": 1000}):
             self.take(it)
 
     def query(self, q, date_filter, rows=1000):

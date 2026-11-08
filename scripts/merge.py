@@ -35,6 +35,7 @@ def main(stage):
             lib.write_shard(dest, list(cur.values()))
         print(job, "added", n)
     lib.save_names(names, abbr)
+    lib.reclassify()
     meta = lib.build_meta()
     print("total", meta["total"], {g: sum(v.values()) for g, v in meta["shards"].items()})
 

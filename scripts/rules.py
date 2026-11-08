@@ -35,12 +35,14 @@ MEM = R(r"membrane|nanofiltration|reverse osmosis|forward osmosis|ultrafiltratio
 NOTSEP = R(r"\btherapy\b|antitumou?r|anticancer|nanocarrier|tumou?r|cancer|osteo|arthritis|wound (healing|dressing)|drug delivery|membrane.coated|"
            r"immunoassay|immunity|inflammat|antifungal|cell membrane|plasma membrane|mitochondri|membrane protein|lipid (bi)?layer|liposom|"
            r"membrane potential|erythrocyte|bacterial (outer )?membrane|membrane-bound|extracellular vesicle|thylakoid|proton exchange membrane|"
-           r"PEM fuel|membrane electrode assembly|fuel cell|electrolyzer|electrolyser|water electrolysis|redox flow batter|lithium.ion batter|"
+           r"PEM fuel|membrane electrode assembly|fuel cell|electrolyzer|electrolyser|water electrolysis|electrolysis cell|polymer electrolyte membrane|redox flow batter|lithium.ion batter|"
            r"separator for|tympanic|basement membrane|amniotic|mucous membrane|periodontal|guided bone|dental|nuclear membrane")
+ATMOS = R(r"source apportionment|ozone formation|atmospheric (oxidation|chemistry|mercury|aerosol)|ozone pollution|tropospher|stratospher|smog|"
+          r"emission inventor|sea.ice|phytoplankton|haze|PM2\.5|secondary organic aerosol|air quality model|elemental mercury")
 ML = R(r"machine learning|deep learning|neural network|artificial intelligence|random forest|convolutional|\bCNN\b|transformer model|"
        r"automated identification|spectral classification|SHAP|interpretable model|data-driven")
 CERAMIC = R(r"ceramic (membrane|ultrafiltration|nanofiltration|microfiltration|hollow.fib|filter|separation|support|tub)|inorganic membrane|"
-            r"alumina (membrane|hollow.fib)|Al2O3 (membrane|hollow.fib)|SiC (membrane|ceramic)|silicon carbide (membrane|ceramic)|zirconia membrane|"
+            r"alumina (membrane|hollow.fib)|Al2O3 (membrane|hollow.fib)|SiC membrane|silicon carbide membrane|zirconia membrane|"
             r"ZrO2 membrane|titania membrane|TiO2 (ceramic )?membrane|mullite membrane|ceramic.based membrane|ceramic hollow|"
             r"mixed ionic.electronic conducting|\bMIEC\b|oxygen.permeable membrane|oxygen transport membrane|oxygen.permeation membrane|"
             r"perovskite (hollow.fib\w* )?membrane|dual.phase membrane|ceramic nanofiltration")
@@ -100,8 +102,8 @@ GROUPS = [
         ("cat-ceramic", "催化陶瓷膜", rule(CERAMIC, need=CATAL, exclude=R(r"fuel cell|battery|electrolyzer|solid oxide"))),
         ("cat-mem", "催化膜", rule(R(r"membrane"), need=R(r"catal|peroxymonosulfate|persulfate|\bPMS\b|ozon|fenton|singlet oxygen|radical"),
                                   exclude=R(r"hydrogen|methane|syngas|reform|dehydrogenation|\bNOx?\b|dust|exchange membrane|electrolyzer|fuel cell|battery|CO2|cell membrane|lipid"))),
-        ("heo", "高熵氧化物催化", rule(R(r"high.entropy|mercaptan|CH3SH"), need=R(r"catal|oxidation|ozon|degrad|peroxymonosulfate|persulfate|VOC|toluene|propane|sulfur|pollut|mercaptan"), energy=True)),
-        ("ceramic", "陶瓷膜", rule(CERAMIC, exclude=[NOTSEP, R(r"solid oxide fuel|battery")])),
+        ("heo", "高熵氧化物催化", rule(R(r"high.entropy|mercaptan|CH3SH"), need=R(r"catal|ozon|degrad|peroxymonosulfate|persulfate|VOC|toluene|propane|pollut|mercaptan|CH3SH"), exclude=R(r"\balloys?\b|coating|oxidation (behaviou?r|resistance)|ablation|cementation|thermal barrier"), energy=True)),
+        ("ceramic", "陶瓷膜", rule(CERAMIC, need=R(r"membrane|filtrat|separat|permeat|filter"), exclude=[NOTSEP, R(r"solid oxide fuel|battery")])),
         ("ro-fo", "反渗透/正渗透", rule(R(r"reverse osmosis|forward osmosis|pressure.retarded osmosis|osmotic|desalination membrane|seawater desalination|\bSWRO\b|\bBWRO\b"), need=MEM, exclude=NOTSEP)),
         ("gas-sep", "气体分离膜", rule(MEM, need=R(r"gas separation|CO2 (capture|separation|/N2|/CH4)|H2/CO2|hydrogen (separation|purification)|O2/N2|olefin/paraffin|propylene/propane|ethylene/ethane|helium|natural gas|biogas upgrading|carbon molecular sieve|mixed.matrix membrane|polymers? of intrinsic microporosity|\bPIM-1\b|facilitated transport|gas permeat"), exclude=NOTSEP)),
         ("md", "膜蒸馏/渗透汽化", rule(R(r"membrane distillation|pervaporation|osmotic distillation|vapor permeation|membrane crystalli"), exclude=NOTSEP)),
@@ -127,19 +129,19 @@ GROUPS = [
         ("sac", "单原子催化", rule(R(r"single.atom|atomically dispersed|isolated (metal|Fe|Co|Cu|Mn|Ni) (site|atom)"), need=AOP, energy=True)),
         ("cof", "COF 材料", rule(R(r"covalent organic framework|\bCOFs?\b"), need=AOP, energy=True)),
         ("mof", "MOF 材料", rule(R(r"metal.organic framework|\bMOFs?\b|\bZIF-?\d|\bUiO-?6|\bMIL-?\d|prussian blue"), need=AOP, energy=True)),
-        ("aop-gas", "气相高级氧化", rule(GASCTX, need=R(r"oxidation|ozon|degrad|catalytic|abatement|removal|elimination|photocatal"), energy=True)),
-        ("aop-water", "水相高级氧化", rule(R(r"peroxymonosulfate|persulfate|peroxydisulfate|\bPMS\b|\bPDS\b|ozon|fenton|advanced oxidation|\bAOPs?\b|hydroxyl radical|singlet oxygen|sulfate radical|high-valent|photocatalytic degradation|electrocatalytic degradation|catalytic degradation"), need=WATERCTX, energy=True)),
+        ("aop-gas", "气相高级氧化", rule(GASCTX, need=R(r"oxidation|ozon|degrad|catalytic|abatement|removal|elimination|photocatal"), exclude=[ATMOS, R(r"cracking|pyrolysis|tar\b")], energy=True)),
+        ("aop-water", "水相高级氧化", rule(R(r"peroxymonosulfate|persulfate|peroxydisulfate|\bPMS\b|\bPDS\b|ozon|fenton|advanced oxidation|\bAOPs?\b|hydroxyl radical|singlet oxygen|sulfate radical|high-valent|photocatalytic degradation|electrocatalytic degradation|catalytic degradation"), need=WATERCTX, exclude=ATMOS, energy=True)),
     ]),
     ("electrochem", "电化学", {C_CHEM, C_MAT, C_ENG, C_ENV, C_ALL, C_PHY}, [
         ("ec-li", "锂离子/锂金属电池", rule(R(r"lithium.ion (batter|full cell|cell|storage|anode|cathode)|\bli[\s‐-]ion\b|(?-i:\bLIBs?\b)|lithium metal (batter|anode)|li metal (batter|anode)|lithium (anode|batter|deposition|dendrite|plating|stripping)|(?-i:\bNCM\d*|\bLFP\b|\bLiNi|\bLiMn|\bLiCoO2|\bLiFePO4|\bSEI\b|\bCEI\b)|Ni.rich (layered |cathode)|high.nickel|\bLi.rich|silicon(.based)? anode|\bSi anode|graphite anode|solid electrolyte interphase|cathode electrolyte interphase|anode.free lithium"),
                                      exclude=[NOTEC, R(r"lithium extraction|lithium recovery|Li\+/Mg2\+|lithium.sulfur|li.s batter|lithium.oxygen|Li.O2|Li.air|Li.CO2")])),
         ("ec-ss", "固态电池与固态电解质", rule(R(r"solid.state (lithium |sodium |li |na )?(metal )?batter|all.solid.state|solid(.state)? (polymer )?electrolyte|sulfide electrolyte|garnet|\bLLZO|argyrodite|halide (solid )?electrolyte|polymer electrolyte|quasi.solid|gel (polymer )?electrolyte|\bPEO\b.*electrolyte|NASICON"),
-                                         need=R(r"batter|lithium|sodium|\bLi\b|\bNa\b|ion|electrolyte"), exclude=[NOTEC, R(r"solid oxide|\bSOFC|\bSOEC|proton.conducting")])),
+                                         need=R(r"batter|lithium|sodium|\bLi\b|\bNa\b|ion.conduct|anode|cathode|Li\+"), exclude=[NOTEC, R(r"solid oxide|\bSOFC|\bSOEC|proton.conducting|electrolysis|fuel cell|electrolyzer")])),
         ("ec-beyond", "钠/钾/锌等新型电池", rule(R(r"sodium.ion (batter|full cell|storage|anode|cathode|capacitor)|(?-i:\bSIBs?\b|\bPIBs?\b|\bZIBs?\b|\bAZIBs?\b)|\bna[\s‐-]ion\b|sodium (metal (batter|anode)|batter|storage)|potassium.ion (batter|storage|anode|cathode)|potassium (metal (batter|anode)|batter|storage)|zinc.ion (batter|hybrid|capacitor|storage)|aqueous zinc|zinc (metal )?anode|\bZn anode|\bZn metal (anode|batter)|zinc batter|magnesium.ion batter|magnesium (metal )?batter|\bMg batter|calcium.ion batter|alumin(i)?um.ion batter|ammonium.ion batter|proton batter|dual.ion batter|redox flow|flow batter|aqueous batter|hard carbon anode|Prussian blue (analogue )?cathode|Zn.ion batter"),
                                            exclude=[NOTEC, R(r"zinc.air|Zn.air|zinc.oxygen")])),
         ("ec-lis", "锂硫与金属-空气电池", rule(R(r"lithium.sulfur|li.s batter|\bLSBs?\b|polysulfide|sulfur cathode|lithium.selenium|lithium.oxygen|Li.O2|Li.air|zinc.air|Zn.air|metal.air|Li.CO2|sodium.sulfur|Na.S batter|room.temperature sodium.sulfur"), exclude=NOTEC)),
         ("ec-sc", "超级电容器", rule(R(r"supercapacit|pseudocapacit|electrochemical capacitor|electric(al)? double.layer capacit|\bEDLCs?\b|hybrid capacitor|zinc.ion capacitor|lithium.ion capacitor|capacitive energy storage"), exclude=NOTEC)),
-        ("ec-water", "电解水制氢", rule(R(r"water (electrolysis|splitting)|(electrocatalytic|photoelectrochemical|electrochemical) water oxidation|hydrogen evolution|oxygen evolution|\bHERs?\b|\bOERs?\b|electrolyzer|electrolyser|\bAEMWE|\bPEMWE|seawater (electrolysis|splitting|oxidation)|overall water|bifunctional electrocatalyst|electrocatalytic hydrogen|hydrogen production by electrolysis|alkaline electrolysis|acidic oxygen evolution|anodic oxygen"),
+        ("ec-water", "电解水制氢", rule(R(r"water (electrolysis|splitting)|electrolysis cells?|PEM electrolysis|(electrocatalytic|photoelectrochemical|electrochemical) water oxidation|hydrogen evolution|oxygen evolution|\bHERs?\b|\bOERs?\b|electrolyzer|electrolyser|\bAEMWE|\bPEMWE|seawater (electrolysis|splitting|oxidation)|overall water|bifunctional electrocatalyst|electrocatalytic hydrogen|hydrogen production by electrolysis|alkaline electrolysis|acidic oxygen evolution|anodic oxygen"),
                                          exclude=[NOTEC, R(r"photocatalytic (hydrogen|H2|water|overall)|photocatalytic.*hydrogen evolution|dye.sensitized")])),
         ("ec-co2", "CO2 电还原", rule(R(r"CO2 (electro)?reduction|\bCO2RR\b|\bCO2ER\b|\beCO2RR\b|electrochemical CO2|electroreduction of (CO2|carbon dioxide)|CO2 electrolysis|CO2 electrolyzer|CO electroreduction|\bCORR\b|carbon dioxide (electro)?reduction|CO2.to.|electrocatalytic CO2"),
                                       need=R(r"electro|\bCO2RR\b|\bCO2ER\b|\bCORR\b|cathode|faradaic|current density|membrane electrode|flow cell|\bMEA\b"), exclude=[NOTEC, R(r"^(?!.*electro).*photo")])),

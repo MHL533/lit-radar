@@ -22,7 +22,23 @@
 2. 在搜索框输入 `peroxymonosulfate`。搜索会匹配标题、中文要点、期刊名及缩写、DOI 和作者单位，忽略英文大小写。已知 DOI 时，可以直接粘贴 DOI 编号。
 3. 用「上线日期」或「中科院分区」缩小范围。打算稍后阅读的论文可以收藏，读完后点「已读」。下次用「★ 收藏」或「未读」筛选即可。
 
-网页当前使用本机账户模式，收藏和已读状态保存在当前浏览器。自行部署时，如需跨设备同步，可先在自己的 Supabase 项目中执行 [建表脚本](supabase/schema.sql)，再在 [config.js](config.js) 填入项目 URL 和公开的 anon key。
+## 个人账户、研究方向与反馈
+
+开通云账户后，点击「登录 / 注册」并选择「注册」，填写邮箱和密码，选择自己关注的研究方向。完成邮箱验证后，使用同一邮箱登录。进入「我的方向」可以直接浏览相关论文。点击右上角账户可以修改昵称和方向。同一账户在不同设备上共享收藏和已读标记。
+
+使用「反馈」提交账户问题、功能建议或文献纠错。云端会把已登录用户的反馈关联到本人账户，访客也可以匿名提交。维护者可以从 Supabase 的 `feedback` 表查看记录。网站未配置云服务时，可使用「本机档案」在当前浏览器保存偏好。
+
+### 为自己的站点启用邮箱登录
+
+1. 在用于本站的 Supabase 项目中执行 [建表脚本](supabase/schema.sql)，启用 Data API 并将 `public` 加入开放的数据库模式。脚本为个人资料、阅读标记和反馈设置行级权限。
+2. 在 **Authentication** 中启用 Email、允许新用户注册并开启邮箱确认。在 **URL Configuration** 中将 Site URL 和允许的回跳地址设置为站点首页。本仓库的地址为 `https://mhl533.github.io/lit-radar/`。
+3. 面向公众开放注册前，配置可用的 SMTP 发信服务，以便访客收到确认邮件。Supabase 默认邮件服务仅向项目团队成员的地址发信。[发信服务说明](https://supabase.com/docs/guides/auth/auth-smtp)
+4. 将项目 URL 和客户端公开密钥（publishable key 或 anon key）分别填入 [config.js](config.js) 的 `supabaseUrl` 和 `supabaseAnonKey`，再发布页面。服务端密钥只保存在服务端。
+5. 用一个测试邮箱注册并验证。换一个浏览器登录同一账号，检查「我的方向」和收藏能否恢复，再提交一条「账户与登录」反馈，核对后台记录的 `user_id`。
+
+**后续绑定微信**
+
+资料与阅读记录以 Supabase 用户 ID 为主键或外键。计划在用户登录后的账户设置中增加微信授权，将验证后的微信身份关联到同一用户 ID。接入前需准备微信开放平台网站应用、AppID、服务端 AppSecret 和回调域名。[微信网站应用接入指南](https://developers.weixin.qq.com/doc/oplatform/Website_App/WeChat_Login/Wechat_Login.html)
 
 ## 数据来源与更新
 

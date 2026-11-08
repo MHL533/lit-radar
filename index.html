@@ -275,14 +275,14 @@ a.btn{text-decoration:none}
   <div class="dlg" role="dialog" aria-modal="true" aria-labelledby="fbTitle">
     <h2 id="fbTitle">反馈</h2>
     <p id="fbIntro"></p>
-    <label>类型<select id="fbType"><option>功能建议</option><option>文献纠错</option><option>问题报告</option><option>其他</option></select></label>
+    <label>类型<select id="fbType"><option>功能建议</option><option>账户与登录</option><option>文献纠错</option><option>问题报告</option><option>其他</option></select></label>
     <p class="fbpaper" id="fbPaper" hidden></p>
     <label>内容<textarea id="fbText" maxlength="2000" placeholder="例如：希望增加某个方向；某篇论文分类不对，应归到……"></textarea></label>
     <label>联系方式（选填）<input type="text" id="fbContact" maxlength="100" placeholder="邮箱或微信，方便回复你"></label>
     <p class="msg" id="fbMsg" role="status"></p>
     <div class="row">
       <button class="btn" id="fbCopy" type="button" hidden>复制内容</button>
-      <a class="btn" id="fbGh" target="_blank" rel="noopener" hidden>提交到 GitHub</a>
+      <a class="btn" id="fbGh" href="https://github.com/MHL533/lit-radar/issues/new" target="_blank" rel="noopener noreferrer" hidden>新建公开 Issue</a>
       <button class="btn" id="fbCancel" type="button">取消</button>
       <button class="btn primary" id="fbSend" type="button">提交</button>
     </div>
@@ -314,45 +314,65 @@ const state = { q: "", scope: store.get("lr-scope", ""), fields: new Set(), date
 
 /* ---------- accounts: cloud (Supabase) or local fallback ---------- */
 const CFG = window.LR_CONFIG || {};
+const cloudConfigured = !!(CFG.supabaseUrl || CFG.supabaseAnonKey);
 let sb = null;
 try { if (CFG.supabaseUrl && CFG.supabaseAnonKey && window.supabase) sb = window.supabase.createClient(CFG.supabaseUrl, CFG.supabaseAnonKey); } catch {}
-const auth = { user: null, profile: null };            // cloud: Supabase user + {nickname, fields}
+const auth = { user: null, profile: null, loading: !!sb };
+let accountVersion = 0;
 let localUsers = store.get("lr-users", {}), localCurrent = store.get("lr-current", null);
 if (localCurrent && !localUsers[localCurrent]) localCurrent = null;
 let marks = {};
 
-function who(){ return sb ? (auth.user ? auth.profile?.nickname || auth.user.email : null) : localCurrent; }
+function who(){ return cloudConfigured ? (auth.user ? auth.profile?.nickname || auth.user.email : null) : localCurrent; }
 function myFields(){
-  const f = sb ? auth.profile?.fields : (localCurrent ? localUsers[localCurrent]?.fields : null);
-  return (f || []).filter(x => FIELDS[x]);
+  const f = cloudConfigured ? auth.profile?.fields : (localCurrent ? localUsers[localCurrent]?.fields : null);
+  return Array.isArray(f) ? f.filter(x => FIELDS[x]) : [];
 }
 function loadLocalMarks(){ marks = store.get("lr-marks:" + (localCurrent || "_guest"), store.get("lit-radar-marks", {})); }
-async function loadCloudMarks(){
-  marks = {};
-  if (!sb || !auth.user) { marks = store.get("lr-marks:_guest", {}); return; }
-  const { data, error } = await sb.from("marks").select("paper_id,starred,read");
-  if (!error) for (const r of data || []) marks[r.paper_id] = { starred: r.starred, read: r.read };
+async function loadCloudMarks(user){
+  const { data, error } = await sb.from("marks").select("paper_id,starred,read").eq("user_id", user.id);
+  if (error) throw error;
+  return Object.fromEntries((data || []).map(r => [r.paper_id, { starred: r.starred, read: r.read }]));
 }
 async function saveMark(id, m){
   if (sb && auth.user){
     const { error } = await sb.from("marks").upsert({ user_id: auth.user.id, paper_id: id, starred: !!m.starred, read: !!m.read, updated_at: new Date().toISOString() });
     if (error) showNote("收藏同步失败：" + error.message);
-  } else store.set("lr-marks:" + (sb ? "_guest" : (localCurrent || "_guest")), marks);
+  } else store.set("lr-marks:" + (cloudConfigured ? "_guest" : (localCurrent || "_guest")), marks);
 }
-async function loadProfile(){
-  auth.profile = null; if (!auth.user) return;
-  const { data } = await sb.from("profiles").select("nickname,fields").eq("id", auth.user.id).maybeSingle();
-  if (data) { auth.profile = data; return; }
-  const meta = auth.user.user_metadata || {};            // first login after sign-up: create the profile row
-  const prof = { id: auth.user.id, nickname: meta.nickname || auth.user.email.split("@")[0], fields: meta.fields || [] };
-  const { error } = await sb.from("profiles").insert(prof);
-  auth.profile = { nickname: prof.nickname, fields: prof.fields };
-  if (error) showNote("保存账户资料失败：" + error.message);
+async function loadProfile(user){
+  const { data, error } = await sb.from("profiles").select("nickname,fields").eq("id", user.id).maybeSingle();
+  if (error) throw error;
+  if (data) return data;
+  const meta = user.user_metadata || {};
+  const prof = { id: user.id, nickname: meta.nickname || user.email.split("@")[0], fields: meta.fields || [] };
+  const { error: saveError } = await sb.from("profiles").upsert(prof, { ignoreDuplicates: true });
+  if (saveError) throw saveError;
+  return prof;
 }
-async function afterAuthChange(){
-  if (sb) { await loadProfile(); await loadCloudMarks(); } else loadLocalMarks();
+function renderAccount(){
   applyMarks(); state.scope = who() ? "mine" : (state.scope === "mine" ? "" : state.scope);
   renderLogin(); renderScope(); reset();
+}
+function afterAuthChange(user = null){
+  const version = ++accountVersion;
+  auth.user = user; auth.profile = null; auth.loading = !!user;
+  if (cloudConfigured) marks = user ? {} : store.get("lr-marks:_guest", {});
+  else loadLocalMarks();
+  if (!$("scrim").hidden) closeLogin();
+  if (!$("fbScrim").hidden) closeFeedback();
+  renderAccount();
+  if (!user) return;
+  // Run database queries outside the auth event's session lock.
+  setTimeout(async () => {
+    const [profile, savedMarks] = await Promise.allSettled([loadProfile(user), loadCloudMarks(user)]);
+    if (version !== accountVersion) return;
+    if (profile.status === "fulfilled") auth.profile = profile.value;
+    if (savedMarks.status === "fulfilled") marks = savedMarks.value;
+    auth.loading = false;
+    renderAccount();
+    if (profile.status === "rejected" || savedMarks.status === "rejected") showNote("部分账户资料未能加载，请刷新页面重试。");
+  }, 0);
 }
 
 /* ---------- helpers ---------- */
@@ -441,6 +461,7 @@ function reset(){ state.shown = PAGE; render(); }
 
 /* ---------- marks ---------- */
 function mark(id, data){
+  if (auth.loading) { showNote("正在加载账户，请稍后再操作。"); return; }
   marks[id] = { ...(marks[id] || {}), ...data };
   ALL = ALL.map(p => p._id === id ? { ...p, ...data } : p); render();
   saveMark(id, marks[id]);
@@ -589,8 +610,15 @@ function render(){
 let mode = "login";      // login | register | profile | local
 function renderLogin(){
   const n = who(); const b = $("loginBtn");
-  b.textContent = n ? "账户：" + n : "登录";
-  b.title = n ? "修改关注方向或退出登录" : "登录后按你的方向浏览，收藏跨设备同步";
+  b.disabled = auth.loading;
+  if (cloudConfigured && !sb) {
+    b.textContent = "登录暂不可用"; b.title = "账户服务未能连接，请刷新页面重试"; return;
+  }
+  if (!cloudConfigured) {
+    b.textContent = n ? "本机档案 · " + n : "本机档案"; b.title = "在当前浏览器保存阅读偏好"; return;
+  }
+  b.textContent = auth.loading ? "正在加载账户…" : n ? "账户 · " + n : "登录 / 注册";
+  b.title = n ? "修改关注方向或退出登录" : "使用邮箱注册或登录个人账户";
 }
 function fieldChecks(selected){
   const box = $("ufields"); box.replaceChildren();
@@ -616,14 +644,15 @@ function setMode(m){
   $("profiles").hidden = m !== "local";
   $("logout").hidden = !(m === "profile" || (m === "local" && localCurrent));
   $("pass").autocomplete = m === "register" ? "new-password" : "current-password";
-  const titles = { login: "登录", register: "注册账户", profile: "我的账户", local: "登录" };
+  const titles = { login: "登录", register: "注册账户", profile: "我的账户", local: "本机档案" };
   $("dlgTitle").textContent = titles[m];
-  $("save").textContent = { login: "登录", register: "注册", profile: "保存", local: localCurrent ? "保存" : "登录" }[m];
+  $("save").textContent = { login: "登录", register: "注册", profile: "保存", local: "保存本机档案" }[m];
+  $("logout").textContent = m === "local" ? "退出本机档案" : "退出登录";
   $("dlgIntro").textContent = {
     login: "用注册时的邮箱和密码登录，任何设备都能看到你的方向和收藏。",
     register: "选择你关注的研究方向，登录后默认只显示这些方向。",
     profile: (auth.user ? auth.user.email + " · " : "") + "可以修改昵称和关注方向。",
-    local: "云端账户尚未开通，当前为本机账户：数据只保存在这台设备的浏览器里。"
+    local: "云端账户尚未开通。昵称、关注方向和收藏仅保存在当前浏览器。"
   }[m];
   if (m === "register") { $("uname").value = ""; fieldChecks([]); }
   if (m === "profile") { $("uname").value = auth.profile?.nickname || ""; fieldChecks(myFields()); }
@@ -633,8 +662,12 @@ function setMode(m){
     for (const n of Object.keys(localUsers)) pf.append(chip(n, n === localCurrent, () => { $("uname").value = n; fieldChecks(localUsers[n].fields); }));
   }
 }
-function openLogin(){ setMode(sb ? (auth.user ? "profile" : "login") : "local"); $("scrim").hidden = false; ( $("email").offsetParent ? $("email") : $("uname") ).focus(); }
-function closeLogin(){ $("scrim").hidden = true; $("loginBtn").focus(); }
+function openLogin(){
+  if (cloudConfigured && !sb) { showNote("账户服务暂不可用，请刷新后重试。"); return; }
+  setMode(sb ? (auth.user ? "profile" : "login") : "local"); $("scrim").hidden = false;
+  ($("email").offsetParent ? $("email") : $("uname")).focus();
+}
+function closeLogin(){ $("scrim").hidden = true; $("pass").value = ""; $("email").value = ""; $("loginBtn").focus(); }
 $("loginBtn").addEventListener("click", openLogin);
 $("tLogin").addEventListener("click", () => setMode("login"));
 $("tReg").addEventListener("click", () => setMode("register"));
@@ -655,14 +688,18 @@ $("save").addEventListener("click", async () => {
     } else if (mode === "register"){
       if (!email || pass.length < 6) { msg.textContent = "请填写邮箱，密码至少 6 位"; return; }
       if (!fields.length) { msg.textContent = "请至少选择一个关注方向"; return; }
-      const { data, error } = await sb.auth.signUp({ email, password: pass, options: { data: { nickname: name || email.split("@")[0], fields } } });
+      const { data, error } = await sb.auth.signUp({ email, password: pass, options: {
+        emailRedirectTo: new URL("./", location.href).href, data: { nickname: name || email.split("@")[0], fields }
+      } });
       if (error) { msg.textContent = ERR[error.message] || error.message; return; }
-      if (!data.session) { msg.textContent = "注册成功。请到邮箱点击验证链接，然后回来登录。"; setTimeout(() => setMode("login"), 2500); return; }
+      if (!data.session) { setMode("login"); $("pass").value = ""; msg.textContent = "请查看验证邮件，点击链接完成注册。已验证的账户可直接登录。"; return; }
       closeLogin();
     } else if (mode === "profile"){
       if (!fields.length) { msg.textContent = "请至少选择一个关注方向"; return; }
-      const prof = { nickname: name || auth.profile?.nickname || "", fields, updated_at: new Date().toISOString() };
-      const { error } = await sb.from("profiles").update(prof).eq("id", auth.user.id);
+      const version = accountVersion;
+      const prof = { id: auth.user.id, nickname: name || auth.profile?.nickname || auth.user.email.split("@")[0], fields, updated_at: new Date().toISOString() };
+      const { error } = await sb.from("profiles").upsert(prof);
+      if (version !== accountVersion) return;
       if (error) { msg.textContent = "保存失败：" + error.message; return; }
       auth.profile = { nickname: prof.nickname, fields }; closeLogin(); state.scope = "mine"; renderLogin(); renderScope(); reset();
     } else {
@@ -670,11 +707,17 @@ $("save").addEventListener("click", async () => {
       localUsers[name] = { fields: fields.length ? fields : (GROUPS.find(g => g.default) || GROUPS[0]).fields };
       store.set("lr-users", localUsers); localCurrent = name; store.set("lr-current", name); closeLogin(); afterAuthChange();
     }
-  } finally { btn.disabled = false; }
+  } catch { msg.textContent = "账户服务未响应，请检查网络后重试。"; }
+  finally { btn.disabled = false; }
 });
 $("logout").addEventListener("click", async () => {
+  if (sb) {
+    try {
+      const { error } = await sb.auth.signOut({ scope: "local" });
+      if (error) { $("msg").textContent = "退出失败，请重试。"; return; }
+    } catch { $("msg").textContent = "退出失败，请检查网络后重试。"; return; }
+  } else { localCurrent = null; store.set("lr-current", null); afterAuthChange(); }
   closeLogin();
-  if (sb) await sb.auth.signOut(); else { localCurrent = null; store.set("lr-current", null); afterAuthChange(); }
 });
 
 /* ---------- theme ---------- */
@@ -695,26 +738,22 @@ function fbBody(){
   if ($("fbContact").value.trim()) lines.push("", "联系方式：" + $("fbContact").value.trim());
   return lines.join("\n");
 }
-function syncFbFallback(){
-  const title = "[" + $("fbType").value + "] " + ($("fbText").value.trim().slice(0, 40) || "反馈");
-  $("fbGh").href = "https://github.com/MHL533/lit-radar/issues/new?title=" + encodeURIComponent(title) + "&body=" + encodeURIComponent(fbBody().slice(0, 5000));
-}
 function openFeedback(p){
   fbPaper = p || null;
   $("fbType").value = p ? "文献纠错" : "功能建议";
   $("fbPaper").hidden = !p; $("fbPaper").textContent = p ? "文献：" + p.title + "（" + abbrOf(p) + "，当前分类：" + (FIELDS[p.field] || p.field) + "）" : "";
-  $("fbText").value = ""; $("fbMsg").textContent = "";
+  $("fbText").value = ""; $("fbContact").value = ""; $("fbMsg").textContent = "";
   const cloud = !!sb;
   $("fbSend").hidden = !cloud; $("fbCopy").hidden = cloud; $("fbGh").hidden = cloud;
-  $("fbIntro").textContent = cloud ? "你的反馈会直接发给维护者，联系方式只有维护者能看到。" : "在线反馈通道正在接入中。可以先复制内容发给维护者，或用 GitHub 账号提交。";
-  syncFbFallback(); $("fbScrim").hidden = false; $("fbText").focus();
+  $("fbIntro").textContent = cloud ? (auth.user ? "反馈将关联当前账户并发送给维护者。" : "本次反馈将以访客身份发送给维护者。") :
+    "可复制反馈并私下发给维护者，也可单独新建公开 GitHub Issue。";
+  $("fbScrim").hidden = false; $("fbText").focus();
 }
 function closeFeedback(){ $("fbScrim").hidden = true; }
 $("fbBtn").addEventListener("click", () => openFeedback(null));
 $("fbCancel").addEventListener("click", closeFeedback);
 $("fbScrim").addEventListener("click", e => { if (e.target === $("fbScrim")) closeFeedback(); });
 document.addEventListener("keydown", e => { if (e.key === "Escape" && !$("fbScrim").hidden) closeFeedback(); });
-["fbType", "fbText", "fbContact"].forEach(id => $(id).addEventListener("input", syncFbFallback));
 $("fbCopy").addEventListener("click", async () => {
   if (!$("fbText").value.trim()) { $("fbMsg").textContent = "请先填写内容"; return; }
   try { await navigator.clipboard.writeText(fbBody()); $("fbMsg").textContent = "已复制，可以粘贴发给维护者。"; }
@@ -722,17 +761,27 @@ $("fbCopy").addEventListener("click", async () => {
 });
 $("fbSend").addEventListener("click", async () => {
   const content = $("fbText").value.trim(); if (!content) { $("fbMsg").textContent = "请先填写内容"; $("fbText").focus(); return; }
+  if (auth.loading && !auth.user) { $("fbMsg").textContent = "正在确认登录状态，请稍后重试。"; return; }
+  const version = accountVersion;
   $("fbSend").disabled = true;
   try {
     const { error } = await sb.from("feedback").insert({ type: $("fbType").value, content, contact: $("fbContact").value.trim() || null,
-      paper_id: fbPaper ? fbPaper._id : null, page_url: location.href.slice(0, 500), user_id: auth.user ? auth.user.id : null });
+      paper_id: fbPaper ? fbPaper._id : null, page_url: location.origin + location.pathname, user_id: auth.user?.id || null });
+    if (version !== accountVersion) return;
     if (error) { $("fbMsg").textContent = "提交失败：" + error.message; return; }
-    $("fbMsg").textContent = "已收到，谢谢你的反馈！"; setTimeout(closeFeedback, 1200);
-  } finally { $("fbSend").disabled = false; }
+    closeFeedback(); showNote("反馈已提交，谢谢！");
+  } catch { $("fbMsg").textContent = "提交失败，请检查网络后重试。"; }
+  finally { $("fbSend").disabled = false; }
 });
 
 /* ---------- boot ---------- */
 renderLogin(); renderDateChips(); renderSort(); setView(state.view);
+if (sb) {
+  sb.auth.onAuthStateChange((event, session) => {
+    const user = session?.user || null;
+    if (event === "INITIAL_SESSION" || user?.id !== auth.user?.id) afterAuthChange(user);
+  });
+} else afterAuthChange();
 (async () => {
   try {
     const get = u => { const c = new AbortController(); const t = setTimeout(() => c.abort(), 25000);
@@ -749,11 +798,8 @@ renderLogin(); renderDateChips(); renderSort(); setView(state.view);
     showNote("文献数据暂时加载失败，请检查网络后刷新页面。");
   }
   state.loaded = true; fillSelects();
-  if (sb){
-    const { data } = await sb.auth.getSession(); auth.user = data?.session?.user || null;
-    sb.auth.onAuthStateChange((ev, session) => { const u = session?.user || null; if ((u && u.id) !== (auth.user && auth.user.id)) { auth.user = u; afterAuthChange(); } });
-  }
-  await afterAuthChange();
+  if (!$("scrim").hidden && !$("lFields").hidden) fieldChecks(chosenFields());
+  renderAccount();
 })();
 </script>
 </body>

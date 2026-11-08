@@ -129,7 +129,9 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.seppur.2026.140809",
-   "key": false
+   "key": false,
+   "affils": [],
+   "corr_affils": []
   },
   {
    "_id": "10.1016_j.memsci.2026.126365",
@@ -145,7 +147,13 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.memsci.2026.126365",
-   "key": false
+   "key": false,
+   "affils": [
+    "Jilin University"
+   ],
+   "corr_affils": [
+    "Jilin University"
+   ]
   },
   {
    "_id": "10.1016_j.cej.2026.183837",
@@ -161,7 +169,15 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.cej.2026.183837",
-   "key": true
+   "key": true,
+   "affils": [
+    "Harbin Institute of Technology",
+    "Northeast Agricultural University"
+   ],
+   "corr_affils": [
+    "Northeast Agricultural University",
+    "Harbin Institute of Technology"
+   ]
   },
   {
    "_id": "10.1021_acs.est.6c14615",
@@ -177,7 +193,13 @@
    "source_type": "官方",
    "source_name": "ACS Publications",
    "source_url": "https://doi.org/10.1021/acs.est.6c14615",
-   "key": true
+   "key": true,
+   "affils": [
+    "Tongji University"
+   ],
+   "corr_affils": [
+    "Tongji University"
+   ]
   },
   {
    "_id": "10.1016_j.memsci.2026.126368",
@@ -193,7 +215,19 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.memsci.2026.126368",
-   "key": true
+   "key": true,
+   "affils": [
+    "Bhabha Atomic Research Centre",
+    "Homi Bhabha National Institute",
+    "Central Salt and Marine Chemicals Research Institute",
+    "Academy of Scientific and Innovative Research"
+   ],
+   "corr_affils": [
+    "Central Salt and Marine Chemicals Research Institute",
+    "Academy of Scientific and Innovative Research",
+    "Bhabha Atomic Research Centre",
+    "Homi Bhabha National Institute"
+   ]
   },
   {
    "_id": "10.1016_j.cej.2026.183864",
@@ -209,7 +243,14 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.cej.2026.183864",
-   "key": false
+   "key": false,
+   "affils": [
+    "Harbin Normal University",
+    "Shenzhen University"
+   ],
+   "corr_affils": [
+    "Harbin Normal University"
+   ]
   },
   {
    "_id": "10.1016_j.memsci.2026.126363",
@@ -225,7 +266,16 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.memsci.2026.126363",
-   "key": true
+   "key": true,
+   "affils": [
+    "Zhengzhou University",
+    "National Supercomputing Center In Zhengzhou",
+    "Research Center for Membrane and Film Technology, Kobe University",
+    "Kobe University"
+   ],
+   "corr_affils": [
+    "Zhengzhou University"
+   ]
   },
   {
    "_id": "10.1016_j.desal.2026.121010",
@@ -241,7 +291,15 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.desal.2026.121010",
-   "key": false
+   "key": false,
+   "affils": [
+    "University of Technology Malaysia",
+    "International Islamic University Malaysia",
+    "Tun Hussein Onn University of Malaysia"
+   ],
+   "corr_affils": [
+    "University of Technology Malaysia"
+   ]
   },
   {
    "_id": "10.1016_j.cej.2026.183692",
@@ -257,7 +315,16 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.cej.2026.183692",
-   "key": false
+   "key": false,
+   "affils": [
+    "Qilu University of Technology",
+    "Shandong Academy of Sciences",
+    "Shandong Jianzhu University"
+   ],
+   "corr_affils": [
+    "Qilu University of Technology",
+    "Shandong Academy of Sciences"
+   ]
   },
   {
    "_id": "10.1016_j.cej.2026.183681",
@@ -273,7 +340,19 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.cej.2026.183681",
-   "key": false
+   "key": false,
+   "affils": [
+    "State Key Laboratory of Pollution Control and Resource Reuse",
+    "Nanjing University",
+    "University of Science and Technology of China",
+    "National Laboratory of Solid State Microstructures",
+    "Nanjing Normal University"
+   ],
+   "corr_affils": [
+    "Nanjing Normal University",
+    "State Key Laboratory of Pollution Control and Resource Reuse",
+    "Nanjing University"
+   ]
   },
   {
    "_id": "10.1016_j.jhazmat.2026.144045",
@@ -289,7 +368,18 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.jhazmat.2026.144045",
-   "key": false
+   "key": false,
+   "affils": [
+    "Yancheng Teachers University",
+    "Beijing University of Chemical Technology",
+    "UCLouvain",
+    "KU Leuven"
+   ],
+   "corr_affils": [
+    "Yancheng Teachers University",
+    "UCLouvain",
+    "KU Leuven"
+   ]
   },
   {
    "_id": "10.1016_j.memsci.2026.126336",
@@ -305,7 +395,18 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.memsci.2026.126336",
-   "key": false
+   "key": false,
+   "affils": [
+    "Nanjing Tech University",
+    "Suzhou Research Institute",
+    "State Key Laboratory of Materials-Oriented Chemical Engineering",
+    "Xinjiang Academy of Agricultural and Reclamation Science"
+   ],
+   "corr_affils": [
+    "Nanjing Tech University",
+    "Suzhou Research Institute",
+    "State Key Laboratory of Materials-Oriented Chemical Engineering"
+   ]
   },
   {
    "_id": "10.1016_j.memsci.2026.126338",
@@ -321,7 +422,13 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.memsci.2026.126338",
-   "key": false
+   "key": false,
+   "affils": [
+    "Zhejiang Normal University"
+   ],
+   "corr_affils": [
+    "Zhejiang Normal University"
+   ]
   },
   {
    "_id": "10.1016_j.memsci.2026.126343",
@@ -337,7 +444,17 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.memsci.2026.126343",
-   "key": false
+   "key": false,
+   "affils": [
+    "China University of Petroleum, East China",
+    "State Key Laboratory of Heavy Oil",
+    "Weichai Power (China)"
+   ],
+   "corr_affils": [
+    "Weichai Power (China)",
+    "China University of Petroleum, East China",
+    "State Key Laboratory of Heavy Oil"
+   ]
   },
   {
    "_id": "10.1016_j.seppur.2026.140690",
@@ -353,7 +470,17 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.seppur.2026.140690",
-   "key": false
+   "key": false,
+   "affils": [
+    "Taiyuan University of Science and Technology",
+    "Chang'an University",
+    "Ministry of Water Resources of the People's Republic of China"
+   ],
+   "corr_affils": [
+    "Chang'an University",
+    "Ministry of Water Resources of the People's Republic of China",
+    "Taiyuan University of Science and Technology"
+   ]
   },
   {
    "_id": "10.1016_j.memsci.2026.126333",
@@ -369,7 +496,18 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.memsci.2026.126333",
-   "key": false
+   "key": false,
+   "affils": [
+    "Nanchang University",
+    "Chinese Academy of Sciences",
+    "Institute of Urban Environment",
+    "University of Engineering and Technology Peshawar"
+   ],
+   "corr_affils": [
+    "Nanchang University",
+    "Chinese Academy of Sciences",
+    "Institute of Urban Environment"
+   ]
   },
   {
    "_id": "10.1016_j.desal.2026.120980",
@@ -385,7 +523,14 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.desal.2026.120980",
-   "key": false
+   "key": false,
+   "affils": [
+    "Northeast Electric Power University",
+    "Shandong University of Aeronautics"
+   ],
+   "corr_affils": [
+    "Northeast Electric Power University"
+   ]
   },
   {
    "_id": "10.1016_j.jece.2026.125600",
@@ -401,7 +546,15 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.jece.2026.125600",
-   "key": true
+   "key": true,
+   "affils": [
+    "Tongji University",
+    "Shanghai Institute of Pollution Control and Ecological Security"
+   ],
+   "corr_affils": [
+    "Tongji University",
+    "Shanghai Institute of Pollution Control and Ecological Security"
+   ]
   },
   {
    "_id": "10.1016_j.desal.2026.120971",
@@ -417,7 +570,14 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.desal.2026.120971",
-   "key": false
+   "key": false,
+   "affils": [
+    "University of Technology Malaysia",
+    "University of Indonesia"
+   ],
+   "corr_affils": [
+    "University of Technology Malaysia"
+   ]
   },
   {
    "_id": "10.1016_j.seppur.2026.140627",
@@ -433,7 +593,15 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.seppur.2026.140627",
-   "key": false
+   "key": false,
+   "affils": [
+    "Sun Yat-sen University",
+    "Guangdong Provincial Key Laboratory of Environmental Pollution Control and Remediation Technology"
+   ],
+   "corr_affils": [
+    "Sun Yat-sen University",
+    "Guangdong Provincial Key Laboratory of Environmental Pollution Control and Remediation Technology"
+   ]
   },
   {
    "_id": "10.1016_j.jece.2026.125554",
@@ -449,7 +617,13 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.jece.2026.125554",
-   "key": false
+   "key": false,
+   "affils": [
+    "Shenyang Jianzhu University"
+   ],
+   "corr_affils": [
+    "Shenyang Jianzhu University"
+   ]
   },
   {
    "_id": "10.1016_j.memsci.2026.126303",
@@ -465,7 +639,17 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.memsci.2026.126303",
-   "key": false
+   "key": false,
+   "affils": [
+    "Nanjing Tech University",
+    "State Key Laboratory of Materials-Oriented Chemical Engineering",
+    "Suzhou Research Institute"
+   ],
+   "corr_affils": [
+    "Nanjing Tech University",
+    "State Key Laboratory of Materials-Oriented Chemical Engineering",
+    "Suzhou Research Institute"
+   ]
   },
   {
    "_id": "10.1016_j.cej.2026.183074",
@@ -481,7 +665,15 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.cej.2026.183074",
-   "key": true
+   "key": true,
+   "affils": [
+    "Hefei University of Technology",
+    "China Academy of Engineering Physics"
+   ],
+   "corr_affils": [
+    "China Academy of Engineering Physics",
+    "Hefei University of Technology"
+   ]
   },
   {
    "_id": "10.1016_j.memsci.2026.126251",
@@ -497,7 +689,16 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.memsci.2026.126251",
-   "key": false
+   "key": false,
+   "affils": [
+    "Beijing Institute of Technology",
+    "Imperial College London",
+    "Chinese Academy of Sciences",
+    "Research Center for Eco-Environmental Sciences"
+   ],
+   "corr_affils": [
+    "Beijing Institute of Technology"
+   ]
   },
   {
    "_id": "10.1016_j.memsci.2026.126297",
@@ -513,7 +714,14 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.memsci.2026.126297",
-   "key": false
+   "key": false,
+   "affils": [
+    "Chengdu University of Technology",
+    "Panzhihua University"
+   ],
+   "corr_affils": [
+    "Chengdu University of Technology"
+   ]
   },
   {
    "_id": "10.1016_j.memsci.2026.126295",
@@ -529,7 +737,14 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.memsci.2026.126295",
-   "key": false
+   "key": false,
+   "affils": [
+    "Zhengzhou University",
+    "University of Regina"
+   ],
+   "corr_affils": [
+    "Zhengzhou University"
+   ]
   },
   {
    "_id": "10.1016_j.memsci.2026.126266",
@@ -545,7 +760,15 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.memsci.2026.126266",
-   "key": false
+   "key": false,
+   "affils": [
+    "Harbin Institute of Technology",
+    "University of Bath",
+    "Foshan University"
+   ],
+   "corr_affils": [
+    "Harbin Institute of Technology"
+   ]
   },
   {
    "_id": "10.1016_j.memsci.2026.126254",
@@ -561,7 +784,13 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.memsci.2026.126254",
-   "key": false
+   "key": false,
+   "affils": [
+    "Tongji University"
+   ],
+   "corr_affils": [
+    "Tongji University"
+   ]
   },
   {
    "_id": "10.1016_j.memsci.2026.126188",
@@ -577,7 +806,13 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.memsci.2026.126188",
-   "key": false
+   "key": false,
+   "affils": [
+    "North China Electric Power University"
+   ],
+   "corr_affils": [
+    "North China Electric Power University"
+   ]
   },
   {
    "_id": "10.1016_j.desal.2026.120922",
@@ -593,7 +828,14 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.desal.2026.120922",
-   "key": false
+   "key": false,
+   "affils": [
+    "North China Electric Power University",
+    "National Center for Nanoscience and Technology"
+   ],
+   "corr_affils": [
+    "North China Electric Power University"
+   ]
   },
   {
    "_id": "10.1016_j.desal.2026.120920",
@@ -609,7 +851,15 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.desal.2026.120920",
-   "key": false
+   "key": false,
+   "affils": [
+    "Tongji University",
+    "Shanghai Institute of Pollution Control and Ecological Security"
+   ],
+   "corr_affils": [
+    "Tongji University",
+    "Shanghai Institute of Pollution Control and Ecological Security"
+   ]
   },
   {
    "_id": "10.1016_j.memsci.2026.126261",
@@ -625,7 +875,17 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.memsci.2026.126261",
-   "key": false
+   "key": false,
+   "affils": [
+    "Tiangong University",
+    "State Key Laboratory of Advanced Separation Membrane Materials",
+    "South Central Minzu University"
+   ],
+   "corr_affils": [
+    "Tiangong University",
+    "State Key Laboratory of Advanced Separation Membrane Materials",
+    "South Central Minzu University"
+   ]
   },
   {
    "_id": "10.1016_j.desal.2026.120906",
@@ -641,7 +901,13 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.desal.2026.120906",
-   "key": false
+   "key": false,
+   "affils": [
+    "Xiamen University"
+   ],
+   "corr_affils": [
+    "Xiamen University"
+   ]
   },
   {
    "_id": "10.1016_j.memsci.2026.126257",
@@ -657,7 +923,15 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.memsci.2026.126257",
-   "key": false
+   "key": false,
+   "affils": [
+    "Sun Yat-sen University",
+    "Guangdong Provincial Key Laboratory of Environmental Pollution Control and Remediation Technology"
+   ],
+   "corr_affils": [
+    "Sun Yat-sen University",
+    "Guangdong Provincial Key Laboratory of Environmental Pollution Control and Remediation Technology"
+   ]
   },
   {
    "_id": "10.1016_j.jhazmat.2026.143795",
@@ -673,7 +947,18 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.jhazmat.2026.143795",
-   "key": false
+   "key": false,
+   "affils": [
+    "Tongji University",
+    "Hohai University",
+    "State Key Laboratory of Pollution Control and Resource Reuse",
+    "Shanghai Institute of Pollution Control and Ecological Security",
+    "South Central Minzu University"
+   ],
+   "corr_affils": [
+    "Hohai University",
+    "South Central Minzu University"
+   ]
   },
   {
    "_id": "10.1016_j.desal.2026.120885",
@@ -689,7 +974,17 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.desal.2026.120885",
-   "key": false
+   "key": false,
+   "affils": [
+    "Nanjing Tech University",
+    "State Key Laboratory of Materials-Oriented Chemical Engineering",
+    "Suzhou Research Institute"
+   ],
+   "corr_affils": [
+    "Nanjing Tech University",
+    "Suzhou Research Institute",
+    "State Key Laboratory of Materials-Oriented Chemical Engineering"
+   ]
   },
   {
    "_id": "10.1016_j.memsci.2026.126231",
@@ -705,7 +1000,17 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.memsci.2026.126231",
-   "key": false
+   "key": false,
+   "affils": [
+    "Jiangnan University",
+    "Suzhou University of Science and Technology",
+    "Collaborative Innovation Center for Water Treatment Technology and Materials"
+   ],
+   "corr_affils": [
+    "Jiangnan University",
+    "Suzhou University of Science and Technology",
+    "Collaborative Innovation Center for Water Treatment Technology and Materials"
+   ]
   },
   {
    "_id": "10.1016_j.memsci.2026.126235",
@@ -721,7 +1026,15 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.memsci.2026.126235",
-   "key": false
+   "key": false,
+   "affils": [
+    "Nanjing Tech University",
+    "State Key Laboratory of Materials-Oriented Chemical Engineering"
+   ],
+   "corr_affils": [
+    "Nanjing Tech University",
+    "State Key Laboratory of Materials-Oriented Chemical Engineering"
+   ]
   },
   {
    "_id": "10.1016_j.jhazmat.2026.143768",
@@ -737,7 +1050,16 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.jhazmat.2026.143768",
-   "key": true
+   "key": true,
+   "affils": [
+    "Tongji University",
+    "Chinese Academy of Sciences",
+    "Research Center for Eco-Environmental Sciences",
+    "Southwest Jiaotong University"
+   ],
+   "corr_affils": [
+    "Tongji University"
+   ]
   },
   {
    "_id": "10.1016_j.memsci.2026.126234",
@@ -753,7 +1075,15 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.memsci.2026.126234",
-   "key": false
+   "key": false,
+   "affils": [
+    "Beijing Normal University",
+    "Beijing Normal University, Zhuhai"
+   ],
+   "corr_affils": [
+    "Beijing Normal University",
+    "Beijing Normal University, Zhuhai"
+   ]
   },
   {
    "_id": "10.1016_j.jece.2026.125290",
@@ -769,7 +1099,16 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.jece.2026.125290",
-   "key": false
+   "key": false,
+   "affils": [
+    "Suzhou University of Science and Technology",
+    "Hainan University",
+    "East China Normal University",
+    "Nanchang University"
+   ],
+   "corr_affils": [
+    "Suzhou University of Science and Technology"
+   ]
   },
   {
    "_id": "10.1016_j.cej.2026.182495",
@@ -785,7 +1124,17 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.cej.2026.182495",
-   "key": false
+   "key": false,
+   "affils": [
+    "Nankai University",
+    "Great Bay University",
+    "Nanyang Technological University",
+    "Technology Innovation Institute"
+   ],
+   "corr_affils": [
+    "Nankai University",
+    "Nanyang Technological University"
+   ]
   },
   {
    "_id": "10.1016_j.memsci.2026.126223",
@@ -801,7 +1150,13 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.memsci.2026.126223",
-   "key": false
+   "key": false,
+   "affils": [
+    "Harbin Institute of Technology"
+   ],
+   "corr_affils": [
+    "Harbin Institute of Technology"
+   ]
   },
   {
    "_id": "10.1021_acs.est.6c09183",
@@ -817,7 +1172,14 @@
    "source_type": "官方",
    "source_name": "ACS Publications",
    "source_url": "https://doi.org/10.1021/acs.est.6c09183",
-   "key": false
+   "key": false,
+   "affils": [
+    "Zhejiang University",
+    "Zhejiang University of Technology"
+   ],
+   "corr_affils": [
+    "Zhejiang University"
+   ]
   },
   {
    "_id": "10.1016_j.seppur.2026.140308",
@@ -833,7 +1195,17 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.seppur.2026.140308",
-   "key": false
+   "key": false,
+   "affils": [
+    "Shanghai Academy of Agricultural Sciences",
+    "Ministry of Agriculture and Rural Affairs",
+    "Shandong Jianzhu University"
+   ],
+   "corr_affils": [
+    "Shanghai Academy of Agricultural Sciences",
+    "Ministry of Agriculture and Rural Affairs",
+    "Shandong Jianzhu University"
+   ]
   },
   {
    "_id": "10.1016_j.memsci.2026.126210",
@@ -849,7 +1221,14 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.memsci.2026.126210",
-   "key": false
+   "key": false,
+   "affils": [
+    "Zhejiang University",
+    "Zhejiang University of Science and Technology"
+   ],
+   "corr_affils": [
+    "Zhejiang University"
+   ]
   },
   {
    "_id": "10.1016_j.memsci.2026.126209",
@@ -865,7 +1244,15 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.memsci.2026.126209",
-   "key": false
+   "key": false,
+   "affils": [
+    "Yancheng Institute of Technology",
+    "Shandong Jianzhu University"
+   ],
+   "corr_affils": [
+    "Yancheng Institute of Technology",
+    "Shandong Jianzhu University"
+   ]
   },
   {
    "_id": "10.1016_j.jece.2026.125155",
@@ -881,7 +1268,13 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.jece.2026.125155",
-   "key": false
+   "key": false,
+   "affils": [
+    "East China University of Science and Technology"
+   ],
+   "corr_affils": [
+    "East China University of Science and Technology"
+   ]
   },
   {
    "_id": "10.1016_j.memsci.2026.126208",
@@ -897,7 +1290,17 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.memsci.2026.126208",
-   "key": true
+   "key": true,
+   "affils": [
+    "Hangzhou Dianzi University",
+    "Westlake University",
+    "Affiliated Hangzhou First People's Hospital, Westlake University, School of Medicine"
+   ],
+   "corr_affils": [
+    "Hangzhou Dianzi University",
+    "Westlake University",
+    "Affiliated Hangzhou First People's Hospital, Westlake University, School of Medicine"
+   ]
   },
   {
    "_id": "10.1016_j.desal.2026.120848",
@@ -913,7 +1316,19 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.desal.2026.120848",
-   "key": false
+   "key": false,
+   "affils": [
+    "Hunan University",
+    "Beijing Normal University",
+    "Beijing Normal University, Zhuhai",
+    "Dezhou University",
+    "Shandong Jianzhu University"
+   ],
+   "corr_affils": [
+    "Beijing Normal University",
+    "Beijing Normal University, Zhuhai",
+    "Shandong Jianzhu University"
+   ]
   },
   {
    "_id": "10.1016_j.watres.2026.127011",
@@ -929,7 +1344,14 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.watres.2026.127011",
-   "key": true
+   "key": true,
+   "affils": [
+    "Shandong University",
+    "Qilu Normal University"
+   ],
+   "corr_affils": [
+    "Shandong University"
+   ]
   },
   {
    "_id": "10.1016_j.jece.2026.125207",
@@ -945,7 +1367,17 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.jece.2026.125207",
-   "key": true
+   "key": true,
+   "affils": [
+    "Shandong University of Science and Technology",
+    "Weichai Power (China)",
+    "Quanzhou Normal University"
+   ],
+   "corr_affils": [
+    "Shandong University of Science and Technology",
+    "Weichai Power (China)",
+    "Quanzhou Normal University"
+   ]
   },
   {
    "_id": "10.1016_j.cej.2026.182304",
@@ -961,7 +1393,18 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.cej.2026.182304",
-   "key": true
+   "key": true,
+   "affils": [
+    "Sogang University",
+    "Gwangju Institute of Science and Technology",
+    "Chonnam National University",
+    "Hanyang University"
+   ],
+   "corr_affils": [
+    "Chonnam National University",
+    "Hanyang University",
+    "Sogang University"
+   ]
   },
   {
    "_id": "10.1002_smll.75752",
@@ -977,7 +1420,14 @@
    "source_type": "官方",
    "source_name": "Wiley Online Library",
    "source_url": "https://doi.org/10.1002/smll.75752",
-   "key": true
+   "key": true,
+   "affils": [
+    "Yantai University",
+    "Hanyang University"
+   ],
+   "corr_affils": [
+    "Yantai University"
+   ]
   },
   {
    "_id": "10.1016_j.jhazmat.2026.143669",
@@ -993,7 +1443,16 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.jhazmat.2026.143669",
-   "key": false
+   "key": false,
+   "affils": [
+    "Beijing Jiaotong University",
+    "Sichuan University of Science and Engineering",
+    "New Jersey Institute of Technology"
+   ],
+   "corr_affils": [
+    "Beijing Jiaotong University",
+    "Sichuan University of Science and Engineering"
+   ]
   },
   {
    "_id": "10.1016_j.jece.2026.125073",
@@ -1009,7 +1468,15 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.jece.2026.125073",
-   "key": false
+   "key": false,
+   "affils": [
+    "Hainan University",
+    "Beijing Normal University"
+   ],
+   "corr_affils": [
+    "Hainan University",
+    "Beijing Normal University"
+   ]
   },
   {
    "_id": "10.1021_acscatal.6c04749",
@@ -1025,7 +1492,14 @@
    "source_type": "官方",
    "source_name": "ACS Publications",
    "source_url": "https://doi.org/10.1021/acscatal.6c04749",
-   "key": false
+   "key": false,
+   "affils": [
+    "Tianjin University",
+    "Shandong Institute of Petroleum and Chemical Technology"
+   ],
+   "corr_affils": [
+    "Tianjin University"
+   ]
   },
   {
    "_id": "10.1016_j.watres.2026.126982",
@@ -1041,7 +1515,15 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.watres.2026.126982",
-   "key": true
+   "key": true,
+   "affils": [
+    "Tongji University",
+    "Shanghai Institute of Pollution Control and Ecological Security"
+   ],
+   "corr_affils": [
+    "Tongji University",
+    "Shanghai Institute of Pollution Control and Ecological Security"
+   ]
   },
   {
    "_id": "10.1016_j.seppur.2026.140167",
@@ -1057,7 +1539,15 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.seppur.2026.140167",
-   "key": false
+   "key": false,
+   "affils": [
+    "Tianjin University",
+    "Tianjin University of Technology"
+   ],
+   "corr_affils": [
+    "Tianjin University",
+    "Tianjin University of Technology"
+   ]
   },
   {
    "_id": "10.1016_j.desal.2026.120810",
@@ -1073,7 +1563,13 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.desal.2026.120810",
-   "key": false
+   "key": false,
+   "affils": [
+    "Tongji University"
+   ],
+   "corr_affils": [
+    "Tongji University"
+   ]
   },
   {
    "_id": "10.1016_j.cej.2026.182079",
@@ -1089,7 +1585,15 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.cej.2026.182079",
-   "key": false
+   "key": false,
+   "affils": [
+    "Dalian University of Technology",
+    "State Key Laboratory of Fine Chemicals"
+   ],
+   "corr_affils": [
+    "Dalian University of Technology",
+    "State Key Laboratory of Fine Chemicals"
+   ]
   },
   {
    "_id": "10.1016_j.cej.2026.181992",
@@ -1105,7 +1609,15 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.cej.2026.181992",
-   "key": false
+   "key": false,
+   "affils": [
+    "University of Alberta",
+    "Lahore University of Management Sciences",
+    "Government College University, Lahore"
+   ],
+   "corr_affils": [
+    "University of Alberta"
+   ]
   },
   {
    "_id": "10.1016_j.memsci.2026.126167",
@@ -1121,7 +1633,15 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.memsci.2026.126167",
-   "key": false
+   "key": false,
+   "affils": [
+    "Sun Yat-sen University",
+    "Guangdong Provincial Key Laboratory of Environmental Pollution Control and Remediation Technology"
+   ],
+   "corr_affils": [
+    "Sun Yat-sen University",
+    "Guangdong Provincial Key Laboratory of Environmental Pollution Control and Remediation Technology"
+   ]
   },
   {
    "_id": "10.1016_j.seppur.2026.140109",
@@ -1137,7 +1657,15 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.seppur.2026.140109",
-   "key": false
+   "key": false,
+   "affils": [
+    "University of Johannesburg",
+    "Institut des Sciences Chimiques de Rennes",
+    "Université de Rennes"
+   ],
+   "corr_affils": [
+    "University of Johannesburg"
+   ]
   },
   {
    "_id": "10.1016_j.jece.2026.125082",
@@ -1153,7 +1681,14 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.jece.2026.125082",
-   "key": false
+   "key": false,
+   "affils": [
+    "King Fahd University of Petroleum and Minerals",
+    "Imam Abdulrahman Bin Faisal University"
+   ],
+   "corr_affils": [
+    "King Fahd University of Petroleum and Minerals"
+   ]
   },
   {
    "_id": "10.1016_j.desal.2026.120802",
@@ -1169,7 +1704,13 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.desal.2026.120802",
-   "key": false
+   "key": false,
+   "affils": [
+    "Korea Advanced Institute of Science and Technology"
+   ],
+   "corr_affils": [
+    "Korea Advanced Institute of Science and Technology"
+   ]
   },
   {
    "_id": "10.1016_j.memsci.2026.126148",
@@ -1185,7 +1726,16 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.memsci.2026.126148",
-   "key": false
+   "key": false,
+   "affils": [
+    "University of Science and Technology of China",
+    "Chinese Academy of Sciences",
+    "Changchun Institute of Applied Chemistry"
+   ],
+   "corr_affils": [
+    "Chinese Academy of Sciences",
+    "Changchun Institute of Applied Chemistry"
+   ]
   },
   {
    "_id": "10.1016_j.memsci.2026.126147",
@@ -1201,7 +1751,22 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.memsci.2026.126147",
-   "key": false
+   "key": false,
+   "affils": [
+    "Sinopec (China)",
+    "Tiangong University",
+    "State Key Laboratory of Advanced Separation Membrane Materials",
+    "Sinopec Beijing Research Institute of Chemical Industry Co., Ltd. (China)",
+    "Jiangnan University",
+    "Hangzhou Dianzi University",
+    "Tianjin University"
+   ],
+   "corr_affils": [
+    "Hangzhou Dianzi University",
+    "Jiangnan University",
+    "Tiangong University",
+    "State Key Laboratory of Advanced Separation Membrane Materials"
+   ]
   },
   {
    "_id": "10.1016_j.seppur.2026.140111",
@@ -1217,7 +1782,16 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.seppur.2026.140111",
-   "key": false
+   "key": false,
+   "affils": [
+    "Shandong Jianzhu University",
+    "Hunan University",
+    "Jiaxing Vocational Technical College",
+    "Yancheng Institute of Technology"
+   ],
+   "corr_affils": [
+    "Shandong Jianzhu University"
+   ]
   },
   {
    "_id": "10.1016_j.memsci.2026.126156",
@@ -1233,7 +1807,13 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.memsci.2026.126156",
-   "key": false
+   "key": false,
+   "affils": [
+    "Fudan University"
+   ],
+   "corr_affils": [
+    "Fudan University"
+   ]
   },
   {
    "_id": "10.1016_j.memsci.2026.126128",
@@ -1249,7 +1829,13 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.memsci.2026.126128",
-   "key": false
+   "key": false,
+   "affils": [
+    "Zhejiang University"
+   ],
+   "corr_affils": [
+    "Zhejiang University"
+   ]
   },
   {
    "_id": "10.1016_j.memsci.2026.126143",
@@ -1265,7 +1851,15 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.memsci.2026.126143",
-   "key": false
+   "key": false,
+   "affils": [
+    "Tiangong University",
+    "State Key Laboratory of Advanced Separation Membrane Materials"
+   ],
+   "corr_affils": [
+    "Tiangong University",
+    "State Key Laboratory of Advanced Separation Membrane Materials"
+   ]
   },
   {
    "_id": "10.1016_j.envres.2026.125618",
@@ -1281,7 +1875,13 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.envres.2026.125618",
-   "key": true
+   "key": true,
+   "affils": [
+    "Suzhou University of Science and Technology"
+   ],
+   "corr_affils": [
+    "Suzhou University of Science and Technology"
+   ]
   },
   {
    "_id": "10.1016_j.seppur.2026.140033",
@@ -1297,7 +1897,13 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.seppur.2026.140033",
-   "key": false
+   "key": false,
+   "affils": [
+    "Zhejiang University"
+   ],
+   "corr_affils": [
+    "Zhejiang University"
+   ]
   },
   {
    "_id": "10.1016_j.memsci.2026.126133",
@@ -1313,7 +1919,13 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.memsci.2026.126133",
-   "key": false
+   "key": false,
+   "affils": [
+    "Chengdu University"
+   ],
+   "corr_affils": [
+    "Chengdu University"
+   ]
   },
   {
    "_id": "10.1016_j.apcatb.2026.127472",
@@ -1329,7 +1941,18 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.apcatb.2026.127472",
-   "key": true
+   "key": true,
+   "affils": [
+    "Jiangsu University",
+    "Hong Kong Baptist University",
+    "Dongguan University of Technology",
+    "Anhui Agricultural University"
+   ],
+   "corr_affils": [
+    "Anhui Agricultural University",
+    "Jiangsu University",
+    "Hong Kong Baptist University"
+   ]
   },
   {
    "_id": "10.1016_j.memsci.2026.126130",
@@ -1345,7 +1968,13 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.memsci.2026.126130",
-   "key": false
+   "key": false,
+   "affils": [
+    "Shanghai University of Engineering Science"
+   ],
+   "corr_affils": [
+    "Shanghai University of Engineering Science"
+   ]
   },
   {
    "_id": "10.1016_j.memsci.2026.126123",
@@ -1361,7 +1990,14 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.memsci.2026.126123",
-   "key": false
+   "key": false,
+   "affils": [
+    "Hebei University of Technology",
+    "Tsinghua University"
+   ],
+   "corr_affils": [
+    "Hebei University of Technology"
+   ]
   },
   {
    "_id": "10.1016_j.memsci.2026.126122",
@@ -1377,7 +2013,13 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.memsci.2026.126122",
-   "key": false
+   "key": false,
+   "affils": [
+    "Nanyang Technological University"
+   ],
+   "corr_affils": [
+    "Nanyang Technological University"
+   ]
   },
   {
    "_id": "10.1016_j.memsci.2026.126121",
@@ -1393,7 +2035,13 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.memsci.2026.126121",
-   "key": true
+   "key": true,
+   "affils": [
+    "Xi'an University of Architecture and Technology"
+   ],
+   "corr_affils": [
+    "Xi'an University of Architecture and Technology"
+   ]
   },
   {
    "_id": "10.1038_s41467-026-76628-8",
@@ -1409,7 +2057,15 @@
    "source_type": "官方",
    "source_name": "Nature",
    "source_url": "https://doi.org/10.1038/s41467-026-76628-8",
-   "key": true
+   "key": true,
+   "affils": [
+    "University of Science and Technology of China",
+    "Rice University"
+   ],
+   "corr_affils": [
+    "Rice University",
+    "University of Science and Technology of China"
+   ]
   },
   {
    "_id": "10.1016_j.desal.2026.120763",
@@ -1425,7 +2081,17 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.desal.2026.120763",
-   "key": false
+   "key": false,
+   "affils": [
+    "Tiangong University",
+    "State Key Laboratory of Advanced Separation Membrane Materials",
+    "Zhejiang University"
+   ],
+   "corr_affils": [
+    "Tiangong University",
+    "State Key Laboratory of Advanced Separation Membrane Materials",
+    "Zhejiang University"
+   ]
   },
   {
    "_id": "10.1016_j.seppur.2026.139994",
@@ -1441,7 +2107,13 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.seppur.2026.139994",
-   "key": true
+   "key": true,
+   "affils": [
+    "Wuhan University"
+   ],
+   "corr_affils": [
+    "Wuhan University"
+   ]
   },
   {
    "_id": "10.1016_j.memsci.2026.126088",
@@ -1457,7 +2129,15 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.memsci.2026.126088",
-   "key": true
+   "key": true,
+   "affils": [
+    "Federal Institute For Materials Research and Testing",
+    "Helmholtz-Zentrum Hereon"
+   ],
+   "corr_affils": [
+    "Federal Institute For Materials Research and Testing",
+    "Helmholtz-Zentrum Hereon"
+   ]
   },
   {
    "_id": "10.1016_j.seppur.2026.139975",
@@ -1473,7 +2153,13 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.seppur.2026.139975",
-   "key": true
+   "key": true,
+   "affils": [
+    "North China University of Water Resources and Electric Power"
+   ],
+   "corr_affils": [
+    "North China University of Water Resources and Electric Power"
+   ]
   },
   {
    "_id": "10.1016_j.memsci.2026.126101",
@@ -1489,7 +2175,14 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.memsci.2026.126101",
-   "key": false
+   "key": false,
+   "affils": [
+    "Jinan University",
+    "Harbin Institute of Technology"
+   ],
+   "corr_affils": [
+    "Jinan University"
+   ]
   },
   {
    "_id": "10.1016_j.seppur.2026.139954",
@@ -1505,7 +2198,16 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.seppur.2026.139954",
-   "key": false
+   "key": false,
+   "affils": [
+    "China University of Petroleum, Beijing",
+    "State Key Laboratory of Heavy Oil",
+    "Guangdong Academy of Sciences"
+   ],
+   "corr_affils": [
+    "China University of Petroleum, Beijing",
+    "State Key Laboratory of Heavy Oil"
+   ]
   },
   {
    "_id": "10.1016_j.memsci.2026.126094",
@@ -1521,7 +2223,15 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.memsci.2026.126094",
-   "key": false
+   "key": false,
+   "affils": [
+    "Kogakuin University",
+    "Beijing Forestry University",
+    "Tsinghua University"
+   ],
+   "corr_affils": [
+    "Kogakuin University"
+   ]
   },
   {
    "_id": "10.1016_j.seppur.2026.139872",
@@ -1537,7 +2247,17 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.seppur.2026.139872",
-   "key": false
+   "key": false,
+   "affils": [
+    "University of Science and Technology of China",
+    "Chinese Academy of Sciences",
+    "Changchun Institute of Applied Chemistry"
+   ],
+   "corr_affils": [
+    "Chinese Academy of Sciences",
+    "Changchun Institute of Applied Chemistry",
+    "University of Science and Technology of China"
+   ]
   },
   {
    "_id": "10.1016_j.seppur.2026.139852",
@@ -1553,7 +2273,16 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.seppur.2026.139852",
-   "key": false
+   "key": false,
+   "affils": [
+    "China National Offshore Oil Corporation (China)",
+    "Harbin Institute of Technology",
+    "Great Bay University"
+   ],
+   "corr_affils": [
+    "China National Offshore Oil Corporation (China)",
+    "Harbin Institute of Technology"
+   ]
   },
   {
    "_id": "10.1016_j.jhazmat.2026.143394",
@@ -1569,7 +2298,16 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.jhazmat.2026.143394",
-   "key": false
+   "key": false,
+   "affils": [
+    "Jiangnan University",
+    "Collaborative Innovation Center for Water Treatment Technology and Materials",
+    "Ningbo University of Technology"
+   ],
+   "corr_affils": [
+    "Ningbo University of Technology",
+    "Jiangnan University"
+   ]
   },
   {
    "_id": "10.1016_j.jhazmat.2026.143393",
@@ -1585,7 +2323,16 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.jhazmat.2026.143393",
-   "key": true
+   "key": true,
+   "affils": [
+    "Tianjin Research Institute of Water Transport Engineering",
+    "Zhejiang University",
+    "South China Institute Of Environmental Sciences"
+   ],
+   "corr_affils": [
+    "South China Institute Of Environmental Sciences",
+    "Zhejiang University"
+   ]
   },
   {
    "_id": "10.1016_j.jece.2026.124769",
@@ -1601,7 +2348,13 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.jece.2026.124769",
-   "key": true
+   "key": true,
+   "affils": [
+    "Zhejiang Sci-Tech University"
+   ],
+   "corr_affils": [
+    "Zhejiang Sci-Tech University"
+   ]
   },
   {
    "_id": "10.1016_j.apcatb.2026.127392",
@@ -1617,7 +2370,16 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.apcatb.2026.127392",
-   "key": false
+   "key": false,
+   "affils": [
+    "Jiangsu University of Science and Technology",
+    "Harbin Institute of Technology",
+    "National University of Singapore"
+   ],
+   "corr_affils": [
+    "Jiangsu University of Science and Technology",
+    "National University of Singapore"
+   ]
   },
   {
    "_id": "10.1016_j.memsci.2026.126076",
@@ -1633,7 +2395,20 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.memsci.2026.126076",
-   "key": false
+   "key": false,
+   "affils": [
+    "Liaocheng University",
+    "Donghua University",
+    "State Key Laboratory for Modification of Chemical Fibers and Polymer Materials",
+    "Jiangsu Provincial Center for Disease Control and Prevention",
+    "Jiangsu Normal University"
+   ],
+   "corr_affils": [
+    "Donghua University",
+    "Liaocheng University",
+    "State Key Laboratory for Modification of Chemical Fibers and Polymer Materials",
+    "Jiangsu Provincial Center for Disease Control and Prevention"
+   ]
   },
   {
    "_id": "10.1016_j.watres.2026.126772",
@@ -1649,7 +2424,17 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.watres.2026.126772",
-   "key": true
+   "key": true,
+   "affils": [
+    "National University of Singapore",
+    "Harbin Institute of Technology",
+    "State Key Laboratory of Urban Water Resources and Water Environment",
+    "Northeast Agricultural University"
+   ],
+   "corr_affils": [
+    "Harbin Institute of Technology",
+    "State Key Laboratory of Urban Water Resources and Water Environment"
+   ]
   },
   {
    "_id": "10.1016_j.seppur.2026.139839",
@@ -1665,7 +2450,17 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.seppur.2026.139839",
-   "key": false
+   "key": false,
+   "affils": [
+    "Tongji University",
+    "State Key Laboratory of Pollution Control and Resource Reuse",
+    "Shanghai Institute of Pollution Control and Ecological Security"
+   ],
+   "corr_affils": [
+    "Tongji University",
+    "State Key Laboratory of Pollution Control and Resource Reuse",
+    "Shanghai Institute of Pollution Control and Ecological Security"
+   ]
   },
   {
    "_id": "10.1016_j.memsci.2026.126070",
@@ -1681,7 +2476,14 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.memsci.2026.126070",
-   "key": false
+   "key": false,
+   "affils": [
+    "Wenzhou University",
+    "Zhejiang University of Technology"
+   ],
+   "corr_affils": [
+    "Wenzhou University"
+   ]
   },
   {
    "_id": "10.1016_j.desal.2026.120698",
@@ -1697,7 +2499,15 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.desal.2026.120698",
-   "key": false
+   "key": false,
+   "affils": [
+    "Tianjin University",
+    "Collaborative Innovation Center of Chemical Science and Engineering Tianjin"
+   ],
+   "corr_affils": [
+    "Tianjin University",
+    "Collaborative Innovation Center of Chemical Science and Engineering Tianjin"
+   ]
   },
   {
    "_id": "10.1016_j.memsci.2026.126069",
@@ -1713,7 +2523,9 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.memsci.2026.126069",
-   "key": false
+   "key": false,
+   "affils": [],
+   "corr_affils": []
   },
   {
    "_id": "10.1016_j.memsci.2026.126068",
@@ -1729,7 +2541,15 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.memsci.2026.126068",
-   "key": false
+   "key": false,
+   "affils": [
+    "Nanjing Tech University",
+    "State Key Laboratory of Materials-Oriented Chemical Engineering"
+   ],
+   "corr_affils": [
+    "Nanjing Tech University",
+    "State Key Laboratory of Materials-Oriented Chemical Engineering"
+   ]
   },
   {
    "_id": "10.1016_j.memsci.2026.126066",
@@ -1745,7 +2565,17 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.memsci.2026.126066",
-   "key": false
+   "key": false,
+   "affils": [
+    "Chinese Academy of Sciences",
+    "Institute of Urban Environment",
+    "University of Chinese Academy of Sciences"
+   ],
+   "corr_affils": [
+    "Chinese Academy of Sciences",
+    "Institute of Urban Environment",
+    "University of Chinese Academy of Sciences"
+   ]
   },
   {
    "_id": "10.1016_j.memsci.2026.126057",
@@ -1761,7 +2591,19 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.memsci.2026.126057",
-   "key": false
+   "key": false,
+   "affils": [
+    "Tsinghua Shenzhen International Graduate School",
+    "Tsinghua University",
+    "Anhui University of Science and Technology",
+    "Shandong University of Technology",
+    "Guangdong University of Technology"
+   ],
+   "corr_affils": [
+    "Tsinghua Shenzhen International Graduate School",
+    "Tsinghua University",
+    "Anhui University of Science and Technology"
+   ]
   },
   {
    "_id": "10.1002_adfm.77829",
@@ -1777,7 +2619,15 @@
    "source_type": "官方",
    "source_name": "Wiley Online Library",
    "source_url": "https://doi.org/10.1002/adfm.77829",
-   "key": false
+   "key": false,
+   "affils": [
+    "Shandong University",
+    "University of Hong Kong",
+    "University of Science and Technology of China"
+   ],
+   "corr_affils": [
+    "Shandong University"
+   ]
   },
   {
    "_id": "10.1016_j.seppur.2026.139804",
@@ -1793,7 +2643,14 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.seppur.2026.139804",
-   "key": false
+   "key": false,
+   "affils": [
+    "Xi'an Jiaotong University",
+    "National University of Singapore"
+   ],
+   "corr_affils": [
+    "Xi'an Jiaotong University"
+   ]
   },
   {
    "_id": "10.1016_j.memsci.2026.126059",
@@ -1809,7 +2666,15 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.memsci.2026.126059",
-   "key": false
+   "key": false,
+   "affils": [
+    "Tiangong University",
+    "State Key Laboratory of Advanced Separation Membrane Materials"
+   ],
+   "corr_affils": [
+    "Tiangong University",
+    "State Key Laboratory of Advanced Separation Membrane Materials"
+   ]
   },
   {
    "_id": "10.1016_j.jece.2026.124656",
@@ -1825,7 +2690,15 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.jece.2026.124656",
-   "key": false
+   "key": false,
+   "affils": [
+    "Diponegoro University",
+    "University of Technology Malaysia",
+    "National Research and Innovation Agency"
+   ],
+   "corr_affils": [
+    "Diponegoro University"
+   ]
   },
   {
    "_id": "10.1016_j.desal.2026.120685",
@@ -1841,7 +2714,20 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.desal.2026.120685",
-   "key": false
+   "key": false,
+   "affils": [
+    "Chinese Academy of Sciences",
+    "Dalian University of Technology",
+    "Institute of Process Engineering",
+    "State Key Laboratory of Fine Chemicals",
+    "University of Chinese Academy of Sciences"
+   ],
+   "corr_affils": [
+    "Chinese Academy of Sciences",
+    "Institute of Process Engineering",
+    "University of Chinese Academy of Sciences",
+    "Dalian University of Technology"
+   ]
   },
   {
    "_id": "10.1038_s41467-026-76788-7",
@@ -1857,7 +2743,15 @@
    "source_type": "官方",
    "source_name": "Nature",
    "source_url": "https://doi.org/10.1038/s41467-026-76788-7",
-   "key": true
+   "key": true,
+   "affils": [
+    "Sun Yat-sen University",
+    "Guangdong Provincial Key Laboratory of Environmental Pollution Control and Remediation Technology"
+   ],
+   "corr_affils": [
+    "Sun Yat-sen University",
+    "Guangdong Provincial Key Laboratory of Environmental Pollution Control and Remediation Technology"
+   ]
   },
   {
    "_id": "10.1016_j.memsci.2026.126004",
@@ -1873,7 +2767,23 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.memsci.2026.126004",
-   "key": false
+   "key": false,
+   "affils": [
+    "Chinese Academy of Sciences",
+    "University of Chinese Academy of Sciences",
+    "Ningbo Institute of Industrial Technology",
+    "École Nationale Supérieure de Chimie de Montpellier",
+    "Centre National de la Recherche Scientifique",
+    "Université de Montpellier",
+    "Institut Européen des Membranes",
+    "Shanghai University"
+   ],
+   "corr_affils": [
+    "Chinese Academy of Sciences",
+    "University of Chinese Academy of Sciences",
+    "Ningbo Institute of Industrial Technology",
+    "École Nationale Supérieure de Chimie de Montpellier"
+   ]
   },
   {
    "_id": "10.1016_j.desal.2026.120668",
@@ -1889,7 +2799,16 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.desal.2026.120668",
-   "key": true
+   "key": true,
+   "affils": [
+    "North China University of Science and Technology",
+    "Zhejiang A & F University",
+    "Chinese University of Hong Kong, Shenzhen"
+   ],
+   "corr_affils": [
+    "Zhejiang A & F University",
+    "Chinese University of Hong Kong, Shenzhen"
+   ]
   },
   {
    "_id": "10.1016_j.memsci.2026.126040",
@@ -1905,7 +2824,13 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.memsci.2026.126040",
-   "key": false
+   "key": false,
+   "affils": [
+    "Indian Institute of Technology Kharagpur"
+   ],
+   "corr_affils": [
+    "Indian Institute of Technology Kharagpur"
+   ]
   },
   {
    "_id": "10.1016_j.memsci.2026.126037",
@@ -1921,7 +2846,16 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.memsci.2026.126037",
-   "key": true
+   "key": true,
+   "affils": [
+    "Zhejiang University",
+    "Changjiang River Scientific Research Institute",
+    "Sinopec (China)",
+    "Hangzhou Dianzi University"
+   ],
+   "corr_affils": [
+    "Hangzhou Dianzi University"
+   ]
   },
   {
    "_id": "10.1016_j.memsci.2026.126035",
@@ -1937,7 +2871,13 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.memsci.2026.126035",
-   "key": false
+   "key": false,
+   "affils": [
+    "Zhongyuan University of Technology"
+   ],
+   "corr_affils": [
+    "Zhongyuan University of Technology"
+   ]
   },
   {
    "_id": "10.1016_j.memsci.2026.126033",
@@ -1953,7 +2893,13 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.memsci.2026.126033",
-   "key": false
+   "key": false,
+   "affils": [
+    "Monash University"
+   ],
+   "corr_affils": [
+    "Monash University"
+   ]
   },
   {
    "_id": "10.1016_j.cej.2026.180582",
@@ -1969,7 +2915,16 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.cej.2026.180582",
-   "key": false
+   "key": false,
+   "affils": [
+    "Ningxia University",
+    "Donghua University",
+    "Hubei Jiufengshan Laboratory"
+   ],
+   "corr_affils": [
+    "Ningxia University",
+    "Hubei Jiufengshan Laboratory"
+   ]
   },
   {
    "_id": "10.1016_j.memsci.2026.126020",
@@ -1985,7 +2940,20 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.memsci.2026.126020",
-   "key": false
+   "key": false,
+   "affils": [
+    "Shanghai Jiao Tong University",
+    "East China University of Science and Technology",
+    "Chinese Academy of Sciences",
+    "Shanghai Advanced Research Institute",
+    "Shanghai Synchrotron Radiation Facility",
+    "Ningbo University",
+    "Donghua University"
+   ],
+   "corr_affils": [
+    "Ningbo University",
+    "Donghua University"
+   ]
   },
   {
    "_id": "10.1016_j.memsci.2026.126010",
@@ -2001,7 +2969,15 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.memsci.2026.126010",
-   "key": false
+   "key": false,
+   "affils": [
+    "Hohai University",
+    "Nanjing Forestry University",
+    "Daqing Oilfield of CNPC"
+   ],
+   "corr_affils": [
+    "Hohai University"
+   ]
   },
   {
    "_id": "10.1016_j.seppur.2026.139641",
@@ -2017,7 +2993,19 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.seppur.2026.139641",
-   "key": false
+   "key": false,
+   "affils": [
+    "Xi'an University of Architecture and Technology",
+    "Chinese Academy of Sciences",
+    "Research Center for Eco-Environmental Sciences",
+    "University of Chinese Academy of Sciences"
+   ],
+   "corr_affils": [
+    "Xi'an University of Architecture and Technology",
+    "Chinese Academy of Sciences",
+    "Research Center for Eco-Environmental Sciences",
+    "University of Chinese Academy of Sciences"
+   ]
   },
   {
    "_id": "10.1016_j.memsci.2026.126011",
@@ -2033,7 +3021,13 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.memsci.2026.126011",
-   "key": true
+   "key": true,
+   "affils": [
+    "Sichuan Normal University"
+   ],
+   "corr_affils": [
+    "Sichuan Normal University"
+   ]
   },
   {
    "_id": "10.1016_j.memsci.2026.126000",
@@ -2049,7 +3043,19 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.memsci.2026.126000",
-   "key": false
+   "key": false,
+   "affils": [
+    "Henan Normal University",
+    "Tiangong University",
+    "State Key Laboratory of Advanced Separation Membrane Materials",
+    "State Key Laboratory of Hollow Fiber Membrane Materials and Processes"
+   ],
+   "corr_affils": [
+    "Henan Normal University",
+    "Tiangong University",
+    "State Key Laboratory of Advanced Separation Membrane Materials",
+    "State Key Laboratory of Hollow Fiber Membrane Materials and Processes"
+   ]
   },
   {
    "_id": "10.1016_j.cej.2026.180367",
@@ -2065,7 +3071,17 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.cej.2026.180367",
-   "key": false
+   "key": false,
+   "affils": [
+    "Qinghai University",
+    "Ordos Laboratory",
+    "Tsinghua University",
+    "Changzhou University",
+    "Zhejiang University"
+   ],
+   "corr_affils": [
+    "Qinghai University"
+   ]
   },
   {
    "_id": "10.1016_j.memsci.2026.126002",
@@ -2081,7 +3097,14 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.memsci.2026.126002",
-   "key": false
+   "key": false,
+   "affils": [
+    "North China Electric Power University",
+    "National Center for Nanoscience and Technology"
+   ],
+   "corr_affils": [
+    "North China Electric Power University"
+   ]
   },
   {
    "_id": "10.1016_j.cej.2026.180363",
@@ -2097,7 +3120,19 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.cej.2026.180363",
-   "key": false
+   "key": false,
+   "affils": [
+    "Qinghai University",
+    "Changzhou University",
+    "Ordos Laboratory",
+    "Tsinghua University",
+    "Research Center for Membrane and Film Technology, Kobe University",
+    "Kobe University"
+   ],
+   "corr_affils": [
+    "Qinghai University",
+    "Changzhou University"
+   ]
   },
   {
    "_id": "10.1016_j.seppur.2026.139640",
@@ -2113,7 +3148,13 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.seppur.2026.139640",
-   "key": false
+   "key": false,
+   "affils": [
+    "Chungnam National University"
+   ],
+   "corr_affils": [
+    "Chungnam National University"
+   ]
   },
   {
    "_id": "10.1016_j.desal.2026.120620",
@@ -2129,7 +3170,15 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.desal.2026.120620",
-   "key": false
+   "key": false,
+   "affils": [
+    "Shandong Jianzhu University",
+    "Harbin Institute of Technology"
+   ],
+   "corr_affils": [
+    "Shandong Jianzhu University",
+    "Harbin Institute of Technology"
+   ]
   },
   {
    "_id": "10.1016_j.cej.2026.180329",
@@ -2145,7 +3194,17 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.cej.2026.180329",
-   "key": false
+   "key": false,
+   "affils": [
+    "Soochow University",
+    "Chinese Academy of Sciences",
+    "Institute of Urban Environment"
+   ],
+   "corr_affils": [
+    "Chinese Academy of Sciences",
+    "Institute of Urban Environment",
+    "Soochow University"
+   ]
   },
   {
    "_id": "10.1016_j.memsci.2026.125996",
@@ -2161,7 +3220,13 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.memsci.2026.125996",
-   "key": false
+   "key": false,
+   "affils": [
+    "Tongji University"
+   ],
+   "corr_affils": [
+    "Tongji University"
+   ]
   },
   {
    "_id": "10.1016_j.memsci.2026.125995",
@@ -2177,7 +3242,13 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.memsci.2026.125995",
-   "key": false
+   "key": false,
+   "affils": [
+    "Northeast Normal University"
+   ],
+   "corr_affils": [
+    "Northeast Normal University"
+   ]
   },
   {
    "_id": "10.1016_j.memsci.2026.125983",
@@ -2193,7 +3264,17 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.memsci.2026.125983",
-   "key": false
+   "key": false,
+   "affils": [
+    "Shanghai University of Engineering Science",
+    "Tiangong University",
+    "State Key Laboratory of Advanced Separation Membrane Materials"
+   ],
+   "corr_affils": [
+    "Shanghai University of Engineering Science",
+    "Tiangong University",
+    "State Key Laboratory of Advanced Separation Membrane Materials"
+   ]
   },
   {
    "_id": "10.1016_j.desal.2026.120621",
@@ -2209,7 +3290,14 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.desal.2026.120621",
-   "key": false
+   "key": false,
+   "affils": [
+    "Beijing Jiaotong University",
+    "China Railway Economic and Planning Research Institute"
+   ],
+   "corr_affils": [
+    "China Railway Economic and Planning Research Institute"
+   ]
   },
   {
    "_id": "10.1016_j.jece.2026.124450",
@@ -2225,7 +3313,17 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.jece.2026.124450",
-   "key": false
+   "key": false,
+   "affils": [
+    "Xihua University",
+    "Southwest Petroleum University",
+    "State Key Laboratory of Oil and Gas Reservoir Geology and Exploitation"
+   ],
+   "corr_affils": [
+    "Xihua University",
+    "Southwest Petroleum University",
+    "State Key Laboratory of Oil and Gas Reservoir Geology and Exploitation"
+   ]
   },
   {
    "_id": "10.1016_j.jece.2026.124350",
@@ -2241,7 +3339,16 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.jece.2026.124350",
-   "key": false
+   "key": false,
+   "affils": [
+    "National Chemical Laboratory",
+    "King Khalid University",
+    "Academy of Scientific and Innovative Research"
+   ],
+   "corr_affils": [
+    "National Chemical Laboratory",
+    "Academy of Scientific and Innovative Research"
+   ]
   },
   {
    "_id": "10.1016_j.cej.2026.180155",
@@ -2257,7 +3364,15 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.cej.2026.180155",
-   "key": false
+   "key": false,
+   "affils": [
+    "Nankai University",
+    "Ministry of Emergency Management of the People's Republic of China"
+   ],
+   "corr_affils": [
+    "Nankai University",
+    "Ministry of Emergency Management of the People's Republic of China"
+   ]
   },
   {
    "_id": "10.1016_j.memsci.2026.125974",
@@ -2273,7 +3388,19 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.memsci.2026.125974",
-   "key": false
+   "key": false,
+   "affils": [
+    "Hunan University",
+    "Shandong Jianzhu University",
+    "Beijing Normal University",
+    "Beijing Normal University, Zhuhai",
+    "The University of Queensland"
+   ],
+   "corr_affils": [
+    "Beijing Normal University",
+    "Beijing Normal University, Zhuhai",
+    "Shandong Jianzhu University"
+   ]
   },
   {
    "_id": "10.1016_j.memsci.2026.125960",
@@ -2289,7 +3416,13 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.memsci.2026.125960",
-   "key": false
+   "key": false,
+   "affils": [
+    "Shanghai Normal University"
+   ],
+   "corr_affils": [
+    "Shanghai Normal University"
+   ]
   },
   {
    "_id": "10.1016_j.seppur.2026.139541",
@@ -2305,7 +3438,19 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.seppur.2026.139541",
-   "key": false
+   "key": false,
+   "affils": [
+    "Xiamen University",
+    "Ministry of Ecology and Environment",
+    "Nanjing Institute of Environmental Sciences",
+    "Beijing Normal University",
+    "Beijing Normal University, Zhuhai"
+   ],
+   "corr_affils": [
+    "Xiamen University",
+    "Beijing Normal University",
+    "Beijing Normal University, Zhuhai"
+   ]
   },
   {
    "_id": "10.1016_j.desal.2026.120592",
@@ -2321,7 +3466,13 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.desal.2026.120592",
-   "key": false
+   "key": false,
+   "affils": [
+    "Zhejiang University of Technology"
+   ],
+   "corr_affils": [
+    "Zhejiang University of Technology"
+   ]
   },
   {
    "_id": "10.1016_j.seppur.2026.139515",
@@ -2337,7 +3488,13 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.seppur.2026.139515",
-   "key": false
+   "key": false,
+   "affils": [
+    "North China Electric Power University"
+   ],
+   "corr_affils": [
+    "North China Electric Power University"
+   ]
   },
   {
    "_id": "10.1016_j.memsci.2026.125965",
@@ -2353,7 +3510,15 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.memsci.2026.125965",
-   "key": false
+   "key": false,
+   "affils": [
+    "Southwest University",
+    "Ministry of Agriculture and Rural Affairs"
+   ],
+   "corr_affils": [
+    "Southwest University",
+    "Ministry of Agriculture and Rural Affairs"
+   ]
   },
   {
    "_id": "10.1016_j.memsci.2026.125962",
@@ -2369,7 +3534,15 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.memsci.2026.125962",
-   "key": false
+   "key": false,
+   "affils": [
+    "Sun Yat-sen University",
+    "Guangdong Provincial Key Laboratory of Environmental Pollution Control and Remediation Technology"
+   ],
+   "corr_affils": [
+    "Sun Yat-sen University",
+    "Guangdong Provincial Key Laboratory of Environmental Pollution Control and Remediation Technology"
+   ]
   },
   {
    "_id": "10.1016_j.memsci.2026.125951",
@@ -2385,7 +3558,15 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.memsci.2026.125951",
-   "key": false
+   "key": false,
+   "affils": [
+    "Tianjin University",
+    "State Key Laboratory of Chemical Engineering"
+   ],
+   "corr_affils": [
+    "Tianjin University",
+    "State Key Laboratory of Chemical Engineering"
+   ]
   },
   {
    "_id": "10.1016_j.desal.2026.120571",
@@ -2401,7 +3582,14 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.desal.2026.120571",
-   "key": false
+   "key": false,
+   "affils": [
+    "Shandong Jianzhu University",
+    "The University of Queensland"
+   ],
+   "corr_affils": [
+    "Shandong Jianzhu University"
+   ]
   },
   {
    "_id": "10.1016_j.memsci.2026.125948",
@@ -2417,7 +3605,9 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.memsci.2026.125948",
-   "key": false
+   "key": false,
+   "affils": [],
+   "corr_affils": []
   },
   {
    "_id": "10.1016_j.seppur.2026.139417",
@@ -2433,7 +3623,17 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.seppur.2026.139417",
-   "key": false
+   "key": false,
+   "affils": [
+    "Ministry of Natural Resources",
+    "Tiangong University",
+    "University of Science and Technology Beijing",
+    "Hebei Normal University of Science and Technology",
+    "Tianjin Chengjian University"
+   ],
+   "corr_affils": [
+    "Ministry of Natural Resources"
+   ]
   },
   {
    "_id": "10.1016_j.jhazmat.2026.143061",
@@ -2449,7 +3649,15 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.jhazmat.2026.143061",
-   "key": false
+   "key": false,
+   "affils": [
+    "Tongji University",
+    "Shanghai Institute of Pollution Control and Ecological Security"
+   ],
+   "corr_affils": [
+    "Tongji University",
+    "Shanghai Institute of Pollution Control and Ecological Security"
+   ]
   },
   {
    "_id": "10.1016_j.desal.2026.120547",
@@ -2465,7 +3673,17 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.desal.2026.120547",
-   "key": false
+   "key": false,
+   "affils": [
+    "Qinghai University",
+    "Ordos Laboratory",
+    "Tsinghua University",
+    "Changzhou University",
+    "Zhejiang University"
+   ],
+   "corr_affils": [
+    "Qinghai University"
+   ]
   },
   {
    "_id": "10.1016_j.seppur.2026.139408",
@@ -2481,7 +3699,19 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.seppur.2026.139408",
-   "key": false
+   "key": false,
+   "affils": [
+    "Tiangong University",
+    "State Key Laboratory of Advanced Separation Membrane Materials",
+    "Ministry of Ecology and Environment",
+    "Nanjing Institute of Environmental Sciences"
+   ],
+   "corr_affils": [
+    "Tiangong University",
+    "State Key Laboratory of Advanced Separation Membrane Materials",
+    "Ministry of Ecology and Environment",
+    "Nanjing Institute of Environmental Sciences"
+   ]
   },
   {
    "_id": "10.1016_j.jece.2026.124166",
@@ -2497,7 +3727,15 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.jece.2026.124166",
-   "key": false
+   "key": false,
+   "affils": [
+    "Fujian Normal University",
+    "Lanzhou University of Technology"
+   ],
+   "corr_affils": [
+    "Fujian Normal University",
+    "Lanzhou University of Technology"
+   ]
   },
   {
    "_id": "10.1016_j.cej.2026.179587",
@@ -2513,7 +3751,13 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.cej.2026.179587",
-   "key": false
+   "key": false,
+   "affils": [
+    "Ewha Womans University"
+   ],
+   "corr_affils": [
+    "Ewha Womans University"
+   ]
   },
   {
    "_id": "10.1016_j.jece.2026.124120",
@@ -2529,7 +3773,13 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.jece.2026.124120",
-   "key": false
+   "key": false,
+   "affils": [
+    "Southwest Minzu University"
+   ],
+   "corr_affils": [
+    "Southwest Minzu University"
+   ]
   },
   {
    "_id": "10.1016_j.seppur.2026.139302",
@@ -2545,7 +3795,13 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.seppur.2026.139302",
-   "key": false
+   "key": false,
+   "affils": [
+    "Qufu Normal University"
+   ],
+   "corr_affils": [
+    "Qufu Normal University"
+   ]
   },
   {
    "_id": "10.1016_j.cej.2026.179307",
@@ -2561,7 +3817,15 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.cej.2026.179307",
-   "key": false
+   "key": false,
+   "affils": [
+    "Peking University",
+    "Ministry of Ecology and Environment"
+   ],
+   "corr_affils": [
+    "Peking University",
+    "Ministry of Ecology and Environment"
+   ]
   },
   {
    "_id": "10.1016_j.cej.2026.179305",
@@ -2577,7 +3841,15 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.cej.2026.179305",
-   "key": false
+   "key": false,
+   "affils": [
+    "Yunnan University",
+    "Dalian University of Technology"
+   ],
+   "corr_affils": [
+    "Dalian University of Technology",
+    "Yunnan University"
+   ]
   },
   {
    "_id": "10.1016_j.jhazmat.2026.142966",
@@ -2593,7 +3865,13 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.jhazmat.2026.142966",
-   "key": true
+   "key": true,
+   "affils": [
+    "Anhui University of Technology"
+   ],
+   "corr_affils": [
+    "Anhui University of Technology"
+   ]
   },
   {
    "_id": "10.1016_j.memsci.2026.125887",
@@ -2609,7 +3887,13 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.memsci.2026.125887",
-   "key": false
+   "key": false,
+   "affils": [
+    "Zhejiang Normal University"
+   ],
+   "corr_affils": [
+    "Zhejiang Normal University"
+   ]
   },
   {
    "_id": "10.1016_j.desal.2026.120513",
@@ -2625,7 +3909,18 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.desal.2026.120513",
-   "key": false
+   "key": false,
+   "affils": [
+    "Shanghai University of Electric Power",
+    "Tongji University",
+    "Yangpu Hospital of Tongji University",
+    "Zhejiang University of Technology"
+   ],
+   "corr_affils": [
+    "Shanghai University of Electric Power",
+    "Tongji University",
+    "Yangpu Hospital of Tongji University"
+   ]
   },
   {
    "_id": "10.1016_j.cej.2026.179110",
@@ -2641,7 +3936,14 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.cej.2026.179110",
-   "key": false
+   "key": false,
+   "affils": [
+    "Sichuan University",
+    "Southwest Minzu University"
+   ],
+   "corr_affils": [
+    "Southwest Minzu University"
+   ]
   },
   {
    "_id": "10.1016_j.seppur.2026.139225",
@@ -2657,7 +3959,14 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.seppur.2026.139225",
-   "key": true
+   "key": true,
+   "affils": [
+    "Zhejiang University",
+    "Tsinghua University"
+   ],
+   "corr_affils": [
+    "Zhejiang University"
+   ]
   },
   {
    "_id": "10.1016_j.memsci.2026.125886",
@@ -2673,7 +3982,14 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.memsci.2026.125886",
-   "key": false
+   "key": false,
+   "affils": [
+    "Harbin Engineering University",
+    "Shenzhen University"
+   ],
+   "corr_affils": [
+    "Harbin Engineering University"
+   ]
   },
   {
    "_id": "10.1016_j.memsci.2026.125877",
@@ -2689,7 +4005,13 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.memsci.2026.125877",
-   "key": true
+   "key": true,
+   "affils": [
+    "Beijing Jiaotong University"
+   ],
+   "corr_affils": [
+    "Beijing Jiaotong University"
+   ]
   },
   {
    "_id": "10.1016_j.cej.2026.179099",
@@ -2705,7 +4027,13 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.cej.2026.179099",
-   "key": false
+   "key": false,
+   "affils": [
+    "Jilin University"
+   ],
+   "corr_affils": [
+    "Jilin University"
+   ]
   },
   {
    "_id": "10.1016_j.cej.2026.179098",
@@ -2721,7 +4049,13 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.cej.2026.179098",
-   "key": false
+   "key": false,
+   "affils": [
+    "Zhejiang University"
+   ],
+   "corr_affils": [
+    "Zhejiang University"
+   ]
   },
   {
    "_id": "10.1016_j.memsci.2026.125885",
@@ -2737,7 +4071,15 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.memsci.2026.125885",
-   "key": false
+   "key": false,
+   "affils": [
+    "East China University of Science and Technology",
+    "State Key Laboratory of Chemical Engineering"
+   ],
+   "corr_affils": [
+    "East China University of Science and Technology",
+    "State Key Laboratory of Chemical Engineering"
+   ]
   },
   {
    "_id": "10.1016_j.seppur.2026.139094",
@@ -2753,7 +4095,14 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.seppur.2026.139094",
-   "key": false
+   "key": false,
+   "affils": [
+    "University of Isfahan",
+    "Isfahan University of Technology"
+   ],
+   "corr_affils": [
+    "University of Isfahan"
+   ]
   },
   {
    "_id": "10.1021_acsnano.6c06468",
@@ -2769,7 +4118,14 @@
    "source_type": "官方",
    "source_name": "ACS Publications",
    "source_url": "https://doi.org/10.1021/acsnano.6c06468",
-   "key": false
+   "key": false,
+   "affils": [
+    "Nankai University",
+    "Beijing Forestry University"
+   ],
+   "corr_affils": [
+    "Nankai University"
+   ]
   },
   {
    "_id": "10.1002_adfm.76714",
@@ -2785,7 +4141,16 @@
    "source_type": "官方",
    "source_name": "Wiley Online Library",
    "source_url": "https://doi.org/10.1002/adfm.76714",
-   "key": false
+   "key": false,
+   "affils": [
+    "Sun Yat-sen University",
+    "State Key Laboratory of Optoelectronic Materials and Technology",
+    "Guangzhou University"
+   ],
+   "corr_affils": [
+    "Sun Yat-sen University",
+    "State Key Laboratory of Optoelectronic Materials and Technology"
+   ]
   },
   {
    "_id": "10.1016_j.memsci.2026.125871",
@@ -2801,7 +4166,15 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.memsci.2026.125871",
-   "key": false
+   "key": false,
+   "affils": [
+    "Tiangong University",
+    "State Key Laboratory of Advanced Separation Membrane Materials"
+   ],
+   "corr_affils": [
+    "Tiangong University",
+    "State Key Laboratory of Advanced Separation Membrane Materials"
+   ]
   },
   {
    "_id": "10.1016_j.apcatb.2026.127174",
@@ -2817,7 +4190,15 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.apcatb.2026.127174",
-   "key": true
+   "key": true,
+   "affils": [
+    "Sun Yat-sen University",
+    "Guangdong Provincial Key Laboratory of Environmental Pollution Control and Remediation Technology"
+   ],
+   "corr_affils": [
+    "Sun Yat-sen University",
+    "Guangdong Provincial Key Laboratory of Environmental Pollution Control and Remediation Technology"
+   ]
   },
   {
    "_id": "10.1016_j.memsci.2026.125856",
@@ -2833,7 +4214,19 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.memsci.2026.125856",
-   "key": false
+   "key": false,
+   "affils": [
+    "Anhui Polytechnic University",
+    "Chinese Academy of Sciences",
+    "Institute of Process Engineering",
+    "University of Chinese Academy of Sciences"
+   ],
+   "corr_affils": [
+    "Chinese Academy of Sciences",
+    "Institute of Process Engineering",
+    "University of Chinese Academy of Sciences",
+    "Anhui Polytechnic University"
+   ]
   },
   {
    "_id": "10.1016_j.memsci.2026.125845",
@@ -2849,7 +4242,15 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.memsci.2026.125845",
-   "key": false
+   "key": false,
+   "affils": [
+    "Academy of Scientific and Innovative Research",
+    "Central Salt and Marine Chemicals Research Institute",
+    "Jain University"
+   ],
+   "corr_affils": [
+    "Academy of Scientific and Innovative Research"
+   ]
   },
   {
    "_id": "10.1016_j.seppur.2026.139031",
@@ -2865,7 +4266,20 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.seppur.2026.139031",
-   "key": false
+   "key": false,
+   "affils": [
+    "Tiangong University",
+    "State Key Laboratory of Advanced Separation Membrane Materials",
+    "Jiangxi Academy of Sciences",
+    "University of Science and Technology Beijing",
+    "University of South Africa"
+   ],
+   "corr_affils": [
+    "University of South Africa",
+    "Tiangong University",
+    "Jiangxi Academy of Sciences",
+    "State Key Laboratory of Advanced Separation Membrane Materials"
+   ]
   },
   {
    "_id": "10.1021_acs.est.6c03988",
@@ -2881,7 +4295,14 @@
    "source_type": "官方",
    "source_name": "ACS Publications",
    "source_url": "https://doi.org/10.1021/acs.est.6c03988",
-   "key": false
+   "key": false,
+   "affils": [
+    "Xiamen University",
+    "Tsinghua University"
+   ],
+   "corr_affils": [
+    "Xiamen University"
+   ]
   },
   {
    "_id": "10.1016_j.watres.2026.126348",
@@ -2897,7 +4318,15 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.watres.2026.126348",
-   "key": false
+   "key": false,
+   "affils": [
+    "Zhengzhou University",
+    "Ministry of Education of the People's Republic of China"
+   ],
+   "corr_affils": [
+    "Ministry of Education of the People's Republic of China",
+    "Zhengzhou University"
+   ]
   },
   {
    "_id": "10.1016_j.memsci.2026.125833",
@@ -2913,7 +4342,13 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.memsci.2026.125833",
-   "key": false
+   "key": false,
+   "affils": [
+    "East China University of Technology"
+   ],
+   "corr_affils": [
+    "East China University of Technology"
+   ]
   },
   {
    "_id": "10.1016_j.desal.2026.120465",
@@ -2929,7 +4364,13 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.desal.2026.120465",
-   "key": false
+   "key": false,
+   "affils": [
+    "Shanxi University"
+   ],
+   "corr_affils": [
+    "Shanxi University"
+   ]
   },
   {
    "_id": "10.1016_j.watres.2026.126340",
@@ -2945,7 +4386,17 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.watres.2026.126340",
-   "key": true
+   "key": true,
+   "affils": [
+    "Sichuan Agricultural University",
+    "Northwest Minzu University",
+    "Shenzhen University",
+    "Technical University of Denmark"
+   ],
+   "corr_affils": [
+    "Technical University of Denmark",
+    "Sichuan Agricultural University"
+   ]
   },
   {
    "_id": "10.1016_j.memsci.2026.125805",
@@ -2961,7 +4412,13 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.memsci.2026.125805",
-   "key": false
+   "key": false,
+   "affils": [
+    "North China Electric Power University"
+   ],
+   "corr_affils": [
+    "North China Electric Power University"
+   ]
   },
   {
    "_id": "10.1016_j.jece.2026.123590",
@@ -2977,7 +4434,18 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.jece.2026.123590",
-   "key": false
+   "key": false,
+   "affils": [
+    "Jiangsu University",
+    "Suzhou University of Science and Technology",
+    "Collaborative Innovation Center for Water Treatment Technology and Materials",
+    "Nanjing Agricultural University"
+   ],
+   "corr_affils": [
+    "Jiangsu University",
+    "Suzhou University of Science and Technology",
+    "Collaborative Innovation Center for Water Treatment Technology and Materials"
+   ]
   },
   {
    "_id": "10.1016_j.seppur.2026.139002",
@@ -2993,7 +4461,15 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.seppur.2026.139002",
-   "key": false
+   "key": false,
+   "affils": [
+    "Tiangong University",
+    "State Key Laboratory of Advanced Separation Membrane Materials"
+   ],
+   "corr_affils": [
+    "Tiangong University",
+    "State Key Laboratory of Advanced Separation Membrane Materials"
+   ]
   },
   {
    "_id": "10.1016_j.watres.2026.126317",
@@ -3009,7 +4485,16 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.watres.2026.126317",
-   "key": true
+   "key": true,
+   "affils": [
+    "Harbin Institute of Technology",
+    "State Key Laboratory of Urban Water Resources and Water Environment",
+    "Jiangsu University of Science and Technology"
+   ],
+   "corr_affils": [
+    "Harbin Institute of Technology",
+    "State Key Laboratory of Urban Water Resources and Water Environment"
+   ]
   },
   {
    "_id": "10.1016_j.seppur.2026.138957",
@@ -3025,7 +4510,20 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.seppur.2026.138957",
-   "key": false
+   "key": false,
+   "affils": [
+    "Tongji University",
+    "State Key Laboratory of Pollution Control and Resource Reuse",
+    "Xinjiang University",
+    "Shanghai Institute of Pollution Control and Ecological Security",
+    "Georgia Institute of Technology"
+   ],
+   "corr_affils": [
+    "Tongji University",
+    "State Key Laboratory of Pollution Control and Resource Reuse",
+    "Shanghai Institute of Pollution Control and Ecological Security",
+    "Georgia Institute of Technology"
+   ]
   },
   {
    "_id": "10.1002_adfm.76560",
@@ -3041,7 +4539,16 @@
    "source_type": "官方",
    "source_name": "Wiley Online Library",
    "source_url": "https://doi.org/10.1002/adfm.76560",
-   "key": false
+   "key": false,
+   "affils": [
+    "State Key Laboratory of Chemical Resource Engineering",
+    "Beijing University of Chemical Technology",
+    "Beijing University of Technology"
+   ],
+   "corr_affils": [
+    "State Key Laboratory of Chemical Resource Engineering",
+    "Beijing University of Chemical Technology"
+   ]
   },
   {
    "_id": "10.1016_j.seppur.2026.138969",
@@ -3057,7 +4564,13 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.seppur.2026.138969",
-   "key": false
+   "key": false,
+   "affils": [
+    "Lanzhou University"
+   ],
+   "corr_affils": [
+    "Lanzhou University"
+   ]
   },
   {
    "_id": "10.1016_j.memsci.2026.125814",
@@ -3073,7 +4586,17 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.memsci.2026.125814",
-   "key": false
+   "key": false,
+   "affils": [
+    "Sun Yat-sen University",
+    "Southern Marine Science and Engineering Guangdong Laboratory (Guangzhou)",
+    "Southern Marine Science and Engineering Guangdong Laboratory (Zhuhai)"
+   ],
+   "corr_affils": [
+    "Sun Yat-sen University",
+    "Southern Marine Science and Engineering Guangdong Laboratory (Guangzhou)",
+    "Southern Marine Science and Engineering Guangdong Laboratory (Zhuhai)"
+   ]
   },
   {
    "_id": "10.1016_j.seppur.2026.138943",
@@ -3089,7 +4612,15 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.seppur.2026.138943",
-   "key": false
+   "key": false,
+   "affils": [
+    "Tiangong University",
+    "State Key Laboratory of Advanced Separation Membrane Materials"
+   ],
+   "corr_affils": [
+    "Tiangong University",
+    "State Key Laboratory of Advanced Separation Membrane Materials"
+   ]
   },
   {
    "_id": "10.1016_j.memsci.2026.125810",
@@ -3105,7 +4636,16 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.memsci.2026.125810",
-   "key": false
+   "key": false,
+   "affils": [
+    "Dalian University of Technology",
+    "Tsinghua Shenzhen International Graduate School",
+    "Tsinghua University",
+    "Shandong University"
+   ],
+   "corr_affils": [
+    "Dalian University of Technology"
+   ]
   },
   {
    "_id": "10.1016_j.memsci.2026.125809",
@@ -3121,7 +4661,13 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.memsci.2026.125809",
-   "key": true
+   "key": true,
+   "affils": [
+    "Changzhou University"
+   ],
+   "corr_affils": [
+    "Changzhou University"
+   ]
   },
   {
    "_id": "10.1016_j.memsci.2026.125783",
@@ -3137,7 +4683,13 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.memsci.2026.125783",
-   "key": false
+   "key": false,
+   "affils": [
+    "East China University of Science and Technology"
+   ],
+   "corr_affils": [
+    "East China University of Science and Technology"
+   ]
   },
   {
    "_id": "10.1016_j.memsci.2026.125804",
@@ -3153,7 +4705,15 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.memsci.2026.125804",
-   "key": true
+   "key": true,
+   "affils": [
+    "Tsinghua Shenzhen International Graduate School",
+    "Tsinghua University"
+   ],
+   "corr_affils": [
+    "Tsinghua Shenzhen International Graduate School",
+    "Tsinghua University"
+   ]
   },
   {
    "_id": "10.1016_j.memsci.2026.125803",
@@ -3169,7 +4729,17 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.memsci.2026.125803",
-   "key": false
+   "key": false,
+   "affils": [
+    "University of Science and Technology of China",
+    "Chinese Academy of Sciences",
+    "Changchun Institute of Applied Chemistry"
+   ],
+   "corr_affils": [
+    "Chinese Academy of Sciences",
+    "Changchun Institute of Applied Chemistry",
+    "University of Science and Technology of China"
+   ]
   },
   {
    "_id": "10.1016_j.jece.2026.123550",
@@ -3185,7 +4755,15 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.jece.2026.123550",
-   "key": false
+   "key": false,
+   "affils": [
+    "Beijing Forestry University",
+    "Sinochem Group (China)",
+    "University of Engineering and Technology Lahore"
+   ],
+   "corr_affils": [
+    "Beijing Forestry University"
+   ]
   },
   {
    "_id": "10.1016_j.memsci.2026.125798",
@@ -3201,7 +4779,17 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.memsci.2026.125798",
-   "key": true
+   "key": true,
+   "affils": [
+    "University of Hong Kong",
+    "Sun Yat-sen University",
+    "National University of Singapore"
+   ],
+   "corr_affils": [
+    "Sun Yat-sen University",
+    "University of Hong Kong",
+    "National University of Singapore"
+   ]
   },
   {
    "_id": "10.1016_j.memsci.2026.125791",
@@ -3217,7 +4805,13 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.memsci.2026.125791",
-   "key": false
+   "key": false,
+   "affils": [
+    "Jiangsu University"
+   ],
+   "corr_affils": [
+    "Jiangsu University"
+   ]
   },
   {
    "_id": "10.1016_j.memsci.2026.125796",
@@ -3233,7 +4827,15 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.memsci.2026.125796",
-   "key": false
+   "key": false,
+   "affils": [
+    "Harbin Engineering University",
+    "Qiqihar University",
+    "Beihua University"
+   ],
+   "corr_affils": [
+    "Harbin Engineering University"
+   ]
   },
   {
    "_id": "10.1016_j.memsci.2026.125785",
@@ -3249,7 +4851,15 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.memsci.2026.125785",
-   "key": false
+   "key": false,
+   "affils": [
+    "Yancheng Institute of Technology",
+    "Shandong Jianzhu University"
+   ],
+   "corr_affils": [
+    "Yancheng Institute of Technology",
+    "Shandong Jianzhu University"
+   ]
   },
   {
    "_id": "10.1016_j.jece.2026.123543",
@@ -3265,7 +4875,13 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.jece.2026.123543",
-   "key": false
+   "key": false,
+   "affils": [
+    "Zhengzhou University"
+   ],
+   "corr_affils": [
+    "Zhengzhou University"
+   ]
   },
   {
    "_id": "10.1016_j.memsci.2026.125775",
@@ -3281,7 +4897,14 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.memsci.2026.125775",
-   "key": true
+   "key": true,
+   "affils": [
+    "Zhejiang A & F University",
+    "North China University of Science and Technology"
+   ],
+   "corr_affils": [
+    "Zhejiang A & F University"
+   ]
   },
   {
    "_id": "10.1016_j.desal.2026.120414",
@@ -3297,7 +4920,15 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.desal.2026.120414",
-   "key": false
+   "key": false,
+   "affils": [
+    "Xuzhou University of Technology",
+    "Nanjing Tech University"
+   ],
+   "corr_affils": [
+    "Xuzhou University of Technology",
+    "Nanjing Tech University"
+   ]
   },
   {
    "_id": "10.1002_anie.5703533",
@@ -3313,7 +4944,13 @@
    "source_type": "官方",
    "source_name": "Wiley Online Library",
    "source_url": "https://doi.org/10.1002/anie.5703533",
-   "key": false
+   "key": false,
+   "affils": [
+    "Huazhong University of Science and Technology"
+   ],
+   "corr_affils": [
+    "Huazhong University of Science and Technology"
+   ]
   },
   {
    "_id": "10.1016_j.seppur.2026.138804",
@@ -3329,7 +4966,15 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.seppur.2026.138804",
-   "key": false
+   "key": false,
+   "affils": [
+    "East China University of Science and Technology",
+    "State Key Laboratory of Chemical Engineering"
+   ],
+   "corr_affils": [
+    "East China University of Science and Technology",
+    "State Key Laboratory of Chemical Engineering"
+   ]
   },
   {
    "_id": "10.1016_j.desal.2026.120403",
@@ -3345,7 +4990,16 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.desal.2026.120403",
-   "key": false
+   "key": false,
+   "affils": [
+    "National Ilan University",
+    "Chung Yuan Christian University",
+    "Mapúa University"
+   ],
+   "corr_affils": [
+    "Chung Yuan Christian University",
+    "National Ilan University"
+   ]
   },
   {
    "_id": "10.1016_j.cej.2026.178028",
@@ -3361,7 +5015,19 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.cej.2026.178028",
-   "key": false
+   "key": false,
+   "affils": [
+    "Tiangong University",
+    "State Key Laboratory of Advanced Separation Membrane Materials",
+    "Ministry of Ecology and Environment",
+    "Nanjing Institute of Environmental Sciences"
+   ],
+   "corr_affils": [
+    "Tiangong University",
+    "State Key Laboratory of Advanced Separation Membrane Materials",
+    "Ministry of Ecology and Environment",
+    "Nanjing Institute of Environmental Sciences"
+   ]
   },
   {
    "_id": "10.1016_j.memsci.2026.125755",
@@ -3377,7 +5043,15 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.memsci.2026.125755",
-   "key": false
+   "key": false,
+   "affils": [
+    "University of Hong Kong",
+    "National University of Singapore"
+   ],
+   "corr_affils": [
+    "National University of Singapore",
+    "University of Hong Kong"
+   ]
   },
   {
    "_id": "10.1016_j.desal.2026.120402",
@@ -3393,7 +5067,15 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.desal.2026.120402",
-   "key": false
+   "key": false,
+   "affils": [
+    "Kyungpook National University",
+    "Ewha Womans University"
+   ],
+   "corr_affils": [
+    "Ewha Womans University",
+    "Kyungpook National University"
+   ]
   },
   {
    "_id": "10.1016_j.seppur.2026.138721",
@@ -3409,7 +5091,13 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.seppur.2026.138721",
-   "key": false
+   "key": false,
+   "affils": [
+    "East China University of Science and Technology"
+   ],
+   "corr_affils": [
+    "East China University of Science and Technology"
+   ]
   },
   {
    "_id": "10.1016_j.seppur.2026.138717",
@@ -3425,7 +5113,15 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.seppur.2026.138717",
-   "key": false
+   "key": false,
+   "affils": [
+    "Tiangong University",
+    "State Key Laboratory of Advanced Separation Membrane Materials"
+   ],
+   "corr_affils": [
+    "Tiangong University",
+    "State Key Laboratory of Advanced Separation Membrane Materials"
+   ]
   },
   {
    "_id": "10.1016_j.memsci.2026.125736",
@@ -3441,7 +5137,17 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.memsci.2026.125736",
-   "key": false
+   "key": false,
+   "affils": [
+    "Sichuan Agricultural University",
+    "University of Duisburg-Essen",
+    "Tiangong University",
+    "State Key Laboratory of Separation Membranes and Membrane Processes"
+   ],
+   "corr_affils": [
+    "Sichuan Agricultural University",
+    "University of Duisburg-Essen"
+   ]
   },
   {
    "_id": "10.1016_j.memsci.2026.125708",
@@ -3457,7 +5163,15 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.memsci.2026.125708",
-   "key": false
+   "key": false,
+   "affils": [
+    "Nanjing Tech University",
+    "State Key Laboratory of Materials-Oriented Chemical Engineering"
+   ],
+   "corr_affils": [
+    "Nanjing Tech University",
+    "State Key Laboratory of Materials-Oriented Chemical Engineering"
+   ]
   },
   {
    "_id": "10.1016_j.memsci.2026.125730",
@@ -3473,7 +5187,19 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.memsci.2026.125730",
-   "key": false
+   "key": false,
+   "affils": [
+    "Nankai University",
+    "Ministry of Natural Resources",
+    "Third Institute of Oceanography",
+    "Fuzhou University",
+    "Dalian Institute of Chemical Physics",
+    "Chinese Academy of Sciences"
+   ],
+   "corr_affils": [
+    "Fuzhou University",
+    "Nankai University"
+   ]
   },
   {
    "_id": "10.1016_j.memsci.2026.125722",
@@ -3489,7 +5215,15 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.memsci.2026.125722",
-   "key": false
+   "key": false,
+   "affils": [
+    "Zhejiang University",
+    "Nanyang Technological University"
+   ],
+   "corr_affils": [
+    "Nanyang Technological University",
+    "Zhejiang University"
+   ]
   },
   {
    "_id": "10.1016_j.seppur.2026.138661",
@@ -3505,7 +5239,15 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.seppur.2026.138661",
-   "key": false
+   "key": false,
+   "affils": [
+    "Southwest Petroleum University",
+    "Chengdu University of Technology",
+    "PetroChina Southwest Oil and Gas Field Company (China)"
+   ],
+   "corr_affils": [
+    "Southwest Petroleum University"
+   ]
   },
   {
    "_id": "10.1016_j.seppur.2026.138622",
@@ -3521,7 +5263,14 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.seppur.2026.138622",
-   "key": false
+   "key": false,
+   "affils": [
+    "Ocean University of China",
+    "Huzhou Normal University"
+   ],
+   "corr_affils": [
+    "Ocean University of China"
+   ]
   },
   {
    "_id": "10.1016_j.jece.2026.123327",
@@ -3537,7 +5286,16 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.jece.2026.123327",
-   "key": false
+   "key": false,
+   "affils": [
+    "Shandong University of Science and Technology",
+    "China University of Petroleum, East China",
+    "Quanzhou Normal University"
+   ],
+   "corr_affils": [
+    "Shandong University of Science and Technology",
+    "Quanzhou Normal University"
+   ]
   },
   {
    "_id": "10.1016_j.seppur.2026.138642",
@@ -3553,7 +5311,13 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.seppur.2026.138642",
-   "key": false
+   "key": false,
+   "affils": [
+    "Guizhou University"
+   ],
+   "corr_affils": [
+    "Guizhou University"
+   ]
   },
   {
    "_id": "10.1016_j.memsci.2026.125707",
@@ -3569,7 +5333,17 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.memsci.2026.125707",
-   "key": false
+   "key": false,
+   "affils": [
+    "Southwest Petroleum University",
+    "China Academy of Engineering Physics",
+    "University of Baghdad"
+   ],
+   "corr_affils": [
+    "Southwest Petroleum University",
+    "University of Baghdad",
+    "China Academy of Engineering Physics"
+   ]
   },
   {
    "_id": "10.1016_j.watres.2026.126172",
@@ -3585,7 +5359,13 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.watres.2026.126172",
-   "key": false
+   "key": false,
+   "affils": [
+    "Qilu University of Technology",
+    "Shandong Academy of Sciences",
+    "Shandong Jianzhu University"
+   ],
+   "corr_affils": []
   },
   {
    "_id": "10.1016_j.watres.2026.126162",
@@ -3601,7 +5381,15 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.watres.2026.126162",
-   "key": false
+   "key": false,
+   "affils": [
+    "Xi'an University of Architecture and Technology",
+    "Shaanxi University of Science and Technology",
+    "Chinese Research Academy of Environmental Sciences"
+   ],
+   "corr_affils": [
+    "Xi'an University of Architecture and Technology"
+   ]
   },
   {
    "_id": "10.1016_j.memsci.2026.125693",
@@ -3617,7 +5405,16 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.memsci.2026.125693",
-   "key": false
+   "key": false,
+   "affils": [
+    "Ministry of Education of the People's Republic of China",
+    "Jilin University",
+    "Northeast Normal University"
+   ],
+   "corr_affils": [
+    "Ministry of Education of the People's Republic of China",
+    "Jilin University"
+   ]
   },
   {
    "_id": "10.1016_j.jece.2026.123222",
@@ -3633,7 +5430,13 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.jece.2026.123222",
-   "key": false
+   "key": false,
+   "affils": [
+    "University of Duisburg-Essen"
+   ],
+   "corr_affils": [
+    "University of Duisburg-Essen"
+   ]
   },
   {
    "_id": "10.1016_j.memsci.2026.125659",
@@ -3649,7 +5452,15 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.memsci.2026.125659",
-   "key": false
+   "key": false,
+   "affils": [
+    "Tiangong University",
+    "State Key Laboratory of Separation Membranes and Membrane Processes"
+   ],
+   "corr_affils": [
+    "Tiangong University",
+    "State Key Laboratory of Separation Membranes and Membrane Processes"
+   ]
   },
   {
    "_id": "10.1016_j.seppur.2026.138550",
@@ -3665,7 +5476,15 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.seppur.2026.138550",
-   "key": true
+   "key": true,
+   "affils": [
+    "Jilin University",
+    "Changchun University of Technology",
+    "Jilin Jianzhu University"
+   ],
+   "corr_affils": [
+    "Jilin University"
+   ]
   },
   {
    "_id": "10.1016_j.seppur.2026.138541",
@@ -3681,7 +5500,15 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.seppur.2026.138541",
-   "key": false
+   "key": false,
+   "affils": [
+    "East China University of Science and Technology",
+    "State Key Laboratory of Chemical Engineering"
+   ],
+   "corr_affils": [
+    "East China University of Science and Technology",
+    "State Key Laboratory of Chemical Engineering"
+   ]
   },
   {
    "_id": "10.1016_j.memsci.2026.125681",
@@ -3697,7 +5524,19 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.memsci.2026.125681",
-   "key": false
+   "key": false,
+   "affils": [
+    "Southwest Petroleum University",
+    "Imperial College London",
+    "Tsinghua University",
+    "Panzhihua University"
+   ],
+   "corr_affils": [
+    "Southwest Petroleum University",
+    "Imperial College London",
+    "Tsinghua University",
+    "Panzhihua University"
+   ]
   },
   {
    "_id": "10.1016_j.memsci.2026.125687",
@@ -3713,7 +5552,13 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.memsci.2026.125687",
-   "key": false
+   "key": false,
+   "affils": [
+    "Ocean University of China"
+   ],
+   "corr_affils": [
+    "Ocean University of China"
+   ]
   },
   {
    "_id": "10.1016_j.memsci.2026.125683",
@@ -3729,7 +5574,15 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.memsci.2026.125683",
-   "key": false
+   "key": false,
+   "affils": [
+    "Soochow University",
+    "Chinese Academy of Sciences",
+    "Suzhou Institute of Nano-tech and Nano-bionics"
+   ],
+   "corr_affils": [
+    "Soochow University"
+   ]
   },
   {
    "_id": "10.1016_j.memsci.2026.125673",
@@ -3745,7 +5598,13 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.memsci.2026.125673",
-   "key": false
+   "key": false,
+   "affils": [
+    "Changzhou University"
+   ],
+   "corr_affils": [
+    "Changzhou University"
+   ]
   },
   {
    "_id": "10.1016_j.seppur.2026.138476",
@@ -3761,7 +5620,15 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.seppur.2026.138476",
-   "key": false
+   "key": false,
+   "affils": [
+    "Tiangong University",
+    "State Key Laboratory of Advanced Separation Membrane Materials"
+   ],
+   "corr_affils": [
+    "Tiangong University",
+    "State Key Laboratory of Advanced Separation Membrane Materials"
+   ]
   },
   {
    "_id": "10.1016_j.memsci.2026.125643",
@@ -3777,7 +5644,14 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.memsci.2026.125643",
-   "key": true
+   "key": true,
+   "affils": [
+    "Hohai University",
+    "Ocean University of China"
+   ],
+   "corr_affils": [
+    "Hohai University"
+   ]
   },
   {
    "_id": "10.1016_j.desal.2026.120305",
@@ -3793,7 +5667,15 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.desal.2026.120305",
-   "key": false
+   "key": false,
+   "affils": [
+    "State Key Laboratory of Chemical Resource Engineering",
+    "Beijing University of Chemical Technology"
+   ],
+   "corr_affils": [
+    "State Key Laboratory of Chemical Resource Engineering",
+    "Beijing University of Chemical Technology"
+   ]
   },
   {
    "_id": "10.1016_j.desal.2026.120304",
@@ -3809,7 +5691,18 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.desal.2026.120304",
-   "key": false
+   "key": false,
+   "affils": [
+    "Chinese Academy of Sciences",
+    "Shanghai Advanced Research Institute",
+    "University of Chinese Academy of Sciences",
+    "ShanghaiTech University"
+   ],
+   "corr_affils": [
+    "Chinese Academy of Sciences",
+    "ShanghaiTech University",
+    "Shanghai Advanced Research Institute"
+   ]
   },
   {
    "_id": "10.1016_j.memsci.2026.125660",
@@ -3825,7 +5718,15 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.memsci.2026.125660",
-   "key": false
+   "key": false,
+   "affils": [
+    "Donghua University",
+    "Henan Academy of Sciences"
+   ],
+   "corr_affils": [
+    "Donghua University",
+    "Henan Academy of Sciences"
+   ]
   },
   {
    "_id": "10.1016_j.memsci.2026.125654",
@@ -3841,7 +5742,14 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.memsci.2026.125654",
-   "key": false
+   "key": false,
+   "affils": [
+    "King Fahd University of Petroleum and Minerals",
+    "Imam Abdulrahman Bin Faisal University"
+   ],
+   "corr_affils": [
+    "King Fahd University of Petroleum and Minerals"
+   ]
   },
   {
    "_id": "10.1016_j.memsci.2026.125635",
@@ -3857,7 +5765,15 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.memsci.2026.125635",
-   "key": false
+   "key": false,
+   "affils": [
+    "Tongji University",
+    "Shanghai Institute of Pollution Control and Ecological Security"
+   ],
+   "corr_affils": [
+    "Tongji University",
+    "Shanghai Institute of Pollution Control and Ecological Security"
+   ]
   },
   {
    "_id": "10.1016_j.desal.2026.120289",
@@ -3873,7 +5789,16 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.desal.2026.120289",
-   "key": false
+   "key": false,
+   "affils": [
+    "Hebei University of Architecture",
+    "Tiangong University",
+    "State Key Laboratory of Advanced Separation Membrane Materials"
+   ],
+   "corr_affils": [
+    "Tiangong University",
+    "State Key Laboratory of Advanced Separation Membrane Materials"
+   ]
   },
   {
    "_id": "10.1016_j.seppur.2026.138402",
@@ -3889,7 +5814,15 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.seppur.2026.138402",
-   "key": false
+   "key": false,
+   "affils": [
+    "Shenzhen University",
+    "Zhejiang University of Technology"
+   ],
+   "corr_affils": [
+    "Zhejiang University of Technology",
+    "Shenzhen University"
+   ]
   },
   {
    "_id": "10.1016_j.memsci.2026.125645",
@@ -3905,7 +5838,14 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.memsci.2026.125645",
-   "key": false
+   "key": false,
+   "affils": [
+    "Zhejiang Sci-Tech University",
+    "Zhejiang University of Technology"
+   ],
+   "corr_affils": [
+    "Zhejiang Sci-Tech University"
+   ]
   },
   {
    "_id": "10.1016_j.watres.2026.126095",
@@ -3921,7 +5861,15 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.watres.2026.126095",
-   "key": false
+   "key": false,
+   "affils": [
+    "Beijing University of Chemical Technology",
+    "Tsinghua University"
+   ],
+   "corr_affils": [
+    "Tsinghua University",
+    "Beijing University of Chemical Technology"
+   ]
   },
   {
    "_id": "10.1016_j.seppur.2026.138407",
@@ -3937,7 +5885,13 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.seppur.2026.138407",
-   "key": false
+   "key": false,
+   "affils": [
+    "Northwest University"
+   ],
+   "corr_affils": [
+    "Northwest University"
+   ]
   },
   {
    "_id": "10.1016_j.memsci.2026.125642",
@@ -3953,7 +5907,13 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.memsci.2026.125642",
-   "key": false
+   "key": false,
+   "affils": [
+    "Zhejiang Sci-Tech University"
+   ],
+   "corr_affils": [
+    "Zhejiang Sci-Tech University"
+   ]
   },
   {
    "_id": "10.1016_j.jece.2026.123034",
@@ -3969,7 +5929,13 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.jece.2026.123034",
-   "key": false
+   "key": false,
+   "affils": [
+    "Hebei University of Science and Technology"
+   ],
+   "corr_affils": [
+    "Hebei University of Science and Technology"
+   ]
   },
   {
    "_id": "10.1016_j.desal.2026.120269",
@@ -3985,7 +5951,15 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.desal.2026.120269",
-   "key": false
+   "key": false,
+   "affils": [
+    "University of Technology Sydney",
+    "The University of Sydney",
+    "Victoria University"
+   ],
+   "corr_affils": [
+    "University of Technology Sydney"
+   ]
   },
   {
    "_id": "10.1016_j.memsci.2026.125627",
@@ -4001,7 +5975,13 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.memsci.2026.125627",
-   "key": false
+   "key": false,
+   "affils": [
+    "Zhejiang University"
+   ],
+   "corr_affils": [
+    "Zhejiang University"
+   ]
   },
   {
    "_id": "10.1016_j.desal.2026.120238",
@@ -4017,7 +5997,15 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.desal.2026.120238",
-   "key": false
+   "key": false,
+   "affils": [
+    "Shandong Jianzhu University",
+    "State Power Investment Corporation (China)",
+    "Harbin Institute of Technology"
+   ],
+   "corr_affils": [
+    "Shandong Jianzhu University"
+   ]
   },
   {
    "_id": "10.1016_j.apcatb.2026.126903",
@@ -4033,7 +6021,17 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.apcatb.2026.126903",
-   "key": true
+   "key": true,
+   "affils": [
+    "Sun Yat-sen University",
+    "Guangdong Provincial Key Laboratory of Environmental Pollution Control and Remediation Technology",
+    "Jinan University"
+   ],
+   "corr_affils": [
+    "Jinan University",
+    "Sun Yat-sen University",
+    "Guangdong Provincial Key Laboratory of Environmental Pollution Control and Remediation Technology"
+   ]
   },
   {
    "_id": "10.1016_j.memsci.2026.125613",
@@ -4049,7 +6047,15 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.memsci.2026.125613",
-   "key": false
+   "key": false,
+   "affils": [
+    "Sun Yat-sen University",
+    "Guangdong Provincial Key Laboratory of Environmental Pollution Control and Remediation Technology"
+   ],
+   "corr_affils": [
+    "Sun Yat-sen University",
+    "Guangdong Provincial Key Laboratory of Environmental Pollution Control and Remediation Technology"
+   ]
   },
   {
    "_id": "10.1016_j.cej.2026.177021",
@@ -4065,7 +6071,14 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.cej.2026.177021",
-   "key": false
+   "key": false,
+   "affils": [
+    "Zhejiang Sci-Tech University",
+    "Zhejiang University of Technology"
+   ],
+   "corr_affils": [
+    "Zhejiang Sci-Tech University"
+   ]
   },
   {
    "_id": "10.1016_j.jece.2026.122981",
@@ -4081,7 +6094,16 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.jece.2026.122981",
-   "key": false
+   "key": false,
+   "affils": [
+    "China University of Petroleum, East China",
+    "Harbin Institute of Technology",
+    "State Key Laboratory of Heavy Oil"
+   ],
+   "corr_affils": [
+    "China University of Petroleum, East China",
+    "State Key Laboratory of Heavy Oil"
+   ]
   },
   {
    "_id": "10.1021_acs.est.5c17477",
@@ -4097,7 +6119,15 @@
    "source_type": "官方",
    "source_name": "ACS Publications",
    "source_url": "https://doi.org/10.1021/acs.est.5c17477",
-   "key": true
+   "key": true,
+   "affils": [
+    "Harbin Institute of Technology",
+    "Jiangsu University of Science and Technology",
+    "Huazhong University of Science and Technology"
+   ],
+   "corr_affils": [
+    "Harbin Institute of Technology"
+   ]
   },
   {
    "_id": "10.1016_j.memsci.2026.125597",
@@ -4113,7 +6143,13 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.memsci.2026.125597",
-   "key": false
+   "key": false,
+   "affils": [
+    "Dalian University of Technology"
+   ],
+   "corr_affils": [
+    "Dalian University of Technology"
+   ]
   },
   {
    "_id": "10.1016_j.memsci.2026.125585",
@@ -4129,7 +6165,15 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.memsci.2026.125585",
-   "key": true
+   "key": true,
+   "affils": [
+    "Shenzhen University",
+    "National University of Singapore"
+   ],
+   "corr_affils": [
+    "National University of Singapore",
+    "Shenzhen University"
+   ]
   },
   {
    "_id": "10.1016_j.memsci.2026.125581",
@@ -4145,7 +6189,13 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.memsci.2026.125581",
-   "key": true
+   "key": true,
+   "affils": [
+    "Shenzhen University"
+   ],
+   "corr_affils": [
+    "Shenzhen University"
+   ]
   },
   {
    "_id": "10.1016_j.memsci.2026.125580",
@@ -4161,7 +6211,15 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.memsci.2026.125580",
-   "key": false
+   "key": false,
+   "affils": [
+    "Tiangong University",
+    "State Key Laboratory of Advanced Separation Membrane Materials"
+   ],
+   "corr_affils": [
+    "Tiangong University",
+    "State Key Laboratory of Advanced Separation Membrane Materials"
+   ]
   },
   {
    "_id": "10.1016_j.memsci.2026.125579",
@@ -4177,7 +6235,16 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.memsci.2026.125579",
-   "key": false
+   "key": false,
+   "affils": [
+    "Qinghai University",
+    "Ordos Laboratory",
+    "Tsinghua University",
+    "Changzhou University"
+   ],
+   "corr_affils": [
+    "Qinghai University"
+   ]
   },
   {
    "_id": "10.1016_j.memsci.2026.125553",
@@ -4193,7 +6260,15 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.memsci.2026.125553",
-   "key": false
+   "key": false,
+   "affils": [
+    "Tiangong University",
+    "State Key Laboratory of Advanced Separation Membrane Materials"
+   ],
+   "corr_affils": [
+    "Tiangong University",
+    "State Key Laboratory of Advanced Separation Membrane Materials"
+   ]
   },
   {
    "_id": "10.1016_j.desal.2026.120224",
@@ -4209,7 +6284,15 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.desal.2026.120224",
-   "key": false
+   "key": false,
+   "affils": [
+    "Tiangong University",
+    "State Key Laboratory of Advanced Separation Membrane Materials"
+   ],
+   "corr_affils": [
+    "Tiangong University",
+    "State Key Laboratory of Advanced Separation Membrane Materials"
+   ]
   },
   {
    "_id": "10.1016_j.seppur.2026.138148",
@@ -4225,7 +6308,14 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.seppur.2026.138148",
-   "key": false
+   "key": false,
+   "affils": [
+    "Zhejiang Gongshang University",
+    "Zhejiang A & F University"
+   ],
+   "corr_affils": [
+    "Zhejiang A & F University"
+   ]
   },
   {
    "_id": "10.1016_j.jece.2026.122770",
@@ -4241,7 +6331,16 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.jece.2026.122770",
-   "key": false
+   "key": false,
+   "affils": [
+    "Chulalongkorn University",
+    "University of Nevada, Las Vegas",
+    "Center of Excellence on Hazardous Substance Management"
+   ],
+   "corr_affils": [
+    "Chulalongkorn University",
+    "Center of Excellence on Hazardous Substance Management"
+   ]
   },
   {
    "_id": "10.1016_j.jece.2026.122801",
@@ -4257,7 +6356,15 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.jece.2026.122801",
-   "key": false
+   "key": false,
+   "affils": [
+    "Gebze Technical University",
+    "Istanbul Technical University",
+    "University of Tabriz"
+   ],
+   "corr_affils": [
+    "Gebze Technical University"
+   ]
   },
   {
    "_id": "10.1016_j.memsci.2026.125551",
@@ -4273,7 +6380,18 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.memsci.2026.125551",
-   "key": false
+   "key": false,
+   "affils": [
+    "Chinese Academy of Sciences",
+    "China University of Mining and Technology",
+    "Research Center for Eco-Environmental Sciences",
+    "University of Chinese Academy of Sciences"
+   ],
+   "corr_affils": [
+    "Chinese Academy of Sciences",
+    "Research Center for Eco-Environmental Sciences",
+    "University of Chinese Academy of Sciences"
+   ]
   },
   {
    "_id": "10.1016_j.cej.2026.176431",
@@ -4289,7 +6407,14 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.cej.2026.176431",
-   "key": false
+   "key": false,
+   "affils": [
+    "Zhejiang Normal University",
+    "Shanghai Jian Qiao University"
+   ],
+   "corr_affils": [
+    "Zhejiang Normal University"
+   ]
   },
   {
    "_id": "10.1016_j.seppur.2026.138081",
@@ -4305,7 +6430,15 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.seppur.2026.138081",
-   "key": true
+   "key": true,
+   "affils": [
+    "Nanyang Normal University",
+    "University of Jinan"
+   ],
+   "corr_affils": [
+    "Nanyang Normal University",
+    "University of Jinan"
+   ]
   },
   {
    "_id": "10.1016_j.cej.2026.176379",
@@ -4321,7 +6454,14 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.cej.2026.176379",
-   "key": false
+   "key": false,
+   "affils": [
+    "Beijing Normal University",
+    "Imperial College London"
+   ],
+   "corr_affils": [
+    "Beijing Normal University"
+   ]
   },
   {
    "_id": "10.1016_j.memsci.2026.125547",
@@ -4337,7 +6477,17 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.memsci.2026.125547",
-   "key": false
+   "key": false,
+   "affils": [
+    "Xihua University",
+    "Southwest Petroleum University",
+    "State Key Laboratory of Oil and Gas Reservoir Geology and Exploitation"
+   ],
+   "corr_affils": [
+    "Xihua University",
+    "Southwest Petroleum University",
+    "State Key Laboratory of Oil and Gas Reservoir Geology and Exploitation"
+   ]
   },
   {
    "_id": "10.1016_j.cej.2026.176366",
@@ -4353,7 +6503,14 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.cej.2026.176366",
-   "key": false
+   "key": false,
+   "affils": [
+    "Hunan University of Science and Technology",
+    "Anhui University"
+   ],
+   "corr_affils": [
+    "Hunan University of Science and Technology"
+   ]
   },
   {
    "_id": "10.1016_j.memsci.2026.125534",
@@ -4369,7 +6526,13 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.memsci.2026.125534",
-   "key": false
+   "key": false,
+   "affils": [
+    "Northeast Normal University"
+   ],
+   "corr_affils": [
+    "Northeast Normal University"
+   ]
   },
   {
    "_id": "10.1016_j.watres.2026.125946",
@@ -4385,7 +6548,13 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.watres.2026.125946",
-   "key": false
+   "key": false,
+   "affils": [
+    "Lanzhou Jiaotong University"
+   ],
+   "corr_affils": [
+    "Lanzhou Jiaotong University"
+   ]
   },
   {
    "_id": "10.1016_j.seppur.2026.137996",
@@ -4401,7 +6570,15 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.seppur.2026.137996",
-   "key": false
+   "key": false,
+   "affils": [
+    "North China Electric Power University",
+    "National Center for Nanoscience and Technology"
+   ],
+   "corr_affils": [
+    "North China Electric Power University",
+    "National Center for Nanoscience and Technology"
+   ]
   },
   {
    "_id": "10.1016_j.memsci.2026.125540",
@@ -4417,7 +6594,17 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.memsci.2026.125540",
-   "key": false
+   "key": false,
+   "affils": [
+    "Southwest Petroleum University",
+    "China Academy of Engineering Physics",
+    "Sichuan University",
+    "State Key Laboratory of Polymer Materials Engineering"
+   ],
+   "corr_affils": [
+    "Southwest Petroleum University",
+    "China Academy of Engineering Physics"
+   ]
   },
   {
    "_id": "10.1016_j.memsci.2026.125451",
@@ -4433,7 +6620,15 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.memsci.2026.125451",
-   "key": false
+   "key": false,
+   "affils": [
+    "Tiangong University",
+    "State Key Laboratory of Advanced Separation Membrane Materials"
+   ],
+   "corr_affils": [
+    "Tiangong University",
+    "State Key Laboratory of Advanced Separation Membrane Materials"
+   ]
   },
   {
    "_id": "10.1016_j.cej.2026.176325",
@@ -4449,7 +6644,15 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.cej.2026.176325",
-   "key": false
+   "key": false,
+   "affils": [
+    "Dalian University of Technology",
+    "Taizhou University"
+   ],
+   "corr_affils": [
+    "Dalian University of Technology",
+    "Taizhou University"
+   ]
   },
   {
    "_id": "10.1016_j.cej.2026.176309",
@@ -4465,7 +6668,19 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.cej.2026.176309",
-   "key": false
+   "key": false,
+   "affils": [
+    "Chinese Academy of Sciences",
+    "Institute of Process Engineering",
+    "University of Chinese Academy of Sciences",
+    "Sinopec Beijing Research Institute of Chemical Industry Co., Ltd. (China)"
+   ],
+   "corr_affils": [
+    "Sinopec Beijing Research Institute of Chemical Industry Co., Ltd. (China)",
+    "Chinese Academy of Sciences",
+    "Institute of Process Engineering",
+    "University of Chinese Academy of Sciences"
+   ]
   },
   {
    "_id": "10.1016_j.cej.2026.176237",
@@ -4481,7 +6696,16 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.cej.2026.176237",
-   "key": false
+   "key": false,
+   "affils": [
+    "Zhejiang Energy Group (China)",
+    "Zhejiang University",
+    "Zhejiang Sci-Tech University"
+   ],
+   "corr_affils": [
+    "Zhejiang Sci-Tech University",
+    "Zhejiang University"
+   ]
   },
   {
    "_id": "10.1016_j.memsci.2026.125533",
@@ -4497,7 +6721,17 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.memsci.2026.125533",
-   "key": false
+   "key": false,
+   "affils": [
+    "Sichuan University",
+    "State Key Laboratory of Hydraulics and Mountain River Engineering",
+    "Chengdu University",
+    "Research Institute of Petroleum Exploration and Development"
+   ],
+   "corr_affils": [
+    "Sichuan University",
+    "State Key Laboratory of Hydraulics and Mountain River Engineering"
+   ]
   },
   {
    "_id": "10.1016_j.memsci.2026.125528",
@@ -4513,7 +6747,14 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.memsci.2026.125528",
-   "key": false
+   "key": false,
+   "affils": [
+    "Tianjin University",
+    "National University of Singapore"
+   ],
+   "corr_affils": [
+    "Tianjin University"
+   ]
   },
   {
    "_id": "10.1016_j.seppur.2026.137942",
@@ -4529,7 +6770,16 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.seppur.2026.137942",
-   "key": false
+   "key": false,
+   "affils": [
+    "Xinjiang University",
+    "Shandong Jianzhu University",
+    "Harbin Institute of Technology"
+   ],
+   "corr_affils": [
+    "Shandong Jianzhu University",
+    "Harbin Institute of Technology"
+   ]
   },
   {
    "_id": "10.1016_j.jece.2026.122598",
@@ -4545,7 +6795,13 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.jece.2026.122598",
-   "key": false
+   "key": false,
+   "affils": [
+    "Chengdu University of Technology"
+   ],
+   "corr_affils": [
+    "Chengdu University of Technology"
+   ]
   },
   {
    "_id": "10.1016_j.cej.2026.176030",
@@ -4561,7 +6817,15 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.cej.2026.176030",
-   "key": false
+   "key": false,
+   "affils": [
+    "China University of Petroleum, Beijing",
+    "State Key Laboratory of Heavy Oil"
+   ],
+   "corr_affils": [
+    "China University of Petroleum, Beijing",
+    "State Key Laboratory of Heavy Oil"
+   ]
   },
   {
    "_id": "10.1016_j.memsci.2026.125485",
@@ -4577,7 +6841,13 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.memsci.2026.125485",
-   "key": false
+   "key": false,
+   "affils": [
+    "Shanghai Jiao Tong University"
+   ],
+   "corr_affils": [
+    "Shanghai Jiao Tong University"
+   ]
   },
   {
    "_id": "10.1016_j.desal.2026.120160",
@@ -4593,7 +6863,15 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.desal.2026.120160",
-   "key": true
+   "key": true,
+   "affils": [
+    "Fuzhou University",
+    "Fujian University of Technology"
+   ],
+   "corr_affils": [
+    "Fuzhou University",
+    "Fujian University of Technology"
+   ]
   },
   {
    "_id": "10.1016_j.memsci.2026.125502",
@@ -4609,7 +6887,13 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.memsci.2026.125502",
-   "key": false
+   "key": false,
+   "affils": [
+    "Xi'an University of Architecture and Technology"
+   ],
+   "corr_affils": [
+    "Xi'an University of Architecture and Technology"
+   ]
   },
   {
    "_id": "10.1016_j.memsci.2026.125490",
@@ -4625,7 +6909,13 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.memsci.2026.125490",
-   "key": false
+   "key": false,
+   "affils": [
+    "Fudan University"
+   ],
+   "corr_affils": [
+    "Fudan University"
+   ]
   },
   {
    "_id": "10.1016_j.desal.2026.120145",
@@ -4641,7 +6931,14 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.desal.2026.120145",
-   "key": false
+   "key": false,
+   "affils": [
+    "University of Science and Technology of China",
+    "Eastern Institute of Technology, Ningbo"
+   ],
+   "corr_affils": [
+    "University of Science and Technology of China"
+   ]
   },
   {
    "_id": "10.1016_j.memsci.2026.125402",
@@ -4657,7 +6954,18 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.memsci.2026.125402",
-   "key": false
+   "key": false,
+   "affils": [
+    "Jingdezhen Ceramic Institute",
+    "Guangzhou University",
+    "Daffodil International University",
+    "Lincoln University - Pennsylvania",
+    "South China University of Technology"
+   ],
+   "corr_affils": [
+    "South China University of Technology",
+    "Guangzhou University"
+   ]
   },
   {
    "_id": "10.1016_j.memsci.2026.125463",
@@ -4673,7 +6981,14 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.memsci.2026.125463",
-   "key": false
+   "key": false,
+   "affils": [
+    "Donghua University",
+    "Shanghai University of Engineering Science"
+   ],
+   "corr_affils": [
+    "Donghua University"
+   ]
   },
   {
    "_id": "10.1016_j.desal.2026.120125",
@@ -4689,7 +7004,15 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.desal.2026.120125",
-   "key": false
+   "key": false,
+   "affils": [
+    "Ministry of Natural Resources",
+    "Tiangong University",
+    "University of Science and Technology Beijing"
+   ],
+   "corr_affils": [
+    "Ministry of Natural Resources"
+   ]
   },
   {
    "_id": "10.1016_j.seppur.2026.137755",
@@ -4705,7 +7028,13 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.seppur.2026.137755",
-   "key": false
+   "key": false,
+   "affils": [
+    "Hainan University"
+   ],
+   "corr_affils": [
+    "Hainan University"
+   ]
   },
   {
    "_id": "10.1002_advs.202523231",
@@ -4721,7 +7050,13 @@
    "source_type": "官方",
    "source_name": "Wiley Online Library",
    "source_url": "https://doi.org/10.1002/advs.202523231",
-   "key": false
+   "key": false,
+   "affils": [
+    "Georgia Institute of Technology"
+   ],
+   "corr_affils": [
+    "Georgia Institute of Technology"
+   ]
   },
   {
    "_id": "10.1016_j.seppur.2026.137729",
@@ -4737,7 +7072,13 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.seppur.2026.137729",
-   "key": false
+   "key": false,
+   "affils": [
+    "Zhengzhou University"
+   ],
+   "corr_affils": [
+    "Zhengzhou University"
+   ]
   },
   {
    "_id": "10.1016_j.jece.2026.122384",
@@ -4753,7 +7094,17 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.jece.2026.122384",
-   "key": false
+   "key": false,
+   "affils": [
+    "National Taiwan University of Science and Technology",
+    "Universidad Politécnica Taiwán Paraguay",
+    "University of Madras",
+    "Women's Christian College",
+    "Chung Yuan Christian University"
+   ],
+   "corr_affils": [
+    "National Taiwan University of Science and Technology"
+   ]
   },
   {
    "_id": "10.1016_j.watres.2026.125786",
@@ -4769,7 +7120,15 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.watres.2026.125786",
-   "key": false
+   "key": false,
+   "affils": [
+    "Tongji University",
+    "Shanghai Institute of Pollution Control and Ecological Security"
+   ],
+   "corr_affils": [
+    "Tongji University",
+    "Shanghai Institute of Pollution Control and Ecological Security"
+   ]
   },
   {
    "_id": "10.1016_j.memsci.2026.125429",
@@ -4785,7 +7144,14 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.memsci.2026.125429",
-   "key": false
+   "key": false,
+   "affils": [
+    "Zhengzhou University",
+    "Zhejiang University"
+   ],
+   "corr_affils": [
+    "Zhejiang University"
+   ]
   },
   {
    "_id": "10.1016_j.seppur.2026.137492",
@@ -4801,7 +7167,12 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.seppur.2026.137492",
-   "key": false
+   "key": false,
+   "affils": [
+    "Inner Mongolia University of Technology",
+    "Hebei University of Technology"
+   ],
+   "corr_affils": []
   },
   {
    "_id": "10.1016_j.cej.2026.175429",
@@ -4817,7 +7188,17 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.cej.2026.175429",
-   "key": false
+   "key": false,
+   "affils": [
+    "Tiangong University",
+    "State Key Laboratory of Advanced Separation Membrane Materials",
+    "Shandong University of Technology",
+    "Nankai University"
+   ],
+   "corr_affils": [
+    "Tiangong University",
+    "State Key Laboratory of Advanced Separation Membrane Materials"
+   ]
   },
   {
    "_id": "10.1016_j.cej.2026.175386",
@@ -4833,7 +7214,20 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.cej.2026.175386",
-   "key": false
+   "key": false,
+   "affils": [
+    "Nanchang University",
+    "Tsinghua Shenzhen International Graduate School",
+    "Tsinghua University",
+    "Chinese Academy of Sciences",
+    "Institute of Urban Environment",
+    "University of Engineering and Technology Peshawar"
+   ],
+   "corr_affils": [
+    "Nanchang University",
+    "Chinese Academy of Sciences",
+    "Institute of Urban Environment"
+   ]
   },
   {
    "_id": "10.1016_j.envres.2026.124322",
@@ -4849,7 +7243,13 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.envres.2026.124322",
-   "key": false
+   "key": false,
+   "affils": [
+    "Dalian Polytechnic University"
+   ],
+   "corr_affils": [
+    "Dalian Polytechnic University"
+   ]
   },
   {
    "_id": "10.1016_j.desal.2026.120094",
@@ -4865,7 +7265,15 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.desal.2026.120094",
-   "key": false
+   "key": false,
+   "affils": [
+    "Jiangnan University",
+    "Key Laboratory of Synthetic and Biological Colloids, Ministry of Education"
+   ],
+   "corr_affils": [
+    "Jiangnan University",
+    "Key Laboratory of Synthetic and Biological Colloids, Ministry of Education"
+   ]
   },
   {
    "_id": "10.1016_j.memsci.2026.125403",
@@ -4881,7 +7289,17 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.memsci.2026.125403",
-   "key": false
+   "key": false,
+   "affils": [
+    "Tiangong University",
+    "State Key Laboratory of Advanced Separation Membrane Materials",
+    "State Key Laboratory of Hollow Fiber Membrane Materials and Processes"
+   ],
+   "corr_affils": [
+    "Tiangong University",
+    "State Key Laboratory of Advanced Separation Membrane Materials",
+    "State Key Laboratory of Hollow Fiber Membrane Materials and Processes"
+   ]
   },
   {
    "_id": "10.1016_j.memsci.2026.125392",
@@ -4897,7 +7315,16 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.memsci.2026.125392",
-   "key": true
+   "key": true,
+   "affils": [
+    "Shenzhen University",
+    "National University of Singapore",
+    "University of Peradeniya"
+   ],
+   "corr_affils": [
+    "National University of Singapore",
+    "Shenzhen University"
+   ]
   },
   {
    "_id": "10.1016_j.memsci.2026.125391",
@@ -4913,7 +7340,17 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.memsci.2026.125391",
-   "key": false
+   "key": false,
+   "affils": [
+    "Research Center for Membrane and Film Technology, Kobe University",
+    "Kobe University",
+    "Hebei University of Technology",
+    "State Key Laboratory of Advanced Separation Membrane Materials"
+   ],
+   "corr_affils": [
+    "Research Center for Membrane and Film Technology, Kobe University",
+    "Kobe University"
+   ]
   },
   {
    "_id": "10.1016_j.cej.2026.175224",
@@ -4929,7 +7366,14 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.cej.2026.175224",
-   "key": false
+   "key": false,
+   "affils": [
+    "University of Alberta",
+    "National Research Council Canada"
+   ],
+   "corr_affils": [
+    "University of Alberta"
+   ]
   },
   {
    "_id": "10.1021_acs.est.5c16846",
@@ -4945,7 +7389,17 @@
    "source_type": "官方",
    "source_name": "ACS Publications",
    "source_url": "https://doi.org/10.1021/acs.est.5c16846",
-   "key": false
+   "key": false,
+   "affils": [
+    "Tsinghua University",
+    "Chinese Academy of Sciences",
+    "Institute of High Energy Physics",
+    "Tongji University",
+    "State Key Laboratory of Pollution Control and Resource Reuse"
+   ],
+   "corr_affils": [
+    "Tsinghua University"
+   ]
   },
   {
    "_id": "10.1016_j.memsci.2026.125387",
@@ -4961,7 +7415,15 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.memsci.2026.125387",
-   "key": false
+   "key": false,
+   "affils": [
+    "Jiangnan University",
+    "Key Laboratory of Synthetic and Biological Colloids, Ministry of Education"
+   ],
+   "corr_affils": [
+    "Jiangnan University",
+    "Key Laboratory of Synthetic and Biological Colloids, Ministry of Education"
+   ]
   },
   {
    "_id": "10.1016_j.memsci.2026.125378",
@@ -4977,7 +7439,13 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.memsci.2026.125378",
-   "key": false
+   "key": false,
+   "affils": [
+    "Zhejiang University of Technology"
+   ],
+   "corr_affils": [
+    "Zhejiang University of Technology"
+   ]
   },
   {
    "_id": "10.1016_j.memsci.2026.125376",
@@ -4993,7 +7461,13 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.memsci.2026.125376",
-   "key": false
+   "key": false,
+   "affils": [
+    "Central South University"
+   ],
+   "corr_affils": [
+    "Central South University"
+   ]
   },
   {
    "_id": "10.1016_j.memsci.2026.125366",
@@ -5009,7 +7483,16 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.memsci.2026.125366",
-   "key": false
+   "key": false,
+   "affils": [
+    "Tiangong University",
+    "State Key Laboratory of Advanced Separation Membrane Materials",
+    "Yanshan University"
+   ],
+   "corr_affils": [
+    "Tiangong University",
+    "State Key Laboratory of Advanced Separation Membrane Materials"
+   ]
   },
   {
    "_id": "10.1002_adfm.202528238",
@@ -5025,7 +7508,17 @@
    "source_type": "官方",
    "source_name": "Wiley Online Library",
    "source_url": "https://doi.org/10.1002/adfm.202528238",
-   "key": false
+   "key": false,
+   "affils": [
+    "Pohang University of Science and Technology",
+    "Narsee Monjee Institute of Management Studies",
+    "Shri Vile Parle Kelavani Mandal",
+    "Griffith University",
+    "King Khalid University"
+   ],
+   "corr_affils": [
+    "Pohang University of Science and Technology"
+   ]
   },
   {
    "_id": "10.1016_j.cej.2026.174700",
@@ -5041,7 +7534,13 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.cej.2026.174700",
-   "key": false
+   "key": false,
+   "affils": [
+    "Jilin University"
+   ],
+   "corr_affils": [
+    "Jilin University"
+   ]
   },
   {
    "_id": "10.1016_j.cej.2026.174735",
@@ -5057,7 +7556,13 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.cej.2026.174735",
-   "key": false
+   "key": false,
+   "affils": [
+    "Beijing University of Technology"
+   ],
+   "corr_affils": [
+    "Beijing University of Technology"
+   ]
   },
   {
    "_id": "10.1016_j.memsci.2026.125340",
@@ -5073,7 +7578,15 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.memsci.2026.125340",
-   "key": false
+   "key": false,
+   "affils": [
+    "Southwest University of Science and Technology",
+    "State Key Laboratory of Environmental-friendly Energy Materials"
+   ],
+   "corr_affils": [
+    "Southwest University of Science and Technology",
+    "State Key Laboratory of Environmental-friendly Energy Materials"
+   ]
   },
   {
    "_id": "10.1016_j.memsci.2026.125311",
@@ -5089,7 +7602,13 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.memsci.2026.125311",
-   "key": false
+   "key": false,
+   "affils": [
+    "East China University of Science and Technology"
+   ],
+   "corr_affils": [
+    "East China University of Science and Technology"
+   ]
   },
   {
    "_id": "10.1016_j.memsci.2026.125341",
@@ -5105,7 +7624,13 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.memsci.2026.125341",
-   "key": false
+   "key": false,
+   "affils": [
+    "Nanjing Tech University"
+   ],
+   "corr_affils": [
+    "Nanjing Tech University"
+   ]
   },
   {
    "_id": "10.1016_j.memsci.2026.125334",
@@ -5121,7 +7646,17 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.memsci.2026.125334",
-   "key": false
+   "key": false,
+   "affils": [
+    "University of California, Los Angeles",
+    "Technical University of Munich",
+    "California NanoSystems Institute"
+   ],
+   "corr_affils": [
+    "California NanoSystems Institute",
+    "University of California, Los Angeles",
+    "Technical University of Munich"
+   ]
   },
   {
    "_id": "10.1016_j.memsci.2026.125330",
@@ -5137,7 +7672,15 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.memsci.2026.125330",
-   "key": false
+   "key": false,
+   "affils": [
+    "Tianjin University",
+    "King Fahd University of Petroleum and Minerals",
+    "National University of Singapore"
+   ],
+   "corr_affils": [
+    "Tianjin University"
+   ]
   },
   {
    "_id": "10.1016_j.memsci.2026.125316",
@@ -5153,7 +7696,15 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.memsci.2026.125316",
-   "key": false
+   "key": false,
+   "affils": [
+    "Sichuan University",
+    "Xinjiang University"
+   ],
+   "corr_affils": [
+    "Sichuan University",
+    "Xinjiang University"
+   ]
   },
   {
    "_id": "10.1016_j.cej.2026.174701",
@@ -5169,7 +7720,13 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.cej.2026.174701",
-   "key": false
+   "key": false,
+   "affils": [
+    "Zhejiang University"
+   ],
+   "corr_affils": [
+    "Zhejiang University"
+   ]
   },
   {
    "_id": "10.1016_j.seppur.2026.137412",
@@ -5185,7 +7742,20 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.seppur.2026.137412",
-   "key": false
+   "key": false,
+   "affils": [
+    "China University of Petroleum, Beijing",
+    "State Key Laboratory of Heavy Oil",
+    "Chinese Academy of Sciences",
+    "Institute of Process Engineering",
+    "UNSW Sydney"
+   ],
+   "corr_affils": [
+    "UNSW Sydney",
+    "Chinese Academy of Sciences",
+    "Institute of Process Engineering",
+    "China University of Petroleum, Beijing"
+   ]
   },
   {
    "_id": "10.1016_j.memsci.2026.125335",
@@ -5201,7 +7771,17 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.memsci.2026.125335",
-   "key": false
+   "key": false,
+   "affils": [
+    "Tiangong University",
+    "State Key Laboratory of Advanced Separation Membrane Materials",
+    "University of South Africa"
+   ],
+   "corr_affils": [
+    "University of South Africa",
+    "Tiangong University",
+    "State Key Laboratory of Advanced Separation Membrane Materials"
+   ]
   },
   {
    "_id": "10.1021_acs.est.5c14877",
@@ -5217,7 +7797,19 @@
    "source_type": "官方",
    "source_name": "ACS Publications",
    "source_url": "https://doi.org/10.1021/acs.est.5c14877",
-   "key": false
+   "key": false,
+   "affils": [
+    "Tsinghua Shenzhen International Graduate School",
+    "Tsinghua University",
+    "Harbin Institute of Technology",
+    "Guangxi Normal University",
+    "Department of Education of Guangdong Province"
+   ],
+   "corr_affils": [
+    "Department of Education of Guangdong Province",
+    "Tsinghua Shenzhen International Graduate School",
+    "Tsinghua University"
+   ]
   },
   {
    "_id": "10.1016_j.memsci.2026.125319",
@@ -5233,7 +7825,17 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.memsci.2026.125319",
-   "key": false
+   "key": false,
+   "affils": [
+    "Hainan University",
+    "Sun Yat-sen University",
+    "Tianjin University"
+   ],
+   "corr_affils": [
+    "Sun Yat-sen University",
+    "Hainan University",
+    "Tianjin University"
+   ]
   },
   {
    "_id": "10.1021_acs.est.5c15416",
@@ -5249,7 +7851,13 @@
    "source_type": "官方",
    "source_name": "ACS Publications",
    "source_url": "https://doi.org/10.1021/acs.est.5c15416",
-   "key": true
+   "key": true,
+   "affils": [
+    "Tsinghua University"
+   ],
+   "corr_affils": [
+    "Tsinghua University"
+   ]
   },
   {
    "_id": "10.1016_j.cej.2026.174486",
@@ -5265,7 +7873,13 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.cej.2026.174486",
-   "key": false
+   "key": false,
+   "affils": [
+    "Shenzhen University"
+   ],
+   "corr_affils": [
+    "Shenzhen University"
+   ]
   },
   {
    "_id": "10.1016_j.seppur.2026.137357",
@@ -5281,7 +7895,13 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.seppur.2026.137357",
-   "key": false
+   "key": false,
+   "affils": [
+    "Shanghai Jiao Tong University"
+   ],
+   "corr_affils": [
+    "Shanghai Jiao Tong University"
+   ]
   },
   {
    "_id": "10.1016_j.cej.2026.174473",
@@ -5297,7 +7917,16 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.cej.2026.174473",
-   "key": false
+   "key": false,
+   "affils": [
+    "Tianjin University of Science and Technology",
+    "Chinese Academy of Sciences",
+    "Institute of Mechanics",
+    "State Key Laboratory of High Temperature Gas Dynamics"
+   ],
+   "corr_affils": [
+    "Tianjin University of Science and Technology"
+   ]
   },
   {
    "_id": "10.1016_j.seppur.2026.137326",
@@ -5313,7 +7942,15 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.seppur.2026.137326",
-   "key": false
+   "key": false,
+   "affils": [
+    "Hainan University",
+    "Third Institute of Oceanography"
+   ],
+   "corr_affils": [
+    "Hainan University",
+    "Third Institute of Oceanography"
+   ]
   },
   {
    "_id": "10.1016_j.memsci.2026.125307",
@@ -5329,7 +7966,15 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.memsci.2026.125307",
-   "key": false
+   "key": false,
+   "affils": [
+    "Shenzhen University",
+    "National University of Singapore"
+   ],
+   "corr_affils": [
+    "National University of Singapore",
+    "Shenzhen University"
+   ]
   },
   {
    "_id": "10.1016_j.desal.2026.119995",
@@ -5345,7 +7990,20 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.desal.2026.119995",
-   "key": false
+   "key": false,
+   "affils": [
+    "Chinese Academy of Sciences",
+    "Shanghai Advanced Research Institute",
+    "University of Chinese Academy of Sciences",
+    "Zhengzhou University",
+    "ShanghaiTech University"
+   ],
+   "corr_affils": [
+    "Zhengzhou University",
+    "Chinese Academy of Sciences",
+    "ShanghaiTech University",
+    "Shanghai Advanced Research Institute"
+   ]
   },
   {
    "_id": "10.1016_j.memsci.2026.125303",
@@ -5361,7 +8019,15 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.memsci.2026.125303",
-   "key": false
+   "key": false,
+   "affils": [
+    "Guangdong University of Technology",
+    "Shandong University of Technology"
+   ],
+   "corr_affils": [
+    "Shandong University of Technology",
+    "Guangdong University of Technology"
+   ]
   },
   {
    "_id": "10.1016_j.desal.2026.119991",
@@ -5377,7 +8043,18 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.desal.2026.119991",
-   "key": false
+   "key": false,
+   "affils": [
+    "Chinese Academy of Sciences",
+    "Institute of Process Engineering",
+    "University of Chinese Academy of Sciences",
+    "China National Petroleum Corporation (China)"
+   ],
+   "corr_affils": [
+    "Chinese Academy of Sciences",
+    "Institute of Process Engineering",
+    "University of Chinese Academy of Sciences"
+   ]
   },
   {
    "_id": "10.1016_j.seppur.2026.137284",
@@ -5393,7 +8070,18 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.seppur.2026.137284",
-   "key": false
+   "key": false,
+   "affils": [
+    "Seoul National University of Science and Technology",
+    "Nanjing Tech University",
+    "State Key Laboratory of Materials-Oriented Chemical Engineering",
+    "Phenikaa University",
+    "VinUniversity"
+   ],
+   "corr_affils": [
+    "VinUniversity",
+    "Seoul National University of Science and Technology"
+   ]
   },
   {
    "_id": "10.1021_acs.est.5c16143",
@@ -5409,7 +8097,13 @@
    "source_type": "官方",
    "source_name": "ACS Publications",
    "source_url": "https://doi.org/10.1021/acs.est.5c16143",
-   "key": true
+   "key": true,
+   "affils": [
+    "Tsinghua University"
+   ],
+   "corr_affils": [
+    "Tsinghua University"
+   ]
   },
   {
    "_id": "10.1016_j.seppur.2026.137189",
@@ -5425,7 +8119,16 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.seppur.2026.137189",
-   "key": false
+   "key": false,
+   "affils": [
+    "Tiangong University",
+    "State Key Laboratory of Advanced Separation Membrane Materials",
+    "Victoria University"
+   ],
+   "corr_affils": [
+    "Tiangong University",
+    "State Key Laboratory of Advanced Separation Membrane Materials"
+   ]
   },
   {
    "_id": "10.1016_j.desal.2026.119967",
@@ -5441,7 +8144,15 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.desal.2026.119967",
-   "key": false
+   "key": false,
+   "affils": [
+    "Nanjing Tech University",
+    "State Key Laboratory of Materials-Oriented Chemical Engineering"
+   ],
+   "corr_affils": [
+    "Nanjing Tech University",
+    "State Key Laboratory of Materials-Oriented Chemical Engineering"
+   ]
   },
   {
    "_id": "10.1016_j.cej.2026.173938",
@@ -5457,7 +8168,13 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.cej.2026.173938",
-   "key": false
+   "key": false,
+   "affils": [
+    "Istanbul University-Cerrahpaşa"
+   ],
+   "corr_affils": [
+    "Istanbul University-Cerrahpaşa"
+   ]
   },
   {
    "_id": "10.1016_j.memsci.2026.125257",
@@ -5473,7 +8190,15 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.memsci.2026.125257",
-   "key": false
+   "key": false,
+   "affils": [
+    "Tongji University",
+    "Shanghai Institute of Pollution Control and Ecological Security"
+   ],
+   "corr_affils": [
+    "Tongji University",
+    "Shanghai Institute of Pollution Control and Ecological Security"
+   ]
   },
   {
    "_id": "10.1016_j.watres.2026.125500",
@@ -5489,7 +8214,20 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.watres.2026.125500",
-   "key": false
+   "key": false,
+   "affils": [
+    "Queen's University",
+    "University of Luxembourg",
+    "Victoria University",
+    "Khazar University",
+    "Kharazmi University",
+    "Istanbul Technical University"
+   ],
+   "corr_affils": [
+    "Khazar University",
+    "Kharazmi University",
+    "Istanbul Technical University"
+   ]
   },
   {
    "_id": "10.1016_j.memsci.2026.125233",
@@ -5505,7 +8243,13 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.memsci.2026.125233",
-   "key": false
+   "key": false,
+   "affils": [
+    "Shaanxi University of Science and Technology"
+   ],
+   "corr_affils": [
+    "Shaanxi University of Science and Technology"
+   ]
   },
   {
    "_id": "10.1016_j.desal.2026.119925",
@@ -5521,7 +8265,17 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.desal.2026.119925",
-   "key": true
+   "key": true,
+   "affils": [
+    "Zhejiang A & F University",
+    "North China University of Science and Technology",
+    "Xi’an Jiaotong-Liverpool University"
+   ],
+   "corr_affils": [
+    "North China University of Science and Technology",
+    "Xi’an Jiaotong-Liverpool University",
+    "Zhejiang A & F University"
+   ]
   },
   {
    "_id": "10.1016_j.memsci.2026.125234",
@@ -5537,7 +8291,15 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.memsci.2026.125234",
-   "key": false
+   "key": false,
+   "affils": [
+    "East China University of Science and Technology",
+    "State Key Laboratory of Chemical Engineering"
+   ],
+   "corr_affils": [
+    "East China University of Science and Technology",
+    "State Key Laboratory of Chemical Engineering"
+   ]
   },
   {
    "_id": "10.1016_j.memsci.2026.125207",
@@ -5553,7 +8315,17 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.memsci.2026.125207",
-   "key": false
+   "key": false,
+   "affils": [
+    "Hebei University of Technology",
+    "Jiangnan University",
+    "Key Laboratory of Synthetic and Biological Colloids, Ministry of Education"
+   ],
+   "corr_affils": [
+    "Jiangnan University",
+    "Key Laboratory of Synthetic and Biological Colloids, Ministry of Education",
+    "Hebei University of Technology"
+   ]
   },
   {
    "_id": "10.1016_j.seppur.2026.137104",
@@ -5569,7 +8341,15 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.seppur.2026.137104",
-   "key": false
+   "key": false,
+   "affils": [
+    "Beijing University of Technology",
+    "Wuhan University"
+   ],
+   "corr_affils": [
+    "Beijing University of Technology",
+    "Wuhan University"
+   ]
   },
   {
    "_id": "10.1016_j.memsci.2026.125231",
@@ -5585,7 +8365,15 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.memsci.2026.125231",
-   "key": false
+   "key": false,
+   "affils": [
+    "Nanjing Tech University",
+    "Southeast University"
+   ],
+   "corr_affils": [
+    "Nanjing Tech University",
+    "Southeast University"
+   ]
   },
   {
    "_id": "10.1016_j.desal.2026.119923",
@@ -5601,7 +8389,15 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.desal.2026.119923",
-   "key": false
+   "key": false,
+   "affils": [
+    "Southwest Forestry University",
+    "Shandong Normal University"
+   ],
+   "corr_affils": [
+    "Shandong Normal University",
+    "Southwest Forestry University"
+   ]
   },
   {
    "_id": "10.1016_j.cej.2026.173585",
@@ -5617,7 +8413,15 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.cej.2026.173585",
-   "key": false
+   "key": false,
+   "affils": [
+    "State Key Laboratory of Chemical Resource Engineering",
+    "Beijing University of Chemical Technology"
+   ],
+   "corr_affils": [
+    "State Key Laboratory of Chemical Resource Engineering",
+    "Beijing University of Chemical Technology"
+   ]
   },
   {
    "_id": "10.1016_j.seppur.2026.137063",
@@ -5633,7 +8437,16 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.seppur.2026.137063",
-   "key": false
+   "key": false,
+   "affils": [
+    "Kyung Hee University",
+    "Ulsan National Institute of Science and Technology",
+    "Ewha Womans University"
+   ],
+   "corr_affils": [
+    "Ewha Womans University",
+    "Kyung Hee University"
+   ]
   },
   {
    "_id": "10.1016_j.cej.2026.173535",
@@ -5649,7 +8462,19 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.cej.2026.173535",
-   "key": false
+   "key": false,
+   "affils": [
+    "Sichuan University",
+    "Chengdu University",
+    "State Key Laboratory of Hydraulics and Mountain River Engineering",
+    "Wageningen University & Research",
+    "Research Institute of Petroleum Exploration and Development"
+   ],
+   "corr_affils": [
+    "Chengdu University",
+    "Sichuan University",
+    "State Key Laboratory of Hydraulics and Mountain River Engineering"
+   ]
   },
   {
    "_id": "10.1016_j.memsci.2026.125211",
@@ -5665,7 +8490,17 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.memsci.2026.125211",
-   "key": false
+   "key": false,
+   "affils": [
+    "University of Science and Technology of China",
+    "Chinese Academy of Sciences",
+    "Changchun Institute of Applied Chemistry"
+   ],
+   "corr_affils": [
+    "University of Science and Technology of China",
+    "Chinese Academy of Sciences",
+    "Changchun Institute of Applied Chemistry"
+   ]
   },
   {
    "_id": "10.1016_j.memsci.2026.125209",
@@ -5681,7 +8516,15 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.memsci.2026.125209",
-   "key": true
+   "key": true,
+   "affils": [
+    "Nanjing Tech University",
+    "State Key Laboratory of Materials-Oriented Chemical Engineering"
+   ],
+   "corr_affils": [
+    "Nanjing Tech University",
+    "State Key Laboratory of Materials-Oriented Chemical Engineering"
+   ]
   },
   {
    "_id": "10.1016_j.memsci.2026.125208",
@@ -5697,7 +8540,18 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.memsci.2026.125208",
-   "key": false
+   "key": false,
+   "affils": [
+    "Qinghai University",
+    "Changzhou University",
+    "Tsinghua University",
+    "Research Center for Membrane and Film Technology, Kobe University",
+    "Kobe University"
+   ],
+   "corr_affils": [
+    "Qinghai University",
+    "Changzhou University"
+   ]
   },
   {
    "_id": "10.1016_j.desal.2026.119920",
@@ -5713,7 +8567,19 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.desal.2026.119920",
-   "key": false
+   "key": false,
+   "affils": [
+    "Tongji University",
+    "Shanghai Institute of Pollution Control and Ecological Security",
+    "Nanchang Hangkong University",
+    "Jinggangshan University"
+   ],
+   "corr_affils": [
+    "Tongji University",
+    "Shanghai Institute of Pollution Control and Ecological Security",
+    "Jinggangshan University",
+    "Nanchang Hangkong University"
+   ]
   },
   {
    "_id": "10.1016_j.jece.2026.121429",
@@ -5729,7 +8595,14 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.jece.2026.121429",
-   "key": true
+   "key": true,
+   "affils": [
+    "Tianjin University",
+    "Tianjin University of Technology"
+   ],
+   "corr_affils": [
+    "Tianjin University"
+   ]
   },
   {
    "_id": "10.1016_j.desal.2026.119907",
@@ -5745,7 +8618,15 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.desal.2026.119907",
-   "key": false
+   "key": false,
+   "affils": [
+    "Dalian University of Technology",
+    "State Key Laboratory of Fine Chemicals"
+   ],
+   "corr_affils": [
+    "Dalian University of Technology",
+    "State Key Laboratory of Fine Chemicals"
+   ]
   },
   {
    "_id": "10.1016_j.seppur.2026.137021",
@@ -5761,7 +8642,19 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.seppur.2026.137021",
-   "key": true
+   "key": true,
+   "affils": [
+    "Anhui University of Science and Technology",
+    "Huainan Normal University",
+    "Tiangong University",
+    "State Key Laboratory of Advanced Separation Membrane Materials"
+   ],
+   "corr_affils": [
+    "Anhui University of Science and Technology",
+    "Huainan Normal University",
+    "Tiangong University",
+    "State Key Laboratory of Advanced Separation Membrane Materials"
+   ]
   },
   {
    "_id": "10.1016_j.seppur.2026.137019",
@@ -5777,7 +8670,15 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.seppur.2026.137019",
-   "key": true
+   "key": true,
+   "affils": [
+    "State Key Laboratory of Chemical Resource Engineering",
+    "Beijing University of Chemical Technology"
+   ],
+   "corr_affils": [
+    "State Key Laboratory of Chemical Resource Engineering",
+    "Beijing University of Chemical Technology"
+   ]
   },
   {
    "_id": "10.1016_j.memsci.2026.125197",
@@ -5793,7 +8694,17 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.memsci.2026.125197",
-   "key": false
+   "key": false,
+   "affils": [
+    "Wuhan University",
+    "Hubei University of Chinese Medicine",
+    "University of Surrey",
+    "Chinese Research Academy of Environmental Sciences"
+   ],
+   "corr_affils": [
+    "Wuhan University",
+    "Chinese Research Academy of Environmental Sciences"
+   ]
   },
   {
    "_id": "10.1016_j.memsci.2026.125173",
@@ -5809,7 +8720,13 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.memsci.2026.125173",
-   "key": false
+   "key": false,
+   "affils": [
+    "Beijing University of Technology"
+   ],
+   "corr_affils": [
+    "Beijing University of Technology"
+   ]
   },
   {
    "_id": "10.1016_j.memsci.2026.125182",
@@ -5825,7 +8742,16 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.memsci.2026.125182",
-   "key": false
+   "key": false,
+   "affils": [
+    "Tiangong University",
+    "State Key Laboratory of Advanced Separation Membrane Materials",
+    "Yantai Nanshan University"
+   ],
+   "corr_affils": [
+    "Tiangong University",
+    "State Key Laboratory of Advanced Separation Membrane Materials"
+   ]
   },
   {
    "_id": "10.1016_j.memsci.2026.125180",
@@ -5841,7 +8767,17 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.memsci.2026.125180",
-   "key": false
+   "key": false,
+   "affils": [
+    "Helmholtz Centre for Environmental Research",
+    "National Research Centre",
+    "University of Duisburg-Essen",
+    "Leibniz Institute of Surface Engineering"
+   ],
+   "corr_affils": [
+    "Helmholtz Centre for Environmental Research",
+    "National Research Centre"
+   ]
   },
   {
    "_id": "10.1016_j.memsci.2026.125177",
@@ -5857,7 +8793,14 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.memsci.2026.125177",
-   "key": false
+   "key": false,
+   "affils": [
+    "Guangdong University of Technology",
+    "Shandong University of Technology"
+   ],
+   "corr_affils": [
+    "Guangdong University of Technology"
+   ]
   },
   {
    "_id": "10.1016_j.memsci.2026.125174",
@@ -5873,7 +8816,16 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.memsci.2026.125174",
-   "key": false
+   "key": false,
+   "affils": [
+    "China University of Mining and Technology",
+    "KU Leuven",
+    "Harbin Institute of Technology",
+    "Northeastern University"
+   ],
+   "corr_affils": [
+    "China University of Mining and Technology"
+   ]
   },
   {
    "_id": "10.1038_s41467-026-68471-8",
@@ -5889,7 +8841,19 @@
    "source_type": "官方",
    "source_name": "Nature",
    "source_url": "https://doi.org/10.1038/s41467-026-68471-8",
-   "key": true
+   "key": true,
+   "affils": [
+    "Tsinghua Shenzhen International Graduate School",
+    "Tsinghua University",
+    "University of Science and Technology of China",
+    "National Synchrotron Radiation Laboratory",
+    "Queensland University of Technology"
+   ],
+   "corr_affils": [
+    "Queensland University of Technology",
+    "Tsinghua Shenzhen International Graduate School",
+    "Tsinghua University"
+   ]
   },
   {
    "_id": "10.1016_j.seppur.2026.136922",
@@ -5905,7 +8869,13 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.seppur.2026.136922",
-   "key": true
+   "key": true,
+   "affils": [
+    "Kunming University of Science and Technology"
+   ],
+   "corr_affils": [
+    "Kunming University of Science and Technology"
+   ]
   },
   {
    "_id": "10.1016_j.memsci.2026.125166",
@@ -5921,7 +8891,16 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.memsci.2026.125166",
-   "key": false
+   "key": false,
+   "affils": [
+    "Yanshan University",
+    "State Key Laboratory of Metastable Materials Science and Technology",
+    "Beijing University of Chemical Technology"
+   ],
+   "corr_affils": [
+    "Yanshan University",
+    "State Key Laboratory of Metastable Materials Science and Technology"
+   ]
   },
   {
    "_id": "10.1016_j.cej.2026.173022",
@@ -5937,7 +8916,15 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.cej.2026.173022",
-   "key": false
+   "key": false,
+   "affils": [
+    "Zhejiang Normal University",
+    "Shanghai Jian Qiao University"
+   ],
+   "corr_affils": [
+    "Zhejiang Normal University",
+    "Shanghai Jian Qiao University"
+   ]
   },
   {
    "_id": "10.1016_j.memsci.2026.125163",
@@ -5953,7 +8940,17 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.memsci.2026.125163",
-   "key": false
+   "key": false,
+   "affils": [
+    "Nankai University",
+    "Dalian Institute of Chemical Physics",
+    "Chinese Academy of Sciences",
+    "Ministry of Natural Resources",
+    "Third Institute of Oceanography"
+   ],
+   "corr_affils": [
+    "Nankai University"
+   ]
   },
   {
    "_id": "10.1016_j.cej.2026.173006",
@@ -5969,7 +8966,18 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.cej.2026.173006",
-   "key": false
+   "key": false,
+   "affils": [
+    "Northeast Electric Power University",
+    "Tianjin University",
+    "State Key Laboratory of Chemical Engineering",
+    "Shandong University of Aeronautics"
+   ],
+   "corr_affils": [
+    "Northeast Electric Power University",
+    "Tianjin University",
+    "State Key Laboratory of Chemical Engineering"
+   ]
   },
   {
    "_id": "10.1016_j.memsci.2026.125161",
@@ -5985,7 +8993,15 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.memsci.2026.125161",
-   "key": false
+   "key": false,
+   "affils": [
+    "Hunan University of Science and Technology",
+    "Tiangong University",
+    "State Key Laboratory of Separation Membranes and Membrane Processes"
+   ],
+   "corr_affils": [
+    "Hunan University of Science and Technology"
+   ]
   },
   {
    "_id": "10.1016_j.memsci.2026.125154",
@@ -6001,7 +9017,17 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.memsci.2026.125154",
-   "key": false
+   "key": false,
+   "affils": [
+    "Jiangnan University",
+    "Suzhou University of Science and Technology",
+    "Collaborative Innovation Center for Water Treatment Technology and Materials"
+   ],
+   "corr_affils": [
+    "Jiangnan University",
+    "Suzhou University of Science and Technology",
+    "Collaborative Innovation Center for Water Treatment Technology and Materials"
+   ]
   },
   {
    "_id": "10.1016_j.cej.2026.172912",
@@ -6017,7 +9043,13 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.cej.2026.172912",
-   "key": false
+   "key": false,
+   "affils": [
+    "Yuan Ze University"
+   ],
+   "corr_affils": [
+    "Yuan Ze University"
+   ]
   },
   {
    "_id": "10.1016_j.seppur.2026.136865",
@@ -6033,7 +9065,17 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.seppur.2026.136865",
-   "key": false
+   "key": false,
+   "affils": [
+    "Hebei University of Technology",
+    "Agro-Environmental Protection Institute",
+    "Ministry of Agriculture and Rural Affairs",
+    "Swinburne University of Technology"
+   ],
+   "corr_affils": [
+    "Hebei University of Technology",
+    "Swinburne University of Technology"
+   ]
   },
   {
    "_id": "10.1016_j.seppur.2026.136851",
@@ -6049,7 +9091,15 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.seppur.2026.136851",
-   "key": true
+   "key": true,
+   "affils": [
+    "Nanyang Normal University",
+    "University of Jinan"
+   ],
+   "corr_affils": [
+    "Nanyang Normal University",
+    "University of Jinan"
+   ]
   },
   {
    "_id": "10.1016_j.memsci.2026.125147",
@@ -6065,7 +9115,20 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.memsci.2026.125147",
-   "key": false
+   "key": false,
+   "affils": [
+    "Sichuan University",
+    "Chengdu University",
+    "State Key Laboratory of Hydraulics and Mountain River Engineering",
+    "Wageningen University & Research",
+    "Research Institute of Petroleum Exploration and Development",
+    "Politecnico di Torino"
+   ],
+   "corr_affils": [
+    "Research Institute of Petroleum Exploration and Development",
+    "Sichuan University",
+    "State Key Laboratory of Hydraulics and Mountain River Engineering"
+   ]
   },
   {
    "_id": "10.1038_s41467-025-68116-2",
@@ -6081,7 +9144,17 @@
    "source_type": "官方",
    "source_name": "Nature",
    "source_url": "https://doi.org/10.1038/s41467-025-68116-2",
-   "key": true
+   "key": true,
+   "affils": [
+    "University of Science and Technology of China",
+    "Donghua University",
+    "State Key Laboratory for Modification of Chemical Fibers and Polymer Materials",
+    "National Synchrotron Radiation Laboratory"
+   ],
+   "corr_affils": [
+    "University of Science and Technology of China",
+    "National Synchrotron Radiation Laboratory"
+   ]
   },
   {
    "_id": "10.1016_j.memsci.2026.125137",
@@ -6097,7 +9170,13 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.memsci.2026.125137",
-   "key": false
+   "key": false,
+   "affils": [
+    "Fujian Agriculture and Forestry University"
+   ],
+   "corr_affils": [
+    "Fujian Agriculture and Forestry University"
+   ]
   },
   {
    "_id": "10.1016_j.cej.2026.172616",
@@ -6113,7 +9192,13 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.cej.2026.172616",
-   "key": false
+   "key": false,
+   "affils": [
+    "East China University of Science and Technology"
+   ],
+   "corr_affils": [
+    "East China University of Science and Technology"
+   ]
   },
   {
    "_id": "10.1016_j.cej.2025.172496",
@@ -6129,7 +9214,15 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.cej.2025.172496",
-   "key": false
+   "key": false,
+   "affils": [
+    "Ministry of Natural Resources",
+    "University of Science and Technology Beijing",
+    "Tiangong University"
+   ],
+   "corr_affils": [
+    "Ministry of Natural Resources"
+   ]
   },
   {
    "_id": "10.1016_j.apcatb.2026.126400",
@@ -6145,7 +9238,18 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.apcatb.2026.126400",
-   "key": true
+   "key": true,
+   "affils": [
+    "Sun Yat-sen University",
+    "Dalian University of Technology",
+    "Guangdong Provincial Key Laboratory of Environmental Pollution Control and Remediation Technology",
+    "Chang'an University",
+    "Ministry of Housing and Urban-Rural Development",
+    "China National Offshore Oil Corporation (China)"
+   ],
+   "corr_affils": [
+    "Dalian University of Technology"
+   ]
   },
   {
    "_id": "10.1016_j.seppur.2026.136742",
@@ -6161,7 +9265,13 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.seppur.2026.136742",
-   "key": false
+   "key": false,
+   "affils": [
+    "Wuhan Institute of Technology"
+   ],
+   "corr_affils": [
+    "Wuhan Institute of Technology"
+   ]
   },
   {
    "_id": "10.1016_j.desal.2026.119848",
@@ -6177,7 +9287,19 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.desal.2026.119848",
-   "key": false
+   "key": false,
+   "affils": [
+    "Chengdu University of Technology",
+    "Panzhihua University",
+    "Beijing University of Civil Engineering and Architecture",
+    "Chongqing University of Arts and Sciences",
+    "State Key Laboratory of Geohazard Prevention and Geoenvironment Protection"
+   ],
+   "corr_affils": [
+    "Chengdu University of Technology",
+    "State Key Laboratory of Geohazard Prevention and Geoenvironment Protection",
+    "Beijing University of Civil Engineering and Architecture"
+   ]
   },
   {
    "_id": "10.1016_j.desal.2025.119832",
@@ -6193,7 +9315,16 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.desal.2025.119832",
-   "key": true
+   "key": true,
+   "affils": [
+    "Harbin Engineering University",
+    "Chinese Academy of Sciences",
+    "Institute of Process Engineering"
+   ],
+   "corr_affils": [
+    "Chinese Academy of Sciences",
+    "Institute of Process Engineering"
+   ]
   },
   {
    "_id": "10.1016_j.watres.2026.125320",
@@ -6209,7 +9340,13 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.watres.2026.125320",
-   "key": false
+   "key": false,
+   "affils": [
+    "Chongqing University"
+   ],
+   "corr_affils": [
+    "Chongqing University"
+   ]
   },
   {
    "_id": "10.1016_j.watres.2026.125319",
@@ -6225,7 +9362,16 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.watres.2026.125319",
-   "key": true
+   "key": true,
+   "affils": [
+    "Beijing University of Technology",
+    "National Engineering Laboratory for Advanced Municipal Wastewater Treatment and Reuse Technology",
+    "Beijing Forestry University"
+   ],
+   "corr_affils": [
+    "Beijing University of Technology",
+    "National Engineering Laboratory for Advanced Municipal Wastewater Treatment and Reuse Technology"
+   ]
   },
   {
    "_id": "10.1016_j.memsci.2025.125115",
@@ -6241,7 +9387,13 @@
    "source_type": "官方",
    "source_name": "ScienceDirect",
    "source_url": "https://doi.org/10.1016/j.memsci.2025.125115",
-   "key": false
+   "key": false,
+   "affils": [
+    "University of Science and Technology of China"
+   ],
+   "corr_affils": [
+    "University of Science and Technology of China"
+   ]
   }
  ]
 }

@@ -28,7 +28,7 @@ GASCTX = re.compile(r"VOCs?\b|volatile organic|toluene|formaldehyde|benzene|xyle
 MP = re.compile(r"micro-?plastic|nano-?plastic", I)
 MEM = re.compile(r"membrane|nanofiltration|reverse osmosis|forward osmosis|ultrafiltration|microfiltration|pervaporation|electrodialysis", I)
 # biological / energy-device membranes are not separation membranes
-NOTSEP = re.compile(r"cell membrane|plasma membrane|mitochondri|membrane protein|lipid (bi)?layer|liposom|membrane potential|erythrocyte|bacterial (outer )?membrane|membrane-bound|vesicle|thylakoid|proton exchange membrane|PEM fuel|membrane electrode assembly|fuel cell|electrolyzer|electrolyser|water electrolysis|redox flow batter|lithium.ion batter|separator for", I)
+NOTSEP = re.compile(r"therap|nanocarrier|tumou?r|cancer|osteo|arthritis|wound|drug delivery|membrane.coated|exosome|immun|inflammat|cell membrane|plasma membrane|mitochondri|membrane protein|lipid (bi)?layer|liposom|membrane potential|erythrocyte|bacterial (outer )?membrane|membrane-bound|vesicle|thylakoid|proton exchange membrane|PEM fuel|membrane electrode assembly|fuel cell|electrolyzer|electrolyser|water electrolysis|redox flow batter|lithium.ion batter|separator for", I)
 ML = re.compile(r"machine learning|deep learning|neural network|artificial intelligence|random forest|convolutional|\bCNN\b|transformer model|automated identification|spectral classification|SHAP|interpretable model|data-driven", I)
 
 

@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>膜科研文献雷达</title>
+</head>
+<body>
+<style>
+/* Layout: one reading column; sticky filter bar; papers grouped by push date like a lab notebook. */
+:root{
+  --bg:#f5f7f8; --surface:#ffffff; --fg:#17232b; --muted:#5b6b75; --line:#dbe2e6;
+  --accent:#1f5f7a; --accent-soft:#e3eef3;
+  --z1:#7a2e1f; --z1-soft:#f6e6e1; --z2:#5a5a1f; --z2-soft:#efefdc;
+  --star:#b8860b;
+  --f-display:"Noto Serif SC", "Songti SC", Georgia, serif;
+  --f-body:"PingFang SC", "Microsoft YaHei", "Noto Sans SC", system-ui, sans-serif;
+  --f-mono:ui-monospace, Menlo, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#10171c; --surface:#172129; --fg:#e3eaee; --muted:#93a3ad; --line:#26333c;
+  --accent:#7cbfdc; --accent-soft:#1c3340;
+  --z1:#f0a28f; --z1-soft:#3a2420; --z2:#d6d68a; --z2-soft:#2f2f1c;
+  --star:#e6b84a; color-scheme:dark }}
+:root[data-theme="dark"]{
+  --bg:#10171c; --surface:#172129; --fg:#e3eaee; --muted:#93a3ad; --line:#26333c;
+  --accent:#7cbfdc; --accent-soft:#1c3340;
+  --z1:#f0a28f; --z1-soft:#3a2420; --z2:#d6d68a; --z2-soft:#2f2f1c;
+  --star:#e6b84a; color-scheme:dark }
+body{background:var(--bg);color:var(--fg);font-family:var(--f-body);font-size:15px;line-height:1.6}
+.wrap{max-width:860px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:28px 64px}
+header{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:8px 24px;margin-bottom:18px}
+h1{font-family:var(--f-display);font-weight:600;font-size:clamp(24px,4vw,32px);margin:0;letter-spacing:.01em;text-wrap:balance}
+.sub{color:var(--muted);font-size:13px;margin:4px 0 0}
+.stats{font-family:var(--f-mono);font-size:12px;color:var(--muted);font-variant-numeric:tabular-nums;display:flex;gap:16px;flex-wrap:wrap}
+.stats b{color:var(--fg);font-weight:500}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--bg)}
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);padding-block:10px;border-bottom:1px solid var(--line);display:flex;flex-direction:column;gap:10px;margin-bottom:8px}
+.row{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+input[type=search]{flex:1;min-width:0;font:inherit;font-size:14px;padding:8px 12px;border:1px solid var(--line);border-radius:6px;background:var(--surface);color:var(--fg)}
+input[type=search]:focus-visible,.chip:focus-visible,.act:focus-visible,a:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.chip{font:inherit;font-size:13px;padding:4px 11px;border-radius:999px;border:1px solid var(--line);background:transparent;color:var(--muted);cursor:pointer}
+.chip[aria-pressed="true"]{background:var(--accent-soft);border-color:var(--accent);color:var(--accent)}
+.sep{width:1px;height:18px;background:var(--line);margin:0 4px}
+.day{margin-top:26px}
+.day h2{font-family:var(--f-mono);font-weight:500;font-size:12px;letter-spacing:.08em;color:var(--muted);margin:0 0 8px;display:flex;gap:10px;align-items:center}
+.day h2::after{content:"";flex:1;height:1px;background:var(--line)}
+article{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:14px 16px;display:grid;gap:6px;margin-bottom:10px}
+article.read{opacity:.62}
+.meta{display:flex;flex-wrap:wrap;gap:6px 10px;align-items:center;font-size:12px;color:var(--muted)}
+.zone{font-family:var(--f-mono);font-size:11px;font-weight:500;padding:1px 7px;border-radius:4px}
+.zone.z1{background:var(--z1-soft);color:var(--z1)}
+.zone.z2{background:var(--z2-soft);color:var(--z2)}
+.key{font-size:11px;font-weight:600;color:var(--star);border:1px solid var(--star);border-radius:4px;padding:0 6px}
+.field{color:var(--accent);font-weight:500}
+.journal{font-style:italic;color:var(--fg)}
+.date{font-family:var(--f-mono);font-variant-numeric:tabular-nums}
+h3{font-family:var(--f-display);font-weight:500;font-size:17px;line-height:1.35;margin:0;min-width:0;overflow-wrap:anywhere}
+h3 a{color:inherit;text-decoration:none}
+h3 a:hover{color:var(--accent);text-decoration:underline;text-underline-offset:3px}
+.sum{margin:0;font-size:14px;max-width:68ch}
+.foot{display:flex;flex-wrap:wrap;justify-content:space-between;gap:6px 12px;align-items:center;font-size:12px;color:var(--muted);margin-top:2px}
+.src a{color:var(--muted)}
+.doi{font-family:var(--f-mono);overflow-wrap:anywhere}
+.acts{display:flex;gap:4px}
+.act{font:inherit;font-size:12px;padding:3px 9px;border-radius:5px;border:1px solid var(--line);background:transparent;color:var(--muted);cursor:pointer}
+.act.on{color:var(--star);border-color:var(--star)}
+.act:disabled{cursor:default;opacity:.5}
+.empty{border:1px dashed var(--line);border-radius:8px;padding:28px 20px;margin-top:24px;color:var(--muted);font-size:14px}
+.empty strong{color:var(--fg);display:block;font-size:15px;margin-bottom:6px}
+.note{font-size:12px;color:var(--muted);margin-top:8px}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+
+<div class="wrap">
+  <header>
+    <div>
+      <h1>膜科研文献雷达</h1>
+      <p class="sub">中科院分区（2025 版）2 区及以上 · 聚酰胺纳滤膜 / 催化膜 / 高熵氧化物催化 / 机器学习+膜 · 每日自动推送</p>
+    </div>
+    <div class="stats" id="stats"></div>
+  </header>
+
+  <div class="bar">
+    <div class="row">
+      <input type="search" id="q" placeholder="搜索标题、期刊、摘要、DOI" aria-label="搜索文献">
+    </div>
+    <div class="row" id="fieldChips" role="group" aria-label="研究方向"></div>
+    <div class="row" role="group" aria-label="筛选">
+      <button class="chip" id="keyonly" aria-pressed="false">只看重点</button>
+      <button class="chip" id="z1only" aria-pressed="false">只看 1 区</button>
+      <button class="chip" id="staronly" aria-pressed="false">★ 收藏</button>
+      <button class="chip" id="unreadonly" aria-pressed="false">未读</button>
+    </div>
+  </div>
+
+  <div id="list"></div>
+  <div class="empty" id="empty" hidden></div>
+  <p class="note" id="note" hidden></p>
+</div>
+
+<script>
+const FIELDS = {
+  "pa-nf":   "聚酰胺纳滤膜",
+  "cat-mem": "催化膜",
+  "heo":     "高熵氧化物催化",
+  "ml-mem":  "机器学习+膜"
+};
+const MARK_KEY = "lit-radar-marks";
+let marks = {}; try { marks = JSON.parse(localStorage.getItem(MARK_KEY) || "{}") || {}; } catch {}
+const state = { papers: [], loaded: false, field: "all", q: "", key: false, z1: false, star: false, unread: false, canWrite: true };
+const $ = id => document.getElementById(id);
+
+function chip(label, key){
+  const b = document.createElement("button");
+  b.className = "chip"; b.textContent = label;
+  b.setAttribute("aria-pressed", String(state.field === key));
+  b.addEventListener("click", () => { state.field = key; renderChips(); render(); });
+  return b;
+}
+function renderChips(){
+  const box = $("fieldChips"); box.replaceChildren(chip("全部方向","all"));
+  for (const [k,v] of Object.entries(FIELDS)) box.append(chip(v,k));
+}
+function toggle(id, key){
+  $(id).addEventListener("click", () => { state[key] = !state[key]; $(id).setAttribute("aria-pressed", String(state[key])); render(); });
+}
+toggle("keyonly","key"); toggle("z1only","z1"); toggle("staronly","star"); toggle("unreadonly","unread");
+$("q").addEventListener("input", e => { state.q = e.target.value.trim().toLowerCase(); render(); });
+
+function el(tag, cls, text){ const e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; }
+function safeUrl(u){ try { const x = new URL(u); return /^https?:$/.test(x.protocol) ? x.href : null; } catch { return null; } }
+
+function patch(id, data){
+  marks[id] = { ...(marks[id] || {}), ...data };
+  try { localStorage.setItem(MARK_KEY, JSON.stringify(marks)); } catch {}
+  state.papers = state.papers.map(p => p._id === id ? { ...p, ...data } : p);
+  render();
+}
+
+function card(p){
+  const a = el("article"); if (p.read) a.classList.add("read");
+  const meta = el("div","meta");
+  const z = String(p.cas_zone || "");
+  if (p.key) meta.append(el("span","key","★ 重点"));
+  meta.append(el("span", "zone " + (z.startsWith("1") ? "z1" : "z2"), z || "分区?"));
+  if (FIELDS[p.field]) meta.append(el("span","field",FIELDS[p.field]));
+  if (p.journal) meta.append(el("span","journal",p.journal));
+  if (p.published) meta.append(el("span","date","online " + p.published));
+  a.append(meta);
+
+  const h = el("h3"); const url = safeUrl(p.url) || (p.doi ? "https://doi.org/" + p.doi : null);
+  if (url){ const l = el("a", null, p.title || "(无标题)"); l.href = url; l.target = "_blank"; l.rel = "noopener"; h.append(l); }
+  else h.textContent = p.title || "(无标题)";
+  a.append(h);
+  if (p.summary_zh) a.append(el("p","sum",p.summary_zh));
+
+  const foot = el("div","foot");
+  const left = el("div","src");
+  if (p.doi) left.append(el("span","doi","DOI " + p.doi));
+  if (p.source_name){
+    left.append(document.createTextNode(p.doi ? " · " : ""));
+    const s = safeUrl(p.source_url);
+    const label = (p.source_type === "转载" ? "转载自 " : "来源 ") + p.source_name;
+    if (s){ const sl = el("a", null, label); sl.href = s; sl.target = "_blank"; sl.rel = "noopener"; left.append(sl); }
+    else left.append(document.createTextNode(label));
+  }
+  foot.append(left);
+
+  {
+    const acts = el("div","acts");
+    const st = el("button","act" + (p.starred ? " on" : ""), p.starred ? "★ 已收藏" : "☆ 收藏");
+    st.addEventListener("click", () => patch(p._id, { starred: !p.starred }));
+    const rd = el("button","act", p.read ? "标为未读" : "标为已读");
+    rd.addEventListener("click", () => patch(p._id, { read: !p.read }));
+    acts.append(st, rd); foot.append(acts);
+  }
+  a.append(foot);
+  return a;
+}
+
+function render(){
+  const all = state.papers;
+  const today = new Date().toISOString().slice(0,10);
+  const s = $("stats");
+  s.replaceChildren();
+  const add = (k,v) => { const sp = el("span"); sp.append(document.createTextNode(k+" "), el("b",null,String(v))); s.append(sp); };
+  add("累计", all.length);
+  add("重点", all.filter(p => p.key).length);
+  add("1区", all.filter(p => String(p.cas_zone||"").startsWith("1")).length);
+  add("未读", all.filter(p => !p.read).length);
+  add("收藏", all.filter(p => p.starred).length);
+
+  const list = $("list"); list.replaceChildren();
+  const q = state.q;
+  const rows = all.filter(p =>
+    (state.field === "all" || p.field === state.field) &&
+    (!state.key || p.key) &&
+    (!state.z1 || String(p.cas_zone||"").startsWith("1")) &&
+    (!state.star || p.starred) &&
+    (!state.unread || !p.read) &&
+    (!q || [p.title,p.journal,p.summary_zh,p.doi,p.source_name].some(x => String(x||"").toLowerCase().includes(q)))
+  ).sort((a,b) => String(b.pushed||"").localeCompare(String(a.pushed||"")) || String(b.published||"").localeCompare(String(a.published||"")));
+
+  const empty = $("empty");
+  if (!rows.length){
+    empty.hidden = false; empty.replaceChildren();
+    if (!state.loaded) { empty.append(el("strong",null,"正在读取文献库…")); }
+    else if (!all.length){
+      empty.append(el("strong",null,"文献库还是空的"));
+      empty.append(document.createTextNode("每天早上的定时推送会把新发表的 2 区及以上论文写进这里，附中文要点、分区和来源链接。第一批会在下一次推送后出现。"));
+    } else empty.append(el("strong",null,"没有符合当前筛选的文献"));
+    return;
+  }
+  empty.hidden = true;
+  let cur = null, box = null;
+  for (const p of rows){
+    const d = p.pushed || "未标日期";
+    if (d !== cur){
+      cur = d; box = el("section","day");
+      box.append(el("h2", null, d === today ? d + " · 今天" : d));
+      list.append(box);
+    }
+    box.append(card(p));
+  }
+}
+
+renderChips(); render();
+
+(async () => {
+  const note = $("note");
+  try {
+    // 数据来源：GitHub 原始文件最新，jsDelivr 国内更稳定（可能有缓存延迟），同目录 papers.json 作兜底；取更新时间最新的一份
+    const SOURCES = [
+      "https://raw.githubusercontent.com/MHL533/lit-radar/main/papers.json",
+      "https://cdn.jsdelivr.net/gh/MHL533/lit-radar@main/papers.json",
+      "papers.json"
+    ];
+    const get = u => { const c = new AbortController(); const t = setTimeout(() => c.abort(), 6000);
+      return fetch(u + (u.startsWith("http") ? "?t=" + Date.now() : ""), { cache: "no-store", signal: c.signal })
+        .then(r => { if (!r.ok) throw new Error(r.status); return r.json(); }).finally(() => clearTimeout(t)); };
+    const got = (await Promise.allSettled(SOURCES.map(get))).filter(x => x.status === "fulfilled" && x.value && Array.isArray(x.value.papers)).map(x => x.value);
+    if (!got.length) throw new Error("no source");
+    const j = got.sort((a, b) => String(b.updated || "").localeCompare(String(a.updated || "")))[0];
+    state.papers = (j.papers || []).map(p => ({ starred: false, read: false, ...p, ...(marks[p._id] || {}) }));
+    if (j.updated){ note.hidden = false; note.textContent = "数据更新于 " + j.updated + "。收藏和已读只保存在你当前的浏览器里。"; }
+  } catch (e) {
+    note.hidden = false; note.textContent = "文献数据暂时加载失败，请检查网络后刷新页面。";
+  }
+  state.loaded = true; render();
+})();
+</script>
+
+</body>
+</html>

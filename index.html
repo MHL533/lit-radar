@@ -2,254 +2,428 @@
 <html lang="zh-CN">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>膜科研文献雷达</title>
-</head>
-<body>
 <style>
-/* Layout: one reading column; sticky filter bar; papers grouped by push date like a lab notebook. */
+/* Layout: one reading column; sticky filter panel; papers as cards (grid) or compact list rows. */
 :root{
-  --bg:#f5f7f8; --surface:#ffffff; --fg:#17232b; --muted:#5b6b75; --line:#dbe2e6;
-  --accent:#1f5f7a; --accent-soft:#e3eef3;
+  --bg:#f5f7f8; --surface:#ffffff; --fg:#17232b; --muted:#5b6b75; --line:#dbe2e6; --soft:#eef2f4;
+  --accent:#1f5f7a; --accent-soft:#e3eef3; --on-accent:#ffffff;
   --z1:#7a2e1f; --z1-soft:#f6e6e1; --z2:#5a5a1f; --z2-soft:#efefdc;
-  --star:#b8860b;
-  --f-display:"Noto Serif SC", "Songti SC", Georgia, serif;
-  --f-body:"PingFang SC", "Microsoft YaHei", "Noto Sans SC", system-ui, sans-serif;
-  --f-mono:ui-monospace, Menlo, Consolas, monospace;
+  --if:#2f4b7c; --if-soft:#e5ebf5;
+  --star:#b8860b; --scrim:rgba(15,23,28,.45);
+  --f-display:"Noto Serif SC","Songti SC","STSong",Georgia,serif;
+  --f-body:"PingFang SC","Microsoft YaHei","Noto Sans SC","Helvetica Neue",system-ui,sans-serif;
+  --f-mono:ui-monospace,"SFMono-Regular",Menlo,Consolas,monospace;
+  color-scheme:light;
 }
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
-  --bg:#10171c; --surface:#172129; --fg:#e3eaee; --muted:#93a3ad; --line:#26333c;
-  --accent:#7cbfdc; --accent-soft:#1c3340;
+  --bg:#10171c; --surface:#172129; --fg:#e3eaee; --muted:#93a3ad; --line:#26333c; --soft:#1c2830;
+  --accent:#7cbfdc; --accent-soft:#1c3340; --on-accent:#0d1a20;
   --z1:#f0a28f; --z1-soft:#3a2420; --z2:#d6d68a; --z2-soft:#2f2f1c;
-  --star:#e6b84a; color-scheme:dark }}
+  --if:#a9c1ec; --if-soft:#1f2a3d; --star:#e6b84a; --scrim:rgba(0,0,0,.6); color-scheme:dark }}
 :root[data-theme="dark"]{
-  --bg:#10171c; --surface:#172129; --fg:#e3eaee; --muted:#93a3ad; --line:#26333c;
-  --accent:#7cbfdc; --accent-soft:#1c3340;
+  --bg:#10171c; --surface:#172129; --fg:#e3eaee; --muted:#93a3ad; --line:#26333c; --soft:#1c2830;
+  --accent:#7cbfdc; --accent-soft:#1c3340; --on-accent:#0d1a20;
   --z1:#f0a28f; --z1-soft:#3a2420; --z2:#d6d68a; --z2-soft:#2f2f1c;
-  --star:#e6b84a; color-scheme:dark }
+  --if:#a9c1ec; --if-soft:#1f2a3d; --star:#e6b84a; --scrim:rgba(0,0,0,.6); color-scheme:dark }
+*{box-sizing:border-box}
+html,body{margin:0}
 body{background:var(--bg);color:var(--fg);font-family:var(--f-body);font-size:15px;line-height:1.6}
-.wrap{max-width:860px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:28px 64px}
-header{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:8px 24px;margin-bottom:18px}
-h1{font-family:var(--f-display);font-weight:600;font-size:clamp(24px,4vw,32px);margin:0;letter-spacing:.01em;text-wrap:balance}
-.sub{color:var(--muted);font-size:13px;margin:4px 0 0}
-.stats{font-family:var(--f-mono);font-size:12px;color:var(--muted);font-variant-numeric:tabular-nums;display:flex;gap:16px;flex-wrap:wrap}
-.stats b{color:var(--fg);font-weight:500}
-body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--bg)}
-.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);padding-block:10px;border-bottom:1px solid var(--line);display:flex;flex-direction:column;gap:10px;margin-bottom:8px}
-.row{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
-input[type=search]{flex:1;min-width:0;font:inherit;font-size:14px;padding:8px 12px;border:1px solid var(--line);border-radius:6px;background:var(--surface);color:var(--fg)}
-input[type=search]:focus-visible,.chip:focus-visible,.act:focus-visible,a:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
-.chip{font:inherit;font-size:13px;padding:4px 11px;border-radius:999px;border:1px solid var(--line);background:transparent;color:var(--muted);cursor:pointer}
+[hidden]{display:none!important}
+.wrap{max-width:1080px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:24px 64px}
+header{display:flex;flex-wrap:wrap;align-items:flex-start;justify-content:space-between;gap:12px 24px;margin-bottom:14px}
+h1{font-family:var(--f-display);font-weight:700;font-size:clamp(24px,4vw,32px);margin:0;letter-spacing:.02em;text-wrap:balance}
+.sub{color:var(--muted);font-size:13px;margin:4px 0 0;max-width:62ch}
+.headr{display:flex;flex-direction:column;align-items:flex-end;gap:8px}
+.stats{font-family:var(--f-mono);font-size:12px;color:var(--muted);font-variant-numeric:tabular-nums;display:flex;gap:14px;flex-wrap:wrap;justify-content:flex-end}
+.stats b{color:var(--fg);font-weight:600}
+.btn{font:inherit;font-size:13px;padding:6px 12px;border-radius:6px;border:1px solid var(--line);background:var(--surface);color:var(--fg);cursor:pointer;display:inline-flex;align-items:center;gap:6px}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
+.btn:focus-visible,.chip:focus-visible,.act:focus-visible,select:focus-visible,input:focus-visible,a:focus-visible,.seg button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.panel{position:sticky;top:0;z-index:5;background:var(--bg);padding-block:10px;border-bottom:1px solid var(--line);display:grid;grid-template-columns:minmax(0,1fr);gap:8px}
+.panel .row>*{min-width:0}
+.row{display:flex;flex-wrap:wrap;gap:6px 8px;align-items:center}
+.row .lab{font-size:12px;color:var(--muted);min-width:3.2em}
+input[type=search],input[type=text],select{font:inherit;font-size:14px;padding:7px 10px;border:1px solid var(--line);border-radius:6px;background:var(--surface);color:var(--fg);min-width:0}
+input[type=search]{flex:1 1 240px}
+select{max-width:100%;text-overflow:ellipsis}
+#journal{flex:1 1 220px;width:100%}
+#month{flex:0 1 auto}
+.seg{flex:none}
+.inst{flex:1 1 220px}
+.chip{font:inherit;font-size:13px;padding:3px 11px;border-radius:999px;border:1px solid var(--line);background:transparent;color:var(--muted);cursor:pointer}
 .chip[aria-pressed="true"]{background:var(--accent-soft);border-color:var(--accent);color:var(--accent)}
-.sep{width:1px;height:18px;background:var(--line);margin:0 4px}
-.day{margin-top:26px}
-.day h2{font-family:var(--f-mono);font-weight:500;font-size:12px;letter-spacing:.08em;color:var(--muted);margin:0 0 8px;display:flex;gap:10px;align-items:center}
-.day h2::after{content:"";flex:1;height:1px;background:var(--line)}
-article{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:14px 16px;display:grid;gap:6px;margin-bottom:10px}
-article.read{opacity:.62}
-.meta{display:flex;flex-wrap:wrap;gap:6px 10px;align-items:center;font-size:12px;color:var(--muted)}
-.zone{font-family:var(--f-mono);font-size:11px;font-weight:500;padding:1px 7px;border-radius:4px}
-.zone.z1{background:var(--z1-soft);color:var(--z1)}
-.zone.z2{background:var(--z2-soft);color:var(--z2)}
-.key{font-size:11px;font-weight:600;color:var(--star);border:1px solid var(--star);border-radius:4px;padding:0 6px}
-.field{color:var(--accent);font-weight:500}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:6px;overflow:hidden}
+.seg button{font:inherit;font-size:13px;padding:5px 10px;border:0;background:var(--surface);color:var(--muted);cursor:pointer;display:inline-flex;align-items:center;gap:5px}
+.seg button[aria-pressed="true"]{background:var(--accent);color:var(--on-accent)}
+.seg svg{width:15px;height:15px;fill:currentColor}
+.count{font-size:12px;color:var(--muted);margin-left:auto;font-variant-numeric:tabular-nums}
+.clear{font:inherit;font-size:12px;background:none;border:0;color:var(--accent);cursor:pointer;text-decoration:underline;text-underline-offset:3px}
+/* cards */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,460px),1fr));gap:12px;margin-top:14px}
+article.card{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:14px 16px;display:flex;flex-direction:column;gap:6px;min-width:0}
+article.card.read,.lrow.read{opacity:.6}
+.meta{display:flex;flex-wrap:wrap;gap:5px 8px;align-items:center;font-size:12px;color:var(--muted)}
+.tag{font-family:var(--f-mono);font-size:11px;font-weight:600;padding:1px 7px;border-radius:4px;white-space:nowrap}
+.z1{background:var(--z1-soft);color:var(--z1)}
+.z2{background:var(--z2-soft);color:var(--z2)}
+.iftag{background:var(--if-soft);color:var(--if)}
+.key{font-size:11px;font-weight:600;color:var(--star);border:1px solid var(--star);border-radius:4px;padding:0 6px;white-space:nowrap}
+.field{color:var(--accent);font-weight:600}
 .journal{font-style:italic;color:var(--fg)}
 .date{font-family:var(--f-mono);font-variant-numeric:tabular-nums}
-h3{font-family:var(--f-display);font-weight:500;font-size:17px;line-height:1.35;margin:0;min-width:0;overflow-wrap:anywhere}
+h3{font-family:var(--f-display);font-weight:600;font-size:16px;line-height:1.4;margin:0;overflow-wrap:anywhere}
 h3 a{color:inherit;text-decoration:none}
 h3 a:hover{color:var(--accent);text-decoration:underline;text-underline-offset:3px}
-.sum{margin:0;font-size:14px;max-width:68ch}
-.foot{display:flex;flex-wrap:wrap;justify-content:space-between;gap:6px 12px;align-items:center;font-size:12px;color:var(--muted);margin-top:2px}
-.src a{color:var(--muted)}
+.sum{margin:0;font-size:14px}
+.aff{font-size:12px;color:var(--muted);margin:0;overflow-wrap:anywhere}
+.aff b{font-weight:600;color:var(--fg)}
+.foot{display:flex;flex-wrap:wrap;justify-content:space-between;gap:6px 12px;align-items:center;font-size:12px;color:var(--muted);margin-top:auto;padding-top:4px}
+.foot a{color:var(--muted)}
 .doi{font-family:var(--f-mono);overflow-wrap:anywhere}
 .acts{display:flex;gap:4px}
-.act{font:inherit;font-size:12px;padding:3px 9px;border-radius:5px;border:1px solid var(--line);background:transparent;color:var(--muted);cursor:pointer}
+.act{font:inherit;font-size:12px;padding:2px 9px;border-radius:5px;border:1px solid var(--line);background:transparent;color:var(--muted);cursor:pointer;white-space:nowrap}
 .act.on{color:var(--star);border-color:var(--star)}
-.act:disabled{cursor:default;opacity:.5}
-.empty{border:1px dashed var(--line);border-radius:8px;padding:28px 20px;margin-top:24px;color:var(--muted);font-size:14px}
+/* list */
+.list{margin-top:14px;border:1px solid var(--line);border-radius:8px;background:var(--surface);overflow:hidden}
+.lrow{display:grid;grid-template-columns:86px 104px minmax(0,1fr) auto;gap:10px;align-items:start;padding:9px 12px;border-top:1px solid var(--line);font-size:13px}
+.lrow:first-child{border-top:0}
+.lrow .t{font-family:var(--f-display);font-weight:600;font-size:14px;line-height:1.4;overflow-wrap:anywhere}
+.lrow .t a{color:inherit;text-decoration:none}
+.lrow .t a:hover{color:var(--accent);text-decoration:underline}
+.lrow .s{font-size:12px;color:var(--muted);margin-top:2px;overflow-wrap:anywhere}
+.lrow .tags{display:flex;flex-wrap:wrap;gap:4px}
+@media (max-width:640px){
+  .lrow{grid-template-columns:1fr auto}
+  .lrow .date,.lrow .tags{grid-column:1/-1;display:flex;gap:6px}
+  .headr{align-items:flex-start}
+  .stats{justify-content:flex-start}
+}
+.empty{border:1px dashed var(--line);border-radius:8px;padding:28px 20px;margin-top:20px;color:var(--muted);font-size:14px}
 .empty strong{color:var(--fg);display:block;font-size:15px;margin-bottom:6px}
-.note{font-size:12px;color:var(--muted);margin-top:8px}
+.more{display:flex;justify-content:center;margin-top:16px}
+.note{font-size:12px;color:var(--muted);margin-top:14px}
+/* login dialog */
+.scrim{position:fixed;inset:0;background:var(--scrim);z-index:20;display:flex;align-items:center;justify-content:center;padding:16px}
+.dlg{background:var(--surface);color:var(--fg);border-radius:10px;border:1px solid var(--line);width:min(440px,100%);max-height:calc(100% - 32px);overflow:auto;padding:20px;display:grid;gap:12px}
+.dlg h2{margin:0;font-family:var(--f-display);font-size:19px}
+.dlg p{margin:0;font-size:13px;color:var(--muted)}
+.dlg label{font-size:13px;display:grid;gap:4px}
+.checks{display:grid;gap:6px}
+.checks label{display:flex;gap:8px;align-items:center;font-size:14px}
+.profiles{display:flex;flex-wrap:wrap;gap:6px}
+.dlg .row{justify-content:flex-end}
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
 </style>
-
+</head>
+<body>
 <div class="wrap">
   <header>
     <div>
       <h1>膜科研文献雷达</h1>
-      <p class="sub">中科院分区（2025 版）2 区及以上 · 聚酰胺纳滤膜 / 催化膜 / 高熵氧化物催化 / 机器学习+膜 · 每日自动推送</p>
+      <p class="sub" id="subline">中科院分区 2 区及以上期刊新论文，每天 7:50、11:50、18:50 自动更新</p>
     </div>
-    <div class="stats" id="stats"></div>
+    <div class="headr">
+      <button class="btn" id="loginBtn" type="button">登录</button>
+      <div class="stats" id="stats"></div>
+    </div>
   </header>
 
-  <div class="bar">
+  <div class="panel" role="search">
     <div class="row">
-      <input type="search" id="q" placeholder="搜索标题、期刊、摘要、DOI" aria-label="搜索文献">
+      <input type="search" id="q" placeholder="搜索标题、要点、期刊、DOI" aria-label="搜索文献">
+      <div class="seg" role="group" aria-label="显示方式">
+        <button type="button" id="vCard" aria-pressed="true" title="卡片视图"><svg viewBox="0 0 16 16" aria-hidden="true"><rect x="1" y="1" width="6" height="6" rx="1"/><rect x="9" y="1" width="6" height="6" rx="1"/><rect x="1" y="9" width="6" height="6" rx="1"/><rect x="9" y="9" width="6" height="6" rx="1"/></svg>卡片</button>
+        <button type="button" id="vList" aria-pressed="false" title="列表视图"><svg viewBox="0 0 16 16" aria-hidden="true"><rect x="1" y="2" width="14" height="2" rx="1"/><rect x="1" y="7" width="14" height="2" rx="1"/><rect x="1" y="12" width="14" height="2" rx="1"/></svg>列表</button>
+      </div>
     </div>
-    <div class="row" id="fieldChips" role="group" aria-label="研究方向"></div>
-    <div class="row" role="group" aria-label="筛选">
-      <button class="chip" id="keyonly" aria-pressed="false">只看重点</button>
-      <button class="chip" id="z1only" aria-pressed="false">只看 1 区</button>
-      <button class="chip" id="staronly" aria-pressed="false">★ 收藏</button>
-      <button class="chip" id="unreadonly" aria-pressed="false">未读</button>
+    <div class="row" id="fieldRow"><span class="lab">方向</span></div>
+    <div class="row" id="dateRow"><span class="lab">日期</span>
+      <select id="month" aria-label="按月份筛选"><option value="">按月份</option></select>
+    </div>
+    <div class="row">
+      <span class="lab">来源</span>
+      <select id="journal" aria-label="期刊"><option value="">全部期刊</option></select>
+      <select id="zone" aria-label="中科院分区"><option value="">全部分区</option><option value="1">中科院 1 区</option><option value="2">中科院 2 区</option></select>
+      <input type="text" class="inst" id="inst" list="instList" placeholder="发表单位，如 Tongji University" aria-label="发表单位">
+      <datalist id="instList"></datalist>
+    </div>
+    <div class="row">
+      <button class="chip" id="keyonly" aria-pressed="false" type="button">只看重点</button>
+      <button class="chip" id="staronly" aria-pressed="false" type="button">★ 收藏</button>
+      <button class="chip" id="unreadonly" aria-pressed="false" type="button">未读</button>
+      <button class="clear" id="reset" type="button">清除筛选</button>
+      <span class="count" id="count"></span>
     </div>
   </div>
 
-  <div id="list"></div>
+  <div id="out"></div>
+  <div class="more" id="moreBox" hidden><button class="btn" id="more" type="button">显示更多</button></div>
   <div class="empty" id="empty" hidden></div>
   <p class="note" id="note" hidden></p>
 </div>
 
-<script>
-const FIELDS = {
-  "pa-nf":   "聚酰胺纳滤膜",
-  "cat-mem": "催化膜",
-  "heo":     "高熵氧化物催化",
-  "ml-mem":  "机器学习+膜"
-};
-const MARK_KEY = "lit-radar-marks";
-let marks = {}; try { marks = JSON.parse(localStorage.getItem(MARK_KEY) || "{}") || {}; } catch {}
-const state = { papers: [], loaded: false, field: "all", q: "", key: false, z1: false, star: false, unread: false, canWrite: true };
-const $ = id => document.getElementById(id);
+<div class="scrim" id="scrim" hidden>
+  <div class="dlg" role="dialog" aria-modal="true" aria-labelledby="dlgTitle">
+    <h2 id="dlgTitle">登录</h2>
+    <p>选择你关注的研究方向，登录后默认只显示这些方向，收藏和已读按账户分开保存。当前为本机账户，数据保存在这台设备的浏览器里。</p>
+    <div class="profiles" id="profiles"></div>
+    <label>昵称<input type="text" id="uname" maxlength="20" placeholder="例如：纳滤课题组"></label>
+    <div class="checks" id="ufields"></div>
+    <div class="row">
+      <button class="btn" id="logout" type="button" hidden>退出登录</button>
+      <button class="btn" id="cancel" type="button">取消</button>
+      <button class="btn primary" id="save" type="button">登录</button>
+    </div>
+  </div>
+</div>
 
-function chip(label, key){
-  const b = document.createElement("button");
-  b.className = "chip"; b.textContent = label;
-  b.setAttribute("aria-pressed", String(state.field === key));
-  b.addEventListener("click", () => { state.field = key; renderChips(); render(); });
-  return b;
-}
-function renderChips(){
-  const box = $("fieldChips"); box.replaceChildren(chip("全部方向","all"));
-  for (const [k,v] of Object.entries(FIELDS)) box.append(chip(v,k));
-}
-function toggle(id, key){
-  $(id).addEventListener("click", () => { state[key] = !state[key]; $(id).setAttribute("aria-pressed", String(state[key])); render(); });
-}
-toggle("keyonly","key"); toggle("z1only","z1"); toggle("staronly","star"); toggle("unreadonly","unread");
-$("q").addEventListener("input", e => { state.q = e.target.value.trim().toLowerCase(); render(); });
+<script>
+const SOURCES = [
+  "https://raw.githubusercontent.com/MHL533/lit-radar/main/papers.json",
+  "https://cdn.jsdelivr.net/gh/MHL533/lit-radar@main/papers.json",
+  "papers.json"
+];
+const DEFAULT_FIELDS = { "pa-nf": "聚酰胺纳滤膜", "cat-mem": "催化膜", "heo": "高熵氧化物催化", "ml-mem": "机器学习+膜" };
+const PAGE = 60;
+const $ = id => document.getElementById(id);
+const store = {
+  get(k, d){ try { const v = localStorage.getItem(k); return v == null ? d : JSON.parse(v); } catch { return d; } },
+  set(k, v){ try { localStorage.setItem(k, JSON.stringify(v)); } catch {} }
+};
+
+let FIELDS = DEFAULT_FIELDS, JOURNALS = {}, ALL = [];
+let users = store.get("lr-users", {}), current = store.get("lr-current", null);
+if (current && !users[current]) current = null;
+const state = { q: "", fields: new Set(), date: "all", month: "", journal: "", zone: "", inst: "", key: false, star: false, unread: false,
+  view: store.get("lr-view", "card"), shown: PAGE, loaded: false };
 
 function el(tag, cls, text){ const e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; }
 function safeUrl(u){ try { const x = new URL(u); return /^https?:$/.test(x.protocol) ? x.href : null; } catch { return null; } }
+function marksKey(){ return "lr-marks:" + (current || "_guest"); }
+let marks = store.get(marksKey(), store.get("lit-radar-marks", {}));
+function zoneOf(p){ return String((JOURNALS[p.journal] || {}).cas_zone || p.cas_zone || ""); }
+function ifOf(p){ const v = (JOURNALS[p.journal] || {}).if; return v == null ? null : v; }
+function abbrOf(p){ return (JOURNALS[p.journal] || {}).abbr || p.journal || ""; }
 
-function patch(id, data){
-  marks[id] = { ...(marks[id] || {}), ...data };
-  try { localStorage.setItem(MARK_KEY, JSON.stringify(marks)); } catch {}
-  state.papers = state.papers.map(p => p._id === id ? { ...p, ...data } : p);
-  render();
+/* ---------- filters UI ---------- */
+function chip(label, pressed, onClick){
+  const b = el("button", "chip", label); b.type = "button"; b.setAttribute("aria-pressed", String(pressed));
+  b.addEventListener("click", onClick); return b;
+}
+function renderFieldChips(){
+  const row = $("fieldRow"); row.querySelectorAll(".chip").forEach(c => c.remove());
+  row.append(chip("全部", state.fields.size === 0, () => { state.fields.clear(); renderFieldChips(); reset(); }));
+  for (const [k, v] of Object.entries(FIELDS))
+    row.append(chip(v, state.fields.has(k), () => { state.fields.has(k) ? state.fields.delete(k) : state.fields.add(k); renderFieldChips(); reset(); }));
+}
+const DATES = [["all","全部"],["7","近 7 天"],["30","近 30 天"],["90","近 3 个月"],["365","近 1 年"]];
+function renderDateChips(){
+  const row = $("dateRow"); row.querySelectorAll(".chip").forEach(c => c.remove());
+  const sel = $("month");
+  for (const [k, v] of DATES)
+    row.insertBefore(chip(v, state.date === k && !state.month, () => { state.date = k; state.month = ""; sel.value = ""; renderDateChips(); reset(); }), sel);
+}
+function fillSelects(){
+  const months = [...new Set(ALL.map(p => String(p.published || "").slice(0, 7)).filter(Boolean))].sort().reverse();
+  const ms = $("month"); ms.length = 1;
+  for (const m of months) ms.append(new Option(m.replace("-", " 年 ") + " 月（" + ALL.filter(p => String(p.published).startsWith(m)).length + "）", m));
+  const cnt = {}; for (const p of ALL) cnt[p.journal] = (cnt[p.journal] || 0) + 1;
+  const js = $("journal"); js.length = 1;
+  for (const j of Object.keys(cnt).sort((a, b) => cnt[b] - cnt[a])){
+    const info = JOURNALS[j] || {}; const extra = [info.cas_zone, info.if != null ? "IF " + info.if : ""].filter(Boolean).join(" · ");
+    js.append(new Option(j + "（" + cnt[j] + (extra ? "，" + extra : "") + "）", j));
+  }
+  const ic = {}; for (const p of ALL) for (const a of p.affils || []) ic[a] = (ic[a] || 0) + 1;
+  const dl = $("instList"); dl.replaceChildren();
+  for (const a of Object.keys(ic).sort((x, y) => ic[y] - ic[x]).slice(0, 400)) { const o = document.createElement("option"); o.value = a; o.label = ic[a] + " 篇"; dl.append(o); }
+}
+function bindToggle(id, key){ $(id).addEventListener("click", () => { state[key] = !state[key]; $(id).setAttribute("aria-pressed", String(state[key])); reset(); }); }
+bindToggle("keyonly", "key"); bindToggle("staronly", "star"); bindToggle("unreadonly", "unread");
+$("q").addEventListener("input", e => { state.q = e.target.value.trim().toLowerCase(); reset(); });
+$("inst").addEventListener("input", e => { state.inst = e.target.value.trim().toLowerCase(); reset(); });
+$("journal").addEventListener("change", e => { state.journal = e.target.value; reset(); });
+$("zone").addEventListener("change", e => { state.zone = e.target.value; reset(); });
+$("month").addEventListener("change", e => { state.month = e.target.value; if (state.month) state.date = "all"; renderDateChips(); reset(); });
+$("reset").addEventListener("click", () => {
+  Object.assign(state, { q: "", date: "all", month: "", journal: "", zone: "", inst: "", key: false, star: false, unread: false });
+  state.fields = new Set(current && users[current] ? users[current].fields : []);
+  ["q","inst"].forEach(i => $(i).value = ""); ["journal","zone","month"].forEach(i => $(i).value = "");
+  ["keyonly","staronly","unreadonly"].forEach(i => $(i).setAttribute("aria-pressed","false"));
+  renderFieldChips(); renderDateChips(); reset();
+});
+function setView(v){ state.view = v; store.set("lr-view", v); $("vCard").setAttribute("aria-pressed", String(v === "card")); $("vList").setAttribute("aria-pressed", String(v === "list")); render(); }
+$("vCard").addEventListener("click", () => setView("card"));
+$("vList").addEventListener("click", () => setView("list"));
+$("more").addEventListener("click", () => { state.shown += PAGE; render(); });
+function reset(){ state.shown = PAGE; render(); }
+
+/* ---------- marks ---------- */
+function mark(id, data){
+  marks[id] = { ...(marks[id] || {}), ...data }; store.set(marksKey(), marks);
+  ALL = ALL.map(p => p._id === id ? { ...p, ...data } : p); render();
+}
+function applyMarks(){ ALL = ALL.map(p => ({ ...p, starred: !!(marks[p._id] || {}).starred, read: !!(marks[p._id] || {}).read })); }
+
+/* ---------- filtering ---------- */
+function filtered(){
+  const now = new Date(); const today = now.toISOString().slice(0, 10);
+  const since = state.date === "all" ? "" : new Date(now - Number(state.date) * 864e5).toISOString().slice(0, 10);
+  const q = state.q, inst = state.inst;
+  return ALL.filter(p =>
+    (state.fields.size === 0 || state.fields.has(p.field)) &&
+    (!since || String(p.published) >= since) &&
+    (!state.month || String(p.published).startsWith(state.month)) &&
+    (!state.journal || p.journal === state.journal) &&
+    (!state.zone || zoneOf(p).startsWith(state.zone)) &&
+    (!inst || (p.affils || []).some(a => a.toLowerCase().includes(inst))) &&
+    (!state.key || p.key) && (!state.star || p.starred) && (!state.unread || !p.read) &&
+    (!q || [p.title, p.summary_zh, p.journal, abbrOf(p), p.doi, (p.affils || []).join(" ")].some(x => String(x || "").toLowerCase().includes(q)))
+  ).sort((a, b) => String(b.published || "").localeCompare(String(a.published || "")) || (b.key - a.key));
 }
 
+/* ---------- render ---------- */
+function tags(p){
+  const box = el("span", "tags"); const z = zoneOf(p); const f = ifOf(p);
+  if (p.key) box.append(el("span", "key", "★ 重点"));
+  if (z) box.append(el("span", "tag " + (z.startsWith("1") ? "z1" : "z2"), "中科院" + z));
+  if (f != null) box.append(el("span", "tag iftag", "IF " + f));
+  return box;
+}
+function titleLink(p, cls){
+  const url = safeUrl(p.url) || (p.doi ? "https://doi.org/" + p.doi : null);
+  if (!url) return el("span", cls, p.title || "(无标题)");
+  const a = el("a", cls, p.title || "(无标题)"); a.href = url; a.target = "_blank"; a.rel = "noopener"; return a;
+}
+function affLine(p, n){
+  const af = p.affils || []; if (!af.length) return null;
+  const line = el("p", "aff"); line.append(document.createTextNode("单位："));
+  af.slice(0, n).forEach((a, i) => { if (i) line.append(document.createTextNode("；")); const isC = (p.corr_affils || []).includes(a); const s = el(isC ? "b" : "span", null, a); if (isC) s.title = "通讯作者单位"; line.append(s); });
+  if (af.length > n) line.append(document.createTextNode(" 等"));
+  return line;
+}
+function actions(p){
+  const acts = el("div", "acts");
+  const st = el("button", "act" + (p.starred ? " on" : ""), p.starred ? "★ 已收藏" : "☆ 收藏"); st.type = "button";
+  st.addEventListener("click", () => mark(p._id, { starred: !p.starred }));
+  const rd = el("button", "act", p.read ? "标为未读" : "已读"); rd.type = "button";
+  rd.addEventListener("click", () => mark(p._id, { read: !p.read }));
+  acts.append(st, rd); return acts;
+}
 function card(p){
-  const a = el("article"); if (p.read) a.classList.add("read");
-  const meta = el("div","meta");
-  const z = String(p.cas_zone || "");
-  if (p.key) meta.append(el("span","key","★ 重点"));
-  meta.append(el("span", "zone " + (z.startsWith("1") ? "z1" : "z2"), z || "分区?"));
-  if (FIELDS[p.field]) meta.append(el("span","field",FIELDS[p.field]));
-  if (p.journal) meta.append(el("span","journal",p.journal));
-  if (p.published) meta.append(el("span","date","online " + p.published));
-  a.append(meta);
-
-  const h = el("h3"); const url = safeUrl(p.url) || (p.doi ? "https://doi.org/" + p.doi : null);
-  if (url){ const l = el("a", null, p.title || "(无标题)"); l.href = url; l.target = "_blank"; l.rel = "noopener"; h.append(l); }
-  else h.textContent = p.title || "(无标题)";
-  a.append(h);
-  if (p.summary_zh) a.append(el("p","sum",p.summary_zh));
-
-  const foot = el("div","foot");
-  const left = el("div","src");
-  if (p.doi) left.append(el("span","doi","DOI " + p.doi));
-  if (p.source_name){
-    left.append(document.createTextNode(p.doi ? " · " : ""));
-    const s = safeUrl(p.source_url);
-    const label = (p.source_type === "转载" ? "转载自 " : "来源 ") + p.source_name;
-    if (s){ const sl = el("a", null, label); sl.href = s; sl.target = "_blank"; sl.rel = "noopener"; left.append(sl); }
-    else left.append(document.createTextNode(label));
-  }
-  foot.append(left);
-
-  {
-    const acts = el("div","acts");
-    const st = el("button","act" + (p.starred ? " on" : ""), p.starred ? "★ 已收藏" : "☆ 收藏");
-    st.addEventListener("click", () => patch(p._id, { starred: !p.starred }));
-    const rd = el("button","act", p.read ? "标为未读" : "标为已读");
-    rd.addEventListener("click", () => patch(p._id, { read: !p.read }));
-    acts.append(st, rd); foot.append(acts);
-  }
-  a.append(foot);
+  const a = el("article", "card" + (p.read ? " read" : ""));
+  const meta = el("div", "meta"); meta.append(tags(p));
+  if (FIELDS[p.field]) meta.append(el("span", "field", FIELDS[p.field]));
+  meta.append(el("span", "journal", abbrOf(p)));
+  if (p.published) meta.append(el("span", "date", p.published));
+  const h = el("h3"); h.append(titleLink(p));
+  a.append(meta, h);
+  if (p.summary_zh) a.append(el("p", "sum", p.summary_zh));
+  const af = affLine(p, 4); if (af) a.append(af);
+  const foot = el("div", "foot"); const left = el("div");
+  if (p.doi) left.append(el("span", "doi", "DOI " + p.doi));
+  if (p.source_name){ left.append(document.createTextNode(" · ")); const s = safeUrl(p.source_url); const lab = (p.source_type === "转载" ? "转载自 " : "来源 ") + p.source_name;
+    if (s){ const l = el("a", null, lab); l.href = s; l.target = "_blank"; l.rel = "noopener"; left.append(l); } else left.append(document.createTextNode(lab)); }
+  foot.append(left, actions(p)); a.append(foot);
   return a;
 }
-
+function lrow(p){
+  const r = el("div", "lrow" + (p.read ? " read" : ""));
+  r.append(el("span", "date", p.published || ""), tags(p));
+  const mid = el("div"); const t = el("div", "t"); t.append(titleLink(p)); mid.append(t);
+  const bits = [abbrOf(p), FIELDS[p.field], (p.affils || []).slice(0, 2).join("；")].filter(Boolean).join(" · ");
+  mid.append(el("div", "s", bits)); r.append(mid);
+  const st = el("button", "act" + (p.starred ? " on" : ""), p.starred ? "★" : "☆"); st.type = "button"; st.title = p.starred ? "取消收藏" : "收藏";
+  st.setAttribute("aria-label", st.title); st.addEventListener("click", () => mark(p._id, { starred: !p.starred }));
+  r.append(st); return r;
+}
+function renderStats(){
+  const s = $("stats"); s.replaceChildren();
+  const add = (k, v) => { const sp = el("span"); sp.append(document.createTextNode(k + " "), el("b", null, String(v))); s.append(sp); };
+  const today = new Date().toISOString().slice(0, 10), wk = new Date(Date.now() - 7 * 864e5).toISOString().slice(0, 10);
+  add("累计", ALL.length); add("近 7 天", ALL.filter(p => String(p.published) >= wk).length);
+  add("1 区", ALL.filter(p => zoneOf(p).startsWith("1")).length); add("重点", ALL.filter(p => p.key).length);
+  add("收藏", ALL.filter(p => p.starred).length);
+}
 function render(){
-  const all = state.papers;
-  const today = new Date().toISOString().slice(0,10);
-  const s = $("stats");
-  s.replaceChildren();
-  const add = (k,v) => { const sp = el("span"); sp.append(document.createTextNode(k+" "), el("b",null,String(v))); s.append(sp); };
-  add("累计", all.length);
-  add("重点", all.filter(p => p.key).length);
-  add("1区", all.filter(p => String(p.cas_zone||"").startsWith("1")).length);
-  add("未读", all.filter(p => !p.read).length);
-  add("收藏", all.filter(p => p.starred).length);
-
-  const list = $("list"); list.replaceChildren();
-  const q = state.q;
-  const rows = all.filter(p =>
-    (state.field === "all" || p.field === state.field) &&
-    (!state.key || p.key) &&
-    (!state.z1 || String(p.cas_zone||"").startsWith("1")) &&
-    (!state.star || p.starred) &&
-    (!state.unread || !p.read) &&
-    (!q || [p.title,p.journal,p.summary_zh,p.doi,p.source_name].some(x => String(x||"").toLowerCase().includes(q)))
-  ).sort((a,b) => String(b.pushed||"").localeCompare(String(a.pushed||"")) || String(b.published||"").localeCompare(String(a.published||"")));
-
+  renderStats();
+  const rows = filtered(); const out = $("out"); out.replaceChildren();
+  $("count").textContent = state.loaded ? "显示 " + Math.min(rows.length, state.shown) + " / 筛出 " + rows.length + " 篇" : "";
   const empty = $("empty");
   if (!rows.length){
     empty.hidden = false; empty.replaceChildren();
-    if (!state.loaded) { empty.append(el("strong",null,"正在读取文献库…")); }
-    else if (!all.length){
-      empty.append(el("strong",null,"文献库还是空的"));
-      empty.append(document.createTextNode("每天早上的定时推送会把新发表的 2 区及以上论文写进这里，附中文要点、分区和来源链接。第一批会在下一次推送后出现。"));
-    } else empty.append(el("strong",null,"没有符合当前筛选的文献"));
-    return;
+    empty.append(el("strong", null, state.loaded ? "没有符合当前筛选的文献" : "正在加载文献…"));
+    if (state.loaded) empty.append(document.createTextNode("可以放宽日期、期刊或单位条件，或点“清除筛选”。"));
+    $("moreBox").hidden = true; return;
   }
   empty.hidden = true;
-  let cur = null, box = null;
-  for (const p of rows){
-    const d = p.pushed || "未标日期";
-    if (d !== cur){
-      cur = d; box = el("section","day");
-      box.append(el("h2", null, d === today ? d + " · 今天" : d));
-      list.append(box);
-    }
-    box.append(card(p));
-  }
+  const part = rows.slice(0, state.shown);
+  const box = el("div", state.view === "list" ? "list" : "grid");
+  for (const p of part) box.append(state.view === "list" ? lrow(p) : card(p));
+  out.append(box);
+  $("moreBox").hidden = rows.length <= state.shown;
 }
 
-renderChips(); render();
+/* ---------- login (local profiles) ---------- */
+function renderLogin(){
+  const b = $("loginBtn");
+  b.textContent = current ? "账户：" + current : "登录";
+  b.title = current ? "切换账户或修改关注方向" : "登录后按你的方向筛选";
+}
+function openLogin(){
+  const box = $("ufields"); box.replaceChildren();
+  const mine = current && users[current] ? users[current].fields : Object.keys(FIELDS);
+  for (const [k, v] of Object.entries(FIELDS)){
+    const lab = el("label"); const cb = document.createElement("input"); cb.type = "checkbox"; cb.value = k; cb.checked = mine.includes(k);
+    lab.append(cb, document.createTextNode(v)); box.append(lab);
+  }
+  $("uname").value = current || "";
+  const pf = $("profiles"); pf.replaceChildren();
+  for (const n of Object.keys(users)) pf.append(chip(n, n === current, () => { $("uname").value = n;
+    box.querySelectorAll("input").forEach(cb => cb.checked = users[n].fields.includes(cb.value)); }));
+  $("logout").hidden = !current; $("save").textContent = current ? "保存" : "登录";
+  $("scrim").hidden = false; $("uname").focus();
+}
+function closeLogin(){ $("scrim").hidden = true; $("loginBtn").focus(); }
+function switchTo(name){
+  current = name; store.set("lr-current", current);
+  marks = store.get(marksKey(), {}); applyMarks();
+  state.fields = new Set(current && users[current] ? users[current].fields : []);
+  renderLogin(); renderFieldChips(); reset();
+}
+$("loginBtn").addEventListener("click", openLogin);
+$("cancel").addEventListener("click", closeLogin);
+$("scrim").addEventListener("click", e => { if (e.target === $("scrim")) closeLogin(); });
+document.addEventListener("keydown", e => { if (e.key === "Escape" && !$("scrim").hidden) closeLogin(); });
+$("save").addEventListener("click", () => {
+  const name = $("uname").value.trim(); if (!name){ $("uname").focus(); $("uname").placeholder = "请先填写昵称"; return; }
+  const fields = [...$("ufields").querySelectorAll("input:checked")].map(c => c.value);
+  users[name] = { fields: fields.length ? fields : Object.keys(FIELDS), created: (users[name] || {}).created || new Date().toISOString() };
+  store.set("lr-users", users); closeLogin(); switchTo(name);
+});
+$("logout").addEventListener("click", () => { closeLogin(); switchTo(null); });
 
+/* ---------- boot ---------- */
+renderLogin(); renderFieldChips(); renderDateChips(); setView(state.view);
 (async () => {
   const note = $("note");
   try {
-    // 数据来源：GitHub 原始文件最新，jsDelivr 国内更稳定（可能有缓存延迟），同目录 papers.json 作兜底；取更新时间最新的一份
-    const SOURCES = [
-      "https://raw.githubusercontent.com/MHL533/lit-radar/main/papers.json",
-      "https://cdn.jsdelivr.net/gh/MHL533/lit-radar@main/papers.json",
-      "papers.json"
-    ];
     const get = u => { const c = new AbortController(); const t = setTimeout(() => c.abort(), 6000);
       return fetch(u + (u.startsWith("http") ? "?t=" + Date.now() : ""), { cache: "no-store", signal: c.signal })
         .then(r => { if (!r.ok) throw new Error(r.status); return r.json(); }).finally(() => clearTimeout(t)); };
     const got = (await Promise.allSettled(SOURCES.map(get))).filter(x => x.status === "fulfilled" && x.value && Array.isArray(x.value.papers)).map(x => x.value);
     if (!got.length) throw new Error("no source");
     const j = got.sort((a, b) => String(b.updated || "").localeCompare(String(a.updated || "")))[0];
-    state.papers = (j.papers || []).map(p => ({ starred: false, read: false, ...p, ...(marks[p._id] || {}) }));
-    if (j.updated){ note.hidden = false; note.textContent = "数据更新于 " + j.updated + "。收藏和已读只保存在你当前的浏览器里。"; }
+    FIELDS = j.fields || DEFAULT_FIELDS; JOURNALS = j.journals || {};
+    ALL = j.papers || []; applyMarks();
+    state.fields = new Set(current && users[current] ? users[current].fields.filter(f => FIELDS[f]) : []);
+    if (j.updated){ note.hidden = false; note.textContent = "数据更新于 " + j.updated + "。影响因子为 JCR 最新年度值，分区为中科院 2025 年版。"; }
   } catch (e) {
     note.hidden = false; note.textContent = "文献数据暂时加载失败，请检查网络后刷新页面。";
   }
-  state.loaded = true; render();
+  state.loaded = true; renderFieldChips(); fillSelects(); render();
 })();
 </script>
-
 </body>
 </html>

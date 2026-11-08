@@ -154,6 +154,10 @@ a.btn{text-decoration:none}
 .checks{display:grid;gap:6px}
 .checks label{display:flex;gap:8px;align-items:center;font-size:14px}
 .profiles{display:flex;flex-wrap:wrap;gap:6px}
+.login-methods{display:flex;flex-wrap:wrap;gap:6px}
+#smsForm{display:grid;gap:8px}
+#smsForm input{width:100%}
+#smsSend{justify-self:start}
 .dlg .row{justify-content:flex-end}
 .dlg input[type=email],.dlg input[type=password],.dlg input[type=text]{width:100%}
 .fgroup{display:grid;gap:4px;margin-bottom:8px}
@@ -257,6 +261,16 @@ a.btn{text-decoration:none}
       <button type="button" id="tLogin" aria-pressed="true">登录</button>
       <button type="button" id="tReg" aria-pressed="false">注册</button>
     </div>
+    <div id="loginMethods" class="login-methods" role="group" aria-label="其他登录方式" hidden>
+      <button class="btn" type="button" id="phoneMethod" disabled>手机验证码</button>
+      <button class="btn" type="button" id="wechatMethod" disabled>微信扫码</button>
+      <button class="btn" type="button" id="qqMethod" disabled>QQ 登录</button>
+    </div>
+    <div id="smsForm" hidden>
+      <label>中国大陆手机号<input type="tel" id="smsPhone" autocomplete="tel" inputmode="tel" placeholder="请输入 +86 手机号"></label>
+      <button type="button" class="btn" id="smsSend">获取验证码</button>
+      <label>短信验证码<input type="text" id="smsCode" inputmode="numeric" autocomplete="one-time-code" maxlength="10"></label>
+    </div>
     <label id="lEmail">邮箱<input type="email" id="email" autocomplete="email" placeholder="name@example.com"></label>
     <label id="lPass">密码<input type="password" id="pass" autocomplete="current-password" placeholder="至少 6 位"></label>
     <div class="profiles" id="profiles"></div>
@@ -290,6 +304,8 @@ a.btn{text-decoration:none}
 </div>
 
 <script src="config.js"></script>
+<script src="phone-auth.js"></script>
+<script src="social-auth.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.js"></script>
 <script>
 // 依次尝试：同站点的 papers.json（GitHub Pages 上最快、最新）→ jsDelivr（国内较稳）→ GitHub 原始文件
@@ -314,6 +330,16 @@ const state = { q: "", scope: store.get("lr-scope", ""), fields: new Set(), date
 
 /* ---------- accounts: cloud (Supabase) or local fallback ---------- */
 const CFG = window.LR_CONFIG || {};
+const authReturnError = (() => {
+  const url = new URL(location.href);
+  for (const params of [url.searchParams, new URLSearchParams(url.hash.slice(1))]){
+    if (!params.has("error")) continue;
+    if (params.get("error_code") === "identity_already_exists") return "此登录身份已绑定其他账户，请使用原来的登录方式。";
+    if (params.get("error") === "access_denied") return "授权未完成。你可以重新授权或使用邮箱登录。";
+    return "第三方授权未完成，请重新登录后再试。";
+  }
+  return "";
+})();
 const cloudConfigured = !!(CFG.supabaseUrl || CFG.supabaseAnonKey);
 let sb = null;
 try { if (CFG.supabaseUrl && CFG.supabaseAnonKey && window.supabase) sb = window.supabase.createClient(CFG.supabaseUrl, CFG.supabaseAnonKey); } catch {}
@@ -323,7 +349,11 @@ let localUsers = store.get("lr-users", {}), localCurrent = store.get("lr-current
 if (localCurrent && !localUsers[localCurrent]) localCurrent = null;
 let marks = {};
 
-function who(){ return cloudConfigured ? (auth.user ? auth.profile?.nickname || auth.user.email : null) : localCurrent; }
+function defaultName(user){
+  const meta = user.user_metadata || {};
+  return [meta.nickname, meta.name, user.email?.split("@")[0]].find(n => typeof n === "string" && n.trim()) || "研究者";
+}
+function who(){ return cloudConfigured ? (auth.user ? auth.profile?.nickname || defaultName(auth.user) : null) : localCurrent; }
 function myFields(){
   const f = cloudConfigured ? auth.profile?.fields : (localCurrent ? localUsers[localCurrent]?.fields : null);
   return Array.isArray(f) ? f.filter(x => FIELDS[x]) : [];
@@ -345,7 +375,7 @@ async function loadProfile(user){
   if (error) throw error;
   if (data) return data;
   const meta = user.user_metadata || {};
-  const prof = { id: user.id, nickname: meta.nickname || user.email.split("@")[0], fields: meta.fields || [] };
+  const prof = { id: user.id, nickname: defaultName(user), fields: Array.isArray(meta.fields) ? meta.fields : [] };
   const { error: saveError } = await sb.from("profiles").upsert(prof, { ignoreDuplicates: true });
   if (saveError) throw saveError;
   return prof;
@@ -371,6 +401,7 @@ function afterAuthChange(user = null){
     if (savedMarks.status === "fulfilled") marks = savedMarks.value;
     auth.loading = false;
     renderAccount();
+    if (profile.status === "fulfilled" && !auth.profile.fields?.length && $("scrim").hidden) openLogin();
     if (profile.status === "rejected" || savedMarks.status === "rejected") showNote("部分账户资料未能加载，请刷新页面重试。");
   }, 0);
 }
@@ -607,7 +638,54 @@ function render(){
 }
 
 /* ---------- login dialog ---------- */
-let mode = "login";      // login | register | profile | local
+let mode = "login";
+let phoneEnabled = null, smsBusy = false, sentPhone = "", resendAt = 0, resendTimer;
+let dialogVersion = 0, socialBusy = false;
+let expectedPhoneOwner = null, rejectedPhoneUser = null;
+
+function rejectPhoneSession(userId){
+  if (!userId || rejectedPhoneUser === userId) return;
+  rejectedPhoneUser = userId;
+  afterAuthChange(null);
+  showNote("手机号验证返回了其他账户，已停止绑定。请用原方式重新登录。");
+  // Release the Auth callback lock before querying or terminating this session.
+  setTimeout(async () => {
+    const { data } = await sb.auth.getSession();
+    if (data.session?.user.id === userId) await sb.auth.signOut({ scope: "local" });
+  }, 0);
+}
+
+async function refreshPhoneStatus(){
+  if (!sb) return;
+  try {
+    const r = await fetch(CFG.supabaseUrl + "/auth/v1/settings", { headers: { apikey: CFG.supabaseAnonKey } });
+    if (!r.ok) throw Error();
+    const settings = await r.json();
+    phoneEnabled = settings.external?.phone === true && settings.phone_autoconfirm === false;
+  } catch { phoneEnabled = null; }
+  renderMethods();
+}
+function renderMethods(){
+  const linking = !!auth.user;
+  $("loginMethods").hidden = !sb || !["login","register","profile"].includes(mode);
+  const phone = $("phoneMethod"), boundPhone = linking && !!auth.user.phone_confirmed_at;
+  phone.disabled = boundPhone || phoneEnabled !== true;
+  phone.textContent = boundPhone ? "已绑定手机号" : (linking ? "绑定手机号" : "手机验证码") +
+    (phoneEnabled === false ? "（待开通）" : phoneEnabled === null ? "（暂不可用）" : "");
+  for (const [key, name] of [["wechat","微信"],["qq","QQ"]]){
+    const provider = CFG.socialProviders?.[key], btn = $(key + "Method");
+    const bound = !!provider && auth.user?.identities?.some(id => id.provider === provider);
+    btn.disabled = !provider || bound || socialBusy;
+    btn.textContent = bound ? "已绑定" + name : (linking ? "绑定" + name : (key === "wechat" ? "微信扫码" : "QQ 登录")) + (provider ? "" : "（待开通）");
+  }
+}
+function updateSmsButton(){
+  clearTimeout(resendTimer);
+  const left = Math.max(0, Math.ceil((resendAt - Date.now()) / 1000));
+  $("smsSend").disabled = smsBusy || left > 0;
+  $("smsSend").textContent = left ? left + " 秒后可重发" : "获取验证码";
+  if (left && mode === "phone" && !$("scrim").hidden) resendTimer = setTimeout(updateSmsButton, 1000);
+}
 function renderLogin(){
   const n = who(); const b = $("loginBtn");
   b.disabled = auth.loading;
@@ -618,7 +696,7 @@ function renderLogin(){
     b.textContent = n ? "本机档案 · " + n : "本机档案"; b.title = "在当前浏览器保存阅读偏好"; return;
   }
   b.textContent = auth.loading ? "正在加载账户…" : n ? "账户 · " + n : "登录 / 注册";
-  b.title = n ? "修改关注方向或退出登录" : "使用邮箱注册或登录个人账户";
+  b.title = n ? "管理登录方式和关注方向" : "登录或注册个人账户";
 }
 function fieldChecks(selected){
   const box = $("ufields"); box.replaceChildren();
@@ -634,9 +712,13 @@ function fieldChecks(selected){
 }
 function chosenFields(){ return [...$("ufields").querySelectorAll("input:checked")].map(c => c.value); }
 function setMode(m){
-  mode = m; $("msg").textContent = "";
+  dialogVersion++; mode = m; $("msg").textContent = "";
+  sentPhone = ""; $("smsCode").value = ""; $("smsPhone").value = "";
+  $("smsForm").hidden = m !== "phone";
+  if (m === "phone") updateSmsButton();
+  renderMethods();
   const cloud = !!sb;
-  $("authTabs").hidden = !(cloud && (m === "login" || m === "register"));
+  $("authTabs").hidden = !(cloud && !auth.user);
   $("tLogin").setAttribute("aria-pressed", String(m === "login")); $("tReg").setAttribute("aria-pressed", String(m === "register"));
   $("lEmail").hidden = $("lPass").hidden = !(m === "login" || m === "register");
   $("lName").hidden = !(m === "register" || m === "profile" || m === "local");
@@ -644,14 +726,15 @@ function setMode(m){
   $("profiles").hidden = m !== "local";
   $("logout").hidden = !(m === "profile" || (m === "local" && localCurrent));
   $("pass").autocomplete = m === "register" ? "new-password" : "current-password";
-  const titles = { login: "登录", register: "注册账户", profile: "我的账户", local: "本机档案" };
+  const titles = { login: "登录", register: "注册账户", profile: "我的账户", local: "本机档案", phone: auth.user ? "绑定手机号" : "手机验证码登录" };
   $("dlgTitle").textContent = titles[m];
-  $("save").textContent = { login: "登录", register: "注册", profile: "保存", local: "保存本机档案" }[m];
+  $("save").textContent = { login: "登录", register: "注册", profile: "保存", local: "保存本机档案", phone: auth.user ? "确认绑定" : "验证并登录" }[m];
   $("logout").textContent = m === "local" ? "退出本机档案" : "退出登录";
   $("dlgIntro").textContent = {
-    login: "用注册时的邮箱和密码登录，任何设备都能看到你的方向和收藏。",
+    login: "用注册时的邮箱和密码登录。已有账户的用户请先登录，再绑定其他登录方式，以保留原有收藏。",
     register: "选择你关注的研究方向，登录后默认只显示这些方向。",
-    profile: (auth.user ? auth.user.email + " · " : "") + "可以修改昵称和关注方向。",
+    profile: (auth.user?.email ? auth.user.email + " · " : "") + "选择研究方向，也可以为当前账户绑定其他登录方式。",
+    phone: auth.user ? "验证手机号后，可用它登录当前账户。" : "首次验证将创建账户。已有账户？请先用原方式登录，再绑定手机号。",
     local: "云端账户尚未开通。昵称、关注方向和收藏仅保存在当前浏览器。"
   }[m];
   if (m === "register") { $("uname").value = ""; fieldChecks([]); }
@@ -665,12 +748,39 @@ function setMode(m){
 function openLogin(){
   if (cloudConfigured && !sb) { showNote("账户服务暂不可用，请刷新后重试。"); return; }
   setMode(sb ? (auth.user ? "profile" : "login") : "local"); $("scrim").hidden = false;
+  refreshPhoneStatus();
   ($("email").offsetParent ? $("email") : $("uname")).focus();
 }
-function closeLogin(){ $("scrim").hidden = true; $("pass").value = ""; $("email").value = ""; $("loginBtn").focus(); }
+function closeLogin(){ dialogVersion++; clearTimeout(resendTimer); sentPhone = ""; $("smsCode").value = ""; $("smsPhone").value = ""; $("scrim").hidden = true; $("pass").value = ""; $("email").value = ""; $("loginBtn").focus(); }
 $("loginBtn").addEventListener("click", openLogin);
 $("tLogin").addEventListener("click", () => setMode("login"));
 $("tReg").addEventListener("click", () => setMode("register"));
+$("phoneMethod").addEventListener("click", () => { if (phoneEnabled === true) { setMode("phone"); $("smsPhone").focus(); } });
+for (const key of ["wechat","qq"]) $(key + "Method").addEventListener("click", async () => {
+  const provider = CFG.socialProviders?.[key], version = dialogVersion;
+  if (!provider || socialBusy) return;
+  socialBusy = true; renderMethods();
+  try {
+    const { error } = await window.LR_SOCIAL.start(sb, provider, !!auth.user);
+    if (error) throw error;
+  } catch (e) { if (version === dialogVersion) $("msg").textContent = "授权未完成，请重试。" + (e.message || ""); }
+  finally { socialBusy = false; renderMethods(); }
+});
+$("smsSend").addEventListener("click", async () => {
+  if (mode !== "phone" || phoneEnabled !== true || smsBusy || Date.now() < resendAt) return;
+  const version = dialogVersion, phone = window.LR_PHONE.normalize($("smsPhone").value);
+  if (!phone) { $("msg").textContent = "请输入有效的中国大陆手机号。"; return; }
+  smsBusy = true; updateSmsButton();
+  try {
+    const send = auth.user ? window.LR_PHONE.sendBinding : window.LR_PHONE.send;
+    const { error } = await send(sb, phone);
+    if (error) throw error;
+    resendAt = Date.now() + 60000;
+    if (version !== dialogVersion) return;
+    sentPhone = phone; $("msg").textContent = "请查看手机短信并输入验证码。"; $("smsCode").focus();
+  } catch (e) { if (version === dialogVersion) $("msg").textContent = "发送失败。" + (e.message || "请稍后重试。"); }
+  finally { smsBusy = false; updateSmsButton(); }
+});
 $("cancel").addEventListener("click", closeLogin);
 $("scrim").addEventListener("click", e => { if (e.target === $("scrim")) closeLogin(); });
 document.addEventListener("keydown", e => { if (e.key === "Escape" && !$("scrim").hidden) closeLogin(); });
@@ -694,10 +804,27 @@ $("save").addEventListener("click", async () => {
       if (error) { msg.textContent = ERR[error.message] || error.message; return; }
       if (!data.session) { setMode("login"); $("pass").value = ""; msg.textContent = "请查看验证邮件，点击链接完成注册。已验证的账户可直接登录。"; return; }
       closeLogin();
+    } else if (mode === "phone"){
+      const phone = window.LR_PHONE.normalize($("smsPhone").value), code = $("smsCode").value.trim();
+      if (!phone || phone !== sentPhone) { msg.textContent = "请先为当前手机号获取验证码。"; return; }
+      if (!/^\d{6,10}$/.test(code)) { msg.textContent = "请输入短信中的数字验证码。"; return; }
+      const binding = !!auth.user, userId = auth.user?.id, version = dialogVersion;
+      const verify = binding ? window.LR_PHONE.verifyBinding : window.LR_PHONE.verify;
+      expectedPhoneOwner = binding ? userId : null;
+      let result;
+      try { result = await verify(sb, phone, code); }
+      finally { expectedPhoneOwner = null; }
+      const { data, error } = result;
+      if (binding && data?.user && data.user.id !== userId) { rejectPhoneSession(data.user.id); return; }
+      if (version !== dialogVersion) return;
+      if (error) { msg.textContent = "验证失败。" + error.message; return; }
+      if (binding && !data?.user) { msg.textContent = "绑定状态未确认，请重新登录查看。"; return; }
+      if (binding) { auth.user = data.user; setMode("profile"); msg.textContent = "手机号已绑定。"; }
+      else closeLogin();
     } else if (mode === "profile"){
       if (!fields.length) { msg.textContent = "请至少选择一个关注方向"; return; }
       const version = accountVersion;
-      const prof = { id: auth.user.id, nickname: name || auth.profile?.nickname || auth.user.email.split("@")[0], fields, updated_at: new Date().toISOString() };
+      const prof = { id: auth.user.id, nickname: name || auth.profile?.nickname || defaultName(auth.user), fields, updated_at: new Date().toISOString() };
       const { error } = await sb.from("profiles").upsert(prof);
       if (version !== accountVersion) return;
       if (error) { msg.textContent = "保存失败：" + error.message; return; }
@@ -779,7 +906,12 @@ renderLogin(); renderDateChips(); renderSort(); setView(state.view);
 if (sb) {
   sb.auth.onAuthStateChange((event, session) => {
     const user = session?.user || null;
+    if (user && (user.id === rejectedPhoneUser || (expectedPhoneOwner && user.id !== expectedPhoneOwner))) {
+      rejectPhoneSession(user.id); return;
+    }
+    if (!user) rejectedPhoneUser = null;
     if (event === "INITIAL_SESSION" || user?.id !== auth.user?.id) afterAuthChange(user);
+    else if (user) { auth.user = user; renderMethods(); }
   });
 } else afterAuthChange();
 (async () => {
@@ -797,6 +929,7 @@ if (sb) {
   } catch (e) {
     showNote("文献数据暂时加载失败，请检查网络后刷新页面。");
   }
+  if (authReturnError) showNote(authReturnError);
   state.loaded = true; fillSelects();
   if (!$("scrim").hidden && !$("lFields").hidden) fieldChecks(chosenFields());
   renderAccount();

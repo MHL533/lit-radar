@@ -36,9 +36,11 @@
 4. 将项目 URL 和客户端公开密钥（publishable key 或 anon key）分别填入 [config.js](config.js) 的 `supabaseUrl` 和 `supabaseAnonKey`，再发布页面。服务端密钥只保存在服务端。
 5. 用一个测试邮箱注册并验证。换一个浏览器登录同一账号，检查「我的方向」和收藏能否恢复，再提交一条「账户与登录」反馈，核对后台记录的 `user_id`。
 
-**后续绑定微信**
+### 手机、微信和 QQ 登录
 
-资料与阅读记录以 Supabase 用户 ID 为主键或外键。计划在用户登录后的账户设置中增加微信授权，将验证后的微信身份关联到同一用户 ID。接入前需准备微信开放平台网站应用、AppID、服务端 AppSecret 和回调域名。[微信网站应用接入指南](https://developers.weixin.qq.com/doc/oplatform/Website_App/WeChat_Login/Wechat_Login.html)
+登录框会显示中国大陆手机号验证码、微信扫码和 QQ 登录的开通状态。首次通过这些方式登录后，可以在「我的账户」选择研究方向。已有邮箱账户的用户应先按原方式登录，再从账户设置绑定手机号、微信或 QQ。资料、收藏和反馈继续使用同一 Supabase 用户 ID。
+
+手机号入口读取项目的短信验证状态。微信和 QQ 分别通过独立的 OIDC 登录连接接入。待开通的按钮会显示状态，开通后即可使用。管理员可按 [中国用户登录接入与验收](docs/china-sign-in.md) 配置短信、授权回调及应用凭据。
 
 ## 数据来源与更新
 

@@ -1,5 +1,103 @@
 {
  "updated": "2026-11-08 17:20",
+ "fields": {
+  "pa-nf": "聚酰胺纳滤膜",
+  "cat-mem": "催化膜",
+  "heo": "高熵氧化物催化",
+  "ml-mem": "机器学习+膜"
+ },
+ "journals": {
+  "Journal of Membrane Science": {
+   "abbr": "J. Membr. Sci.",
+   "cas_zone": "1区",
+   "if": 8.8
+  },
+  "Desalination": {
+   "abbr": "Desalination",
+   "cas_zone": "1区",
+   "if": 9.9
+  },
+  "Chemical Engineering Journal": {
+   "abbr": "Chem. Eng. J.",
+   "cas_zone": "1区",
+   "if": 12.5
+  },
+  "Water Research": {
+   "abbr": "Water Res.",
+   "cas_zone": "1区",
+   "if": 12.8
+  },
+  "Environmental Science & Technology": {
+   "abbr": "Environ. Sci. Technol.",
+   "cas_zone": "1区",
+   "if": 12.2
+  },
+  "Nature Communications": {
+   "abbr": "Nat. Commun.",
+   "cas_zone": "1区",
+   "if": 18.1
+  },
+  "Journal of Hazardous Materials": {
+   "abbr": "J. Hazard. Mater.",
+   "cas_zone": "1区",
+   "if": 10.6
+  },
+  "Applied Catalysis B: Environment and Energy": {
+   "abbr": "Appl. Catal. B",
+   "cas_zone": "1区",
+   "if": 19.7
+  },
+  "ACS Catalysis": {
+   "abbr": "ACS Catal.",
+   "cas_zone": "1区",
+   "if": 13.6
+  },
+  "Advanced Functional Materials": {
+   "abbr": "Adv. Funct. Mater.",
+   "cas_zone": "1区",
+   "if": 19.9
+  },
+  "Advanced Science": {
+   "abbr": "Adv. Sci.",
+   "cas_zone": "1区",
+   "if": 14.1
+  },
+  "Angewandte Chemie International Edition": {
+   "abbr": "Angew. Chem.",
+   "cas_zone": "1区",
+   "if": 17.6
+  },
+  "ACS Nano": {
+   "abbr": "ACS Nano",
+   "cas_zone": "1区",
+   "if": 17.3
+  },
+  "Separation and Purification Technology": {
+   "abbr": "Sep. Purif. Technol.",
+   "cas_zone": "2区",
+   "if": 9.1
+  },
+  "Small": {
+   "abbr": "Small",
+   "cas_zone": "2区",
+   "if": 11.9
+  },
+  "Environmental Research": {
+   "abbr": "Environ. Res.",
+   "cas_zone": "2区",
+   "if": 8.2
+  },
+  "Journal of Environmental Chemical Engineering": {
+   "abbr": "J. Environ. Chem. Eng.",
+   "cas_zone": "2区",
+   "if": 7.5
+  },
+  "Journal of Materials Chemistry A": {
+   "abbr": "J. Mater. Chem. A",
+   "cas_zone": "2区",
+   "if": null
+  }
+ },
  "papers": [
   {
    "_id": "10.1016_j.watres.2026.127291",

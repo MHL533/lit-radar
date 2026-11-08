@@ -1,0 +1,43 @@
+name: Backfill papers
+
+# Runs when scripts/backfill.json changes (bump "run" to start a new backfill), or manually.
+on:
+  push:
+    branches: [main]
+    paths: [scripts/backfill.json, scripts/backfill.py]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: enrich
+  cancel-in-progress: false
+
+jobs:
+  backfill:
+    runs-on: ubuntu-latest
+    timeout-minutes: 300
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Search Crossref and add matching papers
+        run: python scripts/backfill.py
+      - name: Fill author institutions
+        run: python scripts/enrich.py
+      - name: Commit changes
+        run: |
+          if git diff --quiet papers.json; then
+            echo "nothing to commit"; exit 0
+          fi
+          git config user.name "lit-radar-bot"
+          git config user.email "lit-radar-bot@users.noreply.github.com"
+          git add papers.json
+          git commit -m "Backfill papers from Crossref"
+          for i in 1 2 3; do
+            git pull --rebase origin main && git push origin HEAD:main && exit 0
+            sleep 15
+          done
+          exit 1

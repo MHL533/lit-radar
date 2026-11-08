@@ -2,9 +2,19 @@
  "updated": "2026-11-08 17:20",
  "fields": {
   "pa-nf": "聚酰胺纳滤膜",
+  "ro-fo": "反渗透/正渗透",
+  "osn": "有机溶剂纳滤",
+  "uf-mf": "超滤/微滤",
+  "gas-sep": "气体分离膜",
+  "md": "膜蒸馏/渗透汽化",
+  "iem-ed": "离子交换膜/电渗析",
+  "mbr": "膜生物反应器",
+  "2d-mem": "二维/框架材料膜",
   "cat-mem": "催化膜",
   "heo": "高熵氧化物催化",
   "ml-mem": "机器学习+膜",
+  "fouling": "膜污染与清洗",
+  "mem-process": "膜过程与应用",
   "mp": "微塑料",
   "mp-ml": "微塑料机器学习识别",
   "mp-stain": "微塑料染色与标记",
@@ -18,12 +28,22 @@
  "groups": [
   {
    "id": "membrane",
-   "name": "膜分离与催化膜",
+   "name": "膜分离（我的方向）",
    "fields": [
     "pa-nf",
+    "ro-fo",
+    "osn",
+    "uf-mf",
+    "gas-sep",
+    "md",
+    "iem-ed",
+    "mbr",
+    "2d-mem",
     "cat-mem",
     "heo",
-    "ml-mem"
+    "ml-mem",
+    "fouling",
+    "mem-process"
    ],
    "default": true
   },
@@ -139,6 +159,81 @@
    "abbr": "J. Mater. Chem. A",
    "cas_zone": "2区",
    "if": null
+  },
+  "Environment International": {
+   "abbr": "Environ. Int.",
+   "cas_zone": "1区",
+   "if": 10.2
+  },
+  "Science of the Total Environment": {
+   "abbr": "Sci. Total Environ.",
+   "cas_zone": "2区",
+   "if": 8.0
+  },
+  "Environmental Pollution": {
+   "abbr": "Environ. Pollut.",
+   "cas_zone": "2区",
+   "if": 7.2
+  },
+  "Marine Pollution Bulletin": {
+   "abbr": "Mar. Pollut. Bull.",
+   "cas_zone": "2区",
+   "if": 4.9
+  },
+  "Ecotoxicology and Environmental Safety": {
+   "abbr": "Ecotoxicol. Environ. Saf.",
+   "cas_zone": "2区",
+   "if": 6.6
+  },
+  "Analytical Chemistry": {
+   "abbr": "Anal. Chem.",
+   "cas_zone": "1区",
+   "if": 7.3
+  },
+  "TrAC Trends in Analytical Chemistry": {
+   "abbr": "TrAC",
+   "cas_zone": "1区",
+   "if": 13.5
+  },
+  "Journal of Colloid and Interface Science": {
+   "abbr": "J. Colloid Interface Sci.",
+   "cas_zone": "1区",
+   "if": 9.6
+  },
+  "Chinese Journal of Catalysis": {
+   "abbr": "Chin. J. Catal.",
+   "cas_zone": "1区",
+   "if": 17.2
+  },
+  "Environmental Science & Technology Letters": {
+   "abbr": "Environ. Sci. Technol. Lett.",
+   "cas_zone": "2区",
+   "if": 7.3
+  },
+  "Journal of Cleaner Production": {
+   "abbr": "J. Clean. Prod.",
+   "cas_zone": "1区",
+   "if": 10.7
+  },
+  "Applied Surface Science": {
+   "abbr": "Appl. Surf. Sci.",
+   "cas_zone": "2区",
+   "if": 6.6
+  },
+  "Journal of the American Chemical Society": {
+   "abbr": "J. Am. Chem. Soc.",
+   "cas_zone": "1区",
+   "if": 16.6
+  },
+  "Advanced Materials": {
+   "abbr": "Adv. Mater.",
+   "cas_zone": "1区",
+   "if": 29.1
+  },
+  "Journal of Environmental Sciences": {
+   "abbr": "J. Environ. Sci.",
+   "cas_zone": "2区",
+   "if": 6.5
   }
  },
  "papers": [

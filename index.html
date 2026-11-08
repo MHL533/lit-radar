@@ -195,10 +195,11 @@ h3 a:hover{color:var(--accent);text-decoration:underline;text-underline-offset:3
 <script src="config.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.js"></script>
 <script>
+// 依次尝试：同站点的 papers.json（GitHub Pages 上最快、最新）→ jsDelivr（国内较稳）→ GitHub 原始文件
 const SOURCES = [
-  "https://raw.githubusercontent.com/MHL533/lit-radar/main/papers.json",
+  "papers.json",
   "https://cdn.jsdelivr.net/gh/MHL533/lit-radar@main/papers.json",
-  "papers.json"
+  "https://raw.githubusercontent.com/MHL533/lit-radar/main/papers.json"
 ];
 const DEFAULT_FIELDS = { "pa-nf": "聚酰胺纳滤膜", "cat-mem": "催化膜", "heo": "高熵氧化物催化", "ml-mem": "机器学习+膜" };
 const PAGE = 60;
@@ -537,12 +538,12 @@ $("logout").addEventListener("click", async () => {
 renderLogin(); renderDateChips(); setView(state.view);
 (async () => {
   try {
-    const get = u => { const c = new AbortController(); const t = setTimeout(() => c.abort(), 6000);
-      return fetch(u + (u.startsWith("http") ? "?t=" + Date.now() : ""), { cache: "no-store", signal: c.signal })
+    const get = u => { const c = new AbortController(); const t = setTimeout(() => c.abort(), 25000);
+      return fetch(u + "?t=" + Math.floor(Date.now() / 300000), { cache: "no-cache", signal: c.signal })
         .then(r => { if (!r.ok) throw new Error(r.status); return r.json(); }).finally(() => clearTimeout(t)); };
-    const got = (await Promise.allSettled(SOURCES.map(get))).filter(x => x.status === "fulfilled" && x.value && Array.isArray(x.value.papers)).map(x => x.value);
-    if (!got.length) throw new Error("no source");
-    const j = got.sort((a, b) => String(b.updated || "").localeCompare(String(a.updated || "")))[0];
+    let j = null;
+    for (const u of SOURCES) { try { const x = await get(u); if (x && Array.isArray(x.papers)) { j = x; break; } } catch {} }
+    if (!j) throw new Error("no source");
     FIELDS = j.fields || DEFAULT_FIELDS; JOURNALS = j.journals || {};
     if (Array.isArray(j.groups) && j.groups.length) GROUPS = j.groups;
     ALL = j.papers || [];

@@ -6363,25 +6363,6 @@
    ]
   },
   {
-   "_id": "10.1002_adfm.78861",
-   "title": "Correction to “A MOF‐Based Core–Shell System Enables Controlled Release and Ordered Assembly of Nano‐Hydroxyapatite for Enamel Remineralization”",
-   "journal": "Advanced Functional Materials",
-   "cas_zone": "1区",
-   "field": "mof",
-   "published": "2026-10-22",
-   "pushed": "2026-10-22",
-   "doi": "10.1002/adfm.78861",
-   "url": "https://doi.org/10.1002/adfm.78861",
-   "summary_zh": "",
-   "source_type": "官方",
-   "source_name": "Wiley Online Library",
-   "source_url": "https://doi.org/10.1002/adfm.78861",
-   "key": false,
-   "auto": true,
-   "affils": [],
-   "corr_affils": []
-  },
-  {
    "_id": "10.1021_acs.est.6c09645",
    "title": "Emission Mitigation and Climate Warming Increase China’s Ozone Responsiveness to Soil NO x Relative to Biogenic VOCs",
    "journal": "Environmental Science & Technology",
@@ -18825,25 +18806,6 @@
    ]
   },
   {
-   "_id": "10.1021_acs.analchem.6c02729",
-   "title": "Correction to “Shapley Additive exPlanations-Integrated Convolutional Neural Networks for Chemically Interpretable Fourier-Transform Infrared-Based Microplastic Characterization”",
-   "journal": "Analytical Chemistry",
-   "cas_zone": "1区",
-   "field": "mp-ml",
-   "published": "2026-09-21",
-   "pushed": "2026-09-21",
-   "doi": "10.1021/acs.analchem.6c02729",
-   "url": "https://doi.org/10.1021/acs.analchem.6c02729",
-   "summary_zh": "",
-   "source_type": "官方",
-   "source_name": "ACS Publications",
-   "source_url": "https://doi.org/10.1021/acs.analchem.6c02729",
-   "key": false,
-   "auto": true,
-   "affils": [],
-   "corr_affils": []
-  },
-  {
    "_id": "10.1021_acs.analchem.6c01069",
    "title": "Hydrolytic-Peroxidatic Cascade on Bifunctional Nanozymes for Specific Fluorescent Profiling of Aromatic Polyester Microplastics",
    "journal": "Analytical Chemistry",
@@ -23402,29 +23364,6 @@
     "Chinese Academy of Sciences",
     "Lanzhou Institute of Chemical Physics",
     "Lanzhou University"
-   ]
-  },
-  {
-   "_id": "10.1002_advs.77727",
-   "title": "Designer Moiré Quantum Materials Enabled by Freestanding Oxide Membranes in Twisted and Hybrid Bilayers",
-   "journal": "Advanced Science",
-   "cas_zone": "1区",
-   "field": "mem-process",
-   "published": "2026-09-11",
-   "pushed": "2026-09-11",
-   "doi": "10.1002/advs.77727",
-   "url": "https://doi.org/10.1002/advs.77727",
-   "summary_zh": "",
-   "source_type": "官方",
-   "source_name": "Wiley Online Library",
-   "source_url": "https://doi.org/10.1002/advs.77727",
-   "key": false,
-   "auto": true,
-   "affils": [
-    "National Cheng Kung University"
-   ],
-   "corr_affils": [
-    "National Cheng Kung University"
    ]
   },
   {
@@ -36991,25 +36930,6 @@
    "corr_affils": [
     "Qingdao University"
    ]
-  },
-  {
-   "_id": "10.1021_jacs.6c13807",
-   "title": "Correction to “In Situ SERS Monitoring of Plasmon-Mediated Degradation of Microplastics”",
-   "journal": "Journal of the American Chemical Society",
-   "cas_zone": "1区",
-   "field": "mp",
-   "published": "2026-08-11",
-   "pushed": "2026-08-11",
-   "doi": "10.1021/jacs.6c13807",
-   "url": "https://doi.org/10.1021/jacs.6c13807",
-   "summary_zh": "",
-   "source_type": "官方",
-   "source_name": "ACS Publications",
-   "source_url": "https://doi.org/10.1021/jacs.6c13807",
-   "key": false,
-   "auto": true,
-   "affils": [],
-   "corr_affils": []
   },
   {
    "_id": "10.1016_j.watres.2026.126694",
@@ -58140,36 +58060,6 @@
    ]
   },
   {
-   "_id": "10.1016_j.envres.2026.125106",
-   "title": "Plastic mulching and crop type govern the vertical distribution and composition of microplastics in a major agricultural irrigation system",
-   "journal": "Environmental Research",
-   "cas_zone": "2区",
-   "field": "mp",
-   "published": "2026-06-27",
-   "pushed": "2026-06-27",
-   "doi": "10.1016/j.envres.2026.125106",
-   "url": "https://doi.org/10.1016/j.envres.2026.125106",
-   "summary_zh": "",
-   "source_type": "官方",
-   "source_name": "ScienceDirect",
-   "source_url": "https://doi.org/10.1016/j.envres.2026.125106",
-   "key": false,
-   "auto": true,
-   "affils": [
-    "Beihang University",
-    "Capital University of Economics and Business",
-    "Chinese Academy of Sciences",
-    "Research Center for Eco-Environmental Sciences",
-    "University of Chinese Academy of Sciences",
-    "Inner Mongolia Agricultural University",
-    "Beijing Academy of Agriculture and Forestry Sciences",
-    "Universidade Politécnica de Coimbra"
-   ],
-   "corr_affils": [
-    "Beihang University"
-   ]
-  },
-  {
    "_id": "10.1016_j.envpol.2026.128648",
    "title": "Dietary exposure to polystyrene microplastics impairs muscle growth via gut microbiota dysbiosis and hepatic oxidative stress along the gut-liver-muscle axis in Qihe gibel carp (Carassius gibelio var. Qihe)",
    "journal": "Environmental Pollution",
@@ -61117,32 +61007,6 @@
     "Jiangsu University",
     "Suzhou University of Science and Technology",
     "Collaborative Innovation Center for Water Treatment Technology and Materials"
-   ]
-  },
-  {
-   "_id": "10.1016_j.envres.2026.125086",
-   "title": "Source apportionment of photochemical losses of VOCs and ozone formation potential during the critical ozone pollution period of 29 cities in the North China Plain",
-   "journal": "Environmental Research",
-   "cas_zone": "2区",
-   "field": "aop-gas",
-   "published": "2026-06-19",
-   "pushed": "2026-06-19",
-   "doi": "10.1016/j.envres.2026.125086",
-   "url": "https://doi.org/10.1016/j.envres.2026.125086",
-   "summary_zh": "",
-   "source_type": "官方",
-   "source_name": "ScienceDirect",
-   "source_url": "https://doi.org/10.1016/j.envres.2026.125086",
-   "key": false,
-   "auto": true,
-   "affils": [
-    "Beijing Normal University",
-    "Chinese Research Academy of Environmental Sciences",
-    "Tianjin University of Technology"
-   ],
-   "corr_affils": [
-    "Beijing Normal University",
-    "Chinese Research Academy of Environmental Sciences"
    ]
   },
   {
@@ -73201,29 +73065,6 @@
    ]
   },
   {
-   "_id": "10.1016_j.jhazmat.2026.142508",
-   "title": "Horizontal and vertical distributions of microplastics and their water–sediment partitioning in a macrotidal estuarine embayment: Implications for coastal sequestration potential",
-   "journal": "Journal of Hazardous Materials",
-   "cas_zone": "1区",
-   "field": "mp",
-   "published": "2026-05-24",
-   "pushed": "2026-05-24",
-   "doi": "10.1016/j.jhazmat.2026.142508",
-   "url": "https://doi.org/10.1016/j.jhazmat.2026.142508",
-   "summary_zh": "",
-   "source_type": "官方",
-   "source_name": "ScienceDirect",
-   "source_url": "https://doi.org/10.1016/j.jhazmat.2026.142508",
-   "key": false,
-   "auto": true,
-   "affils": [
-    "Incheon National University"
-   ],
-   "corr_affils": [
-    "Incheon National University"
-   ]
-  },
-  {
    "_id": "10.1016_j.jhazmat.2026.142507",
    "title": "Migration and transformation of nanoplastics and microcystin during Chlamydomonas reinhardtii processing: From the environment to product",
    "journal": "Journal of Hazardous Materials",
@@ -73292,25 +73133,6 @@
    "corr_affils": [
     "Shandong University"
    ]
-  },
-  {
-   "_id": "10.1021_acs.est.6c05935",
-   "title": "Correction to “Mapping Microplastic Movement: A Phase Diagram to Predict Nonbuoyant Microplastic Modes of Transport at the Particle Scale”",
-   "journal": "Environmental Science & Technology",
-   "cas_zone": "1区",
-   "field": "mp",
-   "published": "2026-05-23",
-   "pushed": "2026-05-23",
-   "doi": "10.1021/acs.est.6c05935",
-   "url": "https://doi.org/10.1021/acs.est.6c05935",
-   "summary_zh": "",
-   "source_type": "官方",
-   "source_name": "ACS Publications",
-   "source_url": "https://doi.org/10.1021/acs.est.6c05935",
-   "key": false,
-   "auto": true,
-   "affils": [],
-   "corr_affils": []
   },
   {
    "_id": "10.1021_acs.est.6c00941",
@@ -88331,39 +88153,6 @@
    ],
    "corr_affils": [
     "Guangdong Ocean University"
-   ]
-  },
-  {
-   "_id": "10.1016_j.jhazmat.2026.142131",
-   "title": "Source-specific VOCs and atmospheric oxidation capacity drive the formation of secondary aerosols and visibility impairment in East Asia suburban environments",
-   "journal": "Journal of Hazardous Materials",
-   "cas_zone": "1区",
-   "field": "aop-gas",
-   "published": "2026-04-17",
-   "pushed": "2026-04-17",
-   "doi": "10.1016/j.jhazmat.2026.142131",
-   "url": "https://doi.org/10.1016/j.jhazmat.2026.142131",
-   "summary_zh": "",
-   "source_type": "官方",
-   "source_name": "ScienceDirect",
-   "source_url": "https://doi.org/10.1016/j.jhazmat.2026.142131",
-   "key": false,
-   "auto": true,
-   "affils": [
-    "National Sun Yat-sen University",
-    "National Taiwan University",
-    "China Medical University",
-    "National Central University",
-    "Goddard Space Flight Center",
-    "National Taipei University of Technology",
-    "Institute of Atomic and Molecular Sciences, Academia Sinica",
-    "Research Center for Environmental Changes, Academia Sinica"
-   ],
-   "corr_affils": [
-    "National Taiwan University",
-    "Institute of Atomic and Molecular Sciences, Academia Sinica",
-    "Research Center for Environmental Changes, Academia Sinica",
-    "Academia Sinica"
    ]
   },
   {
@@ -113850,30 +113639,6 @@
    ]
   },
   {
-   "_id": "10.1016_j.jece.2026.121885",
-   "title": "The vertical distribution characteristics and influencing factors of microplastics in soils around the Linhuan Industrial Park",
-   "journal": "Journal of Environmental Chemical Engineering",
-   "cas_zone": "2区",
-   "field": "mp",
-   "published": "2026-02-19",
-   "pushed": "2026-02-19",
-   "doi": "10.1016/j.jece.2026.121885",
-   "url": "https://doi.org/10.1016/j.jece.2026.121885",
-   "summary_zh": "",
-   "source_type": "官方",
-   "source_name": "ScienceDirect",
-   "source_url": "https://doi.org/10.1016/j.jece.2026.121885",
-   "key": false,
-   "auto": true,
-   "affils": [
-    "Anhui University",
-    "Huaibei Mining (China)"
-   ],
-   "corr_affils": [
-    "Anhui University"
-   ]
-  },
-  {
    "_id": "10.1016_j.jece.2026.121879",
    "title": "From adsorption to algorithms: Materials and machine learning strategies for microplastic detection and control",
    "journal": "Journal of Environmental Chemical Engineering",
@@ -118080,32 +117845,6 @@
    "corr_affils": [
     "Lawrence Livermore National Laboratory",
     "University of California, Merced"
-   ]
-  },
-  {
-   "_id": "10.1039_d6ta90047j",
-   "title": "Correction: Metal–organic framework applications for microplastic remediation: exploring pathways and future potential",
-   "journal": "Journal of Materials Chemistry A",
-   "cas_zone": "2区",
-   "field": "mp",
-   "published": "2026-02-09",
-   "pushed": "2026-02-09",
-   "doi": "10.1039/d6ta90047j",
-   "url": "https://doi.org/10.1039/d6ta90047j",
-   "summary_zh": "",
-   "source_type": "官方",
-   "source_name": "RSC Publishing",
-   "source_url": "https://doi.org/10.1039/d6ta90047j",
-   "key": false,
-   "auto": true,
-   "affils": [
-    "Wuhan Textile University",
-    "State Key Laboratory of Chemical Resource Engineering",
-    "Beijing University of Chemical Technology",
-    "City University of Hong Kong"
-   ],
-   "corr_affils": [
-    "Wuhan Textile University"
    ]
   },
   {
@@ -126510,39 +126249,6 @@
    ]
   },
   {
-   "_id": "10.1016_j.jes.2026.01.052",
-   "title": "Investigation of the vertical distribution of formaldehyde and its implications for hydroxyl radical contribution and ozone formation sensitivity in Ningbo, China",
-   "journal": "Journal of Environmental Sciences",
-   "cas_zone": "2区",
-   "field": "aop-gas",
-   "published": "2026-01-22",
-   "pushed": "2026-01-22",
-   "doi": "10.1016/j.jes.2026.01.052",
-   "url": "https://doi.org/10.1016/j.jes.2026.01.052",
-   "summary_zh": "",
-   "source_type": "官方",
-   "source_name": "ScienceDirect",
-   "source_url": "https://doi.org/10.1016/j.jes.2026.01.052",
-   "key": false,
-   "auto": true,
-   "affils": [
-    "China Meteorological Administration",
-    "Wuxi University",
-    "Chinese Academy of Sciences",
-    "Hefei Institutes of Physical Science",
-    "Anhui Institute of Optics and Fine Mechanics",
-    "Jiangnan University",
-    "University of Science and Technology of China",
-    "Suzhou University of Science and Technology"
-   ],
-   "corr_affils": [
-    "Chinese Academy of Sciences",
-    "Hefei Institutes of Physical Science",
-    "Anhui Institute of Optics and Fine Mechanics",
-    "University of Science and Technology of China"
-   ]
-  },
-  {
    "_id": "10.1016_j.jes.2026.01.051",
    "title": "Combined neurotoxicity of aged polystyrene microplastics and cadmium in zebrafish: A gut-brain axis perspective",
    "journal": "Journal of Environmental Sciences",
@@ -129374,29 +129080,6 @@
    ],
    "corr_affils": [
     "Universidade Federal de São Paulo"
-   ]
-  },
-  {
-   "_id": "10.1016_j.marpolbul.2026.119229",
-   "title": "Microplastic accumulation and vertical distribution in the Delaware Estuary estuarine turbidity maximum",
-   "journal": "Marine Pollution Bulletin",
-   "cas_zone": "2区",
-   "field": "mp",
-   "published": "2026-01-15",
-   "pushed": "2026-01-15",
-   "doi": "10.1016/j.marpolbul.2026.119229",
-   "url": "https://doi.org/10.1016/j.marpolbul.2026.119229",
-   "summary_zh": "",
-   "source_type": "官方",
-   "source_name": "ScienceDirect",
-   "source_url": "https://doi.org/10.1016/j.marpolbul.2026.119229",
-   "key": false,
-   "auto": true,
-   "affils": [
-    "University of Delaware"
-   ],
-   "corr_affils": [
-    "University of Delaware"
    ]
   },
   {
@@ -153162,33 +152845,6 @@
     "Chinese Academy of Sciences",
     "Ningbo Institute of Industrial Technology",
     "Zhejiang University of Technology"
-   ]
-  },
-  {
-   "_id": "10.1039_d5ta90276b",
-   "title": "Correction: Unraveling the role of the Mn–[O x ]–Ce structure in MnO x /CeO 2 catalysts for the catalytic oxidation of VOCs: resistance to sintering, increasing oxygen vacancies and activation of lattice oxygen",
-   "journal": "Journal of Materials Chemistry A",
-   "cas_zone": "2区",
-   "field": "aop-gas",
-   "published": "2025-11-28",
-   "pushed": "2025-11-28",
-   "doi": "10.1039/d5ta90276b",
-   "url": "https://doi.org/10.1039/d5ta90276b",
-   "summary_zh": "",
-   "source_type": "官方",
-   "source_name": "RSC Publishing",
-   "source_url": "https://doi.org/10.1039/d5ta90276b",
-   "key": false,
-   "auto": true,
-   "affils": [
-    "Zhejiang Ocean University",
-    "Zhejiang University",
-    "Zhejiang Research Institute of Chemical Industry",
-    "Zhejiang Ocean Development Institute"
-   ],
-   "corr_affils": [
-    "Zhejiang Ocean University",
-    "Zhejiang University"
    ]
   },
   {

@@ -25025,6 +25025,29 @@
    ]
   },
   {
+   "_id": "10.1016_j.memsci.2026.126134",
+   "title": "Blend–leach fabrication of organic solvent ultrafiltration PEEK membranes with scale up to spiral wound modules",
+   "journal": "Journal of Membrane Science",
+   "cas_zone": "1区",
+   "field": "osn",
+   "published": "2026-09-05",
+   "pushed": "2026-09-05",
+   "doi": "10.1016/j.memsci.2026.126134",
+   "url": "https://doi.org/10.1016/j.memsci.2026.126134",
+   "summary_zh": "",
+   "source_type": "官方",
+   "source_name": "ScienceDirect",
+   "source_url": "https://doi.org/10.1016/j.memsci.2026.126134",
+   "key": false,
+   "auto": true,
+   "affils": [
+    "Queen Mary University of London"
+   ],
+   "corr_affils": [
+    "Queen Mary University of London"
+   ]
+  },
+  {
    "_id": "10.1016_j.memsci.2026.126133",
    "title": "Integrated transport-reaction nanomeshes in HGO/CoP membranes for high-flux emulsion separation and catalytic antifouling",
    "journal": "Journal of Membrane Science",
@@ -33059,6 +33082,29 @@
    ]
   },
   {
+   "_id": "10.1016_j.jece.2026.124692",
+   "title": "Strategic optimization of silver nanoparticle and PDA modified spacers in spiral-wound nanofiltration for sustainable mitigation of single and composite fouling",
+   "journal": "Journal of Environmental Chemical Engineering",
+   "cas_zone": "2区",
+   "field": "fouling",
+   "published": "2026-08-19",
+   "pushed": "2026-08-19",
+   "doi": "10.1016/j.jece.2026.124692",
+   "url": "https://doi.org/10.1016/j.jece.2026.124692",
+   "summary_zh": "",
+   "source_type": "官方",
+   "source_name": "ScienceDirect",
+   "source_url": "https://doi.org/10.1016/j.jece.2026.124692",
+   "key": false,
+   "auto": true,
+   "affils": [
+    "Harbin Institute of Technology"
+   ],
+   "corr_affils": [
+    "Harbin Institute of Technology"
+   ]
+  },
+  {
    "_id": "10.1016_j.jece.2026.124691",
    "title": "Precursor-directed carbon reconstruction of fully biomass-derived membranes for efficient oil-in-water emulsion separation",
    "journal": "Journal of Environmental Chemical Engineering",
@@ -40295,6 +40341,30 @@
    ]
   },
   {
+   "_id": "10.1016_j.seppur.2026.139628",
+   "title": "Hydraulic resistance and concentration polarization in spiral-wound membrane separation modules regulated by fluid slip at feed spacer surfaces using computational fluid dynamics",
+   "journal": "Separation and Purification Technology",
+   "cas_zone": "2区",
+   "field": "mem-process",
+   "published": "2026-08-04",
+   "pushed": "2026-08-04",
+   "doi": "10.1016/j.seppur.2026.139628",
+   "url": "https://doi.org/10.1016/j.seppur.2026.139628",
+   "summary_zh": "",
+   "source_type": "官方",
+   "source_name": "ScienceDirect",
+   "source_url": "https://doi.org/10.1016/j.seppur.2026.139628",
+   "key": false,
+   "auto": true,
+   "affils": [
+    "Zhejiang Sci-Tech University",
+    "Zhejiang University of Technology"
+   ],
+   "corr_affils": [
+    "Zhejiang Sci-Tech University"
+   ]
+  },
+  {
    "_id": "10.1016_j.memsci.2026.125993",
    "title": "Mechanistic investigation of humic acid treatment and membrane fouling mitigation by peroxymonosulfate activation over a solid-waste-derived MnCo2O4 catalytic ceramic membrane",
    "journal": "Journal of Membrane Science",
@@ -42654,6 +42724,29 @@
    ],
    "corr_affils": [
     "Tsinghua University"
+   ]
+  },
+  {
+   "_id": "10.1016_j.memsci.2026.125977",
+   "title": "In situ 23Na NMR monitoring of sodium accumulation during spiral wound reverse osmosis desalination",
+   "journal": "Journal of Membrane Science",
+   "cas_zone": "1区",
+   "field": "ro-fo",
+   "published": "2026-07-30",
+   "pushed": "2026-07-30",
+   "doi": "10.1016/j.memsci.2026.125977",
+   "url": "https://doi.org/10.1016/j.memsci.2026.125977",
+   "summary_zh": "",
+   "source_type": "官方",
+   "source_name": "ScienceDirect",
+   "source_url": "https://doi.org/10.1016/j.memsci.2026.125977",
+   "key": false,
+   "auto": true,
+   "affils": [
+    "The University of Western Australia"
+   ],
+   "corr_affils": [
+    "The University of Western Australia"
    ]
   },
   {
@@ -47717,6 +47810,29 @@
    ],
    "corr_affils": [
     "Ocean University of China"
+   ]
+  },
+  {
+   "_id": "10.1016_j.memsci.2026.125937",
+   "title": "Enhancing forward osmosis for concentrating biotherapeutics using structurally optimized membranes and macromolecular draw solutes",
+   "journal": "Journal of Membrane Science",
+   "cas_zone": "1区",
+   "field": "ro-fo",
+   "published": "2026-07-20",
+   "pushed": "2026-07-20",
+   "doi": "10.1016/j.memsci.2026.125937",
+   "url": "https://doi.org/10.1016/j.memsci.2026.125937",
+   "summary_zh": "",
+   "source_type": "官方",
+   "source_name": "ScienceDirect",
+   "source_url": "https://doi.org/10.1016/j.memsci.2026.125937",
+   "key": false,
+   "auto": true,
+   "affils": [
+    "Pennsylvania State University"
+   ],
+   "corr_affils": [
+    "Pennsylvania State University"
    ]
   },
   {
@@ -75854,6 +75970,30 @@
    ]
   },
   {
+   "_id": "10.1016_j.desal.2026.120322",
+   "title": "Concentration polarization mitigation via membrane wettability-driven hydrodynamic slip in spiral-wound module channels through computational fluid dynamics",
+   "journal": "Desalination",
+   "cas_zone": "1区",
+   "field": "mem-process",
+   "published": "2026-05-16",
+   "pushed": "2026-05-16",
+   "doi": "10.1016/j.desal.2026.120322",
+   "url": "https://doi.org/10.1016/j.desal.2026.120322",
+   "summary_zh": "",
+   "source_type": "官方",
+   "source_name": "ScienceDirect",
+   "source_url": "https://doi.org/10.1016/j.desal.2026.120322",
+   "key": false,
+   "auto": true,
+   "affils": [
+    "Zhejiang Sci-Tech University",
+    "Zhejiang University of Technology"
+   ],
+   "corr_affils": [
+    "Zhejiang Sci-Tech University"
+   ]
+  },
+  {
    "_id": "10.1016_j.desal.2026.120321",
    "title": "Pore flow model for pervaporation and the possibility of concentration polarization within the membrane",
    "journal": "Desalination",
@@ -90951,6 +91091,33 @@
    ]
   },
   {
+   "_id": "10.1016_j.memsci.2026.125513",
+   "title": "Understanding and mitigating fouling in ultrafiltration of exosomes from complex biofluids using threshold-flux-guided operation",
+   "journal": "Journal of Membrane Science",
+   "cas_zone": "1区",
+   "field": "uf-mf",
+   "published": "2026-04-10",
+   "pushed": "2026-04-10",
+   "doi": "10.1016/j.memsci.2026.125513",
+   "url": "https://doi.org/10.1016/j.memsci.2026.125513",
+   "summary_zh": "",
+   "source_type": "官方",
+   "source_name": "ScienceDirect",
+   "source_url": "https://doi.org/10.1016/j.memsci.2026.125513",
+   "key": false,
+   "auto": true,
+   "affils": [
+    "Chinese Academy of Sciences",
+    "Institute of Process Engineering",
+    "University of Chinese Academy of Sciences"
+   ],
+   "corr_affils": [
+    "Chinese Academy of Sciences",
+    "Institute of Process Engineering",
+    "University of Chinese Academy of Sciences"
+   ]
+  },
+  {
    "_id": "10.1016_j.memsci.2026.125512",
    "title": "Flexible and conductive carbon nanotubes/polyvinyl alcohol composite hollow fiber membranes with electro-enhanced antifouling performance",
    "journal": "Journal of Membrane Science",
@@ -94311,6 +94478,30 @@
    "corr_affils": [
     "University of Liverpool",
     "Zhejiang Gongshang University"
+   ]
+  },
+  {
+   "_id": "10.1016_j.watres.2026.125865",
+   "title": "FIND Parallel: A parallel numerical solver for large-scale simulations of cross-scale spiral-wound reverse osmosis membrane channels",
+   "journal": "Water Research",
+   "cas_zone": "1区",
+   "field": "ro-fo",
+   "published": "2026-04-02",
+   "pushed": "2026-04-02",
+   "doi": "10.1016/j.watres.2026.125865",
+   "url": "https://doi.org/10.1016/j.watres.2026.125865",
+   "summary_zh": "",
+   "source_type": "官方",
+   "source_name": "ScienceDirect",
+   "source_url": "https://doi.org/10.1016/j.watres.2026.125865",
+   "key": false,
+   "auto": true,
+   "affils": [
+    "Sun Yat-sen University",
+    "Soochow University"
+   ],
+   "corr_affils": [
+    "Sun Yat-sen University"
    ]
   },
   {
@@ -100365,6 +100556,38 @@
    ]
   },
   {
+   "_id": "10.1021_acs.est.6c00526",
+   "title": "Divergent Hydrodynamic Impacts of Feed Spacer Designs on Scaling and Biofouling in Spiral Wound Membrane Modules",
+   "journal": "Environmental Science & Technology",
+   "cas_zone": "1区",
+   "field": "mem-process",
+   "published": "2026-03-19",
+   "pushed": "2026-03-19",
+   "doi": "10.1021/acs.est.6c00526",
+   "url": "https://doi.org/10.1021/acs.est.6c00526",
+   "summary_zh": "",
+   "source_type": "官方",
+   "source_name": "ACS Publications",
+   "source_url": "https://doi.org/10.1021/acs.est.6c00526",
+   "key": false,
+   "auto": true,
+   "affils": [
+    "Beijing Normal University",
+    "Tsinghua University",
+    "Chinese Academy of Sciences",
+    "Research Center for Eco-Environmental Sciences",
+    "State Key Laboratory of Environmental Chemistry and Ecotoxicology",
+    "University of Chinese Academy of Sciences",
+    "Nanjing Tech University"
+   ],
+   "corr_affils": [
+    "Chinese Academy of Sciences",
+    "Research Center for Eco-Environmental Sciences",
+    "State Key Laboratory of Environmental Chemistry and Ecotoxicology",
+    "Tsinghua University"
+   ]
+  },
+  {
    "_id": "10.1021_acs.est.5c17054",
    "title": "Risks of Microplastics Shaping Viral Communities and Functions in Real Marine Environments",
    "journal": "Environmental Science & Technology",
@@ -105209,6 +105432,29 @@
    "corr_affils": [
     "Kunming University of Science and Technology",
     "Beijing Forestry University"
+   ]
+  },
+  {
+   "_id": "10.1016_j.desal.2026.120071",
+   "title": "Field-realistic accelerated aging protocol for spiral-wound reverse osmosis membranes: multi-scale diagnostics and end-of-life criteria",
+   "journal": "Desalination",
+   "cas_zone": "1区",
+   "field": "ro-fo",
+   "published": "2026-03-10",
+   "pushed": "2026-03-10",
+   "doi": "10.1016/j.desal.2026.120071",
+   "url": "https://doi.org/10.1016/j.desal.2026.120071",
+   "summary_zh": "",
+   "source_type": "官方",
+   "source_name": "ScienceDirect",
+   "source_url": "https://doi.org/10.1016/j.desal.2026.120071",
+   "key": false,
+   "auto": true,
+   "affils": [
+    "Hamad bin Khalifa University"
+   ],
+   "corr_affils": [
+    "Hamad bin Khalifa University"
    ]
   },
   {
@@ -147247,6 +147493,29 @@
    ]
   },
   {
+   "_id": "10.1002_adfm.202525686",
+   "title": "Engineering Vesicle‐Like Polyamide Nanofiltration Membrane via Interfacial Polymerization on Shear‐Triggered Nanoclay Hydrogel",
+   "journal": "Advanced Functional Materials",
+   "cas_zone": "1区",
+   "field": "pa-nf",
+   "published": "2025-12-09",
+   "pushed": "2025-12-09",
+   "doi": "10.1002/adfm.202525686",
+   "url": "https://doi.org/10.1002/adfm.202525686",
+   "summary_zh": "",
+   "source_type": "官方",
+   "source_name": "Wiley Online Library",
+   "source_url": "https://doi.org/10.1002/adfm.202525686",
+   "key": false,
+   "auto": true,
+   "affils": [
+    "Zhejiang University"
+   ],
+   "corr_affils": [
+    "Zhejiang University"
+   ]
+  },
+  {
    "_id": "10.1039_d5ta08561f",
    "title": "CoFe 2 O 4 /resorcinol–formaldehyde resin p–n heterojunctions with a built-in electric field for photo-self-Fenton degradation of tetracycline hydrochloride",
    "journal": "Journal of Materials Chemistry A",
@@ -155720,6 +155989,32 @@
     "Dalian University of Technology",
     "Wenzhou Institute, University of Chinese Academy of Sciences",
     "Dalian Maritime University"
+   ]
+  },
+  {
+   "_id": "10.1016_j.seppur.2025.136115",
+   "title": "Direct choline phosphate Zwitterionization on poly (ether sulfone) offers inhibited coagulation and immune response for blood-contacting ultrafiltration membranes",
+   "journal": "Separation and Purification Technology",
+   "cas_zone": "2区",
+   "field": "uf-mf",
+   "published": "2025-11-21",
+   "pushed": "2025-11-21",
+   "doi": "10.1016/j.seppur.2025.136115",
+   "url": "https://doi.org/10.1016/j.seppur.2025.136115",
+   "summary_zh": "",
+   "source_type": "官方",
+   "source_name": "ScienceDirect",
+   "source_url": "https://doi.org/10.1016/j.seppur.2025.136115",
+   "key": false,
+   "auto": true,
+   "affils": [
+    "Nanchang University",
+    "Nanchang Medical College",
+    "Third Affiliated Hospital of Nanchang University",
+    "Third Hospital of Nanchang"
+   ],
+   "corr_affils": [
+    "Nanchang University"
    ]
   },
   {

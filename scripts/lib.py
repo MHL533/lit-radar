@@ -1,0 +1,325 @@
+"""Shared helpers for the literature library: journal table, sharded storage, Crossref search, OpenAlex enrichment.
+
+Storage layout (served as static files by GitHub Pages):
+  data/meta.json                     fields, groups, journals, per-group monthly counts, update time
+  data/<group>/<YYYY-MM>.json        {"papers": [record, ...]} newest first; a paper is stored in every group it belongs to
+  data/latest.json                   papers added by the daily update during the last 7 days (for the push task)
+
+Compact record keys:
+  id  stable id from the DOI        t  title           j  journal display name     f  [field, ...] (first = primary)
+  d   publication date YYYY-MM-DD   doi                a  [institutions]           c  [corresponding institutions]
+  s   Chinese summary (optional)    k  1 = key paper   src [type, name, url] when not the publisher page
+  x   time added by the daily update (Beijing time, optional)
+"""
+import csv
+import datetime as dt
+import glob
+import json
+import os
+import re
+import time
+import urllib.parse
+import urllib.request
+
+import rules
+
+ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+DATA = os.path.join(ROOT, "data")
+MAILTO = "lit-radar@users.noreply.github.com"
+UA = f"lit-radar/2.0 (https://mhl533.github.io/lit-radar/; mailto:{MAILTO})"
+SINCE = "2020-01-01"
+
+
+def bj_now():
+    return dt.datetime.utcnow() + dt.timedelta(hours=8)
+
+
+# ---------------------------------------------------------------- journals
+def load_journals():
+    """ISSN -> info for every CAS 2025 zone 1-2 journal in the relevant categories."""
+    by_issn = {}
+    with open(os.path.join(ROOT, "scripts", "journals_cas2025.csv"), encoding="utf-8") as fh:
+        for r in csv.DictReader(fh):
+            issns = r["issn"].split("|")
+            info = {"cas_name": r["journal"], "cat": r["category"], "zone": r["cas_zone"], "top": r["top"] == "1",
+                    "if": float(r["if_jcr2025"]) if re.fullmatch(r"[\d.]+", r["if_jcr2025"]) else None, "issn": issns[0]}
+            for i in issns:
+                by_issn[i] = info
+    return by_issn
+
+
+def load_names():
+    p = os.path.join(ROOT, "scripts", "journal_names.json")
+    return json.load(open(p, encoding="utf-8")) if os.path.exists(p) else {}
+
+
+def save_names(names, abbr=None):
+    json.dump(dict(sorted(names.items())), open(os.path.join(ROOT, "scripts", "journal_names.json"), "w", encoding="utf-8"), ensure_ascii=False, indent=1)
+    if abbr:
+        p = os.path.join(ROOT, "scripts", "journal_abbr.json")
+        cur = json.load(open(p, encoding="utf-8")) if os.path.exists(p) else {}
+        for k, v in abbr.items():
+            cur.setdefault(k, v)
+        json.dump(dict(sorted(cur.items())), open(p, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
+
+
+def title_case(name):
+    if name.upper() != name:
+        return name
+    small = {"of", "and", "the", "in", "for", "on", "a", "an", "to", "at"}
+    words = name.lower().split()
+    return " ".join(w if (i and w in small) else w[:1].upper() + w[1:] for i, w in enumerate(words))
+
+
+# ---------------------------------------------------------------- storage
+def shard_path(group, month):
+    return os.path.join(DATA, group, month + ".json")
+
+
+def read_shard(path):
+    try:
+        return json.load(open(path, encoding="utf-8")).get("papers", [])
+    except FileNotFoundError:
+        return []
+
+
+def write_shard(path, papers):
+    os.makedirs(os.path.dirname(path), exist_ok=True)
+    papers = sorted(papers, key=lambda p: (p.get("d", ""), p["id"]), reverse=True)
+    with open(path, "w", encoding="utf-8") as fh:
+        fh.write('{"papers":[\n' + ",\n".join(json.dumps(p, ensure_ascii=False, separators=(",", ":")) for p in papers) + "\n]}\n")
+
+
+def all_shards():
+    return sorted(glob.glob(os.path.join(DATA, "*", "????-??.json")))
+
+
+def load_all():
+    """id -> record across every shard (one copy per paper)."""
+    out = {}
+    for path in all_shards():
+        for p in read_shard(path):
+            out.setdefault(p["id"], p)
+    return out
+
+
+def groups_of(fields):
+    seen = []
+    for f in fields:
+        g = rules.GROUP_OF.get(f)
+        if g and g not in seen:
+            seen.append(g)
+    return seen
+
+
+def save_records(records, months=None):
+    """Write records (id -> record) into their group/month shards, replacing earlier copies of the same ids.
+
+    Only shards whose month is in `months` (or touched by a record) are rewritten.
+    """
+    by_shard = {}
+    for p in records.values():
+        for g in groups_of(p["f"]):
+            by_shard.setdefault((g, p["d"][:7]), []).append(p)
+    touched = set(by_shard)
+    if months is not None:
+        for path in all_shards():
+            g, m = path.split(os.sep)[-2], os.path.basename(path)[:7]
+            if m in months:
+                touched.add((g, m))
+    ids = set(records)
+    for g, m in sorted(touched):
+        path = shard_path(g, m)
+        keep = [p for p in read_shard(path) if p["id"] not in ids]
+        new = keep + by_shard.get((g, m), [])
+        if new:
+            write_shard(path, new)
+        elif os.path.exists(path):
+            os.remove(path)
+
+
+def pid(doi):
+    return re.sub(r"[^a-z0-9_.~:@+-]", "_", doi.lower())
+
+
+def build_meta():
+    p = os.path.join(ROOT, "scripts", "journal_abbr.json")
+    abbr = json.load(open(p, encoding="utf-8")) if os.path.exists(p) else {}
+    by_issn = load_journals()
+    names = load_names()
+    name_issn = {v: k for k, v in names.items()}
+    counts, used = {}, {}
+    for path in all_shards():
+        g, m = path.split(os.sep)[-2], os.path.basename(path)[:7]
+        ps = read_shard(path)
+        counts.setdefault(g, {})[m] = len(ps)
+        for p in ps:
+            used[p["j"]] = used.get(p["j"], 0) + 1
+    journals = {}
+    for name in sorted(used):
+        issn = name_issn.get(name)
+        info = by_issn.get(issn) if issn else None
+        if info:
+            journals[name] = {"abbr": rules.ABBR.get(info["issn"]) or abbr.get(info["issn"]) or name,
+                              "cas_zone": info["zone"] + "区", "if": info["if"], "top": info["top"], "cat": info["cat"]}
+        else:
+            journals[name] = {"abbr": name}
+    meta = {
+        "updated": bj_now().strftime("%Y-%m-%d %H:%M"),
+        "since": SINCE[:7],
+        "fields": rules.FIELDS,
+        "groups": [{"id": g, "name": n, "fields": [f for f, *_ in fs], **({"default": True} if g == rules.DEFAULT_GROUP else {})}
+                   for g, n, _, fs in rules.GROUPS],
+        "journals": journals,
+        "shards": {g: dict(sorted(v.items(), reverse=True)) for g, v in sorted(counts.items())},
+        "total": len(load_all()),
+    }
+    json.dump(meta, open(os.path.join(DATA, "meta.json"), "w", encoding="utf-8"), ensure_ascii=False, separators=(",", ":"))
+    return meta
+
+
+# ---------------------------------------------------------------- Crossref
+SELECT = "DOI,title,container-title,short-container-title,ISSN,published-online,published-print,issued,created,type"
+
+
+def get_json(url, tries=5):
+    for attempt in range(tries):
+        try:
+            req = urllib.request.Request(url, headers={"User-Agent": UA})
+            with urllib.request.urlopen(req, timeout=120) as r:
+                return json.load(r)
+        except Exception as e:  # network hiccup or rate limit: back off and retry
+            print("  retry", attempt, str(e)[:120], flush=True)
+            time.sleep(8 * (attempt + 1))
+    return None
+
+
+def crossref_pages(base, params, max_items=None):
+    """Yield Crossref items, following the cursor."""
+    params = dict(params, cursor="*", mailto=MAILTO, select=SELECT)
+    n = 0
+    while True:
+        res = get_json(base + "?" + urllib.parse.urlencode(params))
+        time.sleep(0.25)
+        if not res:
+            return
+        items = res["message"].get("items", [])
+        for it in items:
+            yield it
+        n += len(items)
+        cur = res["message"].get("next-cursor")
+        if not items or not cur or (max_items and n >= max_items) or len(items) < params.get("rows", 20):
+            return
+        params["cursor"] = cur
+
+
+def date_of(it):
+    best = None
+    for k in ("published-online", "published-print", "issued", "created"):
+        parts = (it.get(k) or {}).get("date-parts", [[None]])[0]
+        if not parts or parts[0] is None:
+            continue
+        s = "-".join([str(parts[0])] + [f"{x:02d}" for x in parts[1:3]])
+        if len(s) == 10:
+            return s
+        best = best or s
+    if best:
+        return (best + "-01-01")[:10] if len(best) == 4 else best + "-01"
+    return None
+
+
+def source_name(doi):
+    return ("ScienceDirect" if doi.startswith("10.1016") else "Nature" if doi.startswith("10.1038") else
+            "ACS Publications" if doi.startswith("10.1021") else "Wiley Online Library" if doi.startswith("10.1002") else
+            "RSC Publishing" if doi.startswith("10.1039") else "Science" if doi.startswith("10.1126") else
+            "Cell Press" if doi.startswith("10.1016/j.joule") else "Copernicus" if doi.startswith("10.5194") else
+            "AGU" if doi.startswith("10.1029") else "Springer" if doi.startswith("10.1007") else "Crossref")
+
+
+class Collector:
+    """Turns Crossref items into classified records, skipping DOIs already in the library."""
+
+    def __init__(self, seen, since, until, added=None):
+        self.by_issn = load_journals()
+        self.names = load_names()
+        self.seen = seen
+        self.since, self.until = since, until
+        self.added = added
+        self.new = {}
+        self.abbr = {}
+
+    def take(self, it):
+        if it.get("type") not in (None, "journal-article"):
+            return
+        doi = (it.get("DOI") or "").strip()
+        key = pid(doi)
+        if not doi or key in self.seen or key in self.new:
+            return
+        info = next((self.by_issn[i] for i in it.get("ISSN") or [] if i in self.by_issn), None)
+        if not info:
+            return
+        title = re.sub(r"<[^>]+>", "", (it.get("title") or [""])[0])
+        title = re.sub(r"\s+", " ", title).strip()
+        fields = rules.classify(title, info["cat"])
+        if not fields:
+            return
+        d = date_of(it)
+        if not d or d < self.since or d > self.until:
+            return
+        issn = info["issn"]
+        if issn not in self.names:
+            ct = (it.get("container-title") or [""])[0].strip()
+            self.names[issn] = title_case(ct or info["cas_name"])
+        sct = (it.get("short-container-title") or [""])
+        if sct and sct[0] and issn not in self.abbr:
+            self.abbr[issn] = sct[0]
+        rec = {"id": key, "t": title, "j": self.names[issn], "f": fields, "d": d, "doi": doi}
+        if self.added:
+            rec["x"] = self.added
+        self.new[key] = rec
+
+    def scan_journal(self, issn, date_filter):
+        for it in crossref_pages(f"https://api.crossref.org/journals/{issn}/works", {"filter": date_filter + ",type:journal-article", "rows": 1000}):
+            self.take(it)
+
+    def query(self, q, date_filter, rows=1000):
+        for it in crossref_pages("https://api.crossref.org/works", {"query.bibliographic": q, "filter": date_filter + ",type:journal-article", "rows": rows}, max_items=rows):
+            self.take(it)
+
+
+# ---------------------------------------------------------------- OpenAlex institutions
+def enrich(records, batch=50):
+    """Fill a / c (institutions, corresponding institutions) from OpenAlex for records that lack them."""
+    todo = {p["doi"].lower(): p for p in records if "a" not in p and p.get("doi")}
+    keys = list(todo)
+    filled = 0
+    for i in range(0, len(keys), batch):
+        flt = "doi:" + "|".join("https://doi.org/" + d for d in keys[i:i + batch])
+        url = "https://api.openalex.org/works?" + urllib.parse.urlencode({"filter": flt, "per-page": batch, "select": "doi,authorships", "mailto": MAILTO})
+        res = get_json(url, tries=3) or {}
+        for w in res.get("results", []):
+            p = todo.get((w.get("doi") or "").replace("https://doi.org/", "").lower())
+            if not p:
+                continue
+            allinst, corr = [], []
+            for a in w.get("authorships") or []:
+                names = [x.get("display_name") for x in a.get("institutions") or [] if x.get("display_name")]
+                for n in names:
+                    if n not in allinst:
+                        allinst.append(n)
+                if a.get("is_corresponding"):
+                    for n in names:
+                        if n not in corr:
+                            corr.append(n)
+            p["a"] = allinst[:8]
+            if corr:
+                p["c"] = corr[:4]
+            filled += 1
+        old = (dt.date.today() - dt.timedelta(days=45)).isoformat()
+        for d in keys[i:i + batch]:  # not in OpenAlex: stop asking for older papers
+            if res and "a" not in todo[d] and todo[d].get("d", "") < old:
+                todo[d]["a"] = []
+        time.sleep(0.15)
+        if (i // batch) % 50 == 0:
+            print(f"  institutions {i + batch}/{len(keys)} (filled {filled})", flush=True)
+    return filled

@@ -1,43 +1,69 @@
-name: Backfill papers
+name: Backfill library
 
-# Runs when scripts/backfill.json changes (bump "run" to start a new backfill), or manually.
+# Manual: backfills the chosen publication years in parallel (one job per year), then merges and commits.
 on:
-  push:
-    branches: [main]
-    paths: [scripts/backfill.json]
   workflow_dispatch:
+    inputs:
+      years:
+        description: "Years to backfill, as a JSON list"
+        default: '["2026","2025","2024","2023","2022","2021","2020"]'
 
 permissions:
   contents: write
 
-concurrency:
-  group: enrich
-  cancel-in-progress: false
-
 jobs:
-  backfill:
+  year:
     runs-on: ubuntu-latest
-    timeout-minutes: 300
+    timeout-minutes: 355
+    strategy:
+      fail-fast: false
+      max-parallel: 4
+      matrix:
+        year: ${{ fromJSON(inputs.years) }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - name: Search Crossref and add matching papers
-        run: python scripts/backfill.py
-      - name: Fill author institutions
-        run: python scripts/enrich.py
-      - name: Commit changes
+      - name: Collect papers published in ${{ matrix.year }}
+        run: python scripts/collect.py --year ${{ matrix.year }}
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: year-${{ matrix.year }}
+          path: |
+            data/*/${{ matrix.year }}-*.json
+            scripts/journal_names.json
+            scripts/journal_abbr.json
+          if-no-files-found: ignore
+          retention-days: 7
+
+  merge:
+    needs: year
+    if: always()
+    runs-on: ubuntu-latest
+    concurrency:
+      group: data
+      cancel-in-progress: false
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - uses: actions/download-artifact@v4
+        with:
+          path: staging
+      - name: Merge yearly results
+        run: python scripts/merge.py staging
+      - name: Commit
         run: |
-          if git diff --quiet papers.json; then
-            echo "nothing to commit"; exit 0
-          fi
           git config user.name "lit-radar-bot"
           git config user.email "lit-radar-bot@users.noreply.github.com"
-          git add papers.json
-          git commit -m "Backfill papers from Crossref"
-          for i in 1 2 3; do
-            git pull --rebase origin main && git push origin HEAD:main && exit 0
-            sleep 15
+          git add data scripts/journal_names.json scripts/journal_abbr.json
+          if git diff --cached --quiet; then echo "nothing to commit"; exit 0; fi
+          git commit -q -m "Backfill library: ${{ inputs.years }}"
+          for i in 1 2 3 4 5; do
+            git pull --rebase -q origin main && git push -q origin HEAD:main && exit 0
+            sleep 20
           done
           exit 1

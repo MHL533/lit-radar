@@ -1,0 +1,47 @@
+name: Daily update
+
+# Picks up newly registered papers before each push (Beijing 07:20, 11:20, 18:20), and fills missing institutions.
+on:
+  schedule:
+    - cron: "20 23 * * *"
+    - cron: "20 3 * * *"
+    - cron: "20 10 * * *"
+  workflow_dispatch:
+    inputs:
+      days:
+        description: "Look back this many days"
+        default: "6"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: data
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Collect new papers
+        run: python scripts/collect.py --daily --days ${{ inputs.days || '6' }}
+      - name: Fill missing institutions
+        run: python scripts/collect.py --enrich-missing
+      - name: Commit
+        run: |
+          git config user.name "lit-radar-bot"
+          git config user.email "lit-radar-bot@users.noreply.github.com"
+          git add data scripts/journal_names.json
+          [ -f scripts/journal_abbr.json ] && git add scripts/journal_abbr.json
+          if git diff --cached --quiet; then echo "nothing to commit"; exit 0; fi
+          git commit -q -m "Daily update"
+          for i in 1 2 3 4 5; do
+            git pull --rebase -q origin main && git push -q origin HEAD:main && exit 0
+            sleep 20
+          done
+          exit 1

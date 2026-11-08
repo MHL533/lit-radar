@@ -173,7 +173,7 @@ a.btn{text-decoration:none}
   <header>
     <div>
       <h1>科研文献查询器</h1>
-      <p class="sub" id="subline">中科院分区 2 区及以上期刊新论文，按研究领域每天 7:50、11:50、18:50 自动更新</p>
+      <p class="sub" id="subline">中科院分区 1–2 区期刊论文，2020 年至今，按研究领域每天自动更新</p>
     </div>
     <div class="headr">
       <div class="hbtns">
@@ -308,11 +308,11 @@ a.btn{text-decoration:none}
 <script src="social-auth.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.js"></script>
 <script>
-// 依次尝试：同站点的 papers.json（GitHub Pages 上最快、最新）→ jsDelivr（国内较稳）→ GitHub 原始文件
+// 文献库按“领域组/月份”分片存放在 data/ 下，按需加载。依次尝试：同站点（GitHub Pages）→ jsDelivr（国内较稳）→ GitHub 原始文件
 const SOURCES = [
-  "papers.json",
-  "https://cdn.jsdelivr.net/gh/MHL533/lit-radar@main/papers.json",
-  "https://raw.githubusercontent.com/MHL533/lit-radar/main/papers.json"
+  "data/",
+  "https://cdn.jsdelivr.net/gh/MHL533/lit-radar@main/data/",
+  "https://raw.githubusercontent.com/MHL533/lit-radar/main/data/"
 ];
 const DEFAULT_FIELDS = { "pa-nf": "聚酰胺纳滤膜", "cat-mem": "催化膜", "heo": "高熵氧化物催化", "ml-mem": "机器学习+膜" };
 const PAGE = 60;
@@ -324,8 +324,10 @@ const store = {
 function el(tag, cls, text){ const e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; }
 function safeUrl(u){ try { const x = new URL(u); return /^https?:$/.test(x.protocol) ? x.href : null; } catch { return null; } }
 
-let FIELDS = DEFAULT_FIELDS, GROUPS = [{ id: "membrane", name: "膜分离与催化膜", fields: Object.keys(DEFAULT_FIELDS), default: true }], JOURNALS = {}, ALL = [];
-const state = { q: "", scope: store.get("lr-scope", ""), fields: new Set(), date: "all", month: "", journal: "", zone: "", inst: "",
+let FIELDS = DEFAULT_FIELDS, GROUPS = [{ id: "membrane", name: "膜分离", fields: Object.keys(DEFAULT_FIELDS), default: true }], JOURNALS = {}, ALL = [];
+let META = null, BASE = SOURCES[0];
+const LOADED = new Set(), PENDING = new Map(), IDS = new Set();
+const state = { q: "", scope: store.get("lr-scope", ""), fields: new Set(), date: store.get("lr-date", "365"), month: "", journal: "", zone: "", inst: "",
   key: false, star: false, unread: false, view: store.get("lr-view", "card"), sort: store.get("lr-sort", { k: "date", dir: -1 }), shown: PAGE, loaded: false };
 
 /* ---------- accounts: cloud (Supabase) or local fallback ---------- */
@@ -411,6 +413,13 @@ function zoneOf(p){ return String((JOURNALS[p.journal] || {}).cas_zone || p.cas_
 function ifOf(p){ const v = (JOURNALS[p.journal] || {}).if; return v == null ? null : v; }
 function abbrOf(p){ return (JOURNALS[p.journal] || {}).abbr || p.journal || ""; }
 function showNote(t){ const n = $("note"); n.hidden = false; n.textContent = t; }
+function scopeGroups(){
+  if (state.scope === "all") return GROUPS.map(g => g.id);
+  if (state.scope === "mine") { const mf = new Set(myFields()); return GROUPS.filter(g => g.fields.some(f => mf.has(f))).map(g => g.id); }
+  const g = GROUPS.find(x => x.id === state.scope) || GROUPS.find(x => x.default) || GROUPS[0];
+  return g ? [g.id] : [];
+}
+function inScope(p, scope){ return p.fields.some(f => scope.has(f)); }
 function scopeFields(){
   if (state.scope === "mine") return myFields();
   if (state.scope === "all") return Object.keys(FIELDS);
@@ -425,7 +434,7 @@ function chip(label, pressed, onClick){
 }
 function renderScope(){
   const s = $("scope"); s.replaceChildren();
-  if (who()) s.append(new Option("我的方向", "mine"));
+  if (who()) s.append(new Option("我关注的方向", "mine"));
   for (const g of GROUPS) s.append(new Option(g.name, g.id));
   s.append(new Option("全部领域", "all"));
   if (![...s.options].some(o => o.value === state.scope)) state.scope = who() ? "mine" : ((GROUPS.find(x => x.default) || GROUPS[0] || {}).id || "all");
@@ -438,24 +447,35 @@ function renderFieldChips(){
   for (const k of fs) if (FIELDS[k])
     row.append(chip(FIELDS[k], state.fields.has(k), () => { state.fields.has(k) ? state.fields.delete(k) : state.fields.add(k); renderFieldChips(); reset(); }));
 }
-const DATES = [["all","全部"],["7","近 7 天"],["30","近 30 天"],["90","近 3 个月"],["365","近 1 年"]];
+const DATES = [["7","近 7 天"],["30","近 30 天"],["90","近 3 个月"],["365","近 1 年"],["all","全部（" + "2020 至今）"]];
 function renderDateChips(){
   const row = $("dateRow"); row.querySelectorAll(".chip").forEach(c => c.remove());
   const sel = $("month");
   for (const [k, v] of DATES)
-    row.insertBefore(chip(v, state.date === k && !state.month, () => { state.date = k; state.month = ""; sel.value = ""; renderDateChips(); reset(); }), sel);
+    row.insertBefore(chip(v, state.date === k && !state.month, () => { state.date = k; store.set("lr-date", k); state.month = ""; sel.value = ""; renderDateChips(); reset(); }), sel);
 }
 function fillSelects(){
-  const months = [...new Set(ALL.map(p => String(p.published || "").slice(0, 7)).filter(Boolean))].sort().reverse();
-  const ms = $("month"); ms.length = 1;
-  for (const m of months) ms.append(new Option(m.replace("-", " 年 ") + " 月（" + ALL.filter(p => String(p.published).startsWith(m)).length + "）", m));
-  const cnt = {}; for (const p of ALL) cnt[p.journal] = (cnt[p.journal] || 0) + 1;
-  const js = $("journal"); js.length = 1;
+  const mc = {};
+  for (const g of scopeGroups()) for (const [m, n] of Object.entries((META && META.shards[g]) || {})) mc[m] = (mc[m] || 0) + n;
+  const ms = $("month"); ms.replaceChildren(new Option("按年 / 月", ""));
+  const years = [...new Set(Object.keys(mc).map(m => m.slice(0, 4)))].sort().reverse();
+  for (const y of years){
+    const og = document.createElement("optgroup"); og.label = y + " 年";
+    const ym = Object.keys(mc).filter(m => m.startsWith(y)).sort().reverse();
+    og.append(new Option(y + " 全年（" + ym.reduce((t, m) => t + mc[m], 0) + "）", y));
+    for (const m of ym) og.append(new Option(m.replace("-", " 年 ") + " 月（" + mc[m] + "）", m));
+    ms.append(og);
+  }
+  ms.value = state.month && [...ms.options].some(o => o.value === state.month) ? state.month : "";
+  const scope = new Set(scopeFields()); const vis = ALL.filter(p => inScope(p, scope));
+  const cnt = {}; for (const p of vis) cnt[p.journal] = (cnt[p.journal] || 0) + 1;
+  const js = $("journal"); const jv = js.value; js.length = 1;
   for (const j of Object.keys(cnt).sort((a, b) => cnt[b] - cnt[a])){
     const info = JOURNALS[j] || {}; const extra = [info.cas_zone, info.if != null ? "IF " + info.if : ""].filter(Boolean).join(" · ");
     js.append(new Option(j + "（" + cnt[j] + (extra ? "，" + extra : "") + "）", j));
   }
-  const ic = {}; for (const p of ALL) for (const a of p.affils || []) ic[a] = (ic[a] || 0) + 1;
+  if (jv && cnt[jv]) js.value = jv;
+  const ic = {}; for (const p of vis) for (const a of p.affils || []) ic[a] = (ic[a] || 0) + 1;
   const dl = $("instList"); dl.replaceChildren();
   for (const a of Object.keys(ic).sort((x, y) => ic[y] - ic[x]).slice(0, 400)) { const o = document.createElement("option"); o.value = a; o.label = ic[a] + " 篇"; dl.append(o); }
 }
@@ -466,9 +486,9 @@ $("inst").addEventListener("input", e => { state.inst = e.target.value.trim().to
 $("journal").addEventListener("change", e => { state.journal = e.target.value; reset(); });
 $("zone").addEventListener("change", e => { state.zone = e.target.value; reset(); });
 $("scope").addEventListener("change", e => { state.scope = e.target.value; if (state.scope !== "mine") store.set("lr-scope", state.scope); state.fields.clear(); renderFieldChips(); reset(); });
-$("month").addEventListener("change", e => { state.month = e.target.value; if (state.month) state.date = "all"; renderDateChips(); reset(); });
+$("month").addEventListener("change", e => { state.month = e.target.value; renderDateChips(); reset(); });
 $("reset").addEventListener("click", () => {
-  Object.assign(state, { q: "", date: "all", month: "", journal: "", zone: "", inst: "", key: false, star: false, unread: false });
+  Object.assign(state, { q: "", date: "365", month: "", journal: "", zone: "", inst: "", key: false, star: false, unread: false });
   state.fields.clear();
   ["q","inst"].forEach(i => $(i).value = ""); ["journal","zone","month"].forEach(i => $(i).value = "");
   ["keyonly","staronly","unreadonly"].forEach(i => $(i).setAttribute("aria-pressed","false"));
@@ -488,7 +508,57 @@ $("openSide").addEventListener("click", openSide);
 $("closeSide").addEventListener("click", () => { closeSide(); $("openSide").focus(); });
 $("sideScrim").addEventListener("click", closeSide);
 document.addEventListener("keydown", e => { if (e.key === "Escape" && $("side").classList.contains("open")) closeSide(); });
-function reset(){ state.shown = PAGE; render(); }
+function reset(){ state.shown = PAGE; render(); ensureData(); }
+
+/* ---------- data loading (group / month shards) ---------- */
+function getJSON(u){
+  const c = new AbortController(); const t = setTimeout(() => c.abort(), 30000);
+  return fetch(u + "?t=" + Math.floor(Date.now() / 300000), { cache: "no-cache", signal: c.signal })
+    .then(r => { if (!r.ok) throw new Error(r.status); return r.json(); }).finally(() => clearTimeout(t));
+}
+const PUB = [["10.1016/j.joule", "Cell Press"], ["10.1016", "ScienceDirect"], ["10.1038", "Nature"], ["10.1021", "ACS Publications"], ["10.1002", "Wiley Online Library"],
+  ["10.1039", "RSC Publishing"], ["10.1126", "Science"], ["10.5194", "Copernicus"], ["10.1029", "AGU"], ["10.1007", "Springer"]];
+function expand(r){
+  const doi = r.doi || ""; const url = doi ? "https://doi.org/" + doi : "";
+  const src = r.src || ["官方", (PUB.find(([k]) => doi.startsWith(k)) || [0, "出版社"])[1], url];
+  const m = marks[r.id] || {};
+  return { _id: r.id, title: r.t, journal: r.j, fields: r.f || [], field: (r.f || [])[0], published: r.d, doi, url, summary_zh: r.s || "",
+    key: !!r.k, affils: r.a, corr_affils: r.c, source_type: src[0], source_name: src[1], source_url: src[2], added: r.x, starred: !!m.starred, read: !!m.read };
+}
+function neededShards(){
+  if (!META) return [];
+  const now = new Date(); let since = "";
+  if (!state.month && state.date !== "all") since = new Date(now - (Number(state.date) + 31) * 864e5).toISOString().slice(0, 7);
+  const out = [];
+  for (const g of scopeGroups()) for (const m of Object.keys(META.shards[g] || {})){
+    if (state.month ? !m.startsWith(state.month.slice(0, 7)) : m < since) continue;
+    if (!LOADED.has(g + "/" + m)) out.push(g + "/" + m);
+  }
+  return out;
+}
+let renderTimer = 0;
+function scheduleRender(){ clearTimeout(renderTimer); renderTimer = setTimeout(() => { fillSelects(); render(); }, 120); }
+async function loadShard(key){
+  if (PENDING.has(key)) return PENDING.get(key);
+  const job = (async () => {
+    let j = null;
+    for (const u of [BASE, ...SOURCES.filter(x => x !== BASE)]) { try { j = await getJSON(u + key + ".json"); break; } catch {} }
+    if (j) {
+      LOADED.add(key);
+      for (const r of j.papers || []) if (!IDS.has(r.id)) { IDS.add(r.id); ALL.push(expand(r)); }
+    }
+  })().finally(() => { PENDING.delete(key); scheduleRender(); });
+  PENDING.set(key, job); return job;
+}
+async function ensureData(){
+  const todo = neededShards().filter(k => !PENDING.has(k));
+  if (!todo.length) return;
+  todo.sort().reverse();
+  let i = 0;
+  const worker = async () => { while (i < todo.length) await loadShard(todo[i++]); };
+  render();
+  await Promise.all(Array.from({ length: Math.min(6, todo.length) }, worker));
+}
 
 /* ---------- marks ---------- */
 function mark(id, data){
@@ -502,11 +572,11 @@ function applyMarks(){ ALL = ALL.map(p => ({ ...p, starred: !!(marks[p._id] || {
 /* ---------- filtering ---------- */
 function filtered(){
   const now = new Date();
-  const since = state.date === "all" ? "" : new Date(now - Number(state.date) * 864e5).toISOString().slice(0, 10);
+  const since = state.month || state.date === "all" ? "" : new Date(now - Number(state.date) * 864e5).toISOString().slice(0, 10);
   const q = state.q, inst = state.inst, scope = new Set(scopeFields());
   return ALL.filter(p =>
-    scope.has(p.field) &&
-    (state.fields.size === 0 || state.fields.has(p.field)) &&
+    inScope(p, scope) &&
+    (state.fields.size === 0 || p.fields.some(f => state.fields.has(f))) &&
     (!since || String(p.published) >= since) &&
     (!state.month || String(p.published).startsWith(state.month)) &&
     (!state.journal || p.journal === state.journal) &&
@@ -579,10 +649,15 @@ function actions(p){
   fb.addEventListener("click", () => openFeedback(p));
   acts.append(st, rd, fb); return acts;
 }
+function fieldTags(p){
+  const scope = new Set(scopeFields());
+  const fs = p.fields.filter(f => FIELDS[f]);
+  return [...fs.filter(f => scope.has(f)), ...fs.filter(f => !scope.has(f))].slice(0, 2);
+}
 function card(p){
   const a = el("article", "card" + (p.read ? " read" : ""));
   const meta = el("div", "meta"); meta.append(tags(p));
-  if (FIELDS[p.field]) meta.append(el("span", "field", FIELDS[p.field]));
+  for (const f of fieldTags(p)) meta.append(el("span", "field", FIELDS[f]));
   meta.append(el("span", "journal", abbrOf(p)));
   if (p.published) meta.append(el("span", "date", p.published));
   const h = el("h3"); h.append(titleLink(p));
@@ -600,7 +675,7 @@ function lrow(p){
   const r = el("div", "lrow" + (p.read ? " read" : ""));
   r.append(el("span", "date", p.published || ""), tags(p));
   const mid = el("div"); const t = el("div", "t"); t.append(titleLink(p)); mid.append(t);
-  const bits = [abbrOf(p), FIELDS[p.field], (p.affils || []).slice(0, 2).join("；")].filter(Boolean).join(" · ");
+  const bits = [abbrOf(p), fieldTags(p).map(f => FIELDS[f]).join("、"), (p.affils || []).slice(0, 2).join("；")].filter(Boolean).join(" · ");
   mid.append(el("div", "s", bits)); r.append(mid);
   const st = el("button", "act" + (p.starred ? " on" : ""), p.starred ? "★" : "☆"); st.type = "button"; st.title = p.starred ? "取消收藏" : "收藏";
   st.setAttribute("aria-label", st.title); st.addEventListener("click", () => mark(p._id, { starred: !p.starred }));
@@ -608,10 +683,11 @@ function lrow(p){
 }
 function renderStats(){
   const s = $("stats"); s.replaceChildren();
-  const scope = new Set(scopeFields()); const mine = ALL.filter(p => scope.has(p.field));
+  const scope = new Set(scopeFields()); const mine = ALL.filter(p => inScope(p, scope));
   const add = (k, v) => { const sp = el("span"); sp.append(document.createTextNode(k + " "), el("b", null, String(v))); s.append(sp); };
   const wk = new Date(Date.now() - 7 * 864e5).toISOString().slice(0, 10);
-  add("累计", mine.length); add("近 7 天", mine.filter(p => String(p.published) >= wk).length);
+  let total = 0; for (const g of scopeGroups()) for (const n of Object.values((META && META.shards[g]) || {})) total += n;
+  add("库内", total); add("已载入", mine.length); add("近 7 天", mine.filter(p => String(p.published) >= wk).length);
   add("1 区", mine.filter(p => zoneOf(p).startsWith("1")).length); add("重点", mine.filter(p => p.key).length);
   add("收藏", mine.filter(p => p.starred).length);
 }
@@ -620,13 +696,13 @@ function render(){
   const nf = state.fields.size + (state.date !== "all") + !!state.month + !!state.journal + !!state.zone + !!state.inst + state.key + state.star + state.unread;
   $("fcount").hidden = !nf; $("fcount").textContent = nf;
   const rows = filtered(); const out = $("out"); out.replaceChildren();
-  $("count").textContent = state.loaded ? "显示 " + Math.min(rows.length, state.shown) + " / 筛出 " + rows.length + " 篇" : "";
+  $("count").textContent = !state.loaded ? "" : (PENDING.size ? "正在加载 " + PENDING.size + " 个月份分片… " : "") + "显示 " + Math.min(rows.length, state.shown) + " / 筛出 " + rows.length + " 篇";
   const empty = $("empty");
   if (!rows.length){
     empty.hidden = false; empty.replaceChildren();
-    const scope = new Set(scopeFields()); const none = state.loaded && !ALL.some(p => scope.has(p.field));
-    empty.append(el("strong", null, !state.loaded ? "正在加载文献…" : none ? "这个领域还没有文献" : "没有符合当前筛选的文献"));
-    if (state.loaded) empty.append(document.createTextNode(none ? "新领域的论文会从下一次自动推送（每天 7:50、11:50、18:50）开始收录。" : "可以放宽日期、期刊或单位条件，或点“清除筛选”。"));
+    const busy = !state.loaded || PENDING.size > 0;
+    empty.append(el("strong", null, busy ? "正在加载文献…" : "没有符合当前筛选的文献"));
+    if (!busy) empty.append(document.createTextNode("可以放宽日期、期刊或单位条件，或点“清除筛选”。较早的文献请把日期改为“全部”或选择年份。"));
     $("moreBox").hidden = true; return;
   }
   empty.hidden = true;
@@ -916,21 +992,17 @@ if (sb) {
 } else afterAuthChange();
 (async () => {
   try {
-    const get = u => { const c = new AbortController(); const t = setTimeout(() => c.abort(), 25000);
-      return fetch(u + "?t=" + Math.floor(Date.now() / 300000), { cache: "no-cache", signal: c.signal })
-        .then(r => { if (!r.ok) throw new Error(r.status); return r.json(); }).finally(() => clearTimeout(t)); };
     let j = null;
-    for (const u of SOURCES) { try { const x = await get(u); if (x && Array.isArray(x.papers)) { j = x; break; } } catch {} }
+    for (const u of SOURCES) { try { const x = await getJSON(u + "meta.json"); if (x && x.shards) { j = x; BASE = u; break; } } catch {} }
     if (!j) throw new Error("no source");
-    FIELDS = j.fields || DEFAULT_FIELDS; JOURNALS = j.journals || {};
+    META = j; FIELDS = j.fields || DEFAULT_FIELDS; JOURNALS = j.journals || {};
     if (Array.isArray(j.groups) && j.groups.length) GROUPS = j.groups;
-    ALL = j.papers || [];
-    if (j.updated) showNote("数据更新于 " + j.updated + "。影响因子为 JCR 最新年度值，分区为中科院 2025 年版。");
+    if (j.updated) showNote("数据更新于 " + j.updated + "，库内共 " + (j.total || 0).toLocaleString() + " 篇（" + (j.since || "2020-01").slice(0, 4) + " 年至今）。影响因子为 JCR 2025 年发布值，分区为中科院 2025 年版（大类）。");
   } catch (e) {
     showNote("文献数据暂时加载失败，请检查网络后刷新页面。");
   }
   if (authReturnError) showNote(authReturnError);
-  state.loaded = true; fillSelects();
+  state.loaded = true; renderScope(); fillSelects(); ensureData();
   if (!$("scrim").hidden && !$("lFields").hidden) fieldChecks(chosenFields());
   renderAccount();
 })();

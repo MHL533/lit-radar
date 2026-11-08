@@ -4,6 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>科研文献查询器</title>
+<script>try{var t=JSON.parse(localStorage.getItem("lr-theme")||'"system"');if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
 <style>
 /* Layout: filter sidebar on the left (drawer on phones); main column with search bar and results as cards or list rows. */
 :root{
@@ -87,7 +88,16 @@ select{max-width:100%;text-overflow:ellipsis}
 .badge{font-size:11px;font-weight:600;background:var(--accent);color:var(--on-accent);border-radius:999px;padding:0 6px;margin-left:2px}
 .clear{font:inherit;font-size:12px;background:none;border:0;color:var(--accent);cursor:pointer;text-decoration:underline;text-underline-offset:3px}
 /* cards */
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,460px),1fr));gap:12px;margin-top:14px}
+.grid{display:grid;grid-template-columns:minmax(0,1fr);gap:12px;margin-top:14px}
+@media (min-width:901px){
+  .grid{grid-template-columns:repeat(4,minmax(0,1fr))}
+  .grid article.card{padding:12px 13px;gap:5px}
+  .grid h3{font-size:14.5px}
+  .grid .sum{font-size:13px}
+  .grid .foot{flex-direction:column;align-items:stretch}
+  .grid .foot .src{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0;max-width:100%}
+  .grid .foot .doi{overflow-wrap:normal}
+}
 article.card{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:14px 16px;display:flex;flex-direction:column;gap:6px;min-width:0}
 article.card.read,.lrow.read{opacity:.6}
 .meta{display:flex;flex-wrap:wrap;gap:5px 8px;align-items:center;font-size:12px;color:var(--muted)}
@@ -133,6 +143,11 @@ h3 a:hover{color:var(--accent);text-decoration:underline;text-underline-offset:3
 /* login dialog */
 .scrim{position:fixed;inset:0;background:var(--scrim);z-index:20;display:flex;align-items:center;justify-content:center;padding:16px}
 .dlg{background:var(--surface);color:var(--fg);border-radius:10px;border:1px solid var(--line);width:min(440px,100%);max-height:calc(100% - 32px);overflow:auto;padding:20px;display:grid;gap:12px}
+.hbtns{display:flex;flex-wrap:wrap;gap:8px;justify-content:flex-end}
+.dlg textarea{font:inherit;font-size:14px;padding:8px 10px;border:1px solid var(--line);border-radius:6px;background:var(--surface);color:var(--fg);width:100%;resize:vertical;min-height:110px}
+.dlg select{width:100%}
+.fbpaper{font-size:12px!important;background:var(--soft);border-radius:6px;padding:6px 8px;overflow-wrap:anywhere}
+a.btn{text-decoration:none}
 .dlg h2{margin:0;font-family:var(--f-display);font-size:19px}
 .dlg p{margin:0;font-size:13px;color:var(--muted)}
 .dlg label{font-size:13px;display:grid;gap:4px}
@@ -157,7 +172,15 @@ h3 a:hover{color:var(--accent);text-decoration:underline;text-underline-offset:3
       <p class="sub" id="subline">中科院分区 2 区及以上期刊新论文，按研究领域每天 7:50、11:50、18:50 自动更新</p>
     </div>
     <div class="headr">
-      <button class="btn" id="loginBtn" type="button">登录</button>
+      <div class="hbtns">
+        <div class="seg" id="themeSeg" role="group" aria-label="主题">
+          <button type="button" data-t="system" title="跟随系统设置">跟随系统</button>
+          <button type="button" data-t="light" title="浅色主题">浅色</button>
+          <button type="button" data-t="dark" title="暗色主题">暗色</button>
+        </div>
+        <button class="btn" id="fbBtn" type="button">反馈</button>
+        <button class="btn" id="loginBtn" type="button">登录</button>
+      </div>
       <div class="stats" id="stats"></div>
     </div>
   </header>
@@ -244,6 +267,24 @@ h3 a:hover{color:var(--accent);text-decoration:underline;text-underline-offset:3
       <button class="btn" id="logout" type="button" hidden>退出登录</button>
       <button class="btn" id="cancel" type="button">取消</button>
       <button class="btn primary" id="save" type="button">登录</button>
+    </div>
+  </div>
+</div>
+
+<div class="scrim" id="fbScrim" hidden>
+  <div class="dlg" role="dialog" aria-modal="true" aria-labelledby="fbTitle">
+    <h2 id="fbTitle">反馈</h2>
+    <p id="fbIntro"></p>
+    <label>类型<select id="fbType"><option>功能建议</option><option>文献纠错</option><option>问题报告</option><option>其他</option></select></label>
+    <p class="fbpaper" id="fbPaper" hidden></p>
+    <label>内容<textarea id="fbText" maxlength="2000" placeholder="例如：希望增加某个方向；某篇论文分类不对，应归到……"></textarea></label>
+    <label>联系方式（选填）<input type="text" id="fbContact" maxlength="100" placeholder="邮箱或微信，方便回复你"></label>
+    <p class="msg" id="fbMsg" role="status"></p>
+    <div class="row">
+      <button class="btn" id="fbCopy" type="button" hidden>复制内容</button>
+      <a class="btn" id="fbGh" target="_blank" rel="noopener" hidden>提交到 GitHub</a>
+      <button class="btn" id="fbCancel" type="button">取消</button>
+      <button class="btn primary" id="fbSend" type="button">提交</button>
     </div>
   </div>
 </div>
@@ -482,7 +523,9 @@ function actions(p){
   st.addEventListener("click", () => mark(p._id, { starred: !p.starred }));
   const rd = el("button", "act", p.read ? "标为未读" : "已读"); rd.type = "button";
   rd.addEventListener("click", () => mark(p._id, { read: !p.read }));
-  acts.append(st, rd); return acts;
+  const fb = el("button", "act", "纠错"); fb.type = "button"; fb.title = "反馈这篇文献的分类或信息有误";
+  fb.addEventListener("click", () => openFeedback(p));
+  acts.append(st, rd, fb); return acts;
 }
 function card(p){
   const a = el("article", "card" + (p.read ? " read" : ""));
@@ -494,7 +537,7 @@ function card(p){
   a.append(meta, h);
   if (p.summary_zh) a.append(el("p", "sum", p.summary_zh));
   const af = affLine(p, 4); if (af) a.append(af);
-  const foot = el("div", "foot"); const left = el("div");
+  const foot = el("div", "foot"); const left = el("div", "src");
   if (p.doi) left.append(el("span", "doi", "DOI " + p.doi));
   if (p.source_name){ left.append(document.createTextNode(" · ")); const s = safeUrl(p.source_url); const lab = (p.source_type === "转载" ? "转载自 " : "来源 ") + p.source_name;
     if (s){ const l = el("a", null, lab); l.href = s; l.target = "_blank"; l.rel = "noopener"; left.append(l); } else left.append(document.createTextNode(lab)); }
@@ -632,6 +675,60 @@ $("save").addEventListener("click", async () => {
 $("logout").addEventListener("click", async () => {
   closeLogin();
   if (sb) await sb.auth.signOut(); else { localCurrent = null; store.set("lr-current", null); afterAuthChange(); }
+});
+
+/* ---------- theme ---------- */
+function applyTheme(t){
+  if (t === "light" || t === "dark") document.documentElement.setAttribute("data-theme", t); else document.documentElement.removeAttribute("data-theme");
+  store.set("lr-theme", t);
+  for (const b of $("themeSeg").querySelectorAll("button")) b.setAttribute("aria-pressed", String(b.dataset.t === t));
+}
+applyTheme(store.get("lr-theme", "system"));
+$("themeSeg").addEventListener("click", e => { const b = e.target.closest("button[data-t]"); if (b) applyTheme(b.dataset.t); });
+
+/* ---------- feedback ---------- */
+let fbPaper = null;
+function fbBody(){
+  const lines = ["类型：" + $("fbType").value];
+  if (fbPaper) lines.push("文献：" + fbPaper.title + "（DOI " + fbPaper.doi + "，当前分类：" + (FIELDS[fbPaper.field] || fbPaper.field) + "）");
+  lines.push("", $("fbText").value.trim());
+  if ($("fbContact").value.trim()) lines.push("", "联系方式：" + $("fbContact").value.trim());
+  return lines.join("\n");
+}
+function syncFbFallback(){
+  const title = "[" + $("fbType").value + "] " + ($("fbText").value.trim().slice(0, 40) || "反馈");
+  $("fbGh").href = "https://github.com/MHL533/lit-radar/issues/new?title=" + encodeURIComponent(title) + "&body=" + encodeURIComponent(fbBody().slice(0, 5000));
+}
+function openFeedback(p){
+  fbPaper = p || null;
+  $("fbType").value = p ? "文献纠错" : "功能建议";
+  $("fbPaper").hidden = !p; $("fbPaper").textContent = p ? "文献：" + p.title + "（" + abbrOf(p) + "，当前分类：" + (FIELDS[p.field] || p.field) + "）" : "";
+  $("fbText").value = ""; $("fbMsg").textContent = "";
+  const cloud = !!sb;
+  $("fbSend").hidden = !cloud; $("fbCopy").hidden = cloud; $("fbGh").hidden = cloud;
+  $("fbIntro").textContent = cloud ? "你的反馈会直接发给维护者，联系方式只有维护者能看到。" : "在线反馈通道正在接入中。可以先复制内容发给维护者，或用 GitHub 账号提交。";
+  syncFbFallback(); $("fbScrim").hidden = false; $("fbText").focus();
+}
+function closeFeedback(){ $("fbScrim").hidden = true; }
+$("fbBtn").addEventListener("click", () => openFeedback(null));
+$("fbCancel").addEventListener("click", closeFeedback);
+$("fbScrim").addEventListener("click", e => { if (e.target === $("fbScrim")) closeFeedback(); });
+document.addEventListener("keydown", e => { if (e.key === "Escape" && !$("fbScrim").hidden) closeFeedback(); });
+["fbType", "fbText", "fbContact"].forEach(id => $(id).addEventListener("input", syncFbFallback));
+$("fbCopy").addEventListener("click", async () => {
+  if (!$("fbText").value.trim()) { $("fbMsg").textContent = "请先填写内容"; return; }
+  try { await navigator.clipboard.writeText(fbBody()); $("fbMsg").textContent = "已复制，可以粘贴发给维护者。"; }
+  catch { $("fbText").select(); $("fbMsg").textContent = "复制失败，请手动选中内容复制。"; }
+});
+$("fbSend").addEventListener("click", async () => {
+  const content = $("fbText").value.trim(); if (!content) { $("fbMsg").textContent = "请先填写内容"; $("fbText").focus(); return; }
+  $("fbSend").disabled = true;
+  try {
+    const { error } = await sb.from("feedback").insert({ type: $("fbType").value, content, contact: $("fbContact").value.trim() || null,
+      paper_id: fbPaper ? fbPaper._id : null, page_url: location.href.slice(0, 500), user_id: auth.user ? auth.user.id : null });
+    if (error) { $("fbMsg").textContent = "提交失败：" + error.message; return; }
+    $("fbMsg").textContent = "已收到，谢谢你的反馈！"; setTimeout(closeFeedback, 1200);
+  } finally { $("fbSend").disabled = false; }
 });
 
 /* ---------- boot ---------- */

@@ -166,7 +166,7 @@ drop policy if exists "paper_month_counts: public read" on public.paper_month_co
 create policy "paper_month_counts: public read" on public.paper_month_counts for select to anon, authenticated using (true);
 
 create or replace function public.refresh_paper_counts() returns void language sql security definer set search_path = public as $$
-  delete from public.paper_month_counts;
+  delete from public.paper_month_counts where true;  -- PostgREST's safeupdate rejects DELETE without WHERE
   insert into public.paper_month_counts
     select g, to_char(published, 'YYYY-MM'), count(*) from public.papers, unnest(groups) g group by 1, 2
     union all

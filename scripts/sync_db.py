@@ -74,6 +74,9 @@ def main():
     ap.add_argument("--full", action="store_true")
     args = ap.parse_args()
     url, key = config()
+    if os.path.exists(os.path.join(lib.ROOT, "supabase", "SYNC_PAUSED")):
+        print("Database sync paused (supabase/SYNC_PAUSED exists); skipping.")
+        return
     if not url or not key:
         print("Supabase not configured (SUPABASE_SERVICE_ROLE_KEY secret missing); skipping database sync.")
         return

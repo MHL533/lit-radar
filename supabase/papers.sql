@@ -43,9 +43,14 @@ create index if not exists papers_affil on public.papers (first_affil);
 create index if not exists papers_text on public.papers using pgroonga (title, title_zh, keywords, keywords_zh, authors);
 
 -- 共用的筛选条件
+drop function if exists public.search_papers(text[], text[], date, date, text, smallint, text, text, boolean, boolean, boolean, text, integer, integer, integer);
+drop function if exists public.paper_facets(text[], text[], date, date, text, smallint, text, text, boolean, boolean, boolean, integer);
+drop function if exists public.paper_filter(public.papers, text[], text[], date, date, text, smallint, text, text, boolean, boolean, boolean);
+
+-- 收藏 / 已读由网页传入论文 id 列表（p_ids 只看这些，p_not_ids 排除这些），不在这里读 marks 表。
 create or replace function public.paper_filter(
   p public.papers, p_groups text[], p_fields text[], p_since date, p_until date, p_journal text, p_zone smallint,
-  p_inst text, p_q text, p_key boolean, p_star boolean, p_unread boolean)
+  p_inst text, p_key boolean, p_ids text[], p_not_ids text[])
 returns boolean language sql stable as $$
   select (p_groups is null or p.groups && p_groups)
     and (p_fields is null or p.fields && p_fields)
@@ -55,15 +60,15 @@ returns boolean language sql stable as $$
     and (p_zone is null or p.cas_zone = p_zone)
     and (p_inst is null or exists (select 1 from unnest(p.affils) a where a ilike '%' || p_inst || '%'))
     and (not coalesce(p_key, false) or p.is_key)
-    and (not coalesce(p_star, false) or exists (select 1 from public.marks m where m.user_id = auth.uid() and m.paper_id = p.id and m.starred))
-    and (not coalesce(p_unread, false) or not exists (select 1 from public.marks m where m.user_id = auth.uid() and m.paper_id = p.id and m.read))
+    and (p_ids is null or p.id = any(p_ids))
+    and (p_not_ids is null or not (p.id = any(p_not_ids)))
 $$;
 
 -- 列表：筛选 + 全文检索 + 排序 + 分页，附带筛出总数
 create or replace function public.search_papers(
   p_groups text[] default null, p_fields text[] default null, p_since date default null, p_until date default null,
   p_journal text default null, p_zone smallint default null, p_inst text default null, p_q text default null,
-  p_key boolean default false, p_star boolean default false, p_unread boolean default false,
+  p_key boolean default false, p_ids text[] default null, p_not_ids text[] default null,
   p_sort text default 'date', p_dir integer default -1, p_limit integer default 60, p_offset integer default 0)
 returns table (paper jsonb, total bigint)
 language sql stable as $$
@@ -71,7 +76,7 @@ language sql stable as $$
     select p.* from public.papers p
     where (p_q is null or p_q = '' or p.title &@~ pgroonga_query_escape(p_q) or p.title_zh &@~ pgroonga_query_escape(p_q) or p.keywords &@~ pgroonga_query_escape(p_q) or p.keywords_zh &@~ pgroonga_query_escape(p_q) or p.authors &@~ pgroonga_query_escape(p_q)
            or p.doi = lower(p_q))
-      and public.paper_filter(p, p_groups, p_fields, p_since, p_until, p_journal, p_zone, p_inst, p_q, p_key, p_star, p_unread)
+      and public.paper_filter(p, p_groups, p_fields, p_since, p_until, p_journal, p_zone, p_inst, p_key, p_ids, p_not_ids)
   )
   select to_jsonb(h) - 'synced_at', count(*) over ()
   from hits h
@@ -89,14 +94,14 @@ $$;
 create or replace function public.paper_facets(
   p_groups text[] default null, p_fields text[] default null, p_since date default null, p_until date default null,
   p_journal text default null, p_zone smallint default null, p_inst text default null, p_q text default null,
-  p_key boolean default false, p_star boolean default false, p_unread boolean default false, p_sample integer default 0)
+  p_key boolean default false, p_ids text[] default null, p_not_ids text[] default null, p_sample integer default 0)
 returns jsonb
 language sql stable as $$
   with hits as (
     select p.* from public.papers p
     where (p_q is null or p_q = '' or p.title &@~ pgroonga_query_escape(p_q) or p.title_zh &@~ pgroonga_query_escape(p_q) or p.keywords &@~ pgroonga_query_escape(p_q) or p.keywords_zh &@~ pgroonga_query_escape(p_q) or p.authors &@~ pgroonga_query_escape(p_q)
            or p.doi = lower(p_q))
-      and public.paper_filter(p, p_groups, p_fields, p_since, p_until, p_journal, p_zone, p_inst, p_q, p_key, p_star, p_unread)
+      and public.paper_filter(p, p_groups, p_fields, p_since, p_until, p_journal, p_zone, p_inst, p_key, p_ids, p_not_ids)
   )
   select jsonb_build_object(
     'total',  (select count(*) from hits),

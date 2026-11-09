@@ -837,7 +837,9 @@ function dbParams(){
   const groups = state.scope === "all" || state.scope === "mine" ? null : scopeGroups();
   return { p_groups: groups, p_fields: fields, p_since: since, p_until: until, p_journal: state.journal || null,
     p_zone: state.zone ? Number(state.zone) : null, p_inst: state.inst || null, p_q: state.q || null,
-    p_key: state.key, p_star: state.star && !!who(), p_unread: state.unread && !!who() };
+    p_key: state.key,
+    p_ids: state.star ? Object.keys(marks).filter(k => marks[k].starred) : null,
+    p_not_ids: state.unread ? Object.keys(marks).filter(k => marks[k].read) : null };
 }
 function fromDB(r){
   const m = marks[r.id] || {}; const url = "https://doi.org/" + r.doi;

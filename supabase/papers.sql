@@ -43,26 +43,35 @@ create index if not exists papers_affil on public.papers (first_affil);
 create index if not exists papers_text on public.papers using pgroonga (title, title_zh, keywords, keywords_zh, authors);
 
 -- 共用的筛选条件
+-- 检索函数用动态 SQL：只拼接实际用到的条件，PostgreSQL 才能用上各列索引（日期、领域 GIN、PGroonga 全文）。
 drop function if exists public.search_papers(text[], text[], date, date, text, smallint, text, text, boolean, boolean, boolean, text, integer, integer, integer);
 drop function if exists public.paper_facets(text[], text[], date, date, text, smallint, text, text, boolean, boolean, boolean, integer);
 drop function if exists public.paper_filter(public.papers, text[], text[], date, date, text, smallint, text, text, boolean, boolean, boolean);
+drop function if exists public.paper_filter(public.papers, text[], text[], date, date, text, smallint, text, boolean, text[], text[]);
 
--- 收藏 / 已读由网页传入论文 id 列表（p_ids 只看这些，p_not_ids 排除这些），不在这里读 marks 表。
-create or replace function public.paper_filter(
-  p public.papers, p_groups text[], p_fields text[], p_since date, p_until date, p_journal text, p_zone smallint,
-  p_inst text, p_key boolean, p_ids text[], p_not_ids text[])
-returns boolean language sql stable as $$
-  select (p_groups is null or p.groups && p_groups)
-    and (p_fields is null or p.fields && p_fields)
-    and (p_since is null or p.published >= p_since)
-    and (p_until is null or p.published <= p_until)
-    and (p_journal is null or p.journal = p_journal)
-    and (p_zone is null or p.cas_zone = p_zone)
-    and (p_inst is null or exists (select 1 from unnest(p.affils) a where a ilike '%' || p_inst || '%'))
-    and (not coalesce(p_key, false) or p.is_key)
-    and (p_ids is null or p.id = any(p_ids))
-    and (p_not_ids is null or not (p.id = any(p_not_ids)))
-$$;
+-- 由筛选参数生成 WHERE 子句（参数在 EXECUTE ... USING 中依次为 $1..$11）
+create or replace function public.paper_where(
+  p_groups text[], p_fields text[], p_since date, p_until date, p_journal text, p_zone smallint,
+  p_inst text, p_q text, p_key boolean, p_ids text[], p_not_ids text[])
+returns text language plpgsql immutable as $$
+declare w text[] := array['true'];
+begin
+  if p_groups is not null then w := w || 'p.groups && $1'; end if;
+  if p_fields is not null then w := w || 'p.fields && $2'; end if;
+  if p_since is not null then w := w || 'p.published >= $3'; end if;
+  if p_until is not null then w := w || 'p.published <= $4'; end if;
+  if p_journal is not null then w := w || 'p.journal = $5'; end if;
+  if p_zone is not null then w := w || 'p.cas_zone = $6'; end if;
+  if coalesce(p_inst, '') <> '' then w := w || $w$exists (select 1 from unnest(p.affils) a where a ilike '%' || $7 || '%')$w$; end if;
+  if coalesce(p_q, '') <> '' then
+    w := w || '(p.title &@~ pgroonga_query_escape($8) or p.title_zh &@~ pgroonga_query_escape($8) or p.keywords &@~ pgroonga_query_escape($8)'
+              ' or p.keywords_zh &@~ pgroonga_query_escape($8) or p.authors &@~ pgroonga_query_escape($8) or p.doi = lower($8))';
+  end if;
+  if coalesce(p_key, false) then w := w || 'p.is_key'; end if;
+  if p_ids is not null then w := w || 'p.id = any($10)'; end if;
+  if p_not_ids is not null then w := w || 'not (p.id = any($11))'; end if;
+  return array_to_string(w, ' and ');
+end $$;
 
 -- 列表：筛选 + 全文检索 + 排序 + 分页，附带筛出总数
 create or replace function public.search_papers(
@@ -71,24 +80,24 @@ create or replace function public.search_papers(
   p_key boolean default false, p_ids text[] default null, p_not_ids text[] default null,
   p_sort text default 'date', p_dir integer default -1, p_limit integer default 60, p_offset integer default 0)
 returns table (paper jsonb, total bigint)
-language sql stable as $$
-  with hits as (
-    select p.* from public.papers p
-    where (p_q is null or p_q = '' or p.title &@~ pgroonga_query_escape(p_q) or p.title_zh &@~ pgroonga_query_escape(p_q) or p.keywords &@~ pgroonga_query_escape(p_q) or p.keywords_zh &@~ pgroonga_query_escape(p_q) or p.authors &@~ pgroonga_query_escape(p_q)
-           or p.doi = lower(p_q))
-      and public.paper_filter(p, p_groups, p_fields, p_since, p_until, p_journal, p_zone, p_inst, p_key, p_ids, p_not_ids)
-  )
-  select to_jsonb(h) - 'synced_at', count(*) over ()
-  from hits h
-  order by
-    case when p_sort = 'if'   and p_dir < 0 then h.impact_factor end desc nulls last,
-    case when p_sort = 'if'   and p_dir > 0 then h.impact_factor end asc nulls last,
-    case when p_sort = 'inst' and p_dir > 0 then h.first_affil end asc nulls last,
-    case when p_sort = 'inst' and p_dir < 0 then h.first_affil end desc nulls last,
-    case when p_sort = 'date' and p_dir > 0 then h.published end asc,
-    h.published desc, h.id
-  limit least(greatest(p_limit, 1), 5000) offset greatest(p_offset, 0)
-$$;
+language plpgsql stable as $$
+declare
+  w text := public.paper_where(p_groups, p_fields, p_since, p_until, p_journal, p_zone, p_inst, p_q, p_key, p_ids, p_not_ids);
+  ord text := case
+    when p_sort = 'if' and p_dir < 0 then 'p.impact_factor desc nulls last, p.published desc, p.id'
+    when p_sort = 'if' then 'p.impact_factor asc nulls last, p.published desc, p.id'
+    when p_sort = 'inst' and p_dir > 0 then 'p.first_affil asc nulls last, p.published desc, p.id'
+    when p_sort = 'inst' then 'p.first_affil desc nulls last, p.published desc, p.id'
+    when p_dir > 0 then 'p.published asc, p.id'
+    else 'p.published desc, p.id' end;
+  n bigint;
+begin
+  execute 'select count(*) from public.papers p where ' || w into n
+    using p_groups, p_fields, p_since, p_until, p_journal, p_zone, p_inst, p_q, p_key, p_ids, p_not_ids;
+  return query execute 'select to_jsonb(p) - ''synced_at'', $12 from public.papers p where ' || w || ' order by ' || ord || ' limit $13 offset $14'
+    using p_groups, p_fields, p_since, p_until, p_journal, p_zone, p_inst, p_q, p_key, p_ids, p_not_ids, n,
+          least(greatest(p_limit, 1), 5000), greatest(p_offset, 0);
+end $$;
 
 -- 统计、趋势、排行与关联图样本（同一组筛选条件）
 create or replace function public.paper_facets(
@@ -96,35 +105,58 @@ create or replace function public.paper_facets(
   p_journal text default null, p_zone smallint default null, p_inst text default null, p_q text default null,
   p_key boolean default false, p_ids text[] default null, p_not_ids text[] default null, p_sample integer default 0)
 returns jsonb
-language sql stable as $$
-  with hits as (
-    select p.* from public.papers p
-    where (p_q is null or p_q = '' or p.title &@~ pgroonga_query_escape(p_q) or p.title_zh &@~ pgroonga_query_escape(p_q) or p.keywords &@~ pgroonga_query_escape(p_q) or p.keywords_zh &@~ pgroonga_query_escape(p_q) or p.authors &@~ pgroonga_query_escape(p_q)
-           or p.doi = lower(p_q))
-      and public.paper_filter(p, p_groups, p_fields, p_since, p_until, p_journal, p_zone, p_inst, p_key, p_ids, p_not_ids)
-  )
+language plpgsql stable as $$
+declare
+  w text := public.paper_where(p_groups, p_fields, p_since, p_until, p_journal, p_zone, p_inst, p_q, p_key, p_ids, p_not_ids);
+  r jsonb;
+begin
+  execute 'with hits as materialized (select p.published, p.cas_zone, p.is_key, p.fields, p.journal, p.affils, p.keywords, p.keywords_zh, p.journal_abbr
+             from public.papers p where ' || w || ')
   select jsonb_build_object(
-    'total',  (select count(*) from hits),
-    'week',   (select count(*) from hits where published >= current_date - 7),
-    'zone1',  (select count(*) from hits where cas_zone = 1),
-    'key',    (select count(*) from hits where is_key),
-    'months', (select coalesce(jsonb_object_agg(m, n), '{}') from (select to_char(published, 'YYYY-MM') m, count(*) n from hits group by 1) x),
-    'fields', (select coalesce(jsonb_agg(jsonb_build_array(f, n) order by n desc), '[]') from (select f, count(*) n from hits, unnest(fields) f group by f order by n desc limit 40) x),
-    'journals', (select coalesce(jsonb_agg(jsonb_build_array(journal, n) order by n desc), '[]') from (select journal, count(*) n from hits group by journal order by n desc limit 60) x),
-    'insts',  (select coalesce(jsonb_agg(jsonb_build_array(a, n) order by n desc), '[]') from (select a, count(*) n from hits, unnest(affils) a group by a order by n desc limit 40) x),
-    'keywords', (select coalesce(jsonb_agg(jsonb_build_array(k, z, n) order by n desc), '[]') from (
-        select k, max(z) z, count(*) n from hits, unnest(keywords, keywords_zh) as u(k, z) group by k order by n desc limit 40) x),
-    'sample', case when p_sample > 0 then (select coalesce(jsonb_agg(jsonb_build_array(fields, keywords, keywords_zh, affils[1:4], journal_abbr)), '[]')
-        from (select * from hits order by published desc limit least(p_sample, 6000)) s) else '[]'::jsonb end
-  )
-$$;
+    ''total'',  (select count(*) from hits),
+    ''week'',   (select count(*) from hits where published >= current_date - 7),
+    ''zone1'',  (select count(*) from hits where cas_zone = 1),
+    ''key'',    (select count(*) from hits where is_key),
+    ''months'', (select coalesce(jsonb_object_agg(m, c), ''{}'') from (select to_char(published, ''YYYY-MM'') m, count(*) c from hits group by 1) x),
+    ''fields'', (select coalesce(jsonb_agg(jsonb_build_array(f, c) order by c desc), ''[]'') from (select f, count(*) c from hits, unnest(fields) f group by f order by c desc limit 40) x),
+    ''journals'', (select coalesce(jsonb_agg(jsonb_build_array(journal, c) order by c desc), ''[]'') from (select journal, count(*) c from hits group by journal order by c desc limit 60) x),
+    ''insts'',  (select coalesce(jsonb_agg(jsonb_build_array(a, c) order by c desc), ''[]'') from (select a, count(*) c from hits, unnest(affils) a group by a order by c desc limit 40) x),
+    ''keywords'', (select coalesce(jsonb_agg(jsonb_build_array(k, z, c) order by c desc), ''[]'') from (
+        select k, max(z) z, count(*) c from hits, unnest(keywords, keywords_zh) as u(k, z) group by k order by c desc limit 40) x),
+    ''sample'', case when $12 > 0 then (select coalesce(jsonb_agg(jsonb_build_array(fields, keywords, keywords_zh, affils[1:4], journal_abbr)), ''[]'')
+        from (select * from hits order by published desc limit least($12, 6000)) s) else ''[]''::jsonb end)'
+  into r
+  using p_groups, p_fields, p_since, p_until, p_journal, p_zone, p_inst, p_q, p_key, p_ids, p_not_ids, p_sample;
+  return r;
+end $$;
 
--- 各领域每月篇数（网页“按年 / 月”下拉框用）
+-- 各领域每月篇数：由同步脚本在每次写入后刷新，查询时直接读汇总表
+create table if not exists public.paper_month_counts (grp text not null, month text not null, n integer not null, primary key (grp, month));
+alter table public.paper_month_counts enable row level security;
+drop policy if exists "paper_month_counts: public read" on public.paper_month_counts;
+create policy "paper_month_counts: public read" on public.paper_month_counts for select to anon, authenticated using (true);
+
+create or replace function public.refresh_paper_counts() returns void language sql security definer set search_path = public as $$
+  delete from public.paper_month_counts;
+  insert into public.paper_month_counts
+    select g, to_char(published, 'YYYY-MM'), count(*) from public.papers, unnest(groups) g group by 1, 2
+    union all
+    select '*', to_char(published, 'YYYY-MM'), count(*) from public.papers group by 2;
+$$;
+revoke execute on function public.refresh_paper_counts() from public, anon, authenticated;
+
+drop function if exists public.paper_months(text[]);
 create or replace function public.paper_months(p_groups text[] default null)
 returns table (month text, n bigint)
 language sql stable as $$
-  select to_char(published, 'YYYY-MM'), count(*) from public.papers
-  where p_groups is null or groups && p_groups group by 1 order by 1 desc
+  select month, sum(n)::bigint from public.paper_month_counts
+  where (p_groups is null and grp = '*') or grp = any(p_groups) group by month order by month desc
 $$;
 
-grant execute on function public.search_papers, public.paper_facets, public.paper_months, public.paper_filter to anon, authenticated;
+grant execute on function public.search_papers, public.paper_facets, public.paper_months, public.paper_where to anon, authenticated;
+
+-- 匿名访问的语句超时默认 3 秒，聚合统计放宽到 10 秒
+alter role anon set statement_timeout = '10s';
+alter role authenticated set statement_timeout = '10s';
+notify pgrst, 'reload config';
+select public.refresh_paper_counts();

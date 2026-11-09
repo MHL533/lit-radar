@@ -123,6 +123,8 @@ def main():
             chunk = ",".join('"' + g.replace('"', '') + '"' for g in gone[i:i + 200])
             call(url + "/rest/v1/papers?id=in.(" + urllib.request.quote(chunk, safe=",()\"") + ")", key, method="DELETE")
         print("deleted stale rows:", len(gone))
+    if sent or args.full:
+        call(url + "/rest/v1/rpc/refresh_paper_counts", key, body={})
     json.dump(state, open(STATE, "w", encoding="utf-8"), indent=0, sort_keys=True)
     print(f"synced {len(sent)} papers")
 

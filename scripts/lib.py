@@ -438,7 +438,10 @@ class AbstractStore:
 
     @staticmethod
     def bucket(pid_):
-        return hashlib.md5(pid_.encode()).hexdigest()[:3]
+        h = 0x811C9DC5  # FNV-1a, same as absBucket() in index.html
+        for b in pid_.encode():
+            h = ((h ^ b) * 0x01000193) & 0xFFFFFFFF
+        return format(h & 0xFFF, "03x")
 
     def path(self, b):
         return os.path.join(DATA, "abs", b + ".json")

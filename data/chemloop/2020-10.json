@@ -1,4 +1,4 @@
-{"papers":[
-{"id":"10.1021_acsami.0c14822","t":"Hemoglobin-Based Oxygen Carriers Incorporating Nanozymes for the Depletion of Reactive Oxygen Species","j":"ACS Applied Materials &amp; Interfaces","f":["cl-other"],"d":"2020-10-30","doi":"10.1021/acsami.0c14822","a":["Technical University of Denmark","University of Copenhagen"],"c":["Technical University of Denmark"]},
-{"id":"10.1016_j.apenergy.2020.115874","t":"A comparative study on clean ammonia production using chemical looping based technology","j":"Applied Energy","f":["cl-other"],"d":"2020-10-06","doi":"10.1016/j.apenergy.2020.115874","a":["Newcastle University","University of Manchester"],"c":["University of Manchester"]}
+{"v":3,"J":["ACS Applied Materials &amp; Interfaces","Applied Energy"],"I":["Technical University of Denmark","University of Manchester","Newcastle University","University of Copenhagen"],"K":[],"T":[],"papers":[
+{"t":"Hemoglobin-Based Oxygen Carriers Incorporating Nanozymes for the Depletion of Reactive Oxygen Species","j":0,"f":["cl-other"],"d":"2020-10-30","doi":"10.1021/acsami.0c14822","a":[0,3],"c":[0]},
+{"t":"A comparative study on clean ammonia production using chemical looping based technology","j":1,"f":["cl-other"],"d":"2020-10-06","doi":"10.1016/j.apenergy.2020.115874","a":[2,1],"c":[1]}
 ]}

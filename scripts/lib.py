@@ -14,6 +14,7 @@ Compact record keys:
 import csv
 import datetime as dt
 import glob
+import hashlib
 import json
 import os
 import re
@@ -76,18 +77,53 @@ def shard_path(group, month):
     return os.path.join(DATA, group, month + ".json")
 
 
+# Shard format v3: repeated strings are stored once per file.
+#   {"v":3, "J":[journals], "I":[institutions], "K":[keywords], "T":[topics], "papers":[...]}
+#   in each paper j is an index into J; a / c into I; kw into K; tp (OpenAlex topic, subfield) into T; id is derived from the DOI.
+INTERN = (("j", "J", False), ("a", "I", True), ("c", "I", True), ("kw", "K", True), ("tp", "T", True))
+
+
 def read_shard(path):
     try:
-        return json.load(open(path, encoding="utf-8")).get("papers", [])
+        data = json.load(open(path, encoding="utf-8"))
     except FileNotFoundError:
         return []
+    papers = data.get("papers", [])
+    if data.get("v") != 3:
+        return papers
+    out = []
+    for p in papers:
+        p = dict(p)
+        for key, table, many in INTERN:
+            if key in p:
+                p[key] = [data[table][i] for i in p[key]] if many else data[table][p[key]]
+        p["id"] = pid(p["doi"])
+        out.append(p)
+    return out
 
 
 def write_shard(path, papers):
     os.makedirs(os.path.dirname(path), exist_ok=True)
     papers = sorted(papers, key=lambda p: (p.get("d", ""), p["id"]), reverse=True)
+    freq = {}
+    for p in papers:
+        for key, table, many in INTERN:
+            if key in p:
+                for v in (p[key] if many else [p[key]]):
+                    freq.setdefault(table, {}).setdefault(v, 0)
+                    freq[table][v] += 1
+    tables = {t: sorted(c, key=lambda v: (-c[v], v)) for t, c in freq.items()}
+    index = {t: {v: i for i, v in enumerate(vs)} for t, vs in tables.items()}
+    rows = []
+    for p in papers:
+        q = {k: v for k, v in p.items() if k != "id"}
+        for key, table, many in INTERN:
+            if key in q:
+                q[key] = [index[table][v] for v in q[key]] if many else index[table][q[key]]
+        rows.append(json.dumps(q, ensure_ascii=False, separators=(",", ":")))
+    head = {"v": 3, **{t: tables.get(t, []) for t in ("J", "I", "K", "T")}}
     with open(path, "w", encoding="utf-8") as fh:
-        fh.write('{"papers":[\n' + ",\n".join(json.dumps(p, ensure_ascii=False, separators=(",", ":")) for p in papers) + "\n]}\n")
+        fh.write(json.dumps(head, ensure_ascii=False, separators=(",", ":"))[:-1] + ',"papers":[\n' + ",\n".join(rows) + "\n]}\n")
 
 
 def all_shards():
@@ -148,11 +184,12 @@ def build_meta():
     by_issn = load_journals()
     names = load_names()
     name_issn = {v: k for k, v in names.items()}
-    counts, used = {}, {}
+    counts, used, hashes = {}, {}, {}
     for path in all_shards():
         g, m = path.split(os.sep)[-2], os.path.basename(path)[:7]
         ps = read_shard(path)
         counts.setdefault(g, {})[m] = len(ps)
+        hashes.setdefault(g, {})[m] = hashlib.md5(open(path, "rb").read()).hexdigest()[:8]
         for p in ps:
             used[p["j"]] = used.get(p["j"], 0) + 1
     journals = {}
@@ -172,6 +209,7 @@ def build_meta():
                    for g, n, _, fs in rules.GROUPS],
         "journals": journals,
         "shards": {g: dict(sorted(v.items(), reverse=True)) for g, v in sorted(counts.items())},
+        "hash": hashes,
         "total": len(load_all()),
     }
     json.dump(meta, open(os.path.join(DATA, "meta.json"), "w", encoding="utf-8"), ensure_ascii=False, separators=(",", ":"))
@@ -188,6 +226,7 @@ def reclassify():
     recs = load_all()
     out, dropped = {}, 0
     for k, p in recs.items():
+        p["j"] = re.sub(r"\s+", " ", p["j"]).strip()
         f = rules.classify(p["t"], cat.get(p["j"]))
         if p.get("s") or p.get("k"):
             f = [p["f"][0]] + [x for x in f if x != p["f"][0]]
@@ -295,7 +334,7 @@ class Collector:
         issn = info["issn"]
         if issn not in self.names:
             ct = (it.get("container-title") or [""])[0].strip()
-            self.names[issn] = title_case(ct or info["cas_name"])
+            self.names[issn] = title_case(re.sub(r"\s+", " ", ct or info["cas_name"]).strip())
         sct = (it.get("short-container-title") or [""])
         if sct and sct[0] and issn not in self.abbr:
             self.abbr[issn] = sct[0]
@@ -316,14 +355,49 @@ class Collector:
 
 
 # ---------------------------------------------------------------- OpenAlex institutions
-def enrich(records, batch=50):
-    """Fill a / c (institutions, corresponding institutions) from OpenAlex for records that lack them."""
-    todo = {p["doi"].lower(): p for p in records if "a" not in p and p.get("doi")}
+def enrich_shards(minutes=20):
+    """Enrich papers lacking OpenAlex data shard by shard (newest first) within a time budget; progress is written as it goes."""
+    deadline = time.time() + minutes * 60
+    cache = {}
+    keys = ("a", "c", "kw", "tp")
+    done = 0
+    for path in sorted(all_shards(), key=lambda x: os.path.basename(x), reverse=True):
+        if time.time() > deadline:
+            break
+        recs = read_shard(path)
+        for p in recs:
+            hit = cache.get(p.get("doi", "").lower())
+            if hit and needs_enrich(p):
+                p.update(hit)
+        todo = [p for p in recs if needs_enrich(p)]
+        if not todo:
+            continue
+        enrich(todo, deadline=deadline)
+        for p in todo:
+            if not needs_enrich(p):
+                cache[p["doi"].lower()] = {k: p[k] for k in keys if k in p}
+                done += 1
+        write_shard(path, recs)
+        print(f"  {path[len(DATA) + 1:]}: {len(todo)} to enrich, total enriched {done}", flush=True)
+    left = sum(1 for path in all_shards() for p in read_shard(path) if needs_enrich(p))
+    print(f"enriched {done}; still missing {left}", flush=True)
+
+
+def needs_enrich(p):
+    return p.get("doi") and ("a" not in p or "kw" not in p)
+
+
+def enrich(records, batch=50, deadline=None):
+    """Fill institutions (a / c), keywords (kw) and topic (tp = [topic, subfield]) from OpenAlex where missing."""
+    todo = {p["doi"].lower(): p for p in records if needs_enrich(p)}
     keys = list(todo)
     filled = 0
     for i in range(0, len(keys), batch):
         flt = "doi:" + "|".join("https://doi.org/" + d for d in keys[i:i + batch])
-        url = "https://api.openalex.org/works?" + urllib.parse.urlencode({"filter": flt, "per-page": batch, "select": "doi,authorships", "mailto": MAILTO})
+        if deadline and time.time() > deadline:
+            print("  time budget reached; stopping enrichment", flush=True)
+            break
+        url = "https://api.openalex.org/works?" + urllib.parse.urlencode({"filter": flt, "per-page": batch, "select": "doi,authorships,keywords,primary_topic", "mailto": MAILTO})
         res = get_json(url, tries=3) or {}
         for w in res.get("results", []):
             p = todo.get((w.get("doi") or "").replace("https://doi.org/", "").lower())
@@ -342,11 +416,17 @@ def enrich(records, batch=50):
             p["a"] = allinst[:8]
             if corr:
                 p["c"] = corr[:4]
+            p["kw"] = [k["display_name"] for k in sorted(w.get("keywords") or [], key=lambda k: -(k.get("score") or 0))
+                       if k.get("display_name") and (k.get("score") or 0) >= 0.3][:6]
+            t = w.get("primary_topic") or {}
+            if t.get("display_name"):
+                p["tp"] = [t["display_name"], (t.get("subfield") or {}).get("display_name", "")]
             filled += 1
         old = (dt.date.today() - dt.timedelta(days=45)).isoformat()
         for d in keys[i:i + batch]:  # not in OpenAlex: stop asking for older papers
-            if res and "a" not in todo[d] and todo[d].get("d", "") < old:
-                todo[d]["a"] = []
+            if res and needs_enrich(todo[d]) and todo[d].get("d", "") < old:
+                todo[d].setdefault("a", [])
+                todo[d].setdefault("kw", [])
         time.sleep(0.15)
         if (i // batch) % 50 == 0:
             print(f"  institutions {i + batch}/{len(keys)} (filled {filled})", flush=True)

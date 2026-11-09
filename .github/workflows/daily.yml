@@ -1,11 +1,11 @@
 name: Daily update
 
-# Picks up newly registered papers before each push (Beijing 07:20, 11:20, 18:20), and fills missing institutions.
+# Picks up newly registered papers and fills missing OpenAlex data.
+# Runs before each push (Beijing 07:05, 11:05, 18:05) and every 3 hours as a backstop, since GitHub may skip or delay scheduled runs.
 on:
   schedule:
-    - cron: "20 23 * * *"
-    - cron: "20 3 * * *"
-    - cron: "20 10 * * *"
+    - cron: "5 23,3,10 * * *"
+    - cron: "40 1,7,13,16,19 * * *"
   workflow_dispatch:
     inputs:
       days:
@@ -31,7 +31,7 @@ jobs:
       - name: Collect new papers
         run: python scripts/collect.py --daily --days ${{ inputs.days || '6' }}
       - name: Fill missing institutions
-        run: python scripts/collect.py --enrich-missing
+        run: python scripts/collect.py --enrich-missing --minutes 25
       - name: Commit
         run: |
           git config user.name "lit-radar-bot"

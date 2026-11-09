@@ -122,6 +122,55 @@ h3 a:hover{color:var(--accent);text-decoration:underline;text-underline-offset:3
 .act{font:inherit;font-size:12px;padding:2px 9px;border-radius:5px;border:1px solid var(--line);background:transparent;color:var(--muted);cursor:pointer;white-space:nowrap}
 .act.on{color:var(--star);border-color:var(--star)}
 /* list */
+.kws{display:flex;flex-wrap:wrap;gap:4px 6px;font-size:11.5px}
+.kws button{font:inherit;border:0;background:none;padding:0;color:var(--muted);cursor:pointer;text-decoration:underline dotted;text-underline-offset:2px}
+.kws button:hover{color:var(--accent)}
+.sortseg[hidden],.tip[hidden]{display:none}
+.exp{position:relative}
+.exp summary{list-style:none}
+.exp summary::-webkit-details-marker{display:none}
+.exp .menu{position:absolute;right:0;top:calc(100% + 4px);z-index:20;background:var(--surface);border:1px solid var(--line);border-radius:8px;box-shadow:0 6px 24px rgba(0,0,0,.12);padding:6px;min-width:250px;display:flex;flex-direction:column;gap:2px}
+.exp .menu button{font:inherit;font-size:13px;text-align:left;border:0;background:none;color:var(--fg);padding:7px 10px;border-radius:6px;cursor:pointer}
+.exp .menu button:hover{background:var(--soft)}
+.exp .menu small{display:block;color:var(--muted);font-size:11.5px;padding:4px 10px 2px}
+.viz{margin-top:14px;display:flex;flex-direction:column;gap:14px}
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:14px 16px;min-width:0}
+.panel h3{margin:0 0 2px;font-size:14px}
+.panel .sub{margin:0 0 10px;color:var(--muted);font-size:12px}
+.chart{position:relative;width:100%}
+.chart svg{display:block;width:100%;height:auto;overflow:visible}
+.chart .grid-l{stroke:var(--line);stroke-width:1}
+.chart .axis-t{fill:var(--muted);font-size:11px;font-variant-numeric:tabular-nums}
+.chart .bar{fill:var(--accent)}
+.chart .hit{fill:transparent;cursor:default}
+.chart .hit:hover + .bar,.chart .bar.on{fill:var(--fg)}
+.tip{position:absolute;pointer-events:none;background:var(--fg);color:var(--bg);font-size:12px;padding:5px 8px;border-radius:6px;white-space:nowrap;transform:translate(-50%,-100%);margin-top:-8px;z-index:3;font-variant-numeric:tabular-nums}
+.tip[hidden]{display:none}
+.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:14px}
+.hbars{display:flex;flex-direction:column;gap:4px;font-size:12.5px}
+.hb{display:grid;grid-template-columns:minmax(0,1fr) 92px 46px;gap:8px;align-items:center;border:0;background:none;font:inherit;color:inherit;text-align:left;padding:3px 4px;border-radius:5px;cursor:pointer}
+.hb:hover{background:var(--soft)}
+.hb .nm{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.hb .tr{height:8px;background:var(--soft);border-radius:4px;overflow:hidden}
+.hb .tr i{display:block;height:100%;background:var(--accent);border-radius:0 4px 4px 0}
+.hb .n{text-align:right;color:var(--muted);font-variant-numeric:tabular-nums}
+.graphbar{display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center;font-size:12.5px;color:var(--muted);margin-bottom:8px}
+.graphbar select{width:auto}
+.lg{display:inline-flex;align-items:center;gap:5px}
+.lg i{display:inline-block;width:10px;height:10px;border-radius:50%}
+.lg i.f{background:var(--accent)}
+.lg i.k{background:var(--surface);border:1.5px solid var(--muted)}
+.graph svg{display:block;width:100%;height:auto;touch-action:none}
+.graph .ed{stroke:var(--muted);fill:none}
+.graph .nd{cursor:pointer}
+.graph .nd circle.f{fill:var(--accent);stroke:var(--surface);stroke-width:2}
+.graph .nd circle.k{fill:var(--surface);stroke:var(--muted);stroke-width:1.5}
+.graph .nd text{fill:var(--fg);font-size:11px;paint-order:stroke;stroke:var(--surface);stroke-width:3px;stroke-linejoin:round}
+.graph .nd text.f{font-weight:600}
+.graph.focus .ed:not(.on){opacity:.06}
+.graph.focus .nd:not(.on){opacity:.25}
+.pairs{margin:10px 0 0;padding-left:18px;font-size:12.5px;color:var(--muted)}
+.pairs b{color:var(--fg);font-weight:500}
 .list{margin-top:14px;border:1px solid var(--line);border-radius:8px;background:var(--surface);overflow:hidden}
 .lrow{display:grid;grid-template-columns:86px 104px minmax(0,1fr) auto;gap:10px;align-items:start;padding:9px 12px;border-top:1px solid var(--line);font-size:13px}
 .lrow:first-child{border-top:0}
@@ -231,11 +280,23 @@ a.btn{text-decoration:none}
     <main class="main">
       <div class="topbar" role="search">
         <button class="btn" id="openSide" type="button" aria-controls="side">筛选<span class="badge" id="fcount" hidden></span></button>
-        <input type="search" id="q" placeholder="搜索标题、要点、期刊、DOI、单位" aria-label="搜索文献">
+        <input type="search" id="q" placeholder="搜索标题、关键词、期刊、DOI、单位" aria-label="搜索文献">
         <div class="seg" role="group" aria-label="显示方式">
           <button type="button" id="vCard" aria-pressed="true" title="卡片视图"><svg viewBox="0 0 16 16" aria-hidden="true"><rect x="1" y="1" width="6" height="6" rx="1"/><rect x="9" y="1" width="6" height="6" rx="1"/><rect x="1" y="9" width="6" height="6" rx="1"/><rect x="9" y="9" width="6" height="6" rx="1"/></svg>卡片</button>
           <button type="button" id="vList" aria-pressed="false" title="列表视图"><svg viewBox="0 0 16 16" aria-hidden="true"><rect x="1" y="2" width="14" height="2" rx="1"/><rect x="1" y="7" width="14" height="2" rx="1"/><rect x="1" y="12" width="14" height="2" rx="1"/></svg>列表</button>
+          <button type="button" id="vTrend" aria-pressed="false" title="趋势与分布"><svg viewBox="0 0 16 16" aria-hidden="true"><rect x="1" y="9" width="3" height="6" rx="1"/><rect x="6.5" y="5" width="3" height="10" rx="1"/><rect x="12" y="1" width="3" height="14" rx="1"/></svg>趋势</button>
+          <button type="button" id="vGraph" aria-pressed="false" title="雷达关联图"><svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="3" cy="4" r="2"/><circle cx="13" cy="3" r="2"/><circle cx="8" cy="9" r="2.4"/><circle cx="3" cy="14" r="1.6"/><circle cx="13.5" cy="13" r="1.8"/><path d="M3 4 8 9l5-6M8 9l-5 5m5-5 5.5 4" stroke="currentColor" stroke-width="1.2" fill="none"/></svg>关联图</button>
         </div>
+        <details class="exp" id="expMenu">
+          <summary class="btn" role="button">导出</summary>
+          <div class="menu" role="menu">
+            <small id="expNote">当前筛选结果</small>
+            <button type="button" data-fmt="csv" role="menuitem">Excel 表格（.csv）</button>
+            <button type="button" data-fmt="ris" role="menuitem">EndNote / Zotero（.ris）</button>
+            <button type="button" data-fmt="bib" role="menuitem">BibTeX（.bib）</button>
+            <button type="button" data-fmt="doi" role="menuitem">DOI 列表（.txt，可粘贴到 Zotero 按标识符添加）</button>
+          </div>
+        </details>
         <div class="seg sortseg" id="sortSeg" role="group" aria-label="排序">
           <span class="seglab">排序</span>
           <button type="button" data-k="date" aria-pressed="true">日期</button>
@@ -494,9 +555,19 @@ $("reset").addEventListener("click", () => {
   ["keyonly","staronly","unreadonly"].forEach(i => $(i).setAttribute("aria-pressed","false"));
   renderFieldChips(); renderDateChips(); reset();
 });
-function setView(v){ state.view = v; store.set("lr-view", v); $("vCard").setAttribute("aria-pressed", String(v === "card")); $("vList").setAttribute("aria-pressed", String(v === "list")); render(); }
+const VIEWS = { card: "vCard", list: "vList", trend: "vTrend", graph: "vGraph" };
+function setView(v){
+  if (!VIEWS[v]) v = "card";
+  state.view = v; store.set("lr-view", v);
+  for (const [k, id] of Object.entries(VIEWS)) $(id).setAttribute("aria-pressed", String(k === v));
+  $("sortSeg").hidden = v === "trend" || v === "graph";
+  render();
+}
 $("vCard").addEventListener("click", () => setView("card"));
 $("vList").addEventListener("click", () => setView("list"));
+$("vTrend").addEventListener("click", () => setView("trend"));
+$("vGraph").addEventListener("click", () => setView("graph"));
+let resizeTimer = 0; window.addEventListener("resize", () => { if (state.view === "trend" || state.view === "graph"){ clearTimeout(resizeTimer); resizeTimer = setTimeout(render, 250); } });
 $("more").addEventListener("click", () => { state.shown += PAGE; render(); });
 const narrow = matchMedia("(max-width:900px)");
 function setCollapsed(c){ store.set("lr-collapsed", c); $("layout").classList.toggle("collapsed", c); $("openSide").setAttribute("aria-expanded", String(!c)); }
@@ -511,19 +582,26 @@ document.addEventListener("keydown", e => { if (e.key === "Escape" && $("side").
 function reset(){ state.shown = PAGE; render(); ensureData(); }
 
 /* ---------- data loading (group / month shards) ---------- */
-function getJSON(u){
-  const c = new AbortController(); const t = setTimeout(() => c.abort(), 30000);
-  return fetch(u + "?t=" + Math.floor(Date.now() / 300000), { cache: "no-cache", signal: c.signal })
+function getJSON(u, ver){
+  // shards carry a content hash, so the browser may cache them; meta.json is revalidated every 5 minutes
+  const c = new AbortController(); const t = setTimeout(() => c.abort(), 45000);
+  return fetch(u + (ver ? "?v=" + ver : "?t=" + Math.floor(Date.now() / 300000)), ver ? { signal: c.signal } : { cache: "no-cache", signal: c.signal })
     .then(r => { if (!r.ok) throw new Error(r.status); return r.json(); }).finally(() => clearTimeout(t));
 }
 const PUB = [["10.1016/j.joule", "Cell Press"], ["10.1016", "ScienceDirect"], ["10.1038", "Nature"], ["10.1021", "ACS Publications"], ["10.1002", "Wiley Online Library"],
   ["10.1039", "RSC Publishing"], ["10.1126", "Science"], ["10.5194", "Copernicus"], ["10.1029", "AGU"], ["10.1007", "Springer"]];
+function pidOf(doi){ return String(doi || "").toLowerCase().replace(/[^a-z0-9_.~:@+-]/g, "_"); }
+function decodeShard(j){
+  if (!j || j.v !== 3) return (j && j.papers) || [];
+  const map = (arr, t) => arr && arr.map(i => t[i]);
+  return (j.papers || []).map(p => ({ ...p, id: pidOf(p.doi), j: j.J[p.j], a: map(p.a, j.I), c: map(p.c, j.I), kw: map(p.kw, j.K), tp: map(p.tp, j.T) }));
+}
 function expand(r){
   const doi = r.doi || ""; const url = doi ? "https://doi.org/" + doi : "";
   const src = r.src || ["官方", (PUB.find(([k]) => doi.startsWith(k)) || [0, "出版社"])[1], url];
   const m = marks[r.id] || {};
   return { _id: r.id, title: r.t, journal: r.j, fields: r.f || [], field: (r.f || [])[0], published: r.d, doi, url, summary_zh: r.s || "",
-    key: !!r.k, affils: r.a, corr_affils: r.c, source_type: src[0], source_name: src[1], source_url: src[2], added: r.x, starred: !!m.starred, read: !!m.read };
+    key: !!r.k, affils: r.a, corr_affils: r.c, kw: r.kw || [], topic: r.tp, source_type: src[0], source_name: src[1], source_url: src[2], added: r.x, starred: !!m.starred, read: !!m.read };
 }
 function neededShards(){
   if (!META) return [];
@@ -542,10 +620,11 @@ async function loadShard(key){
   if (PENDING.has(key)) return PENDING.get(key);
   const job = (async () => {
     let j = null;
-    for (const u of [BASE, ...SOURCES.filter(x => x !== BASE)]) { try { j = await getJSON(u + key + ".json"); break; } catch {} }
+    const [g, m] = key.split("/"); const ver = META && META.hash && META.hash[g] && META.hash[g][m];
+    for (const u of [BASE, ...SOURCES.filter(x => x !== BASE)]) { try { j = await getJSON(u + key + ".json", ver || "0"); break; } catch {} }
     if (j) {
       LOADED.add(key);
-      for (const r of j.papers || []) if (!IDS.has(r.id)) { IDS.add(r.id); ALL.push(expand(r)); }
+      for (const r of decodeShard(j)) if (!IDS.has(r.id)) { IDS.add(r.id); ALL.push(expand(r)); }
     }
   })().finally(() => { PENDING.delete(key); scheduleRender(); });
   PENDING.set(key, job); return job;
@@ -583,7 +662,7 @@ function filtered(){
     (!state.zone || zoneOf(p).startsWith(state.zone)) &&
     (!inst || (p.affils || []).some(a => a.toLowerCase().includes(inst))) &&
     (!state.key || p.key) && (!state.star || p.starred) && (!state.unread || !p.read) &&
-    (!q || [p.title, p.summary_zh, p.journal, abbrOf(p), p.doi, (p.affils || []).join(" ")].some(x => String(x || "").toLowerCase().includes(q)))
+    (!q || [p.title, p.summary_zh, p.journal, abbrOf(p), p.doi, (p.affils || []).join(" "), p.kw.join(" ")].some(x => String(x || "").toLowerCase().includes(q)))
   ).sort(compare);
 }
 const byDate = (a, b) => String(b.published || "").localeCompare(String(a.published || "")) || (b.key - a.key);
@@ -664,6 +743,7 @@ function card(p){
   a.append(meta, h);
   if (p.summary_zh) a.append(el("p", "sum", p.summary_zh));
   const af = affLine(p, 4); if (af) a.append(af);
+  const kl = kwLine(p, 4); if (kl) a.append(kl);
   const foot = el("div", "foot"); const left = el("div", "src");
   if (p.doi) left.append(el("span", "doi", "DOI " + p.doi));
   if (p.source_name){ left.append(document.createTextNode(" · ")); const s = safeUrl(p.source_url); const lab = (p.source_type === "转载" ? "转载自 " : "来源 ") + p.source_name;
@@ -706,11 +786,238 @@ function render(){
     $("moreBox").hidden = true; return;
   }
   empty.hidden = true;
+  if (state.view === "trend" || state.view === "graph"){
+    $("moreBox").hidden = true;
+    $("count").textContent = (PENDING.size ? "正在加载 " + PENDING.size + " 个月份分片… " : "") + "基于筛出的 " + rows.length.toLocaleString() + " 篇";
+    out.append(state.view === "trend" ? trendView(rows) : graphView(rows)); return;
+  }
   const part = rows.slice(0, state.shown);
   const box = el("div", state.view === "list" ? "list" : "grid");
   for (const p of part) box.append(state.view === "list" ? lrow(p) : card(p));
   out.append(box);
   $("moreBox").hidden = rows.length <= state.shown;
+}
+
+/* ---------- keywords, export ---------- */
+function kwLine(p, n){
+  if (!p.kw || !p.kw.length) return null;
+  const d = el("div", "kws");
+  for (const k of p.kw.slice(0, n)){ const b = el("button", null, k); b.type = "button"; b.title = "搜索这个关键词"; b.addEventListener("click", () => searchFor(k)); d.append(b); }
+  return d;
+}
+function searchFor(text){ $("q").value = text; state.q = text.toLowerCase(); reset(); window.scrollTo({ top: 0, behavior: "smooth" }); }
+const EXPORT_MAX = 5000;
+function download(name, text, type){
+  const blob = new Blob([text], { type }); const a = document.createElement("a");
+  a.href = URL.createObjectURL(blob); a.download = name; document.body.append(a); a.click();
+  setTimeout(() => { URL.revokeObjectURL(a.href); a.remove(); }, 1000);
+}
+function exportRows(fmt){
+  const rows = filtered().slice(0, EXPORT_MAX);
+  if (!rows.length){ showNote("当前筛选结果为空，没有可导出的文献。"); return; }
+  const stamp = new Date().toISOString().slice(0, 10), base = "文献_" + stamp;
+  const fl = p => p.fields.filter(f => FIELDS[f]).map(f => FIELDS[f]).join("；");
+  if (fmt === "csv"){
+    const head = ["标题", "期刊", "期刊缩写", "中科院分区", "影响因子", "发表日期", "研究方向", "关键词", "发表单位", "通讯单位", "DOI", "链接", "中文要点"];
+    const esc = v => { v = v == null ? "" : String(v); return /[",\n]/.test(v) ? '"' + v.replace(/"/g, '""') + '"' : v; };
+    const lines = rows.map(p => [p.title, p.journal, abbrOf(p), zoneOf(p), ifOf(p) ?? "", p.published, fl(p), p.kw.join("；"), (p.affils || []).join("；"), (p.corr_affils || []).join("；"), p.doi, p.url, p.summary_zh].map(esc).join(","));
+    download(base + ".csv", "﻿" + [head.join(","), ...lines].join("\r\n"), "text/csv;charset=utf-8");
+  } else if (fmt === "ris"){
+    const t = rows.map(p => ["TY  - JOUR", "TI  - " + p.title, "JO  - " + p.journal, "J2  - " + abbrOf(p), "PY  - " + String(p.published).slice(0, 4), "DA  - " + String(p.published).replace(/-/g, "/"),
+      "DO  - " + p.doi, "UR  - " + p.url, ...p.kw.map(k => "KW  - " + k), ...(p.summary_zh ? ["N1  - " + p.summary_zh] : []), "ER  - "].join("\r\n"));
+    download(base + ".ris", t.join("\r\n\r\n") + "\r\n", "application/x-research-info-systems");
+  } else if (fmt === "bib"){
+    const used = {};
+    const b = s => String(s || "").replace(/[{}]/g, "");
+    const t = rows.map(p => {
+      let k = (String(p.title).match(/[A-Za-z]{4,}/) || ["paper"])[0].toLowerCase() + String(p.published).slice(0, 4);
+      used[k] = (used[k] || 0) + 1; if (used[k] > 1) k += String.fromCharCode(96 + used[k]);
+      return "@article{" + k + ",\n  title = {" + b(p.title) + "},\n  journal = {" + b(p.journal) + "},\n  year = {" + String(p.published).slice(0, 4) + "},\n  doi = {" + p.doi + "},\n  url = {" + p.url + "}" + (p.kw.length ? ",\n  keywords = {" + b(p.kw.join(", ")) + "}" : "") + "\n}";
+    });
+    download(base + ".bib", t.join("\n\n") + "\n", "application/x-bibtex");
+  } else {
+    download(base + "_DOI.txt", rows.map(p => p.doi).join("\n") + "\n", "text/plain;charset=utf-8");
+  }
+  $("expMenu").open = false;
+  showNote("已导出 " + rows.length.toLocaleString() + " 篇" + (filtered().length > EXPORT_MAX ? "（筛出结果超过 " + EXPORT_MAX + " 篇，只导出排在前面的 " + EXPORT_MAX + " 篇）" : "") + "。作者姓名不在本库中，导入 Zotero / EndNote 后可按 DOI 自动补全题录。");
+}
+$("expMenu").addEventListener("toggle", () => { if ($("expMenu").open) $("expNote").textContent = "当前筛选结果 " + Math.min(filtered().length, EXPORT_MAX).toLocaleString() + " 篇（最多 " + EXPORT_MAX + " 篇）"; });
+for (const b of $("expMenu").querySelectorAll("button[data-fmt]")) b.addEventListener("click", () => exportRows(b.dataset.fmt));
+document.addEventListener("click", e => { if ($("expMenu").open && !$("expMenu").contains(e.target)) $("expMenu").open = false; });
+
+/* ---------- trend view ---------- */
+const SVGNS = "http://www.w3.org/2000/svg";
+function svgEl(tag, attrs){ const e = document.createElementNS(SVGNS, tag); for (const k in attrs) e.setAttribute(k, attrs[k]); return e; }
+function niceMax(v){ if (v <= 5) return 5; const p = Math.pow(10, Math.floor(Math.log10(v))); for (const m of [1, 2, 2.5, 5, 10]) if (m * p >= v) return m * p; return 10 * p; }
+function barChart(data, opts){
+  // data: [{label, value, tip}] — single series, so one hue and no legend
+  const W = Math.max(320, Math.min(1100, ($("out").clientWidth || 800) - 34)), H = opts.height || 220, L = 40, B = 24, T = 8;
+  const max = niceMax(Math.max(1, ...data.map(d => d.value)));
+  const box = el("div", "chart"); const svg = svgEl("svg", { viewBox: `0 0 ${W} ${H}`, role: "img", "aria-label": opts.label });
+  const tip = el("div", "tip"); tip.hidden = true;
+  const y = v => T + (H - T - B) * (1 - v / max);
+  for (let i = 0; i <= 4; i++){
+    const v = max * i / 4, yy = y(v);
+    svg.append(svgEl("line", { class: "grid-l", x1: L, x2: W, y1: yy, y2: yy }));
+    const t = svgEl("text", { class: "axis-t", x: L - 6, y: yy + 4, "text-anchor": "end" }); t.textContent = v >= 1000 ? (v / 1000) + "k" : v; svg.append(t);
+  }
+  const step = (W - L) / data.length, bw = Math.max(1, step - 2), every = Math.ceil(data.length / Math.max(1, Math.floor((W - L) / 56)));
+  data.forEach((d, i) => {
+    const x = L + i * step + 1, yy = y(d.value), h = Math.max(0, H - B - yy), r = Math.min(4, bw / 2, h);
+    const hit = svgEl("rect", { class: "hit", x: L + i * step, y: T, width: step, height: H - T - B });
+    const path = h > 0 ? `M${x},${H - B} V${yy + r} Q${x},${yy} ${x + r},${yy} H${x + bw - r} Q${x + bw},${yy} ${x + bw},${yy + r} V${H - B} Z` : "";
+    const bar = svgEl("path", { class: "bar", d: path });
+    const show = () => { bar.classList.add("on"); tip.hidden = false; tip.textContent = d.tip; tip.style.left = ((x + bw / 2) / W * 100) + "%"; tip.style.top = (yy / H * 100) + "%"; };
+    const hide = () => { bar.classList.remove("on"); tip.hidden = true; };
+    hit.addEventListener("mouseenter", show); hit.addEventListener("mouseleave", hide); hit.addEventListener("touchstart", show, { passive: true });
+    svg.append(hit, bar);
+    if (i % every === 0){ const t = svgEl("text", { class: "axis-t", x: x + bw / 2, y: H - 6, "text-anchor": "middle" }); t.textContent = d.label; svg.append(t); }
+  });
+  box.append(svg, tip); return box;
+}
+function hbars(items, total, onPick){
+  const box = el("div", "hbars"); const max = Math.max(1, ...items.map(x => x[1]));
+  for (const [name, n, val] of items){
+    const b = el("button", "hb"); b.type = "button"; b.title = name + "：" + n.toLocaleString() + " 篇（" + (n / total * 100).toFixed(1) + "%），点击筛选";
+    const tr = el("span", "tr"); const i = el("i"); i.style.width = (n / max * 100) + "%"; tr.append(i);
+    b.append(el("span", "nm", name), tr, el("span", "n", n.toLocaleString()));
+    b.addEventListener("click", () => onPick(val ?? name)); box.append(b);
+  }
+  return box;
+}
+function topCounts(rows, get, n){
+  const c = new Map(); for (const p of rows) for (const k of get(p)) if (k) c.set(k, (c.get(k) || 0) + 1);
+  return [...c.entries()].sort((a, b) => b[1] - a[1]).slice(0, n);
+}
+function trendView(rows){
+  const wrap = el("div", "viz");
+  const months = new Map(); for (const p of rows){ const m = String(p.published).slice(0, 7); if (m.length === 7) months.set(m, (months.get(m) || 0) + 1); }
+  const keys = [...months.keys()].sort(); const p1 = el("section", "panel");
+  if (keys.length){
+    const [y0, m0] = keys[0].split("-").map(Number), [y1, m1] = keys[keys.length - 1].split("-").map(Number);
+    const span = (y1 - y0) * 12 + (m1 - m0) + 1; let data = [];
+    if (span > 36){
+      const ys = new Map(); for (const [m, n] of months) ys.set(m.slice(0, 4), (ys.get(m.slice(0, 4)) || 0) + n);
+      for (let y = y0; y <= y1; y++) data.push({ label: String(y), value: ys.get(String(y)) || 0, tip: y + " 年：" + (ys.get(String(y)) || 0).toLocaleString() + " 篇" });
+    } else {
+      for (let i = 0; i < span; i++){ const y = y0 + Math.floor((m0 - 1 + i) / 12), m = (m0 - 1 + i) % 12 + 1, k = y + "-" + String(m).padStart(2, "0");
+        data.push({ label: (m === 1 || i === 0 ? y + "-" : "") + String(m).padStart(2, "0"), value: months.get(k) || 0, tip: k + "：" + (months.get(k) || 0).toLocaleString() + " 篇" }); }
+    }
+    p1.append(el("h3", null, "发文趋势"), el("p", "sub", (span > 36 ? "按年" : "按月") + "统计当前筛出的 " + rows.length.toLocaleString() + " 篇。最近一个月仍在陆续收录。"), barChart(data, { label: "发文数量随时间变化", height: 220 }));
+  }
+  wrap.append(p1);
+  const cols = el("div", "cols");
+  const scope = new Set(scopeFields());
+  const fset = topCounts(rows, p => p.fields.filter(f => scope.has(f)), 14).map(([f, n]) => [FIELDS[f] || f, n, f]);
+  const pf = el("section", "panel"); pf.append(el("h3", null, "研究方向"), el("p", "sub", "一篇论文可属于多个方向。点击可按该方向筛选。"),
+    hbars(fset, rows.length, f => { state.fields = new Set([f]); renderFieldChips(); setView("card"); reset(); }));
+  const pj = el("section", "panel"); pj.append(el("h3", null, "期刊 Top 12"), el("p", "sub", "点击按期刊筛选。"),
+    hbars(topCounts(rows, p => [p.journal], 12).map(([j, n]) => [abbrOf({ journal: j }) || j, n, j]), rows.length, j => { state.journal = j; $("journal").value = j; setView("card"); reset(); }));
+  const pi = el("section", "panel"); pi.append(el("h3", null, "发表单位 Top 12"), el("p", "sub", "按论文中出现的所有单位计数。点击按单位筛选。"),
+    hbars(topCounts(rows, p => p.affils || [], 12), rows.length, i => { state.inst = i.toLowerCase(); $("inst").value = i; setView("card"); reset(); }));
+  const pk = el("section", "panel"); const kws = topCounts(rows, p => p.kw, 12);
+  pk.append(el("h3", null, "高频关键词 Top 12"), el("p", "sub", kws.length ? "关键词来自 OpenAlex。点击搜索该关键词。" : "关键词还在补全中。"), hbars(kws, rows.length, k => { setView("card"); searchFor(k); }));
+  cols.append(pf, pj, pi, pk); wrap.append(cols);
+  return wrap;
+}
+
+/* ---------- 雷达关联图 ---------- */
+const STOP = new Set("a an and as at based by for from in into of on or the to toward towards via with without its their using under over high enhanced efficient novel new study effect effects performance highly".split(" "));
+function titleTerms(t){
+  const w = String(t).toLowerCase().replace(/[^a-z0-9\s-]/g, " ").split(/\s+/).filter(x => x.length > 2 && !STOP.has(x) && !/^\d+$/.test(x));
+  const out = new Set(); for (let i = 0; i + 1 < w.length; i++) out.add(w[i] + " " + w[i + 1]); return [...out];
+}
+let graphKind = store.get("lr-graph", "kw");
+function graphView(rows){
+  const wrap = el("div", "viz"); const panel = el("section", "panel graph");
+  const bar = el("div", "graphbar");
+  const sel = el("select"); sel.setAttribute("aria-label", "关联对象");
+  for (const [v, t] of [["kw", "研究方向 × 关键词"], ["inst", "研究方向 × 发表单位"], ["journal", "研究方向 × 期刊"]]) sel.append(new Option(t, v));
+  sel.value = graphKind; sel.addEventListener("change", () => { graphKind = sel.value; store.set("lr-graph", graphKind); render(); });
+  const lg1 = el("span", "lg"); lg1.append(el("i", "f"), document.createTextNode("研究方向")); const lg2 = el("span", "lg"); lg2.append(el("i", "k"), document.createTextNode({ kw: "关键词", inst: "发表单位", journal: "期刊" }[graphKind]));
+  bar.append(sel, lg1, lg2, document.createTextNode("圆越大篇数越多，连线越粗共现越多。悬停查看关联，点击筛选。"));
+  const scope = new Set(scopeFields());
+  const kwCover = rows.filter(p => p.kw.length).length / Math.max(1, rows.length);
+  const useTitle = graphKind === "kw" && kwCover < 0.3;
+  const itemsOf = p => graphKind === "inst" ? (p.affils || []).slice(0, 4) : graphKind === "journal" ? [abbrOf(p)] : useTitle ? titleTerms(p.title) : p.kw;
+  const sample = rows.length > 20000 ? rows.slice(0, 20000) : rows;
+  const fTop = topCounts(sample, p => p.fields.filter(f => scope.has(f)), 12).map(x => x[0]);
+  const iTop = topCounts(sample, itemsOf, graphKind === "kw" ? 40 : 30).map(x => x[0]);
+  const nodes = [...fTop.map(f => ({ id: "f:" + f, label: FIELDS[f], kind: "f", f, n: 0 })), ...iTop.map(k => ({ id: "k:" + k, label: k, kind: "k", k, n: 0 }))];
+  const idx = new Map(nodes.map((n, i) => [n.id, i])); const ew = new Map();
+  for (const p of sample){
+    const ids = [...p.fields.filter(f => idx.has("f:" + f)).map(f => idx.get("f:" + f)), ...itemsOf(p).filter(k => idx.has("k:" + k)).map(k => idx.get("k:" + k))];
+    const u = [...new Set(ids)]; for (const i of u) nodes[i].n++;
+    for (let a = 0; a < u.length; a++) for (let b = a + 1; b < u.length; b++){ const k = Math.min(u[a], u[b]) + "-" + Math.max(u[a], u[b]); ew.set(k, (ew.get(k) || 0) + 1); }
+  }
+  // association strength (co-occurrence relative to expectation) keeps the busiest nodes from linking to everything
+  let edges = [...ew.entries()].map(([k, w]) => { const [a, b] = k.split("-").map(Number); return { a, b, w, s: w / Math.sqrt(nodes[a].n * nodes[b].n) }; })
+    .filter(e => e.w >= 2).sort((x, y) => y.s - x.s).slice(0, 160);
+  if (nodes.length < 2 || !edges.length){
+    panel.append(bar, el("p", "sub", useTitle ? "数据还不足以绘制关联图。" : "当前筛选结果太少，放宽条件后再看。")); wrap.append(panel); return wrap;
+  }
+  const W = Math.max(340, Math.min(1100, ($("out").clientWidth || 800) - 34)), H = Math.round(Math.min(720, Math.max(420, W * 0.62)));
+  const maxN = Math.max(...nodes.map(n => n.n)), maxW = Math.max(...edges.map(e => e.w));
+  const rad = n => (n.kind === "f" ? 9 : 5) + Math.sqrt(n.n / maxN) * (n.kind === "f" ? 18 : 14);
+  // deterministic start on two rings, then a small force simulation
+  nodes.forEach((n, i) => { const fl = n.kind === "f", k = fl ? i : i - fTop.length, tot = fl ? fTop.length : iTop.length, ang = 2 * Math.PI * k / Math.max(1, tot) + (fl ? 0 : .3), R = (fl ? .2 : .42) * Math.min(W, H);
+    n.x = W / 2 + R * Math.cos(ang); n.y = H / 2 + R * Math.sin(ang); n.vx = 0; n.vy = 0; n.r = rad(n); });
+  const KR = 0.18 * W * H / nodes.length;
+  for (let it = 0; it < 360; it++){
+    const alpha = 1 - it / 360;
+    for (let i = 0; i < nodes.length; i++) for (let j = i + 1; j < nodes.length; j++){
+      const a = nodes[i], b = nodes[j]; let dx = b.x - a.x, dy = b.y - a.y, d2 = dx * dx + dy * dy + .01, d = Math.sqrt(d2);
+      const min = a.r + b.r + 18; const f = (KR / d2 + (d < min ? (min - d) * .5 : 0)) * alpha;
+      dx /= d; dy /= d; a.vx -= dx * f; a.vy -= dy * f; b.vx += dx * f; b.vy += dy * f;
+    }
+    for (const e of edges){ const a = nodes[e.a], b = nodes[e.b]; const dx = b.x - a.x, dy = b.y - a.y, d = Math.sqrt(dx * dx + dy * dy) || 1;
+      const target = a.r + b.r + 60, f = (d - target) * .015 * (.4 + e.s) * alpha; a.vx += dx / d * f; a.vy += dy / d * f; b.vx -= dx / d * f; b.vy -= dy / d * f; }
+    for (const n of nodes){ n.vx += (W / 2 - n.x) * .002 * alpha; n.vy += (H / 2 - n.y) * .003 * alpha; n.vx *= .6; n.vy *= .6;
+      n.x = Math.max(n.r + 4, Math.min(W - n.r - 4, n.x + n.vx)); n.y = Math.max(n.r + 4, Math.min(H - n.r - 4, n.y + n.vy)); }
+  }
+  const svg = svgEl("svg", { viewBox: `0 0 ${W} ${H}`, role: "img", "aria-label": "研究方向与" + { kw: "关键词", inst: "发表单位", journal: "期刊" }[graphKind] + "的共现关联图" });
+  const gE = svgEl("g", {}), gN = svgEl("g", {}); svg.append(gE, gN);
+  const nbr = nodes.map(() => new Set());
+  const eEls = edges.map(e => { nbr[e.a].add(e.b); nbr[e.b].add(e.a);
+    const l = svgEl("line", { class: "ed", x1: nodes[e.a].x, y1: nodes[e.a].y, x2: nodes[e.b].x, y2: nodes[e.b].y, "stroke-width": (0.6 + 3.4 * e.w / maxW).toFixed(2), "stroke-opacity": (0.18 + 0.5 * e.s).toFixed(2) }); gE.append(l); return l; });
+  const tip = el("div", "tip"); tip.hidden = true;
+  const box = el("div", "chart"); box.append(svg, tip);
+  // labels: fields first, then the biggest other nodes, skipping any that would overlap a placed label
+  const placed = [], labelled = new Set();
+  for (const i of nodes.map((n, i) => i).sort((a, b) => (nodes[b].kind === "f") - (nodes[a].kind === "f") || nodes[b].n - nodes[a].n)){
+    const n = nodes[i], txt = n.label.length > 26 ? n.label.slice(0, 25) + "…" : n.label, w = [...txt].reduce((t, ch) => t + (ch.charCodeAt(0) > 255 ? 11 : 6.2), 0);
+    const bx = { x0: n.x - w / 2, x1: n.x + w / 2, y0: n.y - n.r - 16, y1: n.y - n.r - 2 };
+    if (placed.some(o => bx.x0 < o.x1 && bx.x1 > o.x0 && bx.y0 < o.y1 && bx.y1 > o.y0)) continue;
+    placed.push(bx); labelled.add(i); n.txt = txt;
+  }
+  const nEls = nodes.map((n, i) => {
+    const g = svgEl("g", { class: "nd", tabindex: "0", role: "button", "aria-label": n.label + "，" + n.n + " 篇" });
+    g.append(svgEl("circle", { class: n.kind, cx: n.x, cy: n.y, r: n.r }));
+    if (labelled.has(i)){ const t = svgEl("text", { class: n.kind, x: n.x, y: n.y - n.r - 4, "text-anchor": "middle" }); t.textContent = n.txt; g.append(t); }
+    const on = () => {
+      panel.classList.add("focus"); g.classList.add("on"); for (const j of nbr[i]) nEls[j].classList.add("on");
+      edges.forEach((e, k) => { if (e.a === i || e.b === i) eEls[k].classList.add("on"); });
+      const top = edges.filter(e => e.a === i || e.b === i).sort((x, y) => y.w - x.w).slice(0, 3).map(e => nodes[e.a === i ? e.b : e.a].label + " " + e.w);
+      tip.hidden = false; tip.textContent = n.label + "：" + n.n.toLocaleString() + " 篇" + (top.length ? "｜常同现：" + top.join("、") : "");
+      tip.style.left = (n.x / W * 100) + "%"; tip.style.top = ((n.y - n.r) / H * 100) + "%";
+    };
+    const off = () => { panel.classList.remove("focus"); for (const x of nEls) x.classList.remove("on"); for (const x of eEls) x.classList.remove("on"); tip.hidden = true; };
+    g.addEventListener("mouseenter", on); g.addEventListener("mouseleave", off); g.addEventListener("focus", on); g.addEventListener("blur", off);
+    const pick = () => {
+      if (n.kind === "f"){ state.fields = new Set([n.f]); renderFieldChips(); }
+      else if (graphKind === "inst"){ state.inst = n.k.toLowerCase(); $("inst").value = n.k; }
+      else if (graphKind === "journal"){ const j = Object.keys(JOURNALS).find(x => abbrOf({ journal: x }) === n.k) || n.k; state.journal = j; $("journal").value = j; }
+      else { $("q").value = n.k; state.q = n.k.toLowerCase(); }
+      setView("card"); reset();
+    };
+    g.addEventListener("click", pick); g.addEventListener("keydown", e => { if (e.key === "Enter" || e.key === " "){ e.preventDefault(); pick(); } });
+    gN.append(g); return g;
+  });
+  const pairs = el("ol", "pairs");
+  for (const e of [...edges].sort((x, y) => y.w - x.w).slice(0, 8)){ const li = el("li"); li.append(el("b", null, nodes[e.a].label + " — " + nodes[e.b].label), document.createTextNode("：共同出现 " + e.w + " 篇")); pairs.append(li); }
+  const sub = (rows.length > sample.length ? "基于最新的 " + sample.length.toLocaleString() + " 篇。" : "") + (useTitle ? "关键词仍在补全，暂用标题中的高频词组。" : "");
+  panel.append(el("h3", null, "雷达关联图"), el("p", "sub", "展示当前筛出文献中研究方向与" + { kw: "关键词", inst: "发表单位", journal: "期刊" }[graphKind] + "的共现关系。" + sub), bar, box, el("h3", null, "共现最多的组合"), pairs);
+  wrap.append(panel); return wrap;
 }
 
 /* ---------- login dialog ---------- */
@@ -997,7 +1304,9 @@ if (sb) {
     if (!j) throw new Error("no source");
     META = j; FIELDS = j.fields || DEFAULT_FIELDS; JOURNALS = j.journals || {};
     if (Array.isArray(j.groups) && j.groups.length) GROUPS = j.groups;
-    if (j.updated) showNote("数据更新于 " + j.updated + "，库内共 " + (j.total || 0).toLocaleString() + " 篇（" + (j.since || "2020-01").slice(0, 4) + " 年至今）。影响因子为 JCR 2025 年发布值，分区为中科院 2025 年版（大类）。");
+    const age = j.updated ? (Date.now() - new Date(j.updated.replace(" ", "T") + ":00+08:00")) / 36e5 : 0;
+    if (age > 9) showNote("提示：数据最近一次更新是 " + j.updated + "，距今约 " + Math.round(age) + " 小时，自动更新可能延迟了，稍后会自动补上。");
+    else if (j.updated) showNote("数据更新于 " + j.updated + "，库内共 " + (j.total || 0).toLocaleString() + " 篇（" + (j.since || "2020-01").slice(0, 4) + " 年至今）。影响因子为 JCR 2025 年发布值，分区为中科院 2025 年版（大类）。");
   } catch (e) {
     showNote("文献数据暂时加载失败，请检查网络后刷新页面。");
   }

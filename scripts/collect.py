@@ -44,18 +44,17 @@ def main():
     ap.add_argument("--year", type=int)
     ap.add_argument("--daily", action="store_true")
     ap.add_argument("--days", type=int, default=6)
-    ap.add_argument("--enrich-missing", action="store_true", help="retry OpenAlex institutions for papers that still lack them")
+    ap.add_argument("--enrich-missing", action="store_true", help="fill OpenAlex institutions / keywords / topics for papers that lack them")
+    ap.add_argument("--minutes", type=float, default=20, help="time budget for --enrich-missing")
+    ap.add_argument("--reclassify", action="store_true", help="re-run the title rules over the whole library")
     args = ap.parse_args()
     if args.enrich_missing:
-        allp = lib.load_all()
-        todo = {k: p for k, p in allp.items() if "a" not in p}
-        print("papers without institutions:", len(todo), flush=True)
-        if todo:
-            lib.enrich(list(todo.values()))
-            done = {k: p for k, p in todo.items() if "a" in p}
-            if done:
-                lib.save_records(done)
-                lib.build_meta()
+        lib.enrich_shards(minutes=args.minutes)
+        lib.build_meta()
+        return
+    if args.reclassify:
+        lib.reclassify()
+        lib.build_meta()
         return
     today = lib.bj_now().date()
     seen = set(lib.load_all())
@@ -72,7 +71,7 @@ def main():
         col = lib.Collector(seen, (today - dt.timedelta(days=400)).isoformat(), (today + dt.timedelta(days=60)).isoformat(),
                             added=lib.bj_now().strftime("%Y-%m-%d %H:%M"))
         flt = f"from-created-date:{start}"
-        run(col, flt, [flt], rows=300)
+        run(col, flt, [flt], rows=200)
 
     new = col.new
     from collections import Counter

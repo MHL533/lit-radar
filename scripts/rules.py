@@ -38,7 +38,7 @@ NOTSEP = R(r"\btherapy\b|antitumou?r|anticancer|nanocarrier|tumou?r|cancer|osteo
            r"PEM fuel|membrane electrode assembly|fuel cell|electrolyzer|electrolyser|water electrolysis|electrolysis cell|polymer electrolyte membrane|redox flow batter|lithium.ion batter|"
            r"separator for|tympanic|basement membrane|amniotic|mucous membrane|periodontal|guided bone|dental|nuclear membrane|cellular membrane|"
            r"protocell|giant vesicle|membrane remodel|membrane curvature|outer membrane|inner membrane|membrane fusion|membrane permeabili[sz]|"
-           r"membrane damage|membrane integrity|microRNA|\bDNA\b|\bRNA\b|amplification|Shewanella|dendrite|batter(y|ies)")
+           r"membrane damage|membrane integrity|lipid|phospholipid|biomembrane|peripheral protein|membrane.active|antimicrobial peptide|microRNA|\bDNA\b|\bRNA\b|amplification|Shewanella|dendrite|batter(y|ies)")
 ATMOS = R(r"source apportionment|ozone formation|atmospheric (oxidation|chemistry|mercury|aerosol)|ozone pollution|tropospher|stratospher|smog|"
           r"emission inventor|sea.ice|phytoplankton|haze|PM2\.5|secondary organic aerosol|air quality model|elemental mercury")
 ML = R(r"machine learning|deep learning|neural network|artificial intelligence|random forest|convolutional|\bCNN\b|transformer model|"

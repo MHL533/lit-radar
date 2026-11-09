@@ -1,0 +1,50 @@
+name: Maintain library
+
+# Nightly (Beijing 02:40) and on demand: fill OpenAlex institutions / keywords / topics for older papers in time-boxed batches,
+# or re-run the classification rules over the whole library.
+on:
+  schedule:
+    - cron: "40 18 * * *"
+  workflow_dispatch:
+    inputs:
+      task:
+        description: "enrich or reclassify"
+        default: "enrich"
+      minutes:
+        description: "Time budget for enrich (minutes)"
+        default: "300"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: data
+  cancel-in-progress: false
+
+jobs:
+  maintain:
+    runs-on: ubuntu-latest
+    timeout-minutes: 340
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Enrich
+        if: ${{ (inputs.task || 'enrich') == 'enrich' }}
+        run: python scripts/collect.py --enrich-missing --minutes ${{ inputs.minutes || '300' }}
+      - name: Reclassify
+        if: ${{ inputs.task == 'reclassify' }}
+        run: python scripts/collect.py --reclassify
+      - name: Commit
+        run: |
+          git config user.name "lit-radar-bot"
+          git config user.email "lit-radar-bot@users.noreply.github.com"
+          git add data
+          if git diff --cached --quiet; then echo "nothing to commit"; exit 0; fi
+          git commit -q -m "Maintain library: ${{ inputs.task || 'enrich' }}"
+          for i in 1 2 3 4 5; do
+            git pull --rebase -q origin main && git push -q origin HEAD:main && exit 0
+            sleep 20
+          done
+          exit 1

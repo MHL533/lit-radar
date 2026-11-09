@@ -19,7 +19,7 @@
 | 化学链 | 化学链氧化脱氢、化学链燃烧、化学链制氢/重整/气化、氧载体与其他化学链 |
 | 钙钛矿太阳能电池 | 叠层、无铅/锡基、稳定性与封装、界面与传输层、柔性与大面积组件、薄膜与组分 |
 
-网页默认加载近一年的论文。把日期改为「全部（2020 至今）」或在「按年 / 月」中选择年份，即可查看更早的论文。
+网页默认加载近一年的论文。顶部可切换卡片、列表、「趋势」（发文趋势与方向、期刊、单位、关键词排行）和「关联图」（研究方向与关键词、单位或期刊的共现网络），「导出」可把当前筛选结果存为 Excel、RIS、BibTeX 或 DOI 列表。把日期改为「全部（2020 至今）」或在「按年 / 月」中选择年份，即可查看更早的论文。
 
 ## 怎样查一篇论文
 
@@ -51,12 +51,17 @@
 
 ## 数据来源与更新
 
-文献按「领域/月份」分片保存在 [data/](data/) 目录，网页按需加载。脚本从 Crossref 获取论文：一是逐篇扫描约 80 种核心期刊，二是按各细分方向的关键词检索。只保留 [中科院 2025 年版 1–2 区期刊](scripts/journals_cas2025.csv) 的论文，再用 [标题规则](scripts/rules.py) 归类，并按 DOI 去重。作者单位取自 OpenAlex。期刊分区表和 JCR 影响因子整理自 [ShowJCR](https://github.com/hitfyd/ShowJCR) 收录的公开数据。自动收录的条目没有中文要点。
+文献按「领域/月份」分片保存在 [data/](data/) 目录，网页按需加载。分片里重复出现的期刊、单位、关键词只存一次（格式说明见 [scripts/lib.py](scripts/lib.py)），并带内容哈希，浏览器再次打开时可直接用缓存。
 
-| GitHub Actions 任务 | 何时运行 | 更新内容 |
+脚本从 Crossref 获取论文：一是逐篇扫描约 80 种核心期刊，二是按各细分方向的关键词检索。只保留 [中科院 2025 年版 1–2 区期刊](scripts/journals_cas2025.csv) 的论文，用 [标题规则](scripts/rules.py) 归类，按 DOI 去重。作者单位、关键词和主题取自 OpenAlex。期刊分区表和 JCR 影响因子整理自 [ShowJCR](https://github.com/hitfyd/ShowJCR) 收录的公开数据。
+
+| GitHub Actions 任务 | 何时运行 | 做什么 |
 | --- | --- | --- |
-| [Daily update](.github/workflows/daily.yml) | 每天北京时间 7:20、11:20、18:20，或手动运行 | 收录最近几天新登记的论文，补全作者单位，并把新增条目写入 `data/latest.json` 供推送使用 |
+| [Daily update](.github/workflows/daily.yml) | 北京时间 7:05、11:05、18:05，另每 3 小时补跑一次 | 收录最近几天新登记的论文，补全单位与关键词，把新增条目写入 `data/latest.json` |
+| [Maintain library](.github/workflows/maintain.yml) | 每天凌晨 2:40，或手动运行 | 分批补全较早论文的 OpenAlex 数据；手动选 `reclassify` 可按最新规则重新归类全库 |
 | [Backfill library](.github/workflows/backfill.yml) | 手动运行 | 按出版年份并行补录，再合并提交 |
+
+推送任务通过 [scripts/push.py](scripts/push.py) 读取自上次推送以来的新增论文，并把中文要点写回。
 
 ## 本地运行
 

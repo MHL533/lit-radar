@@ -16,7 +16,10 @@ jobs:
       - name: llama.cpp
         env: { GH_TOKEN: "${{ github.token }}" }
         run: |
-          gh release download -R ggml-org/llama.cpp --pattern '*bin-ubuntu-x64.zip' -D /tmp/l && cd /tmp/l && unzip -q *.zip && find /tmp/l -name llama-server -type f | head -1 > /tmp/srv && cat /tmp/srv
+          gh release view -R ggml-org/llama.cpp --json assets --jq '.assets[].name' | grep -i ubuntu
+          gh release download -R ggml-org/llama.cpp --pattern '*bin-ubuntu-x64.*' -D /tmp/l
+          cd /tmp/l && for f in *; do case $f in *.zip) unzip -q $f;; *.tar.gz) tar xzf $f;; esac; done
+          find /tmp/l -name llama-server -type f | head -1 > /tmp/srv && cat /tmp/srv
       - name: model
         run: |
           pip install -q huggingface_hub

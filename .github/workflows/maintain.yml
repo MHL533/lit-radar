@@ -1,10 +1,10 @@
 name: Maintain library
 
-# Nightly (Beijing 02:40) and on demand: fill OpenAlex institutions / keywords / topics for older papers in time-boxed batches,
-# or re-run the classification rules over the whole library.
+# Several 2.5-hour windows a day, kept clear of the Daily update runs before each push (Beijing 07:05, 11:05, 18:05):
+# fill OpenAlex authors / institutions / keywords / topics / abstracts for older papers, or (on demand) re-run the classification rules.
 on:
   schedule:
-    - cron: "40 18 * * *"
+    - cron: "25 3,6,13,18 * * *"
   workflow_dispatch:
     inputs:
       task:
@@ -12,7 +12,7 @@ on:
         default: "enrich"
       minutes:
         description: "Time budget for enrich (minutes)"
-        default: "300"
+        default: "150"
 
 permissions:
   contents: write
@@ -24,7 +24,7 @@ concurrency:
 jobs:
   maintain:
     runs-on: ubuntu-latest
-    timeout-minutes: 340
+    timeout-minutes: 200
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -32,7 +32,7 @@ jobs:
           python-version: "3.12"
       - name: Enrich
         if: ${{ (inputs.task || 'enrich') == 'enrich' }}
-        run: python scripts/collect.py --enrich-missing --minutes ${{ inputs.minutes || '300' }}
+        run: python scripts/collect.py --enrich-missing --minutes ${{ inputs.minutes || '150' }}
       - name: Reclassify
         if: ${{ inputs.task == 'reclassify' }}
         run: python scripts/collect.py --reclassify

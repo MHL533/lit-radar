@@ -56,20 +56,20 @@ create or replace function public.paper_where(
 returns text language plpgsql immutable as $$
 declare w text[] := array['true'];
 begin
-  if p_groups is not null then w := w || 'p.groups && $1'; end if;
-  if p_fields is not null then w := w || 'p.fields && $2'; end if;
-  if p_since is not null then w := w || 'p.published >= $3'; end if;
-  if p_until is not null then w := w || 'p.published <= $4'; end if;
-  if p_journal is not null then w := w || 'p.journal = $5'; end if;
-  if p_zone is not null then w := w || 'p.cas_zone = $6'; end if;
-  if coalesce(p_inst, '') <> '' then w := w || $w$exists (select 1 from unnest(p.affils) a where a ilike '%' || $7 || '%')$w$; end if;
+  if p_groups is not null then w := array_append(w, 'p.groups && $1'::text); end if;
+  if p_fields is not null then w := array_append(w, 'p.fields && $2'::text); end if;
+  if p_since is not null then w := array_append(w, 'p.published >= $3'::text); end if;
+  if p_until is not null then w := array_append(w, 'p.published <= $4'::text); end if;
+  if p_journal is not null then w := array_append(w, 'p.journal = $5'::text); end if;
+  if p_zone is not null then w := array_append(w, 'p.cas_zone = $6'::text); end if;
+  if coalesce(p_inst, '') <> '' then w := array_append(w, $w$exists (select 1 from unnest(p.affils) a where a ilike '%' || $7 || '%')$w$::text); end if;
   if coalesce(p_q, '') <> '' then
-    w := w || '(p.title &@~ pgroonga_query_escape($8) or p.title_zh &@~ pgroonga_query_escape($8) or p.keywords &@~ pgroonga_query_escape($8)'
-              ' or p.keywords_zh &@~ pgroonga_query_escape($8) or p.authors &@~ pgroonga_query_escape($8) or p.doi = lower($8))';
+    w := array_append(w, '(p.title &@~ pgroonga_query_escape($8) or p.title_zh &@~ pgroonga_query_escape($8) or p.keywords &@~ pgroonga_query_escape($8)'
+              ' or p.keywords_zh &@~ pgroonga_query_escape($8) or p.authors &@~ pgroonga_query_escape($8) or p.doi = lower($8))'::text);
   end if;
-  if coalesce(p_key, false) then w := w || 'p.is_key'; end if;
-  if p_ids is not null then w := w || 'p.id = any($10)'; end if;
-  if p_not_ids is not null then w := w || 'not (p.id = any($11))'; end if;
+  if coalesce(p_key, false) then w := array_append(w, 'p.is_key'::text); end if;
+  if p_ids is not null then w := array_append(w, 'p.id = any($10)'::text); end if;
+  if p_not_ids is not null then w := array_append(w, 'not (p.id = any($11))'::text); end if;
   return array_to_string(w, ' and ');
 end $$;
 

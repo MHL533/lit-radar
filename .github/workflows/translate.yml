@@ -70,6 +70,7 @@ jobs:
         run: |
           /tmp/llama/build/bin/llama-server -m /tmp/models/$MODEL_FILE -c 8192 --parallel 4 -t 4 --port 8080 > /tmp/server.log 2>&1 &
           for i in $(seq 1 90); do curl -s localhost:8080/health | grep -q ok && break; sleep 2; done
+          python -c "import sys; sys.path.insert(0,'scripts'); import translate as t; z=t.translate_one('Polyamide nanofiltration membranes for chloride/sulfate separation', t.SYS_TITLE); print('smoke test:', z); sys.exit(0 if z else 1)"
           MIN=${{ inputs.minutes || '120' }}
           for W in $(echo "${{ needs.plan.outputs.what }}" | tr ',' ' '); do
             if [ "$W" = abstracts ]; then python scripts/translate.py abstracts --minutes $MIN --part ${{ matrix.part }} --parts ${{ strategy.job-total }} --out out;

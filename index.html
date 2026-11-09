@@ -1506,9 +1506,14 @@ if (sb) {
     showNote("文献数据暂时加载失败，请检查网络后刷新页面。");
   }
   if (authReturnError) showNote(authReturnError);
-  DB.on = await probeDB();
-  if (DB.on) showNote(($("note").textContent ? $("note").textContent + " " : "") + "已启用全库检索：搜索与筛选直接查询服务器上的全部文献。");
-  state.loaded = true; renderScope(); fillSelects(); ensureData(); if (DB.on) render();
+  // Show the static monthly files right away (served from the CDN), and switch to full-database search once the server answers.
+  state.loaded = true; renderScope(); fillSelects(); ensureData();
+  probeDB().then(ok => {
+    if (!ok) return;
+    DB.on = true;
+    showNote(($("note").textContent ? $("note").textContent + " " : "") + "已启用全库检索：搜索与筛选直接查询服务器上的全部文献。");
+    render();
+  });
   if (!$("scrim").hidden && !$("lFields").hidden) fieldChecks(chosenFields());
   renderAccount();
 })();

@@ -40,7 +40,13 @@ create index if not exists papers_fields on public.papers using gin (fields);
 create index if not exists papers_journal on public.papers (journal);
 create index if not exists papers_if on public.papers (impact_factor desc nulls last);
 create index if not exists papers_affil on public.papers (first_affil);
-create index if not exists papers_text on public.papers using pgroonga (title, title_zh, keywords, keywords_zh, authors);
+-- 全文检索：把中英文标题、关键词、作者拼成一段文本，用一个 PGroonga 表达式索引
+create or replace function public.paper_search_text(title text, title_zh text, keywords text[], keywords_zh text[], authors text[])
+returns text language sql immutable parallel safe as $$
+  select concat_ws(' ', title, title_zh, array_to_string(keywords, ' '), array_to_string(keywords_zh, ' '), array_to_string(authors, ' '))
+$$;
+drop index if exists public.papers_text;
+create index if not exists papers_search on public.papers using pgroonga (public.paper_search_text(title, title_zh, keywords, keywords_zh, authors));
 
 -- 共用的筛选条件
 -- 检索函数用动态 SQL：只拼接实际用到的条件，PostgreSQL 才能用上各列索引（日期、领域 GIN、PGroonga 全文）。
@@ -63,9 +69,10 @@ begin
   if p_journal is not null then w := array_append(w, 'p.journal = $5'::text); end if;
   if p_zone is not null then w := array_append(w, 'p.cas_zone = $6'::text); end if;
   if coalesce(p_inst, '') <> '' then w := array_append(w, $w$exists (select 1 from unnest(p.affils) a where a ilike '%' || $7 || '%')$w$::text); end if;
-  if coalesce(p_q, '') <> '' then
-    w := array_append(w, '(p.title &@~ pgroonga_query_escape($8) or p.title_zh &@~ pgroonga_query_escape($8) or p.keywords &@~ pgroonga_query_escape($8)'
-              ' or p.keywords_zh &@~ pgroonga_query_escape($8) or p.authors &@~ pgroonga_query_escape($8) or p.doi = lower($8))'::text);
+  if coalesce(p_q, '') ~* '^10\.\d{4,}/' then
+    w := array_append(w, 'p.doi = lower($8)'::text);
+  elsif coalesce(p_q, '') <> '' then
+    w := array_append(w, 'public.paper_search_text(p.title, p.title_zh, p.keywords, p.keywords_zh, p.authors) &@~ pgroonga_query_escape($8)'::text);
   end if;
   if coalesce(p_key, false) then w := array_append(w, 'p.is_key'::text); end if;
   if p_ids is not null then w := array_append(w, 'p.id = any($10)'::text); end if;

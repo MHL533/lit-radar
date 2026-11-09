@@ -820,7 +820,7 @@ function withTimeout(promise, ms){ return Promise.race([promise, new Promise((_,
 async function probeDB(){
   if (!sb) return false;
   try {
-    const { data, error } = await withTimeout(sb.rpc("paper_months", { p_groups: null }), 6000);
+    const { data, error } = await withTimeout(sb.rpc("paper_months", { p_groups: null }), 20000);
     if (error || !Array.isArray(data) || !data.length) return false;
     DB.months.all = data; return true;
   } catch { return false; }
@@ -1493,6 +1493,7 @@ if (sb) {
   });
 } else afterAuthChange();
 (async () => {
+  const dbProbe = probeDB();  // ask the database straight away, in parallel with meta.json
   try {
     let j = null;
     for (const u of SOURCES) { try { const x = await getJSON(u + "meta.json"); if (x && x.shards) { j = x; BASE = u; break; } } catch {} }
@@ -1506,14 +1507,15 @@ if (sb) {
     showNote("文献数据暂时加载失败，请检查网络后刷新页面。");
   }
   if (authReturnError) showNote(authReturnError);
-  // Show the static monthly files right away (served from the CDN), and switch to full-database search once the server answers.
-  state.loaded = true; renderScope(); fillSelects(); ensureData();
-  probeDB().then(ok => {
-    if (!ok) return;
-    DB.on = true;
-    showNote(($("note").textContent ? $("note").textContent + " " : "") + "已启用全库检索：搜索与筛选直接查询服务器上的全部文献。");
-    render();
-  });
+  // Prefer the database; if it has not answered within 2.5 s, show the static monthly files (CDN) meanwhile and switch when it does.
+  const enableDB = () => { DB.on = true; showNote(($("note").textContent ? $("note").textContent + " " : "") + "已启用全库检索：搜索与筛选直接查询服务器上的全部文献。"); };
+  state.loaded = true; renderScope();
+  const quick = await Promise.race([dbProbe, new Promise(r => setTimeout(() => r("slow"), 2500))]);
+  if (quick === true){ enableDB(); render(); }
+  else {
+    fillSelects(); ensureData();
+    if (quick === "slow") dbProbe.then(ok => { if (ok){ enableDB(); render(); } });
+  }
   if (!$("scrim").hidden && !$("lFields").hidden) fieldChecks(chosenFields());
   renderAccount();
 })();

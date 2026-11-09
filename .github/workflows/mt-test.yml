@@ -14,13 +14,11 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: llama.cpp
-        env: { GH_TOKEN: "${{ github.token }}" }
         run: |
-          gh release view -R ggml-org/llama.cpp --json tagName,assets --jq '.tagName, .assets[].name' | tee /tmp/assets
-          A=$(grep -iE '(ubuntu|linux).*x64.*(zip|tar.gz)$' /tmp/assets | grep -viE 'vulkan|cuda|rocm|sycl|openvino|kleidi|s390|arm' | head -1)
-          echo "asset: $A"; gh release download -R ggml-org/llama.cpp --pattern "$A" -D /tmp/l
-          cd /tmp/l && for f in *; do case $f in *.zip) unzip -q $f;; *.tar.gz) tar xzf $f;; esac; done
-          find /tmp/l -name llama-server -type f | head -1 > /tmp/srv && cat /tmp/srv
+          git clone -q --depth 1 https://github.com/ggml-org/llama.cpp /tmp/llama
+          cmake -S /tmp/llama -B /tmp/llama/build -DGGML_NATIVE=ON -DLLAMA_CURL=OFF -DLLAMA_BUILD_TESTS=OFF -DCMAKE_BUILD_TYPE=Release > /dev/null
+          cmake --build /tmp/llama/build --target llama-server -j4 > /dev/null
+          find /tmp/llama/build -name llama-server -type f | head -1 > /tmp/srv && cat /tmp/srv
       - name: model
         run: |
           pip install -q huggingface_hub

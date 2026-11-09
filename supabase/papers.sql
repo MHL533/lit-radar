@@ -70,7 +70,7 @@ begin
   if p_zone is not null then w := array_append(w, 'p.cas_zone = $6'::text); end if;
   if coalesce(p_inst, '') <> '' then w := array_append(w, $w$exists (select 1 from unnest(p.affils) a where a ilike '%' || $7 || '%')$w$::text); end if;
   if coalesce(p_q, '') ~* '^10\.\d{4,}/' then
-    w := array_append(w, 'p.doi = lower($8)'::text);
+    w := array_append(w, $w$p.id = regexp_replace(lower(trim($8)), '[^a-z0-9_.~:@+-]', '_', 'g')$w$::text);
   elsif coalesce(p_q, '') <> '' then
     w := array_append(w, 'public.paper_search_text(p.title, p.title_zh, p.keywords, p.keywords_zh, p.authors) &@~ pgroonga_query_escape($8)'::text);
   end if;

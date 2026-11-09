@@ -1,0 +1,20 @@
+name: Sync search database
+
+# Manual full copy of the library into Supabase (the daily, maintain and translate workflows sync incrementally).
+on:
+  workflow_dispatch:
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - name: Full sync
+        env:
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+        run: |
+          [ -n "$SUPABASE_SERVICE_ROLE_KEY" ] || { echo "SUPABASE_SERVICE_ROLE_KEY secret is missing"; exit 1; }
+          python scripts/sync_db.py --full

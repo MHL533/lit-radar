@@ -79,6 +79,7 @@ def main():
     if not new:
         return
     lib.enrich(list(new.values()))
+    lib.ABSTRACTS.flush()
     cats = {i["issn"]: i["cat"] for i in col.by_issn.values()}
     name_cat = {n: cats.get(i) for i, n in col.names.items()}
     for p in new.values():  # refine sub-directions with the OpenAlex keywords just fetched

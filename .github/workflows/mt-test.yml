@@ -3,10 +3,28 @@ on: workflow_dispatch
 jobs:
   test:
     runs-on: ubuntu-latest
-    timeout-minutes: 60
+    timeout-minutes: 90
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - { repo: "Qwen/Qwen2.5-1.5B-Instruct-GGUF", file: "qwen2.5-1.5b-instruct-q4_k_m.gguf" }
+          - { repo: "Qwen/Qwen2.5-3B-Instruct-GGUF", file: "qwen2.5-3b-instruct-q4_k_m.gguf" }
+          - { repo: "Qwen/Qwen2.5-7B-Instruct-GGUF", file: "qwen2.5-7b-instruct-q4_k_m-00001-of-00002.gguf" }
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
-        with: { python-version: "3.12" }
-      - run: pip install --quiet torch --index-url https://download.pytorch.org/whl/cpu && pip install --quiet transformers sentencepiece sacremoses
-      - run: nproc && python scripts/mt_test.py
+      - name: llama.cpp
+        env: { GH_TOKEN: "${{ github.token }}" }
+        run: |
+          gh release download -R ggml-org/llama.cpp --pattern '*bin-ubuntu-x64.zip' -D /tmp/l && cd /tmp/l && unzip -q *.zip && find /tmp/l -name llama-server -type f | head -1 > /tmp/srv && cat /tmp/srv
+      - name: model
+        run: |
+          pip install -q huggingface_hub
+          python -c "from huggingface_hub import hf_hub_download as d; import sys; r='${{ matrix.repo }}'; f='${{ matrix.file }}'; p=d(r,f,local_dir='/tmp/m'); print(p)
+          if '00001-of' in f: d(r,f.replace('00001-of','00002-of'),local_dir='/tmp/m')"
+      - name: test
+        run: |
+          S=$(cat /tmp/srv); chmod +x $S; nproc
+          LD_LIBRARY_PATH=$(dirname $S) $S -m /tmp/m/${{ matrix.file }} -c 8192 --parallel 4 -t 4 --port 8080 > /tmp/srv.log 2>&1 &
+          for i in $(seq 1 120); do curl -s localhost:8080/health | grep -q ok && break; sleep 2; done
+          python scripts/mt_test2.py ${{ matrix.file }} || tail -30 /tmp/srv.log

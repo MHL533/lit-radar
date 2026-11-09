@@ -83,6 +83,18 @@ def shard_path(group, month):
 INTERN = (("j", "J", False), ("a", "I", True), ("c", "I", True), ("kw", "K", True), ("tp", "T", True))
 
 
+_KWZH = None
+
+
+def kw_zh():
+    """English keyword -> Chinese, shared vocabulary in data/kw_zh.json (filled by translate.py)."""
+    global _KWZH
+    if _KWZH is None:
+        p = os.path.join(DATA, "kw_zh.json")
+        _KWZH = json.load(open(p, encoding="utf-8")) if os.path.exists(p) else {}
+    return _KWZH
+
+
 def read_shard(path):
     try:
         data = json.load(open(path, encoding="utf-8"))
@@ -122,6 +134,9 @@ def write_shard(path, papers):
                 q[key] = [index[table][v] for v in q[key]] if many else index[table][q[key]]
         rows.append(json.dumps(q, ensure_ascii=False, separators=(",", ":")))
     head = {"v": 3, **{t: tables.get(t, []) for t in ("J", "I", "K", "T")}}
+    kz = kw_zh()
+    if kz and head["K"]:
+        head["KZ"] = [kz.get(k, "") for k in head["K"]]
     with open(path, "w", encoding="utf-8") as fh:
         fh.write(json.dumps(head, ensure_ascii=False, separators=(",", ":"))[:-1] + ',"papers":[\n' + ",\n".join(rows) + "\n]}\n")
 
@@ -359,7 +374,7 @@ def enrich_shards(minutes=20):
     """Enrich papers lacking OpenAlex data shard by shard (newest first) within a time budget; progress is written as it goes."""
     deadline = time.time() + minutes * 60
     cache = {}
-    keys = ("a", "c", "kw", "tp")
+    keys = ("a", "c", "kw", "tp", "au", "an", "hb")
     done = 0
     for path in sorted(all_shards(), key=lambda x: os.path.basename(x), reverse=True):
         if time.time() > deadline:
@@ -378,13 +393,86 @@ def enrich_shards(minutes=20):
                 cache[p["doi"].lower()] = {k: p[k] for k in keys if k in p}
                 done += 1
         write_shard(path, recs)
+        ABSTRACTS.flush()
         print(f"  {path[len(DATA) + 1:]}: {len(todo)} to enrich, total enriched {done}", flush=True)
     left = sum(1 for path in all_shards() for p in read_shard(path) if needs_enrich(p))
     print(f"enriched {done}; still missing {left}", flush=True)
 
 
 def needs_enrich(p):
-    return p.get("doi") and ("a" not in p or "kw" not in p)
+    return p.get("doi") and ("a" not in p or "kw" not in p or "au" not in p)
+
+
+def crossref_abstracts(recs):
+    """Second source for abstracts (publishers that deposit them with Crossref; Elsevier does not)."""
+    recs = [p for p in recs if p.get("doi") and not p["doi"].startswith("10.1016/")]
+    for i in range(0, len(recs), 40):
+        part = {p["doi"].lower(): p for p in recs[i:i + 40]}
+        url = "https://api.crossref.org/works?" + urllib.parse.urlencode({"filter": ",".join("doi:" + d for d in part), "select": "DOI,abstract", "rows": 40, "mailto": MAILTO})
+        res = get_json(url, tries=2) or {}
+        for it in (res.get("message") or {}).get("items", []):
+            p = part.get((it.get("DOI") or "").lower())
+            ab = re.sub(r"\s+", " ", re.sub(r"<[^>]+>", " ", it.get("abstract") or "")).strip()
+            ab = re.sub(r"^(abstract|summary)[:.\s]+", "", ab, flags=re.I)
+            if p is not None and len(ab) > 80:
+                ABSTRACTS.put(p["id"], ab)
+                p["hb"] = 1
+        time.sleep(0.2)
+
+
+def abstract_text(inv):
+    """Rebuild an abstract from OpenAlex's inverted index."""
+    if not inv:
+        return ""
+    pos = sorted((i, w) for w, idx in inv.items() for i in idx)
+    text = " ".join(w for _, w in pos)
+    text = re.sub(r"^(abstract|summary)[:.\s]+", "", text, flags=re.I).strip()
+    return text if len(text) > 80 else ""
+
+
+class AbstractStore:
+    """Abstracts live outside the list shards: data/abs/<3 hex of md5(id)>.json = {id: [english, chinese]}."""
+
+    def __init__(self):
+        self.cache, self.dirty = {}, set()
+
+    @staticmethod
+    def bucket(pid_):
+        return hashlib.md5(pid_.encode()).hexdigest()[:3]
+
+    def path(self, b):
+        return os.path.join(DATA, "abs", b + ".json")
+
+    def load(self, b):
+        if b not in self.cache:
+            p = self.path(b)
+            self.cache[b] = json.load(open(p, encoding="utf-8")) if os.path.exists(p) else {}
+        return self.cache[b]
+
+    def get(self, pid_):
+        return self.load(self.bucket(pid_)).get(pid_)
+
+    def put(self, pid_, en=None, zh=None):
+        b = self.bucket(pid_)
+        cur = self.load(b).get(pid_) or ["", ""]
+        if en:
+            cur[0] = en
+        if zh:
+            cur[1] = zh
+        self.cache[b][pid_] = cur
+        self.dirty.add(b)
+
+    def flush(self):
+        os.makedirs(os.path.join(DATA, "abs"), exist_ok=True)
+        for b in sorted(self.dirty):
+            with open(self.path(b), "w", encoding="utf-8") as fh:
+                json.dump(dict(sorted(self.cache[b].items())), fh, ensure_ascii=False, separators=(",", ":"))
+        n = len(self.dirty)
+        self.dirty.clear()
+        return n
+
+
+ABSTRACTS = AbstractStore()
 
 
 def enrich(records, batch=50, deadline=None):
@@ -397,13 +485,22 @@ def enrich(records, batch=50, deadline=None):
         if deadline and time.time() > deadline:
             print("  time budget reached; stopping enrichment", flush=True)
             break
-        url = "https://api.openalex.org/works?" + urllib.parse.urlencode({"filter": flt, "per-page": batch, "select": "doi,authorships,keywords,primary_topic", "mailto": MAILTO})
+        url = "https://api.openalex.org/works?" + urllib.parse.urlencode({"filter": flt, "per-page": batch, "select": "doi,authorships,keywords,primary_topic,abstract_inverted_index", "mailto": MAILTO})
         res = get_json(url, tries=3) or {}
         for w in res.get("results", []):
             p = todo.get((w.get("doi") or "").replace("https://doi.org/", "").lower())
             if not p:
                 continue
             allinst, corr = [], []
+            auth = [(a.get("author") or {}).get("display_name") for a in w.get("authorships") or []]
+            auth = [x for x in auth if x]
+            p["au"] = auth[:12]
+            if len(auth) > 12:
+                p["an"] = len(auth)
+            ab = abstract_text(w.get("abstract_inverted_index"))
+            if ab:
+                ABSTRACTS.put(p["id"], ab)
+                p["hb"] = 1
             for a in w.get("authorships") or []:
                 names = [x.get("display_name") for x in a.get("institutions") or [] if x.get("display_name")]
                 for n in names:
@@ -422,11 +519,13 @@ def enrich(records, batch=50, deadline=None):
             if t.get("display_name"):
                 p["tp"] = [t["display_name"], (t.get("subfield") or {}).get("display_name", "")]
             filled += 1
+        crossref_abstracts([todo[d] for d in keys[i:i + batch] if not todo[d].get("hb")])
         old = (dt.date.today() - dt.timedelta(days=45)).isoformat()
         for d in keys[i:i + batch]:  # not in OpenAlex: stop asking for older papers
             if res and needs_enrich(todo[d]) and todo[d].get("d", "") < old:
                 todo[d].setdefault("a", [])
                 todo[d].setdefault("kw", [])
+                todo[d].setdefault("au", [])
         time.sleep(0.15)
         if (i // batch) % 50 == 0:
             print(f"  institutions {i + batch}/{len(keys)} (filled {filled})", flush=True)

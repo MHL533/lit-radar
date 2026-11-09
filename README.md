@@ -63,6 +63,18 @@
 
 推送任务通过 [scripts/push.py](scripts/push.py) 读取自上次推送以来的新增论文，并把中文要点写回。
 
+## 全库检索数据库（Supabase）
+
+网页在能连上 Supabase 时直接查询服务器上的全部文献（中英文标题、关键词、作者全文检索，按 PGroonga 索引），连不上时自动退回按月份加载静态数据。启用步骤：
+
+1. 在 Supabase 控制台 → SQL Editor 中运行 [supabase/papers.sql](supabase/papers.sql)。
+2. 在 Supabase 控制台 → Project Settings → API Keys 复制 secret（或旧版 service_role）密钥，在 GitHub 仓库 → Settings → Secrets and variables → Actions 中新建名为 `SUPABASE_SERVICE_ROLE_KEY` 的密钥。
+3. 手动运行一次 Maintain library，`task` 填 `sync`，把全库写入数据库。之后每次更新都会自动同步。
+
+## 中文标题、关键词与摘要
+
+[Translate to Chinese](.github/workflows/translate.yml) 在 GitHub 的服务器上用开源模型 Qwen2.5-7B（llama.cpp）把标题、关键词和摘要译成中文，可手动运行（`what` 选 titles / keywords / abstracts，`parts` 为并行任务数），每晚也会补译当天新增的标题和关键词。摘要原文来自 OpenAlex 和 Crossref；Elsevier 期刊的摘要无法通过公开接口获取，网页中会提示到出版社页面查看。尚无中文译文的摘要，可在 Chrome / Edge 中用浏览器本地翻译，或跳转必应翻译。
+
 ## 本地运行
 
 安装 Git 和 Python 3 后，在终端运行以下命令。最后一条命令会在本机启动静态文件服务器。

@@ -33,7 +33,9 @@ def config():
 
 def call(url, key, method="POST", body=None, headers=None, tries=5):
     data = json.dumps(body, ensure_ascii=False).encode() if body is not None else None
-    h = {"apikey": key, "Authorization": "Bearer " + key, "Content-Type": "application/json", **(headers or {})}
+    h = {"apikey": key, "Content-Type": "application/json", **(headers or {})}
+    if not key.startswith("sb_"):  # legacy JWT service_role key; new sb_secret_ keys go in the apikey header only
+        h["Authorization"] = "Bearer " + key
     for attempt in range(tries):
         try:
             req = urllib.request.Request(url, data=data, method=method, headers=h)

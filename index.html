@@ -957,9 +957,29 @@ function absBlock(p){
     const a = await loadAbstract(p._id); box.dataset.done = "1"; box.replaceChildren();
     if (!a || !(a[0] || a[1])){ box.append(el("p", "muted", "暂未获取到摘要，可点标题到出版社页面查看。")); return; }
     if (a[1]){ box.append(el("h4", null, "中文摘要（机器翻译）"), el("p", null, a[1])); }
+    else if (a[0]) box.append(zhFallback(a[0]));
     if (a[0]){ box.append(el("h4", null, "Abstract"), el("p", "en", a[0])); }
   });
   wrap.append(btn, box); return wrap;
+}
+// No stored Chinese abstract yet: translate on the device when the browser offers it (Chrome / Edge Translator API), else link to Bing Translator
+function zhFallback(en){
+  const box = el("div");
+  if ("Translator" in self){
+    const b = el("button", "absbtn", "译成中文（浏览器本地翻译）"); b.type = "button";
+    b.addEventListener("click", async () => {
+      b.disabled = true; b.textContent = "正在翻译…";
+      try {
+        const tr = await Translator.create({ sourceLanguage: "en", targetLanguage: "zh" });
+        const zh = await tr.translate(en); box.replaceChildren(el("h4", null, "中文摘要（浏览器机器翻译）"), el("p", null, zh));
+      } catch { b.disabled = false; b.textContent = "翻译失败，再试一次"; }
+    });
+    box.append(b);
+  } else {
+    const l = el("a", null, "在必应翻译中查看中文"); l.href = "https://cn.bing.com/translator?from=en&to=zh-Hans&text=" + encodeURIComponent(en.slice(0, 4500));
+    l.target = "_blank"; l.rel = "noopener"; box.append(l);
+  }
+  return box;
 }
 function authorLine(p, n){
   const au = p.authors || []; if (!au.length) return null;

@@ -99,8 +99,12 @@ declare
     else 'p.published desc, p.id' end;
   n bigint;
 begin
-  execute 'select count(*) from public.papers p where ' || w into n
-    using p_groups, p_fields, p_since, p_until, p_journal, p_zone, p_inst, p_q, p_key, p_ids, p_not_ids;
+  if w = 'true' then
+    select sum(c.n) into n from public.paper_month_counts c where c.grp = '*';
+  else
+    execute 'select count(*) from public.papers p where ' || w into n
+      using p_groups, p_fields, p_since, p_until, p_journal, p_zone, p_inst, p_q, p_key, p_ids, p_not_ids;
+  end if;
   return query execute 'select to_jsonb(p) - ''synced_at'', $12 from public.papers p where ' || w || ' order by ' || ord || ' limit $13 offset $14'
     using p_groups, p_fields, p_since, p_until, p_journal, p_zone, p_inst, p_q, p_key, p_ids, p_not_ids, n,
           least(greatest(p_limit, 1), 5000), greatest(p_offset, 0);
@@ -137,6 +141,24 @@ begin
   return r;
 end $$;
 
+-- 列表页顶部的统计：一次扫描算出筛出总数、近 7 天、1 区、重点
+create or replace function public.paper_stats(
+  p_groups text[] default null, p_fields text[] default null, p_since date default null, p_until date default null,
+  p_journal text default null, p_zone smallint default null, p_inst text default null, p_q text default null,
+  p_key boolean default false, p_ids text[] default null, p_not_ids text[] default null)
+returns jsonb
+language plpgsql stable as $$
+declare
+  w text := public.paper_where(p_groups, p_fields, p_since, p_until, p_journal, p_zone, p_inst, p_q, p_key, p_ids, p_not_ids);
+  r jsonb;
+begin
+  execute 'select jsonb_build_object(''total'', count(*), ''week'', count(*) filter (where p.published >= current_date - 7),
+             ''zone1'', count(*) filter (where p.cas_zone = 1), ''key'', count(*) filter (where p.is_key))
+           from public.papers p where ' || w
+  into r using p_groups, p_fields, p_since, p_until, p_journal, p_zone, p_inst, p_q, p_key, p_ids, p_not_ids;
+  return r;
+end $$;
+
 -- 各领域每月篇数：由同步脚本在每次写入后刷新，查询时直接读汇总表
 create table if not exists public.paper_month_counts (grp text not null, month text not null, n integer not null, primary key (grp, month));
 alter table public.paper_month_counts enable row level security;
@@ -160,7 +182,7 @@ language sql stable as $$
   where (p_groups is null and grp = '*') or grp = any(p_groups) group by month order by month desc
 $$;
 
-grant execute on function public.search_papers, public.paper_facets, public.paper_months, public.paper_where to anon, authenticated;
+grant execute on function public.search_papers, public.paper_facets, public.paper_stats, public.paper_months, public.paper_where to anon, authenticated;
 
 -- 匿名访问的语句超时默认 3 秒，聚合统计放宽到 10 秒
 alter role anon set statement_timeout = '10s';

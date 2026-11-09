@@ -875,13 +875,13 @@ async function renderDB(more){
     }
     const append = more && key === DB.key;
     const reqs = [sb.rpc("search_papers", { ...params, p_sort: state.sort.k, p_dir: state.sort.dir, p_limit: PAGE, p_offset: append ? DB.rows.length : 0 })];
-    if (!append) reqs.push(sb.rpc("paper_facets", { ...params, p_sample: 0 }));
+    if (!append) reqs.push(sb.rpc("paper_stats", params));
     const [res, fac] = await Promise.all(reqs);
     if (t !== DB.ticket) return; if (res.error) throw res.error;
     const rows = (res.data || []).map(x => fromDB(x.paper));
     DB.rows = append ? DB.rows.concat(rows) : rows; DB.key = key;
     if (res.data && res.data.length) DB.total = res.data[0].total; else if (!append) DB.total = 0;
-    if (fac && !fac.error){ DB.facets = fac.data; renderDBStats(fac.data); fillSelectsDB(fac.data); }
+    if (fac && !fac.error){ renderDBStats(fac.data); fillSelectsDB(DB.facets); }
     drawRows(DB.rows, DB.total, "（全库检索）");
   } catch (e) {
     if (t !== DB.ticket) return;
@@ -920,9 +920,11 @@ async function fillSelectsDB(f){
   ms.value = keep && [...ms.options].some(o => o.value === keep) ? keep : "";
   if (!state.journal){
     const js = $("journal"); js.length = 1;
-    for (const [j, n] of f.journals || []){ const z = zoneOf({ journal: j }), v = ifOf({ journal: j }); js.append(new Option(j + "（" + n + ([z, v != null ? "IF " + v : ""].filter(Boolean).length ? "，" + [z, v != null ? "IF " + v : ""].filter(Boolean).join("，") : "") + "）", j)); }
+    // counts come from the last trend / graph view when available; otherwise every journal in the library, by impact factor
+    const list = f && f.journals ? f.journals : Object.keys(JOURNALS).sort((a, b) => (ifOf({ journal: b }) || 0) - (ifOf({ journal: a }) || 0)).map(j => [j, null]);
+    for (const [j, n] of list){ const z = zoneOf({ journal: j }), v = ifOf({ journal: j }); const bits = [n != null ? n : "", z, v != null ? "IF " + v : ""].filter(x => x !== ""); js.append(new Option(j + (bits.length ? "（" + bits.join("，") + "）" : ""), j)); }
   }
-  const dl = $("instList"); dl.replaceChildren(); for (const [i] of f.insts || []) dl.append(new Option(i));
+  if (f && f.insts){ const dl = $("instList"); dl.replaceChildren(); for (const [i] of f.insts) dl.append(new Option(i)); }
 }
 function aggFromDB(f){
   return { total: f.total, months: f.months || {}, fields: f.fields || [], journals: f.journals || [], insts: f.insts || [],

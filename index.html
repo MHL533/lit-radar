@@ -873,6 +873,7 @@ async function renderDB(more){
       empty.hidden = true; $("count").textContent = "基于筛出的 " + data.total.toLocaleString() + " 篇（全库检索）";
       out.append(state.view === "trend" ? trendView(aggFromDB(data)) : graphView(aggFromDB(data))); return;
     }
+    if (!more && key === DB.key && DB.rows.length){ drawRows(DB.rows, DB.total, "（全库检索）"); return; }  // nothing changed
     const append = more && key === DB.key;
     const reqs = [sb.rpc("search_papers", { ...params, p_sort: state.sort.k, p_dir: state.sort.dir, p_limit: PAGE, p_offset: append ? DB.rows.length : 0 })];
     if (!append) reqs.push(sb.rpc("paper_stats", params));

@@ -116,7 +116,7 @@ def keywords(args, deadline):
     vocab = {}
     for p in lib.load_all().values():
         for k in p.get("kw", []):
-            if k not in kz:
+            if k not in kz and in_part(k, args.part, args.parts):
                 vocab[k] = vocab.get(k, 0) + 1
     todo = sorted(vocab, key=lambda k: -vocab[k])
     print("keywords to translate:", len(todo), flush=True)

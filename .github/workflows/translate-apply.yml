@@ -1,0 +1,52 @@
+name: Apply translations from a run
+
+# Re-apply the results of an earlier "Translate to Chinese" run (artifacts are kept 5 days), e.g. when its commit step failed.
+on:
+  workflow_dispatch:
+    inputs:
+      run_id:
+        description: "Run id of the Translate to Chinese run"
+        required: true
+
+permissions:
+  contents: write
+  actions: read
+
+concurrency:
+  group: data
+  cancel-in-progress: false
+
+jobs:
+  apply:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - uses: actions/download-artifact@v4
+        with:
+          path: staging
+          run-id: ${{ inputs.run_id }}
+          github-token: ${{ github.token }}
+      - name: Apply translations
+        run: python scripts/apply_translations.py staging
+      - name: Sync to the search database
+        continue-on-error: true
+        env:
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+        run: python scripts/sync_db.py
+      - name: Commit
+        run: |
+          git config user.name "lit-radar-bot"
+          git config user.email "lit-radar-bot@users.noreply.github.com"
+          for i in 1 2 3 4 5; do
+            git add data
+            git diff --cached --quiet && { echo "nothing to commit"; exit 0; }
+            git commit -q -m "Chinese translations from run ${{ inputs.run_id }}"
+            git pull --rebase -q origin main && git push -q origin HEAD:main && exit 0
+            git rebase --abort 2>/dev/null || true
+            git fetch -q origin main && git reset -q --hard origin/main
+            python scripts/apply_translations.py staging
+            sleep 10
+          done
+          exit 1

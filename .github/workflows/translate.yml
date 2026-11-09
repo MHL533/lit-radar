@@ -74,7 +74,6 @@ jobs:
           MIN=${{ inputs.minutes || '120' }}
           for W in $(echo "${{ needs.plan.outputs.what }}" | tr ',' ' '); do
             if [ "$W" = abstracts ]; then python scripts/translate.py abstracts --minutes $MIN --part ${{ matrix.part }} --parts ${{ strategy.job-total }} --out out;
-            elif [ "$W" = keywords ] && [ "${{ matrix.part }}" != "0" ]; then echo "keywords run in part 0 only";
             else python scripts/translate.py $W --minutes $MIN --part ${{ matrix.part }} --parts ${{ strategy.job-total }} --out out; fi
           done
       - uses: actions/upload-artifact@v4
@@ -109,11 +108,15 @@ jobs:
         run: |
           git config user.name "lit-radar-bot"
           git config user.email "lit-radar-bot@users.noreply.github.com"
-          git add data
-          if git diff --cached --quiet; then echo "nothing to commit"; exit 0; fi
-          git commit -q -m "Chinese translations: ${{ needs.plan.outputs.what }}"
           for i in 1 2 3 4 5; do
+            git add data
+            git diff --cached --quiet && { echo "nothing to commit"; exit 0; }
+            git commit -q -m "Chinese translations: ${{ needs.plan.outputs.what }}"
             git pull --rebase -q origin main && git push -q origin HEAD:main && exit 0
-            sleep 20
+            # someone else changed the same files: start again from the latest main and re-apply (cheap and deterministic)
+            git rebase --abort 2>/dev/null || true
+            git fetch -q origin main && git reset -q --hard origin/main
+            python scripts/apply_translations.py staging
+            sleep 10
           done
           exit 1

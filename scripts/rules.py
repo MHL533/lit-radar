@@ -113,7 +113,7 @@ GROUPS = [
         ("mbr", "膜生物反应器", rule(R(r"membrane bioreactor|\bMBRs?\b|\bAnMBRs?\b|gravity.driven membrane|membrane.aerated biofilm|\bMABRs?\b"), exclude=NOTSEP)),
         ("2d-mem", "二维/框架材料膜", rule(MEM, need=R(r"graphene oxide|\bGO\b|MXene|lamellar|nanosheet|two.dimensional|\b2D\b|covalent organic framework|\bCOFs?\b|metal.organic framework|\bMOFs?\b|zeolite|carbon nanotube|nanochannel|angstrom|[aå]ngstr|sub.nanometer channel"), exclude=NOTSEP)),
         ("oil-water", "油水分离膜", rule(R(r"oil.water|oil/water|oil.in.water|water.in.oil|emulsion (separation|demulsif)|emulsified oil|oily wastewater|underwater superoleophob|superwettab|oil spill|crude oil.*separation"), need=R(r"membrane|mesh|filtration|separat|fabric|filter"), exclude=NOTSEP)),
-        ("uf-mf", "超滤/微滤", rule(R(r"ultrafiltration|microfiltration|filtration membrane|membrane filtration|hollow fib\w* membrane|phase inversion|electrospun (nanofiber(s)? )?membrane|nanofibrous membrane|janus membrane|loose membrane|porous membrane|membrane filter"), exclude=NOTSEP)),
+        ("uf-mf", "超滤/微滤", rule(R(r"ultrafiltration|microfiltration|\bfiltration membrane|\bmembrane filtration|hollow fib\w* membrane|phase inversion|electrospun (nanofiber(s)? )?membrane|nanofibrous membrane|janus membrane|loose membrane|porous membrane|membrane filter"), exclude=NOTSEP)),
         ("osmotic-energy", "盐差能与纳流体离子传输", rule(R(r"osmotic (energy|power)|salinity gradient|blue energy|reverse electrodialysis|ionic diode|ion.selective (channel|nanochannel)|ionic (current )?rectification|nanofluidic|ion transport.*(membrane|channel)|iontronic|ion sieving"), need=R(r"membrane|channel|nanofluidic|nanopore|sieving"), exclude=NOTSEP)),
         ("mem-model", "膜模拟与传质机理", rule(MEM, need=R(r"molecular dynamics|molecular simulation|simulation|computational|density functional|\bDFT\b|modell?ing|\bCFD\b|computational fluid|transport model|Donnan|Nernst.Planck|\bDSPM\b|first.principles|theoretical|mechanistic model"), exclude=NOTSEP)),
         ("mem-process", "膜过程与应用", rule(MEM, need=R(r"process|system|pilot|full.scale|brine|zero liquid discharge|\bZLD\b|resource recovery|lithium (extraction|recovery)|recovery of|techno.economic|life cycle|integrated|hybrid|module|energy consumption|treatment of|reclamation|reuse"), exclude=NOTSEP)),
@@ -193,18 +193,27 @@ DEFAULT_GROUP = "membrane"
 PUSH_GROUP = "membrane"
 
 
-def classify(title, category=None):
-    """Return the list of matching fields (priority order) for a title from a journal of the given CAS category."""
+def classify(title, category=None, keywords=None):
+    """Return the matching fields (priority order) for a paper.
+
+    The title decides which groups a paper belongs to. OpenAlex keywords, when known, only refine the sub-directions
+    inside those groups (e.g. move a paper from "其他电化学" to "锂离子电池"); they never pull a paper into a new group.
+    """
     if not title or NOISE.search(title):
         return []
+    rich = title + " ; " + " ; ".join(keywords) if keywords else None
     out = []
     for gid, _, cats, fs in GROUPS:
         if category and category not in cats:
             continue
         hit = [f for f, _, r, *fb in fs if not fb and r(title)]
-        if not hit:
-            hit = [f for f, _, r, *fb in fs if fb and r(title)][:1]
-        out += hit
+        fallback = [] if hit else [f for f, _, r, *fb in fs if fb and r(title)][:1]
+        if (hit or fallback) and rich:
+            extra = [f for f, _, r, *fb in fs if not fb and f not in hit and r(rich)]
+            if extra:
+                hit = [f for f, *_ in fs if f in hit or f in extra]
+                fallback = []
+        out += hit or fallback
     return out
 
 

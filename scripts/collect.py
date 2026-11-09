@@ -79,6 +79,10 @@ def main():
     if not new:
         return
     lib.enrich(list(new.values()))
+    cats = {i["issn"]: i["cat"] for i in col.by_issn.values()}
+    name_cat = {n: cats.get(i) for i, n in col.names.items()}
+    for p in new.values():  # refine sub-directions with the OpenAlex keywords just fetched
+        p["f"] = rules.classify(p["t"], name_cat.get(p["j"]), p.get("kw")) or p["f"]
     lib.save_names(col.names, col.abbr)
     lib.save_records(new)
     if args.daily:

@@ -227,7 +227,7 @@ def reclassify():
     out, dropped = {}, 0
     for k, p in recs.items():
         p["j"] = re.sub(r"\s+", " ", p["j"]).strip()
-        f = rules.classify(p["t"], cat.get(p["j"]))
+        f = rules.classify(p["t"], cat.get(p["j"]), p.get("kw"))
         if p.get("s") or p.get("k"):
             f = [p["f"][0]] + [x for x in f if x != p["f"][0]]
         if not f:

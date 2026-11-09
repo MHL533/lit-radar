@@ -1,6 +1,96 @@
 {
-"updated": "2026-11-08 21:22",
+"updated": "2026-11-09 09:13",
 "papers": [
+{
+"id": "10.1007_s40820-026-02359-6",
+"t": "Interfacial Electronic Regulation in N-Doped Carbon-Encapsulated NiCo Alloy Enables High-Current Nitrate-to-Ammonia Electrosynthesis",
+"j": "Nano-Micro Letters",
+"f": [
+"ec-n"
+],
+"d": "2026-11-09",
+"doi": "10.1007/s40820-026-02359-6",
+"x": "2026-11-09 09:09"
+},
+{
+"id": "10.1021_acs.est.6c09066",
+"t": "Dual Regulation of Monomer Transport Enables Ultrahigh Mg2+/Li+ Selectivity in Polyamide Nanofiltration Membranes",
+"j": "Environmental Science & Technology",
+"f": [
+"pa-nf",
+"uf-mf"
+],
+"d": "2026-11-08",
+"doi": "10.1021/acs.est.6c09066",
+"x": "2026-11-09 09:09"
+},
+{
+"id": "10.1016_j.marpolbul.2026.120554",
+"t": "Microplastic ingestion and polymer characterisation in commercial fish from a tropical coastal lagoon, Pulicat Lake, India and potential ecological risks",
+"j": "Marine Pollution Bulletin",
+"f": [
+"mp"
+],
+"d": "2026-11-08",
+"doi": "10.1016/j.marpolbul.2026.120554",
+"x": "2026-11-09 09:09"
+},
+{
+"id": "10.1016_j.ijhydene.2026.158586",
+"t": "Novel Heterostructure rGO@In2S3 Wedge-like Nanosheets Thin Films for Enhanced Photoelectrochemical Performance",
+"j": "International Journal of Hydrogen Energy",
+"f": [
+"ec-other"
+],
+"d": "2026-11-08",
+"doi": "10.1016/j.ijhydene.2026.158586",
+"x": "2026-11-09 09:09"
+},
+{
+"id": "10.1002_anie.4438070",
+"t": "Electrostatic Cation Intercalation Into Polymeric Self‐Assembled Monolayers Enables Ambient‐Air Fabrication of 32.73% Efficient Monolithic Perovskite/Silicon Tandem Solar Cells",
+"j": "Angewandte Chemie International Edition",
+"f": [
+"psc-tandem",
+"psc-int"
+],
+"d": "2026-11-08",
+"doi": "10.1002/anie.4438070",
+"x": "2026-11-09 09:09"
+},
+{
+"id": "10.1021_jacs.6c19292",
+"t": "Ambipolar Electrochemical Doping of CsPbBr 3 Nanocrystals",
+"j": "Journal of the American Chemical Society",
+"f": [
+"ec-other"
+],
+"d": "2026-11-08",
+"doi": "10.1021/jacs.6c19292",
+"x": "2026-11-09 09:09"
+},
+{
+"id": "10.1016_j.cities.2026.107713",
+"t": "Comparative analysis of barriers and opportunities for implementation of blue-green infrastructure for enhancing urban flood resilience in Uganda, Rwanda, and Sweden",
+"j": "Cities",
+"f": [
+"flood"
+],
+"d": "2026-11-08",
+"doi": "10.1016/j.cities.2026.107713",
+"x": "2026-11-09 09:09"
+},
+{
+"id": "10.1007_s11426-026-3928-4",
+"t": "SSE-Bridge: an agentic workflow for constructing ionic conductivity and doping strategy databases for solid-state electrolytes",
+"j": "Science China Chemistry",
+"f": [
+"ec-other"
+],
+"d": "2026-11-03",
+"doi": "10.1007/s11426-026-3928-4",
+"x": "2026-11-09 09:09"
+},
 {
 "id": "10.1021_acssensors.6c01205",
 "t": "Ionic Liquid-Functionalized CNT Electrochemical Platform Governed by a Dual-Path Sensing Mechanism for Versatile VOC Detection",

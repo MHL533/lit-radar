@@ -1,0 +1,118 @@
+name: Translate to Chinese
+
+# Chinese titles, keywords and abstracts with a local LLM (Qwen via llama.cpp) on GitHub's CPUs.
+# Parallel jobs each handle a slice of the library; a final job merges and commits.
+on:
+  workflow_dispatch:
+    inputs:
+      what:
+        description: "titles, keywords or abstracts"
+        default: "titles"
+      parts:
+        description: "Parallel jobs (1-20)"
+        default: "16"
+      minutes:
+        description: "Time budget per job (minutes)"
+        default: "300"
+  schedule:
+    - cron: "50 14 * * *"   # nightly keywords + titles catch-up (Beijing 22:50)
+
+permissions:
+  contents: write
+
+env:
+  MODEL_REPO: Qwen/Qwen2.5-7B-Instruct-GGUF
+  MODEL_FILE: qwen2.5-7b-instruct-q4_k_m-00001-of-00002.gguf
+
+jobs:
+  plan:
+    runs-on: ubuntu-latest
+    outputs:
+      parts: ${{ steps.p.outputs.parts }}
+      what: ${{ steps.p.outputs.what }}
+    steps:
+      - id: p
+        run: |
+          N=${{ inputs.parts || '4' }}; echo "parts=$(python3 -c "print(list(range(int('$N'))))")" >> $GITHUB_OUTPUT
+          echo "what=${{ inputs.what || 'keywords,titles' }}" >> $GITHUB_OUTPUT
+
+  translate:
+    needs: plan
+    runs-on: ubuntu-latest
+    timeout-minutes: 350
+    strategy:
+      fail-fast: false
+      matrix:
+        part: ${{ fromJSON(needs.plan.outputs.parts) }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - uses: actions/cache@v4
+        with:
+          path: /tmp/llama/build/bin
+          key: llama-server-${{ runner.os }}-v1
+      - uses: actions/cache@v4
+        with:
+          path: /tmp/models
+          key: model-${{ env.MODEL_FILE }}
+      - name: Build llama.cpp server
+        run: |
+          if [ ! -x /tmp/llama/build/bin/llama-server ]; then
+            git clone -q --depth 1 https://github.com/ggml-org/llama.cpp /tmp/llama-src
+            cmake -S /tmp/llama-src -B /tmp/llama/build -DGGML_NATIVE=OFF -DLLAMA_CURL=OFF -DLLAMA_BUILD_TESTS=OFF -DBUILD_SHARED_LIBS=OFF -DCMAKE_BUILD_TYPE=Release > /dev/null
+            cmake --build /tmp/llama/build --target llama-server -j4 > /dev/null
+          fi
+      - name: Model
+        run: |
+          if [ ! -f /tmp/models/$MODEL_FILE ]; then pip install -q huggingface_hub && python -c "from huggingface_hub import hf_hub_download as d; [d('$MODEL_REPO','$MODEL_FILE'.replace('00001-of', p),local_dir='/tmp/models') for p in ('00001-of','00002-of')]"; fi
+      - name: Translate
+        run: |
+          /tmp/llama/build/bin/llama-server -m /tmp/models/$MODEL_FILE -c 8192 --parallel 4 -t 4 --port 8080 > /tmp/server.log 2>&1 &
+          for i in $(seq 1 90); do curl -s localhost:8080/health | grep -q ok && break; sleep 2; done
+          MIN=${{ inputs.minutes || '120' }}
+          for W in $(echo "${{ needs.plan.outputs.what }}" | tr ',' ' '); do
+            if [ "$W" = abstracts ]; then python scripts/translate.py abstracts --minutes $MIN --part ${{ matrix.part }} --parts ${{ strategy.job-total }} --out out;
+            elif [ "$W" = keywords ] && [ "${{ matrix.part }}" != "0" ]; then echo "keywords run in part 0 only";
+            else python scripts/translate.py $W --minutes $MIN --part ${{ matrix.part }} --parts ${{ strategy.job-total }} --out out; fi
+          done
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: zh-${{ matrix.part }}
+          path: out/
+          if-no-files-found: ignore
+          retention-days: 5
+
+  apply:
+    needs: [plan, translate]
+    if: always()
+    runs-on: ubuntu-latest
+    concurrency:
+      group: data
+      cancel-in-progress: false
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - uses: actions/download-artifact@v4
+        with: { path: staging }
+      - name: Apply translations
+        run: python scripts/apply_translations.py staging
+      - name: Sync to the search database
+        continue-on-error: true
+        env:
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+        run: python scripts/sync_db.py
+      - name: Commit
+        run: |
+          git config user.name "lit-radar-bot"
+          git config user.email "lit-radar-bot@users.noreply.github.com"
+          git add data
+          if git diff --cached --quiet; then echo "nothing to commit"; exit 0; fi
+          git commit -q -m "Chinese translations: ${{ needs.plan.outputs.what }}"
+          for i in 1 2 3 4 5; do
+            git pull --rebase -q origin main && git push -q origin HEAD:main && exit 0
+            sleep 20
+          done
+          exit 1

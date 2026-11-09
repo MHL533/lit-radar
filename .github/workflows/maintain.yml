@@ -8,7 +8,7 @@ on:
   workflow_dispatch:
     inputs:
       task:
-        description: "enrich or reclassify"
+        description: "enrich, reclassify or sync (full database sync)"
         default: "enrich"
       minutes:
         description: "Time budget for enrich (minutes)"
@@ -36,6 +36,11 @@ jobs:
       - name: Reclassify
         if: ${{ inputs.task == 'reclassify' }}
         run: python scripts/collect.py --reclassify
+      - name: Sync to the search database
+        continue-on-error: true
+        env:
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+        run: python scripts/sync_db.py ${{ inputs.task == 'sync' && '--full' || '' }}
       - name: Commit
         run: |
           git config user.name "lit-radar-bot"

@@ -1,6 +1,257 @@
 {
-"updated": "2026-11-11 01:35",
+"updated": "2026-11-11 04:39",
 "papers": [
+{
+"id": "10.1016_j.memsci.2026.126391",
+"t": "Dual-Functional Phosphorylated Cellulose Nanofibril Membranes for Proton-Conductive Microbial Fuel Cells",
+"j": "Journal of Membrane Science",
+"f": [
+"ec-fc",
+"ec-env"
+],
+"d": "2026-11-10",
+"doi": "10.1016/j.memsci.2026.126391",
+"x": "2026-11-11 04:36"
+},
+{
+"id": "10.1016_j.desal.2026.121043",
+"t": "MXene-based composite membranes for membrane distillation",
+"j": "Desalination",
+"f": [
+"md",
+"2d-mem"
+],
+"d": "2026-11-10",
+"doi": "10.1016/j.desal.2026.121043",
+"x": "2026-11-11 04:36"
+},
+{
+"id": "10.1016_j.cej.2026.184104",
+"t": "Calculation-guided design and experimental validation of ionic liquid electrolytes for boosting high CO generation rate in CO2 electroreduction",
+"j": "Chemical Engineering Journal",
+"f": [
+"ec-co2"
+],
+"d": "2026-11-10",
+"doi": "10.1016/j.cej.2026.184104",
+"x": "2026-11-11 04:36"
+},
+{
+"id": "10.1016_j.jhazmat.2026.144170",
+"t": "Microplastics and Cyanobacterial Harmful Algal Blooms: Mechanistic Pathways, Cyanotoxin Dynamics, and Quantitative Evidence from Polystyrene (PS)-Microcystis Interactions",
+"j": "Journal of Hazardous Materials",
+"f": [
+"mp"
+],
+"d": "2026-11-10",
+"doi": "10.1016/j.jhazmat.2026.144170",
+"x": "2026-11-11 04:36"
+},
+{
+"id": "10.1016_j.apcatb.2026.127777",
+"t": "Self-Sustaining Buffered Electron Shuttle Triggered by Core-Shell Ru/RuO2 Phase Evolution for High-Performance and Durable Anion Exchange Membrane Water Electrolyzers",
+"j": "Applied Catalysis B: Environment and Energy",
+"f": [
+"ec-water"
+],
+"d": "2026-11-10",
+"doi": "10.1016/j.apcatb.2026.127777",
+"x": "2026-11-11 04:36"
+},
+{
+"id": "10.1016_j.apcatb.2026.127773",
+"t": "Co–Fe Bimetallic Atom-Cluster Cascades Enable Rapid Hydroxyl Radical Generation for Efficient Electro-Fenton Water Purification",
+"j": "Applied Catalysis B: Environment and Energy",
+"f": [
+"aop-water",
+"ec-env"
+],
+"d": "2026-11-10",
+"doi": "10.1016/j.apcatb.2026.127773",
+"x": "2026-11-11 04:36"
+},
+{
+"id": "10.1016_j.apcatb.2026.127774",
+"t": "Coordinatively Unsaturated Reciprocal Cu–Ni Atomic Sites Enable Complementary CO2 and Nitrate Activation for Low-Potential Urea Electrosynthesis",
+"j": "Applied Catalysis B: Environment and Energy",
+"f": [
+"ec-n"
+],
+"d": "2026-11-10",
+"doi": "10.1016/j.apcatb.2026.127774",
+"x": "2026-11-11 04:36"
+},
+{
+"id": "10.1016_j.jeurceramsoc.2026.119036",
+"t": "Hot corrosion resistance of Cr2AlC MAX phase against Calcium-Magnesium-Aluminum-Silicate (CMAS)",
+"j": "Journal of the European Ceramic Society",
+"f": [
+"ec-corr"
+],
+"d": "2026-11-10",
+"doi": "10.1016/j.jeurceramsoc.2026.119036",
+"x": "2026-11-11 04:36"
+},
+{
+"id": "10.1016_j.ceramint.2026.11.093",
+"t": "Effects of pulsed electrical parameters on the microstructural evolution and thermal shock behavior of YSZ thermal barrier coatings prepared via cathode plasma electrolytic deposition",
+"j": "Ceramics International",
+"f": [
+"ec-other"
+],
+"d": "2026-11-10",
+"doi": "10.1016/j.ceramint.2026.11.093",
+"x": "2026-11-11 04:36"
+},
+{
+"id": "10.1016_j.ensm.2026.105649",
+"t": "Solvent-protect-solvent strategy enables fast-charging and low-temperature 1,3-dioxolane-based electrolytes in lithium-ion batteries",
+"j": "Energy Storage Materials",
+"f": [
+"ec-li"
+],
+"d": "2026-11-10",
+"doi": "10.1016/j.ensm.2026.105649",
+"x": "2026-11-11 04:36"
+},
+{
+"id": "10.1021_acsenergylett.6c01693",
+"t": "A Self-Driving Laboratory for Accelerated Electrolyte Discovery",
+"j": "ACS Energy Letters",
+"f": [
+"ec-other"
+],
+"d": "2026-11-10",
+"doi": "10.1021/acsenergylett.6c01693",
+"x": "2026-11-11 04:36",
+"hb": 1
+},
+{
+"id": "10.1021_jacs.6c11241",
+"t": "Multiphase Inorganic-Rich Interphases with Integrated Li-Ion Capture-Transport Ability for High-Rate Lithium Metal Batteries",
+"j": "Journal of the American Chemical Society",
+"f": [
+"ec-li"
+],
+"d": "2026-11-10",
+"doi": "10.1021/jacs.6c11241",
+"x": "2026-11-11 04:36",
+"hb": 1
+},
+{
+"id": "10.1021_jacs.6c15586",
+"t": "Tailoring Solid-State Reaction Pathways for Bulk Fluorination of Mn-Rich Rock-Salt Cathodes",
+"j": "Journal of the American Chemical Society",
+"f": [
+"ec-other"
+],
+"d": "2026-11-10",
+"doi": "10.1021/jacs.6c15586",
+"x": "2026-11-11 04:36",
+"hb": 1
+},
+{
+"id": "10.1021_acscatal.6c06712",
+"t": "Graph-Guided C–C Coupling Pathways from Reaction Networks to Excited-State Dynamics in CO2-to-C2H4 Photoelectroreduction",
+"j": "ACS Catalysis",
+"f": [
+"ec-co2"
+],
+"d": "2026-11-10",
+"doi": "10.1021/acscatal.6c06712",
+"x": "2026-11-11 04:36",
+"hb": 1
+},
+{
+"id": "10.1039_d6ta07552e",
+"t": "Structural Characterization of Low-Temperature Synthesized Cathodes, LT-LiMn x Ni 1-x O 2 (0.5 ≤x ≤ 0.75), for Li-ion Batteries",
+"j": "Journal of Materials Chemistry A",
+"f": [
+"ec-li"
+],
+"d": "2026-11-10",
+"doi": "10.1039/d6ta07552e",
+"x": "2026-11-11 04:36",
+"hb": 1
+},
+{
+"id": "10.1016_j.corsci.2026.114404",
+"t": "Remarkable corrosion and wear resistant Fe60Cr10Ni10Ti10Mo5Al5 high-entropy alloy coatings for carbon steel protection in harsh supercritical CO2 formation water environment",
+"j": "Corrosion Science",
+"f": [
+"ec-corr"
+],
+"d": "2026-11-10",
+"doi": "10.1016/j.corsci.2026.114404",
+"x": "2026-11-11 04:36"
+},
+{
+"id": "10.1016_j.apenergy.2026.129239",
+"t": "Forecast-free real-time V2B control of battery swapping stations as distributed battery assets via imitation learning",
+"j": "Applied Energy",
+"f": [
+"ec-other"
+],
+"d": "2026-11-10",
+"doi": "10.1016/j.apenergy.2026.129239",
+"x": "2026-11-11 04:36"
+},
+{
+"id": "10.1016_j.jhydrol.2026.136801",
+"t": "Exploring the mutual interactions among population, income and water resource availability using a coupled socio-hydrological model",
+"j": "Journal of Hydrology",
+"f": [
+"abm"
+],
+"d": "2026-11-10",
+"doi": "10.1016/j.jhydrol.2026.136801",
+"x": "2026-11-11 04:36"
+},
+{
+"id": "10.1016_j.jclepro.2026.149901",
+"t": "Techno-economic assessment of lithium recovery from spent batteries by nanofiltration: trade-offs between recovery, purity and cost",
+"j": "Journal of Cleaner Production",
+"f": [
+"pa-nf",
+"ec-other"
+],
+"d": "2026-11-10",
+"doi": "10.1016/j.jclepro.2026.149901",
+"x": "2026-11-11 04:36"
+},
+{
+"id": "10.1016_j.jallcom.2026.192383",
+"t": "Hollow CoP/Fe2P heterojunction via etching-phosphorization: Synergistic structure-interface engineering for durable bifunctional water electrolysis",
+"j": "Journal of Alloys and Compounds",
+"f": [
+"ec-water"
+],
+"d": "2026-11-10",
+"doi": "10.1016/j.jallcom.2026.192383",
+"x": "2026-11-11 04:36"
+},
+{
+"id": "10.1016_j.rineng.2026.114093",
+"t": "Bidirectional Thermal and Mass Coupling of Solid Oxide Electrolysis with an Oxy-Combustion Cycle for Low-Carbon Ammonia and Power Co-Production",
+"j": "Results in Engineering",
+"f": [
+"ec-fc"
+],
+"d": "2026-11-10",
+"doi": "10.1016/j.rineng.2026.114093",
+"x": "2026-11-11 04:36"
+},
+{
+"id": "10.1016_j.jclepro.2026.149923",
+"t": "Development and optimization of rapid synthesized Ni-Fe electrodes for the OER in an alkaline electrolysis cell",
+"j": "Journal of Cleaner Production",
+"f": [
+"ec-water"
+],
+"d": "2026-11-10",
+"doi": "10.1016/j.jclepro.2026.149923",
+"x": "2026-11-11 04:36"
+},
 {
 "id": "10.1061_jcemd4.coeng-18562",
 "t": "How Human–AI Interaction Reshapes Construction Workers’ Safety Behaviors: Insights from Agent-Based Modeling",

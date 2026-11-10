@@ -1,6 +1,439 @@
 {
-"updated": "2026-11-10 07:14",
+"updated": "2026-11-10 12:41",
 "papers": [
+{
+"id": "10.1016_j.memsci.2026.126392",
+"t": "Compatibilizing Interlayers in Multilayer Thin-Film Composite Hollow Fiber Membranes for Humid CO2/N2 Separation",
+"j": "Journal of Membrane Science",
+"f": [
+"gas-sep",
+"uf-mf"
+],
+"d": "2026-11-10",
+"doi": "10.1016/j.memsci.2026.126392",
+"x": "2026-11-10 12:30"
+},
+{
+"id": "10.1016_j.desal.2026.121038",
+"t": "Innovative, low-cost, and high-performance plastic-based electrodes in brine electrolyzer for acid and base production",
+"j": "Desalination",
+"f": [
+"ec-water"
+],
+"d": "2026-11-10",
+"doi": "10.1016/j.desal.2026.121038",
+"x": "2026-11-10 12:30"
+},
+{
+"id": "10.1016_j.seppur.2026.140883",
+"t": "Advances in positively charged thin-film composite polyamide nanofiltration membranes for enhanced Li+/Mg2+ separation performance",
+"j": "Separation and Purification Technology",
+"f": [
+"pa-nf"
+],
+"d": "2026-11-10",
+"doi": "10.1016/j.seppur.2026.140883",
+"x": "2026-11-10 12:30"
+},
+{
+"id": "10.1016_j.cej.2026.184100",
+"t": "Recyclable Fenton-like engineering of Auricularia Heimuer-derived N-doped porous carbon for high-performance supercapacitors and zinc-ion hybrid capacitors",
+"j": "Chemical Engineering Journal",
+"f": [
+"ec-beyond",
+"ec-sc"
+],
+"d": "2026-11-10",
+"doi": "10.1016/j.cej.2026.184100",
+"x": "2026-11-10 12:30"
+},
+{
+"id": "10.1016_j.cej.2026.184061",
+"t": "Biocompatible nanoporous 3D-printed membranes for blood-contacting filtration and apheresis-type separations",
+"j": "Chemical Engineering Journal",
+"f": [
+"mem-other"
+],
+"d": "2026-11-10",
+"doi": "10.1016/j.cej.2026.184061",
+"x": "2026-11-10 12:30"
+},
+{
+"id": "10.1016_j.cej.2026.184042",
+"t": "Data-driven multi-parameter optimization of molecularly imprinted polymers for pico-level vitamin C detection",
+"j": "Chemical Engineering Journal",
+"f": [
+"mip-sensor"
+],
+"d": "2026-11-10",
+"doi": "10.1016/j.cej.2026.184042",
+"x": "2026-11-10 12:30"
+},
+{
+"id": "10.1016_j.cej.2026.184059",
+"t": "Electrode-resolved EIS and DRT reveal cathode and anode impedance origins in transition-metal-modified LiS batteries",
+"j": "Chemical Engineering Journal",
+"f": [
+"ec-other"
+],
+"d": "2026-11-10",
+"doi": "10.1016/j.cej.2026.184059",
+"x": "2026-11-10 12:30"
+},
+{
+"id": "10.1016_j.jece.2026.125873",
+"t": "Evaluation of Heat-Activated and Unactivated Persulfate Oxidation Coupled with Biodegradation for Naphthenic Acid Removal and Acute Toxicity Reduction in Oil Sands Process-Affected Water",
+"j": "Journal of Environmental Chemical Engineering",
+"f": [
+"aop-water"
+],
+"d": "2026-11-10",
+"doi": "10.1016/j.jece.2026.125873",
+"x": "2026-11-10 12:30"
+},
+{
+"id": "10.1016_j.jcis.2026.141958",
+"t": "Promotion of oxygen reduction reactions by FeGa bimetallic catalysts via p-d orbital hybridization for zinc-air batteries",
+"j": "Journal of Colloid and Interface Science",
+"f": [
+"ec-lis",
+"ec-fc"
+],
+"d": "2026-11-10",
+"doi": "10.1016/j.jcis.2026.141958",
+"x": "2026-11-10 12:30"
+},
+{
+"id": "10.1016_j.jcis.2026.141957",
+"t": "Self-supporting W-doped NiFe/NiMo heterojunction as a high-performance and stable electrocatalyst for efficient overall water splitting",
+"j": "Journal of Colloid and Interface Science",
+"f": [
+"ec-water"
+],
+"d": "2026-11-10",
+"doi": "10.1016/j.jcis.2026.141957",
+"x": "2026-11-10 12:30"
+},
+{
+"id": "10.1016_j.ensm.2026.105647",
+"t": "Unraveling Ion Transport Limitation in Thick Electrodes for Guiding Pore-Gradient Structure Design in Electrochemical Capacitors",
+"j": "Energy Storage Materials",
+"f": [
+"ec-sc"
+],
+"d": "2026-11-10",
+"doi": "10.1016/j.ensm.2026.105647",
+"x": "2026-11-10 12:30"
+},
+{
+"id": "10.1016_j.jechem.2026.10.057",
+"t": "Modified interfacial electronic environment of Fe–N4 molecules coupling on 2D molybdenum-based platforms for reversible zinc–air batteries",
+"j": "Journal of Energy Chemistry",
+"f": [
+"ec-lis"
+],
+"d": "2026-11-10",
+"doi": "10.1016/j.jechem.2026.10.057",
+"x": "2026-11-10 12:30"
+},
+{
+"id": "10.1016_j.jechem.2026.10.056",
+"t": "P-site multi-anion-engineered NASICON-type cathode with quasi-solid-solution triphasic behavior for high-rate sodium storage",
+"j": "Journal of Energy Chemistry",
+"f": [
+"ec-ss",
+"ec-beyond"
+],
+"d": "2026-11-10",
+"doi": "10.1016/j.jechem.2026.10.056",
+"x": "2026-11-10 12:30"
+},
+{
+"id": "10.1016_j.jechem.2026.10.059",
+"t": "Band alignment modulation mitigates space-charge-layer effects at Ni-rich cathode/sulfide electrolyte interfaces in all-solid-state batteries",
+"j": "Journal of Energy Chemistry",
+"f": [
+"ec-li",
+"ec-ss"
+],
+"d": "2026-11-10",
+"doi": "10.1016/j.jechem.2026.10.059",
+"x": "2026-11-10 12:30"
+},
+{
+"id": "10.1016_j.est.2026.125568",
+"t": "Stabilization mechanisms and design strategies of 1,3-dioxolane-based electrolytes for high-voltage lithium metal batteries",
+"j": "Journal of Energy Storage",
+"f": [
+"ec-li"
+],
+"d": "2026-11-10",
+"doi": "10.1016/j.est.2026.125568",
+"x": "2026-11-10 12:30"
+},
+{
+"id": "10.1016_j.est.2026.125593",
+"t": "Selective etching and depassivation of Zn crystal facets for highly reversible Zn anodes",
+"j": "Journal of Energy Storage",
+"f": [
+"ec-beyond"
+],
+"d": "2026-11-10",
+"doi": "10.1016/j.est.2026.125593",
+"x": "2026-11-10 12:30"
+},
+{
+"id": "10.1016_j.est.2026.125543",
+"t": "Mechanistic insights into zinc ion storage in microporous and small-mesoporous architectures for high-performance porous carbon cathodes",
+"j": "Journal of Energy Storage",
+"f": [
+"ec-beyond"
+],
+"d": "2026-11-10",
+"doi": "10.1016/j.est.2026.125543",
+"x": "2026-11-10 12:30"
+},
+{
+"id": "10.1016_j.est.2026.125551",
+"t": "Manganese oxide nanoparticles anchored on heteroatom incorporated pumpkin-derived activated carbon as an advanced anode for rechargeable lithium and sodium-ion batteries",
+"j": "Journal of Energy Storage",
+"f": [
+"ec-beyond"
+],
+"d": "2026-11-10",
+"doi": "10.1016/j.est.2026.125551",
+"x": "2026-11-10 12:30"
+},
+{
+"id": "10.1016_j.ijhydene.2026.158552",
+"t": "Sequential Oxygen-Plasma, Nitrogen-Doped Carbon Nanotube and Deep Eutectic Solvent Engineering of Carbon Cloth Electrodes for Regenerative Hydrogen/Vanadium Fuel Cells",
+"j": "International Journal of Hydrogen Energy",
+"f": [
+"ec-fc"
+],
+"d": "2026-11-10",
+"doi": "10.1016/j.ijhydene.2026.158552",
+"x": "2026-11-10 12:30"
+},
+{
+"id": "10.1016_j.ijhydene.2026.158581",
+"t": "La1.7Gd0.3NiO4.16 Oxide as an Efficient Electrocatalyst for the Hydrogen Evolution Reaction in Alkaline Media",
+"j": "International Journal of Hydrogen Energy",
+"f": [
+"ec-water"
+],
+"d": "2026-11-10",
+"doi": "10.1016/j.ijhydene.2026.158581",
+"x": "2026-11-10 12:30"
+},
+{
+"id": "10.1021_acsami.6c15759",
+"t": "Crystalline NiO:N Templating of Uniformly Anchored Self-Assembled Monolayers for Inverted Perovskite Solar Cells",
+"j": "ACS Applied Materials &amp; Interfaces",
+"f": [
+"psc-int"
+],
+"d": "2026-11-10",
+"doi": "10.1021/acsami.6c15759",
+"x": "2026-11-10 12:30",
+"hb": 1
+},
+{
+"id": "10.1039_d6ta05754c",
+"t": "Bimetallic (Cu,Zn)ZIF-8/Ti 3 C 2 T x Heterointerfaces for Synergistic Polysulfide Adsorption and Catalytic Conversion in Lithium-Sulfur Batteries",
+"j": "Journal of Materials Chemistry A",
+"f": [
+"ec-lis"
+],
+"d": "2026-11-10",
+"doi": "10.1039/d6ta05754c",
+"x": "2026-11-10 12:30",
+"hb": 1
+},
+{
+"id": "10.1016_j.jes.2026.105888",
+"t": "Airborne photoaged polyvinyl chloride microplastics aggravate myocardial fibrosis and lipid accumulation by disrupting endoplasmic reticulum-mitochondria contacts in male mice",
+"j": "Journal of Environmental Sciences",
+"f": [
+"mp"
+],
+"d": "2026-11-10",
+"doi": "10.1016/j.jes.2026.105888",
+"x": "2026-11-10 12:30"
+},
+{
+"id": "10.1016_j.jes.2026.105886",
+"t": "Aged PVC microplastics interfered mitochondrial homeostasis via Parkin signalling and PI3K/Akt/mTORC2 pathway in vitro and in vivo",
+"j": "Journal of Environmental Sciences",
+"f": [
+"mp"
+],
+"d": "2026-11-10",
+"doi": "10.1016/j.jes.2026.105886",
+"x": "2026-11-10 12:30"
+},
+{
+"id": "10.1016_j.jes.2026.105885",
+"t": "Light-driven release of micro- and nanoplastics from medical infusion systems",
+"j": "Journal of Environmental Sciences",
+"f": [
+"mp"
+],
+"d": "2026-11-10",
+"doi": "10.1016/j.jes.2026.105885",
+"x": "2026-11-10 12:30"
+},
+{
+"id": "10.1016_j.carbon.2026.122318",
+"t": "DFT Simulation and Synthesis of 2D/2D/0D Ternary NanoHybrid Heterostructure with Ti3C2Tx/Graphene/NiCo2S4 for High-performance Supercapacitor",
+"j": "Carbon",
+"f": [
+"ec-sc"
+],
+"d": "2026-11-10",
+"doi": "10.1016/j.carbon.2026.122318",
+"x": "2026-11-10 12:30"
+},
+{
+"id": "10.1016_j.jclepro.2026.149909",
+"t": "Pt/Pd coatings on nickel foam working electrodes for simultaneous biohydrogen production and wastewater treatment in microbial electrolysis cells",
+"j": "Journal of Cleaner Production",
+"f": [
+"ec-water",
+"ec-env"
+],
+"d": "2026-11-10",
+"doi": "10.1016/j.jclepro.2026.149909",
+"x": "2026-11-10 12:30"
+},
+{
+"id": "10.1039_d6cc06025k",
+"t": "A High-Capacity N-Heterocyclic Porous Polymer for Sustainable All-Polymer Seawater Batteries at Subzero Temperatures",
+"j": "Chemical Communications",
+"f": [
+"ec-other"
+],
+"d": "2026-11-10",
+"doi": "10.1039/d6cc06025k",
+"x": "2026-11-10 12:30",
+"hb": 1
+},
+{
+"id": "10.1016_j.joei.2026.102764",
+"t": "Chemical Looping with Fe/Ca-Rich Solid Wastes for Carbon Separation and Resource Recovery: Insights into Oxygen Migration Mechanism and Modification",
+"j": "Journal of the Energy Institute",
+"f": [
+"cl-other"
+],
+"d": "2026-11-10",
+"doi": "10.1016/j.joei.2026.102764",
+"x": "2026-11-10 12:30"
+},
+{
+"id": "10.1016_j.cej.2026.184035",
+"t": "Revealing interfacial phosphate as a proton relay for oxygen evolution through Operando Raman spectroscopy and DFT calculations",
+"j": "Chemical Engineering Journal",
+"f": [
+"ec-water"
+],
+"d": "2026-11-09",
+"doi": "10.1016/j.cej.2026.184035",
+"x": "2026-11-10 12:30"
+},
+{
+"id": "10.1016_j.est.2026.125339",
+"t": "Lithium-ion battery state-of-health prediction with missing data using RBF-KAN-enhanced neural ordinary differential equations",
+"j": "Journal of Energy Storage",
+"f": [
+"ec-li"
+],
+"d": "2026-11-09",
+"doi": "10.1016/j.est.2026.125339",
+"x": "2026-11-10 12:30"
+},
+{
+"id": "10.1016_j.est.2026.125409",
+"t": "Contrastive learning for battery capacity estimation through electrochemical impedance spectroscopy",
+"j": "Journal of Energy Storage",
+"f": [
+"ec-other"
+],
+"d": "2026-11-09",
+"doi": "10.1016/j.est.2026.125409",
+"x": "2026-11-10 12:30"
+},
+{
+"id": "10.1016_j.est.2026.125448",
+"t": "Pre-trained large models for battery management systems: Techniques, applications, challenges, and prospects",
+"j": "Journal of Energy Storage",
+"f": [
+"ec-other"
+],
+"d": "2026-11-09",
+"doi": "10.1016/j.est.2026.125448",
+"x": "2026-11-10 12:30"
+},
+{
+"id": "10.1016_j.est.2026.125452",
+"t": "Stress dispersion and an inorganic-rich solid electrolyte interphase facilitate long-cycle stability of high-Sn-content sodium-ion anodes",
+"j": "Journal of Energy Storage",
+"f": [
+"ec-li",
+"ec-ss",
+"ec-beyond"
+],
+"d": "2026-11-09",
+"doi": "10.1016/j.est.2026.125452",
+"x": "2026-11-10 12:30"
+},
+{
+"id": "10.1016_j.est.2026.125471",
+"t": "Structure engineering modulation via physical vapor deposition for superior organic cathode of aluminum batteries",
+"j": "Journal of Energy Storage",
+"f": [
+"ec-other"
+],
+"d": "2026-11-09",
+"doi": "10.1016/j.est.2026.125471",
+"x": "2026-11-10 12:30"
+},
+{
+"id": "10.1002_adma.75619",
+"t": "Rate Capability of Lithium‐Rich Manganese‐Based Oxide Cathodes: Charge–Discharge Kinetics, Multiscale Bottlenecks, and Dynamic Rate‐Determining Steps",
+"j": "Advanced Materials",
+"f": [
+"ec-other"
+],
+"d": "2026-11-09",
+"doi": "10.1002/adma.75619",
+"x": "2026-11-10 12:30",
+"hb": 1
+},
+{
+"id": "10.1002_adma.75604",
+"t": "Ultralow Loading Iridium Doped Hollandite Manganese Oxide Nanowires for Efficient Acidic Oxygen Evolution Reaction",
+"j": "Advanced Materials",
+"f": [
+"ec-water"
+],
+"d": "2026-11-09",
+"doi": "10.1002/adma.75604",
+"x": "2026-11-10 12:30",
+"hb": 1
+},
+{
+"id": "10.1021_jacs.6c13825",
+"t": "Catalytic Interphases Enable Sulfur Redox Catalysis in All-Solid-State Lithium–Sulfur Batteries",
+"j": "Journal of the American Chemical Society",
+"f": [
+"ec-ss",
+"ec-lis"
+],
+"d": "2026-11-09",
+"doi": "10.1021/jacs.6c13825",
+"x": "2026-11-10 12:30",
+"hb": 1
+},
 {
 "id": "10.1016_j.desal.2026.121034",
 "t": "Interfacial covalency and d-band center engineering at Mn/Ni oxide heterointerfaces on biochar for enhanced persulfate activation toward tetracycline degradation",

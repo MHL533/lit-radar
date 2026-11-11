@@ -87,7 +87,8 @@ def main():
     hashes = {os.path.relpath(p, lib.DATA): hashlib.md5(open(p, "rb").read()).hexdigest() for p in shards}
     hashes["kw_zh"] = hashlib.md5(json.dumps(kz, sort_keys=True).encode()).hexdigest()
     hashes["journals"] = hashlib.md5(json.dumps(journals, sort_keys=True).encode()).hexdigest()
-    everything = args.full or state.get("kw_zh") != hashes["kw_zh"] or state.get("journals") != hashes["journals"]
+    # keyword translations are embedded in each shard, so a changed vocabulary already changes the affected shard hashes
+    everything = args.full or state.get("journals") != hashes["journals"]
     todo = [p for p in shards if everything or state.get(os.path.relpath(p, lib.DATA)) != hashes[os.path.relpath(p, lib.DATA)]]
     print(f"shards to sync: {len(todo)} / {len(shards)}", flush=True)
     sent, seen, batch = set(), set(), []

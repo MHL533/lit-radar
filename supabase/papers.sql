@@ -1,8 +1,7 @@
 -- 科研文献查询器：全库文献表与检索函数（在 Supabase → SQL Editor 里整段运行一次；以后升级也可重复运行）
 -- 文献由 GitHub Actions（scripts/sync_db.py，用 service_role 密钥）写入；网页用公开 anon 密钥只读查询。
--- 全文检索用 PGroonga，中英文混合检索都能用索引。
+-- 为了留在 Supabase 免费版 500 MB 以内，不建全文索引：搜索时逐行匹配（每个词都要出现），一次约几秒。
 
-create extension if not exists pgroonga;
 
 create table if not exists public.papers (
   id            text primary key,           -- 由 DOI 生成，与网页、收藏表 marks.paper_id 一致
@@ -40,13 +39,13 @@ create index if not exists papers_fields on public.papers using gin (fields);
 create index if not exists papers_journal on public.papers (journal);
 create index if not exists papers_if on public.papers (impact_factor desc nulls last);
 create index if not exists papers_affil on public.papers (first_affil);
--- 全文检索：把中英文标题、关键词、作者拼成一段文本，用一个 PGroonga 表达式索引
+-- 搜索文本：中英文标题、关键词、作者拼成一段
 create or replace function public.paper_search_text(title text, title_zh text, keywords text[], keywords_zh text[], authors text[])
 returns text language sql immutable parallel safe as $$
   select concat_ws(' ', title, title_zh, array_to_string(keywords, ' '), array_to_string(keywords_zh, ' '), array_to_string(authors, ' '))
 $$;
 drop index if exists public.papers_text;
-create index if not exists papers_search on public.papers using pgroonga (public.paper_search_text(title, title_zh, keywords, keywords_zh, authors));
+drop index if exists public.papers_search;
 
 -- 共用的筛选条件
 -- 检索函数用动态 SQL：只拼接实际用到的条件，PostgreSQL 才能用上各列索引（日期、领域 GIN、PGroonga 全文）。
@@ -72,7 +71,8 @@ begin
   if coalesce(p_q, '') ~* '^10\.\d{4,}/' then
     w := array_append(w, $w$p.id = regexp_replace(lower(trim($8)), '[^a-z0-9_.~:@+-]', '_', 'g')$w$::text);
   elsif coalesce(p_q, '') <> '' then
-    w := array_append(w, 'public.paper_search_text(p.title, p.title_zh, p.keywords, p.keywords_zh, p.authors) &@~ pgroonga_query_escape($8)'::text);
+    w := array_append(w, $w$(select bool_and(public.paper_search_text(p.title, p.title_zh, p.keywords, p.keywords_zh, p.authors)
+        ilike '%' || replace(replace(t, '%', '\%'), '_', '\_') || '%') from unnest(regexp_split_to_array(trim($8), '\s+')) t)$w$::text);
   end if;
   if coalesce(p_key, false) then w := array_append(w, 'p.is_key'::text); end if;
   if p_ids is not null then w := array_append(w, 'p.id = any($10)'::text); end if;

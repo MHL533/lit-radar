@@ -65,7 +65,7 @@
 
 ## 全库检索数据库（Supabase）
 
-网页在能连上 Supabase 时直接查询服务器上的全部文献（中英文标题、关键词、作者全文检索，按 PGroonga 索引），连不上时自动退回按月份加载静态数据。启用步骤：
+网页在能连上 Supabase 时直接查询服务器上的全部文献（中英文标题、关键词、作者；为留在免费版容量内不建全文索引，一次搜索约几秒），连不上时自动退回按月份加载静态数据。启用步骤：
 
 1. 在 Supabase 控制台 → SQL Editor 中运行 [supabase/papers.sql](supabase/papers.sql)。
 2. 在 Supabase 控制台 → Project Settings → API Keys 复制 secret（或旧版 service_role）密钥，在 GitHub 仓库 → Settings → Secrets and variables → Actions 中新建名为 `SUPABASE_SERVICE_ROLE_KEY` 的密钥。

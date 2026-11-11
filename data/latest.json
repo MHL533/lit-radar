@@ -1,6 +1,215 @@
 {
-"updated": "2026-11-11 10:43",
+"updated": "2026-11-11 16:42",
 "papers": [
+{
+"id": "10.1016_j.electacta.2026.150409",
+"t": "Silicon/Dithiane single electrolyte additive constructs parallel interface for cyclic stability of high-voltage NCM811||graphite cell",
+"j": "Electrochimica Acta",
+"f": [
+"ec-li"
+],
+"d": "2026-11-11",
+"doi": "10.1016/j.electacta.2026.150409",
+"x": "2026-11-11 16:22"
+},
+{
+"id": "10.1007_s00604-026-08510-9",
+"t": "Heterocyclic nitrogen-regulated perylene diimide for co-reactant-free self-enhanced electrochemical sensing of carcinoembryonic antigen",
+"j": "Microchimica Acta",
+"f": [
+"ec-sensor"
+],
+"d": "2026-11-11",
+"doi": "10.1007/s00604-026-08510-9",
+"x": "2026-11-11 16:22"
+},
+{
+"id": "10.1016_j.trac.2026.119267",
+"t": "Electrochemical strategies for single-molecule detection: A review",
+"j": "TrAC Trends in Analytical Chemistry",
+"f": [
+"ec-other"
+],
+"d": "2026-11-11",
+"doi": "10.1016/j.trac.2026.119267",
+"x": "2026-11-11 16:22"
+},
+{
+"id": "10.1016_j.desal.2026.121048",
+"t": "Inter-unit coordination of working solutions in a wastewater treatment heat engine integrating reverse electrodialysis and air-gap diffusion distillation",
+"j": "Desalination",
+"f": [
+"iem-ed"
+],
+"d": "2026-11-11",
+"doi": "10.1016/j.desal.2026.121048",
+"x": "2026-11-11 16:22"
+},
+{
+"id": "10.3389_fnut.2026.1932193",
+"t": "Microplastics and emerging chemical contaminants in indoor dust: potential human exposure pathways and implications for food and human health",
+"j": "Frontiers in Nutrition",
+"f": [
+"mp"
+],
+"d": "2026-11-11",
+"doi": "10.3389/fnut.2026.1932193",
+"x": "2026-11-11 16:22",
+"hb": 1
+},
+{
+"id": "10.1016_j.desal.2026.121017",
+"t": "Synergistic adsorption of tetracycline in water by carbon black and microplastics: exploring interfacial mechanisms",
+"j": "Desalination",
+"f": [
+"mp"
+],
+"d": "2026-11-11",
+"doi": "10.1016/j.desal.2026.121017",
+"x": "2026-11-11 16:22"
+},
+{
+"id": "10.1016_j.cej.2026.184145",
+"t": "Towards cost-competitive acetate production via carbon monoxide electroreduction in membrane electrode assembly electrolysers",
+"j": "Chemical Engineering Journal",
+"f": [
+"ec-water",
+"ec-fc"
+],
+"d": "2026-11-11",
+"doi": "10.1016/j.cej.2026.184145",
+"x": "2026-11-11 16:22"
+},
+{
+"id": "10.1016_j.jallcom.2026.192386",
+"t": "Ni-Induced Oxygen Vacancy Engineered CoFe₂O₄ Spinel Ferrites as Efficient Electrocatalyst for Methanol-Assisted Electrolysis: Predictive LSTM Modelling",
+"j": "Journal of Alloys and Compounds",
+"f": [
+"ec-other"
+],
+"d": "2026-11-11",
+"doi": "10.1016/j.jallcom.2026.192386",
+"x": "2026-11-11 16:22"
+},
+{
+"id": "10.1016_j.cej.2026.184147",
+"t": "Halide-mediated photoelectrochemical urea oxidation on WO3: From surface-confined to homogeneous regime",
+"j": "Chemical Engineering Journal",
+"f": [
+"ec-other"
+],
+"d": "2026-11-11",
+"doi": "10.1016/j.cej.2026.184147",
+"x": "2026-11-11 16:22"
+},
+{
+"id": "10.1016_j.apcatb.2026.127784",
+"t": "Framework-Confined CuN/O Coordination Engineering for Bifunctional Electrocatalysis in Alkaline Water Splitting",
+"j": "Applied Catalysis B: Environment and Energy",
+"f": [
+"ec-water"
+],
+"d": "2026-11-11",
+"doi": "10.1016/j.apcatb.2026.127784",
+"x": "2026-11-11 16:22"
+},
+{
+"id": "10.1021_acsenergylett.6c02914",
+"t": "Decoding Symmetry-Breaking Band Structures in Nanocatalysts for Kinetically Favorable Li-S Batteries",
+"j": "ACS Energy Letters",
+"f": [
+"ec-lis"
+],
+"d": "2026-11-10",
+"doi": "10.1021/acsenergylett.6c02914",
+"x": "2026-11-11 16:22",
+"hb": 1
+},
+{
+"id": "10.1002_adma.75615",
+"t": "Constructing Low‐Friction Ion Transport Pathways in Crosslinked Polymer Electrolyte for Practical Quasi‐Solid‐State Lithium Metal Batteries",
+"j": "Advanced Materials",
+"f": [
+"ec-li",
+"ec-ss"
+],
+"d": "2026-11-10",
+"doi": "10.1002/adma.75615",
+"x": "2026-11-11 16:22",
+"hb": 1
+},
+{
+"id": "10.1002_adma.75684",
+"t": "Deciphering Roles of Interfacial Tunable Primer for High Active Material Contents Pure Silicon Electrodes",
+"j": "Advanced Materials",
+"f": [
+"ec-other"
+],
+"d": "2026-11-10",
+"doi": "10.1002/adma.75684",
+"x": "2026-11-11 16:22",
+"hb": 1
+},
+{
+"id": "10.1002_adma.75694",
+"t": "Bridge‐Level Electronic Compensation in Prussian White Cathodes: Charge‐Transfer Kinetic Regimes and Design Principles",
+"j": "Advanced Materials",
+"f": [
+"ec-other"
+],
+"d": "2026-11-10",
+"doi": "10.1002/adma.75694",
+"x": "2026-11-11 16:22",
+"hb": 1
+},
+{
+"id": "10.1002_advs.78727",
+"t": "Reframing Porous Carbon as a Transport Framework for High‐Rate CO 2 Electroreduction",
+"j": "Advanced Science",
+"f": [
+"ec-other"
+],
+"d": "2026-11-10",
+"doi": "10.1002/advs.78727",
+"x": "2026-11-11 16:22",
+"hb": 1
+},
+{
+"id": "10.1002_cssc.71211",
+"t": "Ion Transport in Polymer‐Rich Soft Phases Offering Insights Into Soft‐Gel Electrode Batteries",
+"j": "ChemSusChem",
+"f": [
+"ec-other"
+],
+"d": "2026-11-10",
+"doi": "10.1002/cssc.71211",
+"x": "2026-11-11 16:22",
+"hb": 1
+},
+{
+"id": "10.1002_cssc.71149",
+"t": "Systematic Investigation of BiVO 4 /FeOOH Photoanode via Experimental and Theoretical Approach and Constructing Tandem Photoelectrochemical Cell With CuO/AlO x /RuO 2 Photocathode for Solar Water Splitting",
+"j": "ChemSusChem",
+"f": [
+"ec-water"
+],
+"d": "2026-11-10",
+"doi": "10.1002/cssc.71149",
+"x": "2026-11-11 16:22",
+"hb": 1
+},
+{
+"id": "10.1002_cssc.71224",
+"t": "Interfacial Molecular Engineering of Cobalt Catalysts Enables Efficient Bifunctional Electrocatalysis",
+"j": "ChemSusChem",
+"f": [
+"ec-other"
+],
+"d": "2026-11-10",
+"doi": "10.1002/cssc.71224",
+"x": "2026-11-11 16:22",
+"hb": 1
+},
 {
 "id": "10.1016_j.desal.2026.121040",
 "t": "Efficient antibiotic degradation under hypoxic aquatic conditions: Hydrophilic montmorillonite-mediated photocatalytic peroxydisulfate activation enables singlet oxygen production via a water-molecule conversion pathway",

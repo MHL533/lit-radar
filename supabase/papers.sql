@@ -59,7 +59,7 @@ create or replace function public.paper_where(
   p_groups text[], p_fields text[], p_since date, p_until date, p_journal text, p_zone smallint,
   p_inst text, p_q text, p_key boolean, p_ids text[], p_not_ids text[])
 returns text language plpgsql immutable as $$
-declare w text[] := array['true'];
+declare w text[] := array['true']; t text;
 begin
   if p_groups is not null then w := array_append(w, 'p.groups && $1'::text); end if;
   if p_fields is not null then w := array_append(w, 'p.fields && $2'::text); end if;
@@ -71,8 +71,11 @@ begin
   if coalesce(p_q, '') ~* '^10\.\d{4,}/' then
     w := array_append(w, $w$p.id = regexp_replace(lower(trim($8)), '[^a-z0-9_.~:@+-]', '_', 'g')$w$::text);
   elsif coalesce(p_q, '') <> '' then
-    w := array_append(w, $w$(select bool_and(public.paper_search_text(p.title, p.title_zh, p.keywords, p.keywords_zh, p.authors)
-        ilike '%' || replace(replace(t, '%', '\%'), '_', '\_') || '%') from unnest(regexp_split_to_array(trim($8), '\s+')) t)$w$::text);
+    -- one ILIKE per word (at most 6), with the pattern inlined as a literal so each row costs only a concat and a scan
+    foreach t in array (regexp_split_to_array(trim(p_q), '\s+'))[1:6] loop
+      w := array_append(w, format('public.paper_search_text(p.title, p.title_zh, p.keywords, p.keywords_zh, p.authors) ilike %L',
+                                  '%' || replace(replace(replace(t, '\', '\\'), '%', '\%'), '_', '\_') || '%'));
+    end loop;
   end if;
   if coalesce(p_key, false) then w := array_append(w, 'p.is_key'::text); end if;
   if p_ids is not null then w := array_append(w, 'p.id = any($10)'::text); end if;
@@ -101,6 +104,12 @@ declare
 begin
   if w = 'true' then
     select sum(c.n) into n from public.paper_month_counts c where c.grp = '*';
+  elsif coalesce(p_q, '') <> '' then
+    -- text search scans the table, so count in the same pass instead of scanning twice
+    return query execute 'select to_jsonb(p) - ''synced_at'', count(*) over () from public.papers p where ' || w || ' order by ' || ord || ' limit $12 offset $13'
+      using p_groups, p_fields, p_since, p_until, p_journal, p_zone, p_inst, p_q, p_key, p_ids, p_not_ids,
+            least(greatest(p_limit, 1), 5000), greatest(p_offset, 0);
+    return;
   else
     execute 'select count(*) from public.papers p where ' || w into n
       using p_groups, p_fields, p_since, p_until, p_journal, p_zone, p_inst, p_q, p_key, p_ids, p_not_ids;
@@ -173,6 +182,7 @@ create or replace function public.refresh_paper_counts() returns void language s
     select '*', to_char(published, 'YYYY-MM'), count(*) from public.papers group by 2;
 $$;
 revoke execute on function public.refresh_paper_counts() from public, anon, authenticated;
+alter function public.refresh_paper_counts() set statement_timeout = '180s';
 
 drop function if exists public.paper_months(text[]);
 create or replace function public.paper_months(p_groups text[] default null)

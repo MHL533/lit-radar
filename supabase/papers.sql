@@ -1,6 +1,6 @@
 -- 科研文献查询器：全库文献表与检索函数（在 Supabase → SQL Editor 里整段运行一次；以后升级也可重复运行）
 -- 文献由 GitHub Actions（scripts/sync_db.py，用 service_role 密钥）写入；网页用公开 anon 密钥只读查询。
--- 为了留在 Supabase 免费版 500 MB 以内，不建全文索引：搜索时逐行匹配（每个词都要出现），一次约几秒。
+-- 为了留在 Supabase 免费版 500 MB 以内，英文检索用 PostgreSQL 自带的精简全文索引（标题、关键词、作者）；中文检索逐行匹配中文标题和中文关键词，较慢。
 
 
 create table if not exists public.papers (
@@ -47,6 +47,13 @@ $$;
 drop index if exists public.papers_text;
 drop index if exists public.papers_search;
 
+-- 英文全文索引（词干化，体积小）
+create or replace function public.paper_tsv(title text, keywords text[], authors text[])
+returns tsvector language sql immutable parallel safe as $$
+  select to_tsvector('english'::regconfig, concat_ws(' ', title, array_to_string(keywords, ' '), array_to_string(authors, ' ')))
+$$;
+create index if not exists papers_fts on public.papers using gin (public.paper_tsv(title, keywords, authors));
+
 -- 共用的筛选条件
 -- 检索函数用动态 SQL：只拼接实际用到的条件，PostgreSQL 才能用上各列索引（日期、领域 GIN、PGroonga 全文）。
 drop function if exists public.search_papers(text[], text[], date, date, text, smallint, text, text, boolean, boolean, boolean, text, integer, integer, integer);
@@ -71,11 +78,14 @@ begin
   if coalesce(p_q, '') ~* '^10\.\d{4,}/' then
     w := array_append(w, $w$p.id = regexp_replace(lower(trim($8)), '[^a-z0-9_.~:@+-]', '_', 'g')$w$::text);
   elsif coalesce(p_q, '') <> '' then
-    -- one ILIKE per word (at most 6), with the pattern inlined as a literal so each row costs only a concat and a scan
-    foreach t in array (regexp_split_to_array(trim(p_q), '\s+'))[1:6] loop
-      w := array_append(w, format('public.paper_search_text(p.title, p.title_zh, p.keywords, p.keywords_zh, p.authors) ilike %L',
-                                  '%' || replace(replace(replace(t, '\', '\\'), '%', '\%'), '_', '\_') || '%'));
-    end loop;
+    if p_q ~ '[一-鿿]' then
+      -- Chinese words: row-by-row match on the Chinese title and keywords (no index)
+      foreach t in array (regexp_split_to_array(trim(p_q), '\s+'))[1:4] loop
+        w := array_append(w, format($f$strpos(coalesce(p.title_zh, '') || ' ' || array_to_string(p.keywords_zh, ' '), %L) > 0$f$, t));
+      end loop;
+    else
+      w := array_append(w, $f$public.paper_tsv(p.title, p.keywords, p.authors) @@ plainto_tsquery('english'::regconfig, $8)$f$::text);
+    end if;
   end if;
   if coalesce(p_key, false) then w := array_append(w, 'p.is_key'::text); end if;
   if p_ids is not null then w := array_append(w, 'p.id = any($10)'::text); end if;

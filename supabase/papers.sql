@@ -115,8 +115,9 @@ begin
   if w = 'true' then
     select sum(c.n) into n from public.paper_month_counts c where c.grp = '*';
   elsif coalesce(p_q, '') <> '' then
-    -- text search scans the table, so count in the same pass instead of scanning twice
-    return query execute 'select to_jsonb(p) - ''synced_at'', count(*) over () from public.papers p where ' || w || ' order by ' || ord || ' limit $12 offset $13'
+    -- text search: one pass picks the page of ids and the total; only that page is turned into JSON
+    return query execute 'with h as (select p.id, count(*) over () c, row_number() over (order by ' || ord || ') rn from public.papers p where ' || w
+        || ' order by rn limit $12 offset $13) select to_jsonb(q) - ''synced_at'', h.c from h join public.papers q on q.id = h.id order by h.rn'
       using p_groups, p_fields, p_since, p_until, p_journal, p_zone, p_inst, p_q, p_key, p_ids, p_not_ids,
             least(greatest(p_limit, 1), 5000), greatest(p_offset, 0);
     return;

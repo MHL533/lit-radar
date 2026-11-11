@@ -1,6 +1,409 @@
 {
-"updated": "2026-11-11 04:39",
+"updated": "2026-11-11 10:43",
 "papers": [
+{
+"id": "10.1016_j.desal.2026.121040",
+"t": "Efficient antibiotic degradation under hypoxic aquatic conditions: Hydrophilic montmorillonite-mediated photocatalytic peroxydisulfate activation enables singlet oxygen production via a water-molecule conversion pathway",
+"j": "Desalination",
+"f": [
+"aop-water"
+],
+"d": "2026-11-11",
+"doi": "10.1016/j.desal.2026.121040",
+"x": "2026-11-11 10:34"
+},
+{
+"id": "10.1016_j.seppur.2026.140857",
+"t": "EDTA-assisted retention-based Li/Mg separation by capacitive deionization with complementary flow-through Li+ monitoring",
+"j": "Separation and Purification Technology",
+"f": [
+"ec-env"
+],
+"d": "2026-11-11",
+"doi": "10.1016/j.seppur.2026.140857",
+"x": "2026-11-11 10:34"
+},
+{
+"id": "10.1016_j.seppur.2026.140886",
+"t": "Superhydrophilic/underwater superoleophobic coated fabrics for efficient botanical volatile oil/water separation",
+"j": "Separation and Purification Technology",
+"f": [
+"oil-water"
+],
+"d": "2026-11-11",
+"doi": "10.1016/j.seppur.2026.140886",
+"x": "2026-11-11 10:34"
+},
+{
+"id": "10.1016_j.seppur.2026.140885",
+"t": "High-performance positively charged polyamide nanofiltration membranes via interfacial polymerization assisted by quaternary ammonium-functionalized cellulose nanofibrils",
+"j": "Separation and Purification Technology",
+"f": [
+"pa-nf"
+],
+"d": "2026-11-11",
+"doi": "10.1016/j.seppur.2026.140885",
+"x": "2026-11-11 10:34"
+},
+{
+"id": "10.1016_j.seppur.2026.140884",
+"t": "Mix-charged cellulose acetate membranes via electrostatic assembly for enhanced nanofiltration-based desalination",
+"j": "Separation and Purification Technology",
+"f": [
+"pa-nf"
+],
+"d": "2026-11-11",
+"doi": "10.1016/j.seppur.2026.140884",
+"x": "2026-11-11 10:34"
+},
+{
+"id": "10.1016_j.seppur.2026.140909",
+"t": "A pre-wetting-determined wettability cellulose-based aerogels for high-efficiency separation of complex oil-water systems",
+"j": "Separation and Purification Technology",
+"f": [
+"oil-water"
+],
+"d": "2026-11-11",
+"doi": "10.1016/j.seppur.2026.140909",
+"x": "2026-11-11 10:34"
+},
+{
+"id": "10.1016_j.watres.2026.127314",
+"t": "Larger online performance decline does not necessarily indicate more severe membrane fouling: Evidence from electrodialysis with an anionic surfactant",
+"j": "Water Research",
+"f": [
+"iem-ed",
+"fouling"
+],
+"d": "2026-11-11",
+"doi": "10.1016/j.watres.2026.127314",
+"x": "2026-11-11 10:34"
+},
+{
+"id": "10.1016_j.cej.2026.184046",
+"t": "The behavior of carbon deposition in solid oxide electrolysis cells with finger-like pores based on a thermodynamic and kinetic model",
+"j": "Chemical Engineering Journal",
+"f": [
+"ec-water",
+"ec-fc"
+],
+"d": "2026-11-11",
+"doi": "10.1016/j.cej.2026.184046",
+"x": "2026-11-11 10:34"
+},
+{
+"id": "10.1016_j.jhazmat.2026.144184",
+"t": "Iron-oxidizing bacteria-mediated Fe(II) organo-mineralization drives arsenic and microplastics co-immobilization",
+"j": "Journal of Hazardous Materials",
+"f": [
+"mp"
+],
+"d": "2026-11-11",
+"doi": "10.1016/j.jhazmat.2026.144184",
+"x": "2026-11-11 10:34"
+},
+{
+"id": "10.1016_j.apcatb.2026.127780",
+"t": "APTES-mediated Fe-N coordination modulates electronic structure of Fe single-atom for selective photocatalytic nitrate reduction to N2",
+"j": "Applied Catalysis B: Environment and Energy",
+"f": [
+"ec-n"
+],
+"d": "2026-11-11",
+"doi": "10.1016/j.apcatb.2026.127780",
+"x": "2026-11-11 10:34"
+},
+{
+"id": "10.1016_j.envres.2026.126161",
+"t": "Photodegradation of Chloramphenicol by UVA/Fe(III)/PMS for Antibiotic-Contaminated Wastewater: Degradation Kinetics and Mechanisms",
+"j": "Environmental Research",
+"f": [
+"aop-water"
+],
+"d": "2026-11-11",
+"doi": "10.1016/j.envres.2026.126161",
+"x": "2026-11-11 10:34"
+},
+{
+"id": "10.1016_j.jeurceramsoc.2026.119035",
+"t": "Effect of alumina infiltration on calcium-magnesium-alumino-silicate (CMAS) corrosion resistance and failure of EB-PVD TBCs",
+"j": "Journal of the European Ceramic Society",
+"f": [
+"ec-corr"
+],
+"d": "2026-11-11",
+"doi": "10.1016/j.jeurceramsoc.2026.119035",
+"x": "2026-11-11 10:34"
+},
+{
+"id": "10.1016_j.electacta.2026.150402",
+"t": "pH-Dependent Interfacial Electrochemistry and Sensing Performance of Anodically Exfoliated Graphene",
+"j": "Electrochimica Acta",
+"f": [
+"ec-other"
+],
+"d": "2026-11-11",
+"doi": "10.1016/j.electacta.2026.150402",
+"x": "2026-11-11 10:34"
+},
+{
+"id": "10.1016_j.jechem.2026.10.063",
+"t": "Structural design strategies of zinc metal anode",
+"j": "Journal of Energy Chemistry",
+"f": [
+"ec-beyond"
+],
+"d": "2026-11-11",
+"doi": "10.1016/j.jechem.2026.10.063",
+"x": "2026-11-11 10:34"
+},
+{
+"id": "10.1016_j.jechem.2026.10.061",
+"t": "Dual-chalcogen-mediated carbon architectures with coupled adsorption-intercalation-conversion pathways for high-performance potassium storage",
+"j": "Journal of Energy Chemistry",
+"f": [
+"ec-beyond"
+],
+"d": "2026-11-11",
+"doi": "10.1016/j.jechem.2026.10.061",
+"x": "2026-11-11 10:34"
+},
+{
+"id": "10.1016_j.est.2026.125538",
+"t": "Integrated hydrometallurgical valorization of natural manganese ore into lithium nickel manganese cobalt oxide cathode materials for lithium-ion batteries",
+"j": "Journal of Energy Storage",
+"f": [
+"ec-li"
+],
+"d": "2026-11-11",
+"doi": "10.1016/j.est.2026.125538",
+"x": "2026-11-11 10:34"
+},
+{
+"id": "10.1021_acsnano.6c14267",
+"t": "Deciphering Charge Delocalization across Mercaptobenzonitrile Ligand Terminals and Inner Hydrides in Atomically Precise Cu14H10 Nanoclusters for Electrocatalytic CO2 Reduction",
+"j": "ACS Nano",
+"f": [
+"ec-co2"
+],
+"d": "2026-11-11",
+"doi": "10.1021/acsnano.6c14267",
+"x": "2026-11-11 10:34",
+"hb": 1
+},
+{
+"id": "10.1016_j.talanta.2026.130937",
+"t": "Flexible Conductive Hydrogel Fiber Microelectrode for Highly Sensitive Electrochemical Monitoring of Bisphenol B in Blood",
+"j": "Talanta",
+"f": [
+"ec-sensor"
+],
+"d": "2026-11-11",
+"doi": "10.1016/j.talanta.2026.130937",
+"x": "2026-11-11 10:34"
+},
+{
+"id": "10.1007_s00604-026-08545-y",
+"t": "Electrochemical food safety sensing via engineered MXene composites: from interfacial dynamics to intelligent devices",
+"j": "Microchimica Acta",
+"f": [
+"ec-other"
+],
+"d": "2026-11-11",
+"doi": "10.1007/s00604-026-08545-y",
+"x": "2026-11-11 10:34"
+},
+{
+"id": "10.1016_j.jhydrol.2026.136809",
+"t": "Autoencoder-guided flood-event classification and diffusion augmentation for event-scale flood forecasting in a data-scarce basin",
+"j": "Journal of Hydrology",
+"f": [
+"flood"
+],
+"d": "2026-11-11",
+"doi": "10.1016/j.jhydrol.2026.136809",
+"x": "2026-11-11 10:34"
+},
+{
+"id": "10.1016_j.microc.2026.120248",
+"t": "Phyto-mediated facile ternary CuO/Bi2O3/Sb2O3 nanocomposite for overall water splitting and supercapacitor: synthesis, characterization, and electrochemical studies",
+"j": "Microchemical Journal",
+"f": [
+"ec-sc",
+"ec-water"
+],
+"d": "2026-11-11",
+"doi": "10.1016/j.microc.2026.120248",
+"x": "2026-11-11 10:34"
+},
+{
+"id": "10.1016_j.jallcom.2026.192384",
+"t": "Laser-assisted synthesis of MoCo-N-C bifunctional electrocatalyst for efficient overall water and seawater splitting",
+"j": "Journal of Alloys and Compounds",
+"f": [
+"ec-water"
+],
+"d": "2026-11-11",
+"doi": "10.1016/j.jallcom.2026.192384",
+"x": "2026-11-11 10:34"
+},
+{
+"id": "10.1016_j.est.2026.125473",
+"t": "Precursor-driven microstructural engineering of porous silicon anodes via magnesiothermic reduction for lithium-ion batteries",
+"j": "Journal of Energy Storage",
+"f": [
+"ec-li"
+],
+"d": "2026-11-10",
+"doi": "10.1016/j.est.2026.125473",
+"x": "2026-11-11 10:34"
+},
+{
+"id": "10.1016_j.est.2026.125497",
+"t": "Nickel Molybdates emerging as prominent transition-metal Molybdates for supercapacitor applications: Energy and power densities review",
+"j": "Journal of Energy Storage",
+"f": [
+"ec-sc"
+],
+"d": "2026-11-10",
+"doi": "10.1016/j.est.2026.125497",
+"x": "2026-11-11 10:34"
+},
+{
+"id": "10.1016_j.est.2026.125535",
+"t": "Polyaniline-encapsulated V6O13 nanorods with synergistic electron/ion dual-conduction for high-rate aqueous zinc-ion batteries",
+"j": "Journal of Energy Storage",
+"f": [
+"ec-beyond"
+],
+"d": "2026-11-10",
+"doi": "10.1016/j.est.2026.125535",
+"x": "2026-11-11 10:34"
+},
+{
+"id": "10.1016_j.est.2026.125578",
+"t": "Research progress on molecular engineering of multifunctional electrolyte additives for aqueous zinc-ion batteries",
+"j": "Journal of Energy Storage",
+"f": [
+"ec-beyond"
+],
+"d": "2026-11-10",
+"doi": "10.1016/j.est.2026.125578",
+"x": "2026-11-11 10:34"
+},
+{
+"id": "10.1016_j.est.2026.125600",
+"t": "Electrochemically accessible ultrahigh-surface-area carbon derived from Pithecellobium dulce leaves for high-energy aqueous supercapacitor: Atomistic insights into defect-oxygen regulated interfacial charge storage",
+"j": "Journal of Energy Storage",
+"f": [
+"ec-sc"
+],
+"d": "2026-11-10",
+"doi": "10.1016/j.est.2026.125600",
+"x": "2026-11-11 10:34"
+},
+{
+"id": "10.1016_j.est.2026.125524",
+"t": "Influence of battery temperature on long-distance trip of an electric vehicle: Insights from driving and charging tests",
+"j": "Journal of Energy Storage",
+"f": [
+"ec-other"
+],
+"d": "2026-11-10",
+"doi": "10.1016/j.est.2026.125524",
+"x": "2026-11-11 10:34"
+},
+{
+"id": "10.1016_j.est.2026.125571",
+"t": "Phase-modulated MoS2@functionalized multi-walled carbon nanotube hybrids with distorted metallic domains for high-performance supercapacitors",
+"j": "Journal of Energy Storage",
+"f": [
+"ec-sc"
+],
+"d": "2026-11-10",
+"doi": "10.1016/j.est.2026.125571",
+"x": "2026-11-11 10:34"
+},
+{
+"id": "10.1016_j.est.2026.125605",
+"t": "A physics-informed neural network approach for lithium-ion battery state-of-health estimation based on electrochemical impedance spectroscopy",
+"j": "Journal of Energy Storage",
+"f": [
+"ec-li"
+],
+"d": "2026-11-10",
+"doi": "10.1016/j.est.2026.125605",
+"x": "2026-11-11 10:34"
+},
+{
+"id": "10.1016_j.ijhydene.2026.158592",
+"t": "High-Fidelity Dynamic Calibration of H2/O2 Dead-End PEMFC Model and Its Application in Flooding Purge Strategy Optimization",
+"j": "International Journal of Hydrogen Energy",
+"f": [
+"ec-fc"
+],
+"d": "2026-11-10",
+"doi": "10.1016/j.ijhydene.2026.158592",
+"x": "2026-11-11 10:34"
+},
+{
+"id": "10.1016_j.ijhydene.2026.158609",
+"t": "First-Principles Investigation of the Structural, Electronic and Optical Properties of TiF2 and Janus TiFBr Monolayers as Candidate Photocatalysts for Water Splitting",
+"j": "International Journal of Hydrogen Energy",
+"f": [
+"ec-water"
+],
+"d": "2026-11-10",
+"doi": "10.1016/j.ijhydene.2026.158609",
+"x": "2026-11-11 10:34"
+},
+{
+"id": "10.1016_j.ijhydene.2026.158576",
+"t": "Recent Advances in Pt-Based Electrocatalysts for Hydrogen Evolution Reaction: Mechanistic Insights, Engineering Strategies, and Future Perspectives",
+"j": "International Journal of Hydrogen Energy",
+"f": [
+"ec-water"
+],
+"d": "2026-11-10",
+"doi": "10.1016/j.ijhydene.2026.158576",
+"x": "2026-11-11 10:34"
+},
+{
+"id": "10.1002_adfm.79178",
+"t": "Advancing CO 2 Electroreduction Toward Multicarbon Products via Catalyst Engineering and Integrated Paired Electrolysis",
+"j": "Advanced Functional Materials",
+"f": [
+"ec-synth"
+],
+"d": "2026-11-10",
+"doi": "10.1002/adfm.79178",
+"x": "2026-11-11 10:34",
+"hb": 1
+},
+{
+"id": "10.1021_acscatal.6c04972",
+"t": "Beneficial Reduction of Surface Compositional Complexity in High-Entropy Oxide Oxygen Evolution Reaction Catalysts into a Ternary Phase",
+"j": "ACS Catalysis",
+"f": [
+"ec-water"
+],
+"d": "2026-11-10",
+"doi": "10.1021/acscatal.6c04972",
+"x": "2026-11-11 10:34",
+"hb": 1
+},
+{
+"id": "10.1021_acsnano.6c18045",
+"t": "Data-Driven Atomic Interplay Modulation Enables Dual-Functional High-Entropy Alloy Mediator for Li–S Batteries",
+"j": "ACS Nano",
+"f": [
+"ec-lis"
+],
+"d": "2026-11-10",
+"doi": "10.1021/acsnano.6c18045",
+"x": "2026-11-11 10:34",
+"hb": 1
+},
 {
 "id": "10.1016_j.memsci.2026.126391",
 "t": "Dual-Functional Phosphorylated Cellulose Nanofibril Membranes for Proton-Conductive Microbial Fuel Cells",

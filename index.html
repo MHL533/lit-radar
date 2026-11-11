@@ -988,8 +988,9 @@ function zhFallback(en){
 }
 function authorLine(p, n){
   const au = p.authors || []; if (!au.length) return null;
-  const more = Math.max((p.author_count || au.length) - n, 0);
-  return el("p", "au", au.slice(0, n).join(", ") + (more ? " 等 " + (p.author_count || au.length) + " 人" : ""));
+  const total = p.author_count || au.length;
+  if (total > au.length) return el("p", "au", au.slice(0, -1).join(", ") + " … " + au[au.length - 1] + "（共 " + total + " 人）");  // database rows keep the first three and the last author
+  return el("p", "au", au.slice(0, n).join(", ") + (total > n ? " 等 " + total + " 人" : ""));
 }
 
 /* ---------- keywords, export ---------- */

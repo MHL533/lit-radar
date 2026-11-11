@@ -53,6 +53,28 @@ def call(url, key, method="POST", body=None, headers=None, tries=5):
     raise RuntimeError("Supabase request failed: " + url)
 
 
+def short_authors(au):
+    """First three authors plus the last one (often the corresponding author) keep the rows small."""
+    return au if len(au) <= 4 else au[:3] + au[-1:]
+
+
+def refresh_counts(url, key, shards):
+    """Per-group monthly counts, computed here and written to paper_month_counts (cheap for the database)."""
+    counts, seen = {}, set()
+    for path in shards:
+        g, m = path.split(os.sep)[-2], os.path.basename(path)[:7]
+        ps = lib.read_shard(path)
+        counts[(g, m)] = len(ps)
+        for p in ps:
+            if p["id"] not in seen:
+                seen.add(p["id"])
+                counts[("*", p["d"][:7])] = counts.get(("*", p["d"][:7]), 0) + 1
+    rows = [{"grp": g, "month": m, "n": n} for (g, m), n in counts.items()]
+    call(url + "/rest/v1/paper_month_counts?grp=neq.__none__", key, method="DELETE", headers={"Prefer": "return=minimal"})
+    for i in range(0, len(rows), 500):
+        call(url + "/rest/v1/paper_month_counts", key, body=rows[i:i + 500], headers={"Prefer": "return=minimal"})
+
+
 def row(p, journals, kz):
     j = journals.get(p["j"], {})
     zone = (j.get("cas_zone") or "")[:1]
@@ -61,8 +83,8 @@ def row(p, journals, kz):
         "id": p["id"], "doi": p["doi"], "title": p["t"], "title_zh": p.get("tz"), "journal": p["j"], "journal_abbr": j.get("abbr"),
         "cas_zone": int(zone) if zone.isdigit() else None, "impact_factor": j.get("if"), "published": p["d"],
         "fields": p["f"], "groups": lib.groups_of(p["f"]), "keywords": kws, "keywords_zh": [kz.get(k, "") for k in kws],
-        "authors": p.get("au", [])[:6], "author_count": p.get("an") or len(p.get("au", [])) or None,
-        "affils": p.get("a", [])[:5], "corr_affils": p.get("c", [])[:2], "first_affil": (p.get("a") or [None])[0],
+        "authors": short_authors(p.get("au", [])), "author_count": p.get("an") or len(p.get("au", [])) or None,
+        "affils": p.get("a", [])[:3], "corr_affils": p.get("c", [])[:1], "first_affil": (p.get("a") or [None])[0],
         "summary_zh": p.get("s"), "is_key": bool(p.get("k")), "has_abstract": bool(p.get("hb")),
         "added": (p["x"].replace(" ", "T") + ":00+08:00") if p.get("x") else None,
         "synced_at": dt.datetime.now(dt.timezone.utc).isoformat(),
@@ -128,7 +150,7 @@ def main():
             call(url + "/rest/v1/papers?id=in.(" + urllib.request.quote(chunk, safe=",()\"") + ")", key, method="DELETE")
         print("deleted stale rows:", len(gone))
     if sent or args.full:
-        call(url + "/rest/v1/rpc/refresh_paper_counts", key, body={})
+        refresh_counts(url, key, shards)
     json.dump(state, open(STATE, "w", encoding="utf-8"), indent=0, sort_keys=True)
     print(f"synced {len(sent)} papers")
 

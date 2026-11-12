@@ -1,6 +1,162 @@
 {
-"updated": "2026-11-13 02:06",
+"updated": "2026-11-13 05:10",
 "papers": [
+{
+"id": "10.1021_acsenergylett.6c02917",
+"t": "Cu-Doped Highly Porous SnO2 for Long-Lasting Acidic CO2 Electroreduction at 1000 mA cm–2",
+"j": "ACS Energy Letters",
+"f": [
+"ec-co2"
+],
+"d": "2026-11-12",
+"doi": "10.1021/acsenergylett.6c02917",
+"x": "2026-11-13 05:05",
+"hb": 1
+},
+{
+"id": "10.1021_acsenergylett.6c02703",
+"t": "Regulation of Anionic Redox Reaction Voltage by Energy Band Modulation for Li-Rich Cathodes",
+"j": "ACS Energy Letters",
+"f": [
+"ec-li"
+],
+"d": "2026-11-12",
+"doi": "10.1021/acsenergylett.6c02703",
+"x": "2026-11-13 05:05",
+"hb": 1
+},
+{
+"id": "10.1021_jacs.6c18729",
+"t": "Interfacial Confinement Enables Conformal IrOx Nanofilms for Low-Ir-Loading PEM Water Electrolysis",
+"j": "Journal of the American Chemical Society",
+"f": [
+"ec-water"
+],
+"d": "2026-11-12",
+"doi": "10.1021/jacs.6c18729",
+"x": "2026-11-13 05:05",
+"hb": 1
+},
+{
+"id": "10.1021_jacs.6c17602",
+"t": "A Crystalline LaCl3 Reinforced Amorphous Oxyhalide Electrolyte for Thermally Stable All-Solid-State Batteries",
+"j": "Journal of the American Chemical Society",
+"f": [
+"ec-ss"
+],
+"d": "2026-11-12",
+"doi": "10.1021/jacs.6c17602",
+"x": "2026-11-13 05:05",
+"hb": 1
+},
+{
+"id": "10.1021_jacs.6c15743",
+"t": "General Synthesis of Functionalized 1,3-Diamines from Azoarenes and Enoates via Electrochemical Annulation and N–N Bond Cleavage Followed by Chemical Reduction",
+"j": "Journal of the American Chemical Society",
+"f": [
+"ec-other"
+],
+"d": "2026-11-12",
+"doi": "10.1021/jacs.6c15743",
+"x": "2026-11-13 05:05",
+"hb": 1
+},
+{
+"id": "10.1021_jacs.6c17549",
+"t": "Solvent/Anion Codepleted Solvation Engineering Enables Low-Coordination Electrolytes for High-Energy and Low-Temperature Sodium-Ion Pouch Cells",
+"j": "Journal of the American Chemical Society",
+"f": [
+"ec-other"
+],
+"d": "2026-11-12",
+"doi": "10.1021/jacs.6c17549",
+"x": "2026-11-13 05:05",
+"hb": 1
+},
+{
+"id": "10.1021_jacs.6c18741",
+"t": "Breaking the “Micro-Size Inversion” Paradox via a Surface-Chemistry-Driven Molecular Sieving Membrane for Ambient Lithium–Air Batteries",
+"j": "Journal of the American Chemical Society",
+"f": [
+"ec-other"
+],
+"d": "2026-11-12",
+"doi": "10.1021/jacs.6c18741",
+"x": "2026-11-13 05:05",
+"hb": 1
+},
+{
+"id": "10.1021_acscatal.6c07019",
+"t": "Brønsted Acid Site-Mediated Proton Injection and Redistribution Regulate Phosphoric Acid Electrochemical Interfaces",
+"j": "ACS Catalysis",
+"f": [
+"ec-other"
+],
+"d": "2026-11-12",
+"doi": "10.1021/acscatal.6c07019",
+"x": "2026-11-13 05:05",
+"hb": 1
+},
+{
+"id": "10.1021_acscatal.6c07220",
+"t": "Vacancy-Directed Phytate Coordination Couples Ni-Site Polarization with Interfacial Hydration for Durable Photoelectrochemical Seawater Oxidation",
+"j": "ACS Catalysis",
+"f": [
+"ec-water"
+],
+"d": "2026-11-12",
+"doi": "10.1021/acscatal.6c07220",
+"x": "2026-11-13 05:05",
+"hb": 1
+},
+{
+"id": "10.1039_d6ta07537a",
+"t": "Photocatalytic Hydrogen Evolution with Single-Atom Cocatalyst-Loaded Graphitic Carbon Nitride: Understanding Electronic-Metal-Support Interaction-Mediated Charge-Transfer Dynamics",
+"j": "Journal of Materials Chemistry A",
+"f": [
+"ec-water"
+],
+"d": "2026-11-12",
+"doi": "10.1039/d6ta07537a",
+"x": "2026-11-13 05:05",
+"hb": 1
+},
+{
+"id": "10.1109_tia.2026.3753219",
+"t": "Performance Assessment of Supercapacitor, Battery, and Hybrid Energy Storage Systems for Fuel Cell Electric Vehicles",
+"j": "IEEE Transactions on Industry Applications",
+"f": [
+"ec-sc",
+"ec-fc"
+],
+"d": "2026-11-12",
+"doi": "10.1109/tia.2026.3753219",
+"x": "2026-11-13 05:05"
+},
+{
+"id": "10.1073_pnas.2616212123",
+"t": "Diffusional depth profiling using electrochemiluminescence microscopy",
+"j": "Proceedings of the National Academy of Sciences",
+"f": [
+"ec-sensor"
+],
+"d": "2026-11-12",
+"doi": "10.1073/pnas.2616212123",
+"x": "2026-11-13 05:05",
+"hb": 1
+},
+{
+"id": "10.1021_acs.langmuir.6c03980",
+"t": "Enzyme-Induced Photocurrent Polarity Reversal in a Zr-MOF/COF Photoelectrochemical Immunosensor for Ultrasensitive Detection of Cancer Markers",
+"j": "Langmuir",
+"f": [
+"ec-sensor"
+],
+"d": "2026-11-12",
+"doi": "10.1021/acs.langmuir.6c03980",
+"x": "2026-11-13 05:05",
+"hb": 1
+},
 {
 "id": "10.1016_j.memsci.2026.126396",
 "t": "Hydration energy-regulated Mg2+/Li+ separation via interfacial polymerized nanofiltration membrane with uniform sub-nanometer pores",

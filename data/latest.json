@@ -1,6 +1,146 @@
 {
-"updated": "2026-11-12 11:43",
+"updated": "2026-11-12 17:00",
 "papers": [
+{
+"id": "10.1021_acs.est.6c10833",
+"t": "Aldehyde-philic Portal Engineering of γ-Cyclodextrin MOF for Synergistic Capture of Toluene and Formaldehyde in Humid Atmospheric Environments",
+"j": "Environmental Science & Technology",
+"f": [
+"mof"
+],
+"d": "2026-11-12",
+"doi": "10.1021/acs.est.6c10833",
+"x": "2026-11-12 16:49",
+"hb": 1
+},
+{
+"id": "10.1039_d6ee05977e",
+"t": "Anion-Dipole Tailoring and Directional Dipole Coordination Enable Ultrahigh-Energy-Density Lithium-Ion Batteries",
+"j": "Energy &amp; Environmental Science",
+"f": [
+"ec-li"
+],
+"d": "2026-11-12",
+"doi": "10.1039/d6ee05977e",
+"x": "2026-11-12 16:49",
+"hb": 1
+},
+{
+"id": "10.1016_j.est.2026.125641",
+"t": "Spherical SiOx@C/LiPAA composites with a gradient pore architecture for stable and high-rate lithium-ion battery anodes",
+"j": "Journal of Energy Storage",
+"f": [
+"ec-li"
+],
+"d": "2026-11-12",
+"doi": "10.1016/j.est.2026.125641",
+"x": "2026-11-12 16:49"
+},
+{
+"id": "10.1021_acsami.6c12778",
+"t": "Quantitative Solvation Scale for Lithium Battery Electrolytes",
+"j": "ACS Applied Materials &amp; Interfaces",
+"f": [
+"ec-li"
+],
+"d": "2026-11-12",
+"doi": "10.1021/acsami.6c12778",
+"x": "2026-11-12 16:49",
+"hb": 1
+},
+{
+"id": "10.1021_acsami.6c13020",
+"t": "Fe-Regulated Sulfidation of Ni-MOF to Construct an Fe-Ni(OH)2/Ni3S2 Heterojunction for Efficient Hydrogen Evolution in Both Acidic and Alkaline Media",
+"j": "ACS Applied Materials &amp; Interfaces",
+"f": [
+"ec-water"
+],
+"d": "2026-11-12",
+"doi": "10.1021/acsami.6c13020",
+"x": "2026-11-12 16:49",
+"hb": 1
+},
+{
+"id": "10.1039_d6ta08095b",
+"t": "Thiourea-Based Porous Organic Polymer/Carbon Nanotubes Interlayer for the Entrapment of Lithium Polysulfides in Lithium-Sulfur Batteries",
+"j": "Journal of Materials Chemistry A",
+"f": [
+"ec-lis"
+],
+"d": "2026-11-12",
+"doi": "10.1039/d6ta08095b",
+"x": "2026-11-12 16:49",
+"hb": 1
+},
+{
+"id": "10.1039_d6ta04480h",
+"t": "Modulation of organosulfur sources hydrothermally captures MoS 2 polytypes with tailored electrochemical activity",
+"j": "Journal of Materials Chemistry A",
+"f": [
+"ec-other"
+],
+"d": "2026-11-12",
+"doi": "10.1039/d6ta04480h",
+"x": "2026-11-12 16:49",
+"hb": 1
+},
+{
+"id": "10.1039_d6ta07281j",
+"t": "Stacking‑modulated electronic properties of type‑II arsenene/Janus Nb3TeCl7 van der Waals heterostructures for photocatalytic overall water splitting",
+"j": "Journal of Materials Chemistry A",
+"f": [
+"ec-water"
+],
+"d": "2026-11-12",
+"doi": "10.1039/d6ta07281j",
+"x": "2026-11-12 16:49",
+"hb": 1
+},
+{
+"id": "10.1007_s00604-026-08546-x",
+"t": "Visible-light-driven non-enzymatic photoelectrochemical glucose sensing using an Ag₂S/PANi-Nafion/ITO hybrid electrode for analysis of sports nutrition samples",
+"j": "Microchimica Acta",
+"f": [
+"ec-sensor"
+],
+"d": "2026-11-12",
+"doi": "10.1007/s00604-026-08546-x",
+"x": "2026-11-12 16:49"
+},
+{
+"id": "10.1021_acs.jcim.6c02127",
+"t": "Molecular Determinants of Contaminant Association with PET Nanoplastics Revealed by Atomistic Simulations",
+"j": "Journal of Chemical Information and Modeling",
+"f": [
+"mp"
+],
+"d": "2026-11-12",
+"doi": "10.1021/acs.jcim.6c02127",
+"x": "2026-11-12 16:49",
+"hb": 1
+},
+{
+"id": "10.1002_adma.75528",
+"t": "Dynamic Electrophoretic Assembly Coupled With Water‐Splitting‐Induced pH Control Enables Precision Ion Sieving Membranes (Adv. Mater. 63/2026)",
+"j": "Advanced Materials",
+"f": [
+"osmotic-energy"
+],
+"d": "2026-11-11",
+"doi": "10.1002/adma.75528",
+"x": "2026-11-12 16:49"
+},
+{
+"id": "10.1002_adma.75529",
+"t": "Negative‐Thermal‐Expansion Strategy Enables Hard Carbon With Tuned Heat/Strain Tolerances for Sodium Storage (Adv. Mater. 63/2026)",
+"j": "Advanced Materials",
+"f": [
+"ec-beyond"
+],
+"d": "2026-11-11",
+"doi": "10.1002/adma.75529",
+"x": "2026-11-12 16:49"
+},
 {
 "id": "10.1016_j.memsci.2026.126400",
 "t": "Cr3+-Crosslinked PEEK@MXene Membranes with Locked Sub-Nanometer Channels for Ultra-Stable Organic Solvent Nanofiltration",

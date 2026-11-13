@@ -1,6 +1,156 @@
 {
-"updated": "2026-11-14 01:44",
+"updated": "2026-11-14 04:43",
 "papers": [
+{
+"id": "10.1016_j.cej.2026.184186",
+"t": "Hybrid membrane nanoparticles hijack T cell homing to allografts for targeted immunosuppression",
+"j": "Chemical Engineering Journal",
+"f": [
+"mem-process"
+],
+"d": "2026-11-13",
+"doi": "10.1016/j.cej.2026.184186",
+"x": "2026-11-14 04:39"
+},
+{
+"id": "10.1016_j.cej.2026.184227",
+"t": "Upcycling traditional Chinese medicine residue into magnetically separable FeMn biochar for ultrafast peroxymonosulfate activation and ciprofloxacin detoxification",
+"j": "Chemical Engineering Journal",
+"f": [
+"aop-water"
+],
+"d": "2026-11-13",
+"doi": "10.1016/j.cej.2026.184227",
+"x": "2026-11-14 04:39"
+},
+{
+"id": "10.1016_j.cej.2026.184231",
+"t": "Decoding biochar-enabled AnMBR adaptability to sulfadiazine shock via microbiome modulation and DIET promotion",
+"j": "Chemical Engineering Journal",
+"f": [
+"mbr"
+],
+"d": "2026-11-13",
+"doi": "10.1016/j.cej.2026.184231",
+"x": "2026-11-14 04:39"
+},
+{
+"id": "10.1021_acs.est.6c10774",
+"t": "Decoupling Ion Selectivity and Transport via Dual-Scale Interlayer Nanochannels in Reduced Graphene Oxide Membranes for Lithium Separation",
+"j": "Environmental Science & Technology",
+"f": [
+"2d-mem"
+],
+"d": "2026-11-13",
+"doi": "10.1021/acs.est.6c10774",
+"x": "2026-11-14 04:39",
+"hb": 1
+},
+{
+"id": "10.1016_j.jece.2026.125938",
+"t": "Deciphering Hydrothermal Temperature-Induced Morphological Evolution of Sea-Urchin NiCoS Microflowers with Enhanced Electrocatalytic Activity for Ultrasensitive Metol Detection in Environmental Waters",
+"j": "Journal of Environmental Chemical Engineering",
+"f": [
+"ec-other"
+],
+"d": "2026-11-13",
+"doi": "10.1016/j.jece.2026.125938",
+"x": "2026-11-14 04:39"
+},
+{
+"id": "10.1016_j.nanoen.2026.112620",
+"t": "Synergistic Electronic Push–Pull Modulation Enables Reversible Mn/O Redox in P2-Type Cathodes",
+"j": "Nano Energy",
+"f": [
+"ec-other"
+],
+"d": "2026-11-13",
+"doi": "10.1016/j.nanoen.2026.112620",
+"x": "2026-11-14 04:39"
+},
+{
+"id": "10.1016_j.jechem.2026.10.074",
+"t": "An efficient hetero-structured misfit layer composite electrode enabling flexible and tunable CO2 to CO/CH4 conversion",
+"j": "Journal of Energy Chemistry",
+"f": [
+"ec-co2"
+],
+"d": "2026-11-13",
+"doi": "10.1016/j.jechem.2026.10.074",
+"x": "2026-11-14 04:39"
+},
+{
+"id": "10.1021_acsami.6c17789",
+"t": "Oscillatory Chemical Networks in Silicon Nanofluidic Chips for Ultra-low-power Computing",
+"j": "ACS Applied Materials &amp; Interfaces",
+"f": [
+"osmotic-energy"
+],
+"d": "2026-11-13",
+"doi": "10.1021/acsami.6c17789",
+"x": "2026-11-14 04:39",
+"hb": 1
+},
+{
+"id": "10.1002_adfm.79644",
+"t": "Ether‐Oxygen‐Functionalized Ionic Liquid Electrolytes Enabling Intrinsically Safe 535 Wh Kg −1 Lithium Metal Batteries",
+"j": "Advanced Functional Materials",
+"f": [
+"ec-li"
+],
+"d": "2026-11-13",
+"doi": "10.1002/adfm.79644",
+"x": "2026-11-14 04:39",
+"hb": 1
+},
+{
+"id": "10.1002_adfm.79608",
+"t": "Prussian Blue Analogue Cathode Materials for Sodium‐Ion Batteries: A Comprehensive Review",
+"j": "Advanced Functional Materials",
+"f": [
+"ec-beyond"
+],
+"d": "2026-11-13",
+"doi": "10.1002/adfm.79608",
+"x": "2026-11-14 04:39",
+"hb": 1
+},
+{
+"id": "10.1021_jacs.6c17896",
+"t": "Site-Selective and Deuterium-Programmable Electrochemical Synthesis of Deuterated Pharmaceuticals",
+"j": "Journal of the American Chemical Society",
+"f": [
+"ec-synth"
+],
+"d": "2026-11-13",
+"doi": "10.1021/jacs.6c17896",
+"x": "2026-11-14 04:39",
+"hb": 1
+},
+{
+"id": "10.1016_j.fuel.2026.142144",
+"t": "Dynamic carbon corrosion and mitigation in commercial-size fuel cells under localized anode flooding",
+"j": "Fuel",
+"f": [
+"ec-fc",
+"ec-corr",
+"flood"
+],
+"d": "2026-11-13",
+"doi": "10.1016/j.fuel.2026.142144",
+"x": "2026-11-14 04:39"
+},
+{
+"id": "10.1016_j.eng.2026.09.016",
+"t": "A Fish Gill-Inspired Self-Breathing Dissolved Oxygen Seawater Battery with Ultrahigh Power Density",
+"j": "Engineering",
+"f": [
+"ec-other"
+],
+"d": "2026-11-13",
+"doi": "10.1016/j.eng.2026.09.016",
+"x": "2026-11-14 04:39"
+},
 {
 "id": "10.1016_j.desal.2026.121052",
 "t": "A tutorial review: From Stefan–Maxwell through Kedem–Katchalsky to modern membrane transport theory",

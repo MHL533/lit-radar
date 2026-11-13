@@ -1,6 +1,189 @@
 {
-"updated": "2026-11-13 11:17",
+"updated": "2026-11-13 16:51",
 "papers": [
+{
+"id": "10.1016_j.memsci.2026.126399",
+"t": "Zirconium Alginate-Modified Graphene Oxide Membranes for High-Efficiency Antibiotic Desalination",
+"j": "Journal of Membrane Science",
+"f": [
+"2d-mem"
+],
+"d": "2026-11-13",
+"doi": "10.1016/j.memsci.2026.126399",
+"x": "2026-11-13 16:44"
+},
+{
+"id": "10.1016_j.watres.2026.127315",
+"t": "Dynamic interfacial charge buffering in single-atom nano-islands: breaking the activity-stability trade-off in catalytic ozonation",
+"j": "Water Research",
+"f": [
+"sac"
+],
+"d": "2026-11-13",
+"doi": "10.1016/j.watres.2026.127315",
+"x": "2026-11-13 16:44"
+},
+{
+"id": "10.1016_j.jeurceramsoc.2026.119049",
+"t": "Highly dense co-sintered Ce0.9Gd0.1O1.95 diffusion barrier layer on zirconia-based electrolytes via multi-casting",
+"j": "Journal of the European Ceramic Society",
+"f": [
+"ec-other"
+],
+"d": "2026-11-13",
+"doi": "10.1016/j.jeurceramsoc.2026.119049",
+"x": "2026-11-13 16:44"
+},
+{
+"id": "10.1016_j.ceramint.2026.11.151",
+"t": "The Effect of Glass Structure and High-Temperature Sintering Wetting on the Acid Resistance of Thick-Film Silver Electrodes",
+"j": "Ceramics International",
+"f": [
+"ec-other"
+],
+"d": "2026-11-13",
+"doi": "10.1016/j.ceramint.2026.11.151",
+"x": "2026-11-13 16:44"
+},
+{
+"id": "10.1016_j.electacta.2026.150418",
+"t": "Thermodynamic–Kinetic Matching of N-Site-Regulated Aromatic Acids Enables 5000 h-Class Cycling of Zinc Metal Anodes at Subzero Temperatures",
+"j": "Electrochimica Acta",
+"f": [
+"ec-beyond"
+],
+"d": "2026-11-13",
+"doi": "10.1016/j.electacta.2026.150418",
+"x": "2026-11-13 16:44"
+},
+{
+"id": "10.1016_j.electacta.2026.150424",
+"t": "Inhomogeneity Classification in Catalyst Layers of PEM Fuel Cells by Transfer Learning",
+"j": "Electrochimica Acta",
+"f": [
+"ec-fc"
+],
+"d": "2026-11-13",
+"doi": "10.1016/j.electacta.2026.150424",
+"x": "2026-11-13 16:44"
+},
+{
+"id": "10.1021_acsenergylett.6c02782",
+"t": "Transition from Dehydration to Rehydration of Chloride Salts near the Melting Point: Thermodynamic Origin and Implications for High-Temperature Corrosion",
+"j": "ACS Energy Letters",
+"f": [
+"ec-corr"
+],
+"d": "2026-11-13",
+"doi": "10.1021/acsenergylett.6c02782",
+"x": "2026-11-13 16:44",
+"hb": 1
+},
+{
+"id": "10.1021_acsami.6c18239",
+"t": "Electronic Modulation Engineering of Pt-Modified TiO2 Nanotube-Confined Co Catalyst for Efficient Low-Temperature Catalytic Oxidation of CH3SH",
+"j": "ACS Applied Materials &amp; Interfaces",
+"f": [
+"heo"
+],
+"d": "2026-11-13",
+"doi": "10.1021/acsami.6c18239",
+"x": "2026-11-13 16:44",
+"hb": 1
+},
+{
+"id": "10.1021_jacs.6c15115",
+"t": "Artificial Intelligence-Assisted Ion-Association Design Decouples Linearity and Dynamic Range in Organic Electrochemical Synapses",
+"j": "Journal of the American Chemical Society",
+"f": [
+"ec-other"
+],
+"d": "2026-11-13",
+"doi": "10.1021/jacs.6c15115",
+"x": "2026-11-13 16:44",
+"hb": 1
+},
+{
+"id": "10.1021_jacs.6c18715",
+"t": "Spin Exchange Enables Two-Electron TEMPO Catholytes for Aqueous Organic Flow Batteries",
+"j": "Journal of the American Chemical Society",
+"f": [
+"ec-beyond"
+],
+"d": "2026-11-13",
+"doi": "10.1021/jacs.6c18715",
+"x": "2026-11-13 16:44",
+"hb": 1
+},
+{
+"id": "10.1016_j.snb.2026.141240",
+"t": "+Cytochrome P450 2C9 Baculosome-Functionalized Carbon Screen-Printed Electrodes for Enzymatic Electrochemical Detection of Diclofenac",
+"j": "Sensors and Actuators B: Chemical",
+"f": [
+"ec-sensor"
+],
+"d": "2026-11-13",
+"doi": "10.1016/j.snb.2026.141240",
+"x": "2026-11-13 16:44"
+},
+{
+"id": "10.1016_j.aca.2026.346545",
+"t": "Aggregation-induced electrochemiluminescence of polymer dots enables ultrasensitive analysis of β-Lactoglobulin",
+"j": "Analytica Chimica Acta",
+"f": [
+"ec-sensor"
+],
+"d": "2026-11-13",
+"doi": "10.1016/j.aca.2026.346545",
+"x": "2026-11-13 16:44"
+},
+{
+"id": "10.1021_acs.nanolett.6c04631",
+"t": "Regulating the Spin-State and Frontier Orbital of a Molecular FePc Catalyst by Interlayer Electronic Coupling for Enhanced ORR Activity",
+"j": "Nano Letters",
+"f": [
+"ec-fc"
+],
+"d": "2026-11-13",
+"doi": "10.1021/acs.nanolett.6c04631",
+"x": "2026-11-13 16:44",
+"hb": 1
+},
+{
+"id": "10.3389_fnut.2026.1935750",
+"t": "From sludge to supper: biosolids as a potential source of microplastics in the food chain",
+"j": "Frontiers in Nutrition",
+"f": [
+"mp"
+],
+"d": "2026-11-13",
+"doi": "10.3389/fnut.2026.1935750",
+"x": "2026-11-13 16:44",
+"hb": 1
+},
+{
+"id": "10.1016_j.scp.2026.102615",
+"t": "Green electrosynthesis of M–Salen complexes: A sustainable alternative to salt-based routes enabled by experimental design and energy minimization",
+"j": "Sustainable Chemistry and Pharmacy",
+"f": [
+"ec-synth"
+],
+"d": "2026-11-13",
+"doi": "10.1016/j.scp.2026.102615",
+"x": "2026-11-13 16:44"
+},
+{
+"id": "10.1002_adsc.70872",
+"t": "Interfacial Engineering of Advanced Electrocatalysts for Efficient Hydrogen Production via Hydrazine‐Assisted Water Electrolysis",
+"j": "Advanced Synthesis &amp; Catalysis",
+"f": [
+"ec-water"
+],
+"d": "2026-11-12",
+"doi": "10.1002/adsc.70872",
+"x": "2026-11-13 16:44",
+"hb": 1
+},
 {
 "id": "10.1016_j.seppur.2026.140881",
 "t": "Thermally stable and chemically robust CNT/PEKK Nanofibrous membranes for oil/water separation, emulsion purification, and direct high-temperature oil clarification",

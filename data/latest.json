@@ -1,6 +1,330 @@
 {
-"updated": "2026-11-13 05:10",
+"updated": "2026-11-13 11:17",
 "papers": [
+{
+"id": "10.1016_j.seppur.2026.140881",
+"t": "Thermally stable and chemically robust CNT/PEKK Nanofibrous membranes for oil/water separation, emulsion purification, and direct high-temperature oil clarification",
+"j": "Separation and Purification Technology",
+"f": [
+"oil-water",
+"uf-mf"
+],
+"d": "2026-11-13",
+"doi": "10.1016/j.seppur.2026.140881",
+"x": "2026-11-13 11:11"
+},
+{
+"id": "10.1016_j.seppur.2026.140935",
+"t": "MOF-derived NiO porous networks as ideal interlayers enable efficient dye/salt separation on polyamide thin-film composite membranes",
+"j": "Separation and Purification Technology",
+"f": [
+"2d-mem"
+],
+"d": "2026-11-13",
+"doi": "10.1016/j.seppur.2026.140935",
+"x": "2026-11-13 11:11"
+},
+{
+"id": "10.1016_j.watres.2026.127332",
+"t": "Integrating Ti-engineered LiMn2O4 self-supported electrodes with flow-enabled ion transport for highly selective lithium recovery from brines",
+"j": "Water Research",
+"f": [
+"ec-other"
+],
+"d": "2026-11-13",
+"doi": "10.1016/j.watres.2026.127332",
+"x": "2026-11-13 11:11"
+},
+{
+"id": "10.1016_j.watres.2026.127338",
+"t": "Anodic Boundary-Layer Pumping Enables Membraneless Organophosphonate Conversion and Phosphorus Recovery in Recirculating Cooling Water",
+"j": "Water Research",
+"f": [
+"mem-other"
+],
+"d": "2026-11-13",
+"doi": "10.1016/j.watres.2026.127338",
+"x": "2026-11-13 11:11"
+},
+{
+"id": "10.1016_j.cej.2026.184132",
+"t": "Multimodal electronic-state basis for divergent kinetics in structurally comparable LiNixMn2-xO4 cathodes",
+"j": "Chemical Engineering Journal",
+"f": [
+"ec-li"
+],
+"d": "2026-11-13",
+"doi": "10.1016/j.cej.2026.184132",
+"x": "2026-11-13 11:11"
+},
+{
+"id": "10.1016_j.cej.2026.184183",
+"t": "Electrodeposition-engineered Pt/Ni-foam architecture for production of pressurized, high-purity hydrogen from direct electrolysis of liquid anhydrous ammonia",
+"j": "Chemical Engineering Journal",
+"f": [
+"ec-corr"
+],
+"d": "2026-11-13",
+"doi": "10.1016/j.cej.2026.184183",
+"x": "2026-11-13 11:11"
+},
+{
+"id": "10.1016_j.cej.2026.184123",
+"t": "Promoting lattice-oxygen pathway with concurrent adsorbate evolution in amorphous/crystalline Fe–B–O@NiFe LDH for enhanced alkaline OER",
+"j": "Chemical Engineering Journal",
+"f": [
+"ec-water"
+],
+"d": "2026-11-13",
+"doi": "10.1016/j.cej.2026.184123",
+"x": "2026-11-13 11:11"
+},
+{
+"id": "10.1016_j.cej.2026.184161",
+"t": "Simultaneous production of H2O2 and FDCA over ternary metal oxide bifunctional electrocatalyst",
+"j": "Chemical Engineering Journal",
+"f": [
+"ec-water"
+],
+"d": "2026-11-13",
+"doi": "10.1016/j.cej.2026.184161",
+"x": "2026-11-13 11:11"
+},
+{
+"id": "10.1016_j.cej.2026.184212",
+"t": "Atomic layer deposited SnxFe2-xO3 photoelectrodes: Box-Behnken design guided optimization for enhanced photoelectrocatalytic removal of sulfamethoxazole",
+"j": "Chemical Engineering Journal",
+"f": [
+"ec-env"
+],
+"d": "2026-11-13",
+"doi": "10.1016/j.cej.2026.184212",
+"x": "2026-11-13 11:11"
+},
+{
+"id": "10.1016_j.cej.2026.184197",
+"t": "Hot-extrusion-induced microstructural reconstruction enables balanced corrosion resistance and discharge activity in Mg-0.2Ca-0.6Sn-0.6Sm anodes for Mg-air batteries",
+"j": "Chemical Engineering Journal",
+"f": [
+"ec-corr"
+],
+"d": "2026-11-13",
+"doi": "10.1016/j.cej.2026.184197",
+"x": "2026-11-13 11:11"
+},
+{
+"id": "10.1016_j.cej.2026.184196",
+"t": "Synergistic anion competition enables a robust interface in fluorine-free LiNO3-based electrolytes for durable Li metal batteries",
+"j": "Chemical Engineering Journal",
+"f": [
+"ec-li"
+],
+"d": "2026-11-13",
+"doi": "10.1016/j.cej.2026.184196",
+"x": "2026-11-13 11:11"
+},
+{
+"id": "10.1016_j.apcatb.2026.127789",
+"t": "W2C-Mediated Electronic Modulation of BiCu Nano-islands for Stable, High-Rate CO2 Electroreduction to Formate",
+"j": "Applied Catalysis B: Environment and Energy",
+"f": [
+"ec-co2"
+],
+"d": "2026-11-13",
+"doi": "10.1016/j.apcatb.2026.127789",
+"x": "2026-11-13 11:11"
+},
+{
+"id": "10.1016_j.envpol.2026.129492",
+"t": "Decoupled drivers and spatial patterns of metal and microplastic pollution along the River Severn, Britain’s longest river",
+"j": "Environmental Pollution",
+"f": [
+"mp"
+],
+"d": "2026-11-13",
+"doi": "10.1016/j.envpol.2026.129492",
+"x": "2026-11-13 11:11"
+},
+{
+"id": "10.1016_j.envint.2026.110597",
+"t": "Integrated computational multi-omics and in vitro validation identify candidate targets linking PET microplastics to Alzheimer’s neuroinflammation",
+"j": "Environment International",
+"f": [
+"mp"
+],
+"d": "2026-11-13",
+"doi": "10.1016/j.envint.2026.110597",
+"x": "2026-11-13 11:11"
+},
+{
+"id": "10.1016_j.marpolbul.2026.120566",
+"t": "Depth-resolved microplastic distribution and environmental associations in the epipelagic-to-bathypelagic waters off southeastern Hainan Island, South China Sea",
+"j": "Marine Pollution Bulletin",
+"f": [
+"mp"
+],
+"d": "2026-11-13",
+"doi": "10.1016/j.marpolbul.2026.120566",
+"x": "2026-11-13 11:11"
+},
+{
+"id": "10.1016_j.ceramint.2026.11.156",
+"t": "High-entropy engineering for enhanced capacitive energy storage under moderate electric field in CaTiO3-Bi0.5Na0.5TiO3-NaNbO3 ceramics",
+"j": "Ceramics International",
+"f": [
+"ec-sc"
+],
+"d": "2026-11-13",
+"doi": "10.1016/j.ceramint.2026.11.156",
+"x": "2026-11-13 11:11"
+},
+{
+"id": "10.1016_j.electacta.2026.150423",
+"t": "Enhancing the Reaction Kinetics and Interfacial Stability of Sn–Based Anodes through Cu–Sn Alloying and MOF–Derived Confinement",
+"j": "Electrochimica Acta",
+"f": [
+"ec-other"
+],
+"d": "2026-11-13",
+"doi": "10.1016/j.electacta.2026.150423",
+"x": "2026-11-13 11:11"
+},
+{
+"id": "10.1016_j.nanoen.2026.112607",
+"t": "pH Buffering Strategy for Carboxylate Ligand in Aqueous All-Iron Redox Flow Batteries",
+"j": "Nano Energy",
+"f": [
+"ec-beyond"
+],
+"d": "2026-11-13",
+"doi": "10.1016/j.nanoen.2026.112607",
+"x": "2026-11-13 11:11"
+},
+{
+"id": "10.1016_j.jechem.2026.10.058",
+"t": "Hard carbon anodes for sodium-ion batteries: from sodium storage mechanisms to multi-dimensional performance optimization strategies",
+"j": "Journal of Energy Chemistry",
+"f": [
+"ec-beyond"
+],
+"d": "2026-11-13",
+"doi": "10.1016/j.jechem.2026.10.058",
+"x": "2026-11-13 11:11"
+},
+{
+"id": "10.1021_acsami.6c22070",
+"t": "Stable Magnesium Negative Electrodes Achieved via Dy Microalloying for Rechargeable Magnesium Batteries",
+"j": "ACS Applied Materials &amp; Interfaces",
+"f": [
+"ec-beyond"
+],
+"d": "2026-11-13",
+"doi": "10.1021/acsami.6c22070",
+"x": "2026-11-13 11:11",
+"hb": 1
+},
+{
+"id": "10.1038_s41467-026-79156-7",
+"t": "Anion manipulation for breaking through 3.0 V of aluminium–graphite batteries",
+"j": "Nature Communications",
+"f": [
+"ec-other"
+],
+"d": "2026-11-13",
+"doi": "10.1038/s41467-026-79156-7",
+"x": "2026-11-13 11:11"
+},
+{
+"id": "10.1016_j.envsoft.2026.107246",
+"t": "Data-Driven Pluvial Flood Modeling for Urban Regions: An Investigation of Spatial Generalizability",
+"j": "Environmental Modelling &amp; Software",
+"f": [
+"flood"
+],
+"d": "2026-11-13",
+"doi": "10.1016/j.envsoft.2026.107246",
+"x": "2026-11-13 11:11"
+},
+{
+"id": "10.1016_j.fmre.2026.11.003",
+"t": "Leaf-deposited nanoplastics reshape plant–herbivore interactions via species-specific metabolic defense elicitation and trans-trophic feedback",
+"j": "Fundamental Research",
+"f": [
+"mp"
+],
+"d": "2026-11-13",
+"doi": "10.1016/j.fmre.2026.11.003",
+"x": "2026-11-13 11:11"
+},
+{
+"id": "10.1016_j.apsusc.2026.168917",
+"t": "Engineering CoFe/CoFe2O4 heterointerfaces via temperature-controlled phase evolution for enhanced bifunctional oxygen electrocatalysis and Zn-air batteries",
+"j": "Applied Surface Science",
+"f": [
+"ec-lis"
+],
+"d": "2026-11-13",
+"doi": "10.1016/j.apsusc.2026.168917",
+"x": "2026-11-13 11:11"
+},
+{
+"id": "10.1016_j.ecoenv.2026.121053",
+"t": "Integrated phenotypic, transcriptomic and metabolomic profiling reveals the hepatic toxicity of differentially surface-modified microplastics",
+"j": "Ecotoxicology and Environmental Safety",
+"f": [
+"mp"
+],
+"d": "2026-11-12",
+"doi": "10.1016/j.ecoenv.2026.121053",
+"x": "2026-11-13 11:11"
+},
+{
+"id": "10.1021_acsenergylett.6c02622",
+"t": "Artificial Intelligence Advances the Uncovering of Solid–Liquid Interfaces in Batteries",
+"j": "ACS Energy Letters",
+"f": [
+"ec-other"
+],
+"d": "2026-11-12",
+"doi": "10.1021/acsenergylett.6c02622",
+"x": "2026-11-13 11:11",
+"hb": 1
+},
+{
+"id": "10.1021_jacs.6c15483",
+"t": "A Single Water Molecule Drives a 20-Fold Acceleration in the Gas-Phase Reaction of Iodide with Ozone",
+"j": "Journal of the American Chemical Society",
+"f": [
+"aop-water"
+],
+"d": "2026-11-12",
+"doi": "10.1021/jacs.6c15483",
+"x": "2026-11-13 11:11",
+"hb": 1
+},
+{
+"id": "10.1021_acsnano.6c11607",
+"t": "Competing Surface Dynamics of Copper Catalyst Particles during Electrochemical Carbon Dioxide Reduction",
+"j": "ACS Nano",
+"f": [
+"ec-co2"
+],
+"d": "2026-11-12",
+"doi": "10.1021/acsnano.6c11607",
+"x": "2026-11-13 11:11",
+"hb": 1
+},
+{
+"id": "10.1016_j.fuel.2026.142019",
+"t": "Engineering Pt-integrated BaMnO3/rGO nanohybrids for enhanced methanol oxidation",
+"j": "Fuel",
+"f": [
+"ec-fc"
+],
+"d": "2026-11-12",
+"doi": "10.1016/j.fuel.2026.142019",
+"x": "2026-11-13 11:11"
+},
 {
 "id": "10.1021_acsenergylett.6c02917",
 "t": "Cu-Doped Highly Porous SnO2 for Long-Lasting Acidic CO2 Electroreduction at 1000 mA cm–2",

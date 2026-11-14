@@ -1,6 +1,28 @@
 {
-"updated": "2026-11-15 02:55",
+"updated": "2026-11-15 07:25",
 "papers": [
+{
+"id": "10.1016_j.ijhydene.2026.158596",
+"t": "In-Situ Investigation of the Effects of Inlet Humidity and Reactant Stoichiometry on Thermal and Water Management in a PEMFC Under Low-Load Operation",
+"j": "International Journal of Hydrogen Energy",
+"f": [
+"ec-fc"
+],
+"d": "2026-11-14",
+"doi": "10.1016/j.ijhydene.2026.158596",
+"x": "2026-11-15 07:22"
+},
+{
+"id": "10.1016_j.ijhydene.2026.158657",
+"t": "Spiking Neural Network Energy Management for PEM Fuel Cell Transient Mitigation in Hydrogen-Powered More-electric Aircraft",
+"j": "International Journal of Hydrogen Energy",
+"f": [
+"ec-fc"
+],
+"d": "2026-11-14",
+"doi": "10.1016/j.ijhydene.2026.158657",
+"x": "2026-11-15 07:22"
+},
 {
 "id": "10.1016_j.memsci.2026.126413",
 "t": "Overcoming Conductivity-Selectivity Trade-Offs in Proton-Blocking Anion-Exchange Membranes",

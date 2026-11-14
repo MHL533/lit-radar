@@ -165,7 +165,7 @@
 "aop/2026-08.json": "a90aa7dc15ff78ec1a4f069c4fc48c3f",
 "aop/2026-09.json": "5ea90667227196c5d9392380e9edf301",
 "aop/2026-10.json": "d82341acdb5eb272511bb83fb084f1fd",
-"aop/2026-11.json": "8e83a63a0557440a6e37ae92a6334b23",
+"aop/2026-11.json": "93eb0e3cdbcb31e75f9eaecf55b31bc8",
 "chemloop/2020-01.json": "c01cb6646fd12772dd9d6018de0ab64c",
 "chemloop/2020-02.json": "60b05bc7bd2887ba0718c0cd691a9ede",
 "chemloop/2020-03.json": "250bf41753e996bc7b4196eb9ed17b8c",
@@ -329,7 +329,7 @@
 "electrochem/2026-08.json": "6b27613da239ccd8cbe8c36ff8096e6c",
 "electrochem/2026-09.json": "903f2b30fe958189cb1c0c4bde848907",
 "electrochem/2026-10.json": "e09127ae0869e07584fd557eccf1b3e3",
-"electrochem/2026-11.json": "c84a70e03c3a515df317b47b38c07272",
+"electrochem/2026-11.json": "4056bc07b7e6bdafc6aacb6e3915e679",
 "journals": "e54e26199a49b076518beb8f03f04b9b",
 "kw_zh": "b6042ad8689a18e21a74e23cd642c57c",
 "membrane/2020-01.json": "542988c4f91331ff58b727450b6e8819",
@@ -414,7 +414,7 @@
 "membrane/2026-08.json": "ec22a0f91a1fd1129ffee6a35bd80490",
 "membrane/2026-09.json": "b3e4bc672e0d9e1bbd26fc311338a0eb",
 "membrane/2026-10.json": "743890396ca03993945b51b0d1189a60",
-"membrane/2026-11.json": "41fa6303a5c180e43ca93d0c57ef9b08",
+"membrane/2026-11.json": "213ffd0cd99bedb306ee385d82b135be",
 "microplastics/2020-01.json": "d3c16f4adbb0d73b0c7ae3114b03b3d2",
 "microplastics/2020-02.json": "b98c61adb2160fb2a7ecd79e4b01ee70",
 "microplastics/2020-03.json": "58649b08aa9d84600bab3c8b5c2ed3eb",
@@ -497,7 +497,7 @@
 "microplastics/2026-08.json": "92eb393e8be529758bb19b89145dfe46",
 "microplastics/2026-09.json": "9f157fa4061da8023a482ca8b7c2cd79",
 "microplastics/2026-10.json": "897d2c9bfe914f4d91204d87f9d346e9",
-"microplastics/2026-11.json": "891ee1c6470c99b35144d02542228571",
+"microplastics/2026-11.json": "687c4ac6fbe76d580662c2860fb36df0",
 "mip/2020-01.json": "e2998086e7e933881d115d4a25d7854d",
 "mip/2020-02.json": "28932efed364d4e8a187d65bbcfa50a0",
 "mip/2020-03.json": "5a0d933dfe329adfadd140d2988b8833",
@@ -663,5 +663,5 @@
 "psc/2026-08.json": "47c5896486b8963c6a3db3baac962e3d",
 "psc/2026-09.json": "16dc428d7f6ba0d117c24f7c2a06a009",
 "psc/2026-10.json": "b7964939bc6a209b716b15161297827c",
-"psc/2026-11.json": "a0a5211ea522f0125b19834183a523ed"
+"psc/2026-11.json": "32d6d51357ec68d736b0866fbe48f7ac"
 }

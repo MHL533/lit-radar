@@ -1,6 +1,419 @@
 {
-"updated": "2026-11-14 10:58",
+"updated": "2026-11-14 16:11",
 "papers": [
+{
+"id": "10.1021_jacs.6c16437",
+"t": "Unraveling the Intrinsic Interfacial Chemistry of Fluoroethylene Carbonate on Lithium Metal Anodes via a Solvent-Free Model System",
+"j": "Journal of the American Chemical Society",
+"f": [
+"ec-li"
+],
+"d": "2026-11-14",
+"doi": "10.1021/jacs.6c16437",
+"x": "2026-11-14 15:59",
+"hb": 1
+},
+{
+"id": "10.1021_acs.jpclett.6c02951",
+"t": "Beyond Intrinsic Size Effects: Regulating Multiphase Transport and Interfacial Microenvironments within Catalyst Layers for CO2 Electrolysis",
+"j": "The Journal of Physical Chemistry Letters",
+"f": [
+"ec-co2",
+"ec-fc"
+],
+"d": "2026-11-14",
+"doi": "10.1021/acs.jpclett.6c02951",
+"x": "2026-11-14 15:59",
+"hb": 1
+},
+{
+"id": "10.1002_smll.76724",
+"t": "Coordination‐Chemistry‐Directed Nanofluidic Ion‐Channel Engineering Enables Trimodal Self‐Powered, Colorimetric, and Wireless Humidity Transduction in a Wet‐Spun Biopolymer Fiber",
+"j": "Small",
+"f": [
+"osmotic-energy"
+],
+"d": "2026-11-13",
+"doi": "10.1002/smll.76724",
+"x": "2026-11-14 15:59",
+"hb": 1
+},
+{
+"id": "10.1002_smll.76723",
+"t": "Defect‐Rich Ultrathin CuO Nanosheets Promote Electrocatalytic Coupling of CO 2 With Ethylene Glycol",
+"j": "Small",
+"f": [
+"ec-other"
+],
+"d": "2026-11-13",
+"doi": "10.1002/smll.76723",
+"x": "2026-11-14 15:59",
+"hb": 1
+},
+{
+"id": "10.1002_smll.76716",
+"t": "Breaking the Porosity‐Strength Trade‐Off in Hierarchical Current Collectors for Lithium Metal Batteries",
+"j": "Small",
+"f": [
+"ec-li"
+],
+"d": "2026-11-13",
+"doi": "10.1002/smll.76716",
+"x": "2026-11-14 15:59",
+"hb": 1
+},
+{
+"id": "10.1002_smll.76661",
+"t": "Rechargeable Metal‐Catalysis Batteries for Energy‐Storing Decoupled Electrosynthesis",
+"j": "Small",
+"f": [
+"ec-synth"
+],
+"d": "2026-11-13",
+"doi": "10.1002/smll.76661",
+"x": "2026-11-14 15:59",
+"hb": 1
+},
+{
+"id": "10.1002_smll.76612",
+"t": "Multifunctional Design of 2D MoS 2‐x Se x /Carbon Heterostructures Enabling High‐Performance Lithium‐based Batteries",
+"j": "Small",
+"f": [
+"ec-other"
+],
+"d": "2026-11-13",
+"doi": "10.1002/smll.76612",
+"x": "2026-11-14 15:59",
+"hb": 1
+},
+{
+"id": "10.1002_smll.76543",
+"t": "Nanoscale Interface Engineering of Solid‐State Electrolytes for High‐Performance Solid‐State Alkali Metal Sulfur Batteries",
+"j": "Small",
+"f": [
+"ec-ss"
+],
+"d": "2026-11-13",
+"doi": "10.1002/smll.76543",
+"x": "2026-11-14 15:59",
+"hb": 1
+},
+{
+"id": "10.1002_smll.76717",
+"t": "Coordinative Organic–Inorganic Heterostructured Hierarchical Composite Gel Polymer Electrolytes Enabling Ultrahigh‐Power and Ultra‐Durable Solid‐State Zinc–Air Batteries",
+"j": "Small",
+"f": [
+"ec-ss",
+"ec-lis"
+],
+"d": "2026-11-13",
+"doi": "10.1002/smll.76717",
+"x": "2026-11-14 15:59",
+"hb": 1
+},
+{
+"id": "10.1002_smll.76688",
+"t": "Lattice Engineering of the Copper Sulfide Cathodes via Mn 2+ Substitution for High‐Rate Magnesium Storage",
+"j": "Small",
+"f": [
+"ec-other"
+],
+"d": "2026-11-13",
+"doi": "10.1002/smll.76688",
+"x": "2026-11-14 15:59",
+"hb": 1
+},
+{
+"id": "10.1002_smll.76709",
+"t": "Understanding and Steering NH 3 Crossover from NO Reduction in a Zero‐Gap Electrolyzer",
+"j": "Small",
+"f": [
+"ec-water"
+],
+"d": "2026-11-13",
+"doi": "10.1002/smll.76709",
+"x": "2026-11-14 15:59",
+"hb": 1
+},
+{
+"id": "10.1002_smll.76657",
+"t": "Porous Nanotubular Array Cathode With Nanoengineered Triple‐Phase Boundaries Toward Local O 2 Permeation",
+"j": "Small",
+"f": [
+"ec-other"
+],
+"d": "2026-11-13",
+"doi": "10.1002/smll.76657",
+"x": "2026-11-14 15:59",
+"hb": 1
+},
+{
+"id": "10.1002_smll.76750",
+"t": "Surface Hydroxylation‐Regulated Self‐Assembled Molecular Extrusion Enables Efficient Inverted Perovskite Solar Cells Without a Pre‐Deposited Hole‐Transport Layer",
+"j": "Small",
+"f": [
+"psc-int"
+],
+"d": "2026-11-13",
+"doi": "10.1002/smll.76750",
+"x": "2026-11-14 15:59",
+"hb": 1
+},
+{
+"id": "10.1002_smll.76735",
+"t": "Mitigating Failure Modes in Next‐Generation Batteries via High‐Entropy Materials: A Cross‐System Review",
+"j": "Small",
+"f": [
+"ec-other"
+],
+"d": "2026-11-13",
+"doi": "10.1002/smll.76735",
+"x": "2026-11-14 15:59",
+"hb": 1
+},
+{
+"id": "10.1002_smll.76463",
+"t": "Dual‐Phase Perovskite Oxide as a Bifunctional Air Electrode for Reversible Ceramic Electrochemical Cells",
+"j": "Small",
+"f": [
+"ec-other"
+],
+"d": "2026-11-13",
+"doi": "10.1002/smll.76463",
+"x": "2026-11-14 15:59",
+"hb": 1
+},
+{
+"id": "10.1002_smll.76712",
+"t": "Benzodithiophene‐Based Bolaamphiphiles With Highly Coordinated Cubic Network Structures for Efficient and Stable Perovskite Solar Cells",
+"j": "Small",
+"f": [
+"psc-stab"
+],
+"d": "2026-11-13",
+"doi": "10.1002/smll.76712",
+"x": "2026-11-14 15:59",
+"hb": 1
+},
+{
+"id": "10.1002_smll.76738",
+"t": "Gluconic Acid Ligand Enables Rapid Chemical Bath Deposition of SnO 2 for High‐Efficiency Perovskite Solar Cells",
+"j": "Small",
+"f": [
+"psc-other"
+],
+"d": "2026-11-13",
+"doi": "10.1002/smll.76738",
+"x": "2026-11-14 15:59",
+"hb": 1
+},
+{
+"id": "10.1002_smll.76771",
+"t": "Bicyclic 3‐Methyladenine‐Mediated Multifunctional Passivation for High‐Performance Flexible Perovskite Photovoltaics",
+"j": "Small",
+"f": [
+"psc-int",
+"psc-module"
+],
+"d": "2026-11-13",
+"doi": "10.1002/smll.76771",
+"x": "2026-11-14 15:59",
+"hb": 1
+},
+{
+"id": "10.1002_smll.76713",
+"t": "Interfacial Chemo‐Mechanical Engineering of a Vertically Aligned Host for Reversible Anode‐Less Lithium Metal Batteries",
+"j": "Small",
+"f": [
+"ec-li"
+],
+"d": "2026-11-13",
+"doi": "10.1002/smll.76713",
+"x": "2026-11-14 15:59",
+"hb": 1
+},
+{
+"id": "10.1002_smll.76504",
+"t": "A Multifunctional Epoxy–Polyether Network for Chemo‐Mechanical Stabilization of High‐Loading Ni‐Rich Cathodes",
+"j": "Small",
+"f": [
+"ec-li"
+],
+"d": "2026-11-13",
+"doi": "10.1002/smll.76504",
+"x": "2026-11-14 15:59",
+"hb": 1
+},
+{
+"id": "10.1002_smll.76540",
+"t": "A Rapid Low Temperature Route to High‐Entropy Thiospinels for Efficient Electrocatalytic Hydrogen Evolution",
+"j": "Small",
+"f": [
+"ec-water"
+],
+"d": "2026-11-13",
+"doi": "10.1002/smll.76540",
+"x": "2026-11-14 15:59",
+"hb": 1
+},
+{
+"id": "10.1002_smll.76478",
+"t": "F‐Doped NiO/Ni@C Nanorods for Hydrazine Borane Electrooxidation: Enabling High‐Performance Fuel Cells and Energy‐Saving Hydrogen Production",
+"j": "Small",
+"f": [
+"ec-fc"
+],
+"d": "2026-11-13",
+"doi": "10.1002/smll.76478",
+"x": "2026-11-14 15:59",
+"hb": 1
+},
+{
+"id": "10.1002_smll.76755",
+"t": "A Photo‐Charging Time Regulation Strategy for Enhancing the Solar‐to‐Electrochemical Energy Efficiency of Photo‐Rechargeable Devices",
+"j": "Small",
+"f": [
+"ec-other"
+],
+"d": "2026-11-13",
+"doi": "10.1002/smll.76755",
+"x": "2026-11-14 15:59",
+"hb": 1
+},
+{
+"id": "10.1002_adfm.79641",
+"t": "Precise Interlayer Ru─O─M Electronic Bridge Installation in Hydrotalcite‐Like Metal‐Organic Frameworks for Boosted Electrochemical Amine Oxidation",
+"j": "Advanced Functional Materials",
+"f": [
+"ec-other"
+],
+"d": "2026-11-13",
+"doi": "10.1002/adfm.79641",
+"x": "2026-11-14 15:59",
+"hb": 1
+},
+{
+"id": "10.1002_adfm.79462",
+"t": "Local Symmetry Engineering Unlocks Stable Multi‐Electron Chemistry in NASICON Cathodes for High‐Energy‐Density Sodium‐Ion Batteries",
+"j": "Advanced Functional Materials",
+"f": [
+"ec-ss",
+"ec-beyond"
+],
+"d": "2026-11-13",
+"doi": "10.1002/adfm.79462",
+"x": "2026-11-14 15:59",
+"hb": 1
+},
+{
+"id": "10.1002_adma.75735",
+"t": "High‐Efficiency Perovskite‐Organic Tandem Solar Cells Enabled by Perovskite Crystallization Optimization and Metal‐Free Interconnecting Layer",
+"j": "Advanced Materials",
+"f": [
+"psc-tandem"
+],
+"d": "2026-11-13",
+"doi": "10.1002/adma.75735",
+"x": "2026-11-14 15:59",
+"hb": 1
+},
+{
+"id": "10.1002_adma.75687",
+"t": "A Scalable Protrusion‐Targeted Electrolyte Enables 500 Wh Kg −1 Lithium Metal Batteries With 500‐Cycle Stability",
+"j": "Advanced Materials",
+"f": [
+"ec-li"
+],
+"d": "2026-11-13",
+"doi": "10.1002/adma.75687",
+"x": "2026-11-14 15:59",
+"hb": 1
+},
+{
+"id": "10.1002_adma.75703",
+"t": "Reconstructing Colloidal NiO x Contacts for Efficient and Lamination‐Resilient Perovskite Photovoltaics",
+"j": "Advanced Materials",
+"f": [
+"psc-int"
+],
+"d": "2026-11-13",
+"doi": "10.1002/adma.75703",
+"x": "2026-11-14 15:59",
+"hb": 1
+},
+{
+"id": "10.1002_adma.75642",
+"t": "Chain‐Regulated Degradation of Polyvinyl Chloride in UiO‐Type Metal–Organic Frameworks",
+"j": "Advanced Materials",
+"f": [
+"mof"
+],
+"d": "2026-11-13",
+"doi": "10.1002/adma.75642",
+"x": "2026-11-14 15:59",
+"hb": 1
+},
+{
+"id": "10.1002_adma.75747",
+"t": "Li–B–Mg Composite Foils With a LiB 0.88 Microrod Array Enable Ultrathin Self‐Supporting Lithium Metal Anodes",
+"j": "Advanced Materials",
+"f": [
+"ec-li"
+],
+"d": "2026-11-13",
+"doi": "10.1002/adma.75747",
+"x": "2026-11-14 15:59",
+"hb": 1
+},
+{
+"id": "10.1002_adma.75718",
+"t": "Molecular Bridging Flexibility Enables Closed‐Pore Engineering in Hard Carbon for Enhanced Plateau Sodium Storage",
+"j": "Advanced Materials",
+"f": [
+"ec-beyond"
+],
+"d": "2026-11-13",
+"doi": "10.1002/adma.75718",
+"x": "2026-11-14 15:59",
+"hb": 1
+},
+{
+"id": "10.1002_adma.75714",
+"t": "Pulsed Electrosynthesis of Conformal High‐Entropy Metallic Glass Skins for Durable Industrial Water Electrolysis",
+"j": "Advanced Materials",
+"f": [
+"ec-water",
+"ec-synth"
+],
+"d": "2026-11-13",
+"doi": "10.1002/adma.75714",
+"x": "2026-11-14 15:59",
+"hb": 1
+},
+{
+"id": "10.1002_adma.75721",
+"t": "Covalently Integrated MXene–Fluorinated Polymer Electrolytes for 714 Wh Kg −1 Lithium–Metal Batteries",
+"j": "Advanced Materials",
+"f": [
+"ec-ss"
+],
+"d": "2026-11-13",
+"doi": "10.1002/adma.75721",
+"x": "2026-11-14 15:59",
+"hb": 1
+},
+{
+"id": "10.1111_ejss.70455",
+"t": "Interactions Between Polyethylene Microplastics and Saline‐Alkali Gradients Shape Microbial Communities and Functions",
+"j": "European Journal of Soil Science",
+"f": [
+"mp"
+],
+"d": "2026-11-13",
+"doi": "10.1111/ejss.70455",
+"x": "2026-11-14 15:59",
+"hb": 1
+},
 {
 "id": "10.1021_acsami.6c17205",
 "t": "Coupled Regulation of Oxygen-Vacancy-Modified Near-Surface Structure and Interfacial Stability for High-Performance Li-Rich Mn-Based Cathodes",

@@ -1,6 +1,366 @@
 {
-"updated": "2026-11-14 16:11",
+"updated": "2026-11-14 18:06",
 "papers": [
+{
+"id": "10.1016_j.seppur.2026.140943",
+"t": "Sustainable desalination of agricultural saline drainage using a photovoltaic-powered Micro-flocculation-media filtration-ultrafiltration-reverse osmosis process",
+"j": "Separation and Purification Technology",
+"f": [
+"ro-fo",
+"uf-mf",
+"mem-process"
+],
+"d": "2026-11-14",
+"doi": "10.1016/j.seppur.2026.140943",
+"x": "2026-11-14 17:51"
+},
+{
+"id": "10.1016_j.watres.2026.127344",
+"t": "Distinct viral ecological responses associated with polystyrene and polyvinyl chloride microplastics in anaerobic digestion of waste activated sludge",
+"j": "Water Research",
+"f": [
+"mp"
+],
+"d": "2026-11-14",
+"doi": "10.1016/j.watres.2026.127344",
+"x": "2026-11-14 17:51"
+},
+{
+"id": "10.1016_j.cej.2026.184191",
+"t": "Installed trivalent cobalt in an isostructural ZIF-67 self-supported electrode enables efficient and robust oxygen evolution catalysis",
+"j": "Chemical Engineering Journal",
+"f": [
+"ec-water"
+],
+"d": "2026-11-14",
+"doi": "10.1016/j.cej.2026.184191",
+"x": "2026-11-14 17:51"
+},
+{
+"id": "10.1016_j.cej.2026.184171",
+"t": "In-situ fabricated of Bi-MOF/Bi2S3 reduction-state high-low junction photoanode for efficient H2O2 production and electricity generation",
+"j": "Chemical Engineering Journal",
+"f": [
+"ec-synth"
+],
+"d": "2026-11-14",
+"doi": "10.1016/j.cej.2026.184171",
+"x": "2026-11-14 17:51"
+},
+{
+"id": "10.1016_j.cej.2026.184245",
+"t": "High conductivity electrodes enabling hundred millisecond switching in 100 cm2 electrochromic devices",
+"j": "Chemical Engineering Journal",
+"f": [
+"ec-other"
+],
+"d": "2026-11-14",
+"doi": "10.1016/j.cej.2026.184245",
+"x": "2026-11-14 17:51"
+},
+{
+"id": "10.1016_j.cej.2026.184260",
+"t": "Activating the lattice oxygen pathway via tailored reconstruction of La and P Co-doped CoSe2 for efficient oxygen evolution",
+"j": "Chemical Engineering Journal",
+"f": [
+"ec-water"
+],
+"d": "2026-11-14",
+"doi": "10.1016/j.cej.2026.184260",
+"x": "2026-11-14 17:51"
+},
+{
+"id": "10.1016_j.apcatb.2026.127768",
+"t": "Synergy of Cu Single Atoms and Fe3O4/Cu Heterostructures for Boosting Urea Electrosynthesis via a Near-thermoneutral C─N Coupling Process",
+"j": "Applied Catalysis B: Environment and Energy",
+"f": [
+"ec-n",
+"ec-synth"
+],
+"d": "2026-11-14",
+"doi": "10.1016/j.apcatb.2026.127768",
+"x": "2026-11-14 17:51"
+},
+{
+"id": "10.1016_j.apcatb.2026.127802",
+"t": "Polyoxometalate-Mediated Interfacial Electron Redistribution Enables Efficient Chlorobenzene Oxidation through Coupled Oxygen Activation and Chlorine Transfer",
+"j": "Applied Catalysis B: Environment and Energy",
+"f": [
+"aop-gas"
+],
+"d": "2026-11-14",
+"doi": "10.1016/j.apcatb.2026.127802",
+"x": "2026-11-14 17:51"
+},
+{
+"id": "10.1016_j.jece.2026.125972",
+"t": "Efficacy and mechanism of nickel-based bimetallic hydroxide functionalized ceramic membranes for peroxymonosulfate activation under neutral conditions: Pollutant removal enhancement and membrane fouling alleviation",
+"j": "Journal of Environmental Chemical Engineering",
+"f": [
+"cat-ceramic",
+"cat-mem",
+"ceramic",
+"fouling",
+"aop-water"
+],
+"d": "2026-11-14",
+"doi": "10.1016/j.jece.2026.125972",
+"x": "2026-11-14 17:51"
+},
+{
+"id": "10.1016_j.jece.2026.125867",
+"t": "Enhancing the 1O2 production to degrade tetracycline hydrochloride in Fe3O4/CeO2/C electrocatalytic oxidation system: The key role of Ce3+/Ce4+ cycle",
+"j": "Journal of Environmental Chemical Engineering",
+"f": [
+"ec-other"
+],
+"d": "2026-11-14",
+"doi": "10.1016/j.jece.2026.125867",
+"x": "2026-11-14 17:51"
+},
+{
+"id": "10.1016_j.jece.2026.125976",
+"t": "Scalable hydrothermal synthesis of non-metal-doped TiO2 with tailored surfaces for the photo-oxidation of VOCs under dynamic-flow conditions",
+"j": "Journal of Environmental Chemical Engineering",
+"f": [
+"aop-gas"
+],
+"d": "2026-11-14",
+"doi": "10.1016/j.jece.2026.125976",
+"x": "2026-11-14 17:51"
+},
+{
+"id": "10.1016_j.envres.2026.126158",
+"t": "Engineering d-p orbital hybridization promotes active hydrogen desorption for sensitive electrochemical detection of metronidazole in environmental resources",
+"j": "Environmental Research",
+"f": [
+"ec-sensor"
+],
+"d": "2026-11-14",
+"doi": "10.1016/j.envres.2026.126158",
+"x": "2026-11-14 17:51"
+},
+{
+"id": "10.1016_j.electacta.2026.150434",
+"t": "Three-dimensional numerical simulation of pore-scale two-phase transport in the anode catalyst layer of PEMWE based on lattice Boltzmann method",
+"j": "Electrochimica Acta",
+"f": [
+"ec-water",
+"ec-fc"
+],
+"d": "2026-11-14",
+"doi": "10.1016/j.electacta.2026.150434",
+"x": "2026-11-14 17:51"
+},
+{
+"id": "10.1016_j.electacta.2026.150436",
+"t": "Sulfur-Doped Graphene Oxide/Polypyrrole Composite for Efficient Removal of Zn2+ via Capacitive Deionization",
+"j": "Electrochimica Acta",
+"f": [
+"ec-env"
+],
+"d": "2026-11-14",
+"doi": "10.1016/j.electacta.2026.150436",
+"x": "2026-11-14 17:51"
+},
+{
+"id": "10.1016_j.ijhydene.2026.158646",
+"t": "Facile Surfactant-Free One-Pot Synthesis of Carbon-Supported Pt-Based Alloy Nanocatalysts for Boosting Hydrogen Evolution in Acidic and Alkaline Electrolytes",
+"j": "International Journal of Hydrogen Energy",
+"f": [
+"ec-water"
+],
+"d": "2026-11-14",
+"doi": "10.1016/j.ijhydene.2026.158646",
+"x": "2026-11-14 17:51"
+},
+{
+"id": "10.1016_j.ijhydene.2026.158647",
+"t": "Defective Co3S4@MoS2 with Polarized Heterointerface Facilitate Overall Water Splitting at Industrial Ampere Current Density",
+"j": "International Journal of Hydrogen Energy",
+"f": [
+"ec-water"
+],
+"d": "2026-11-14",
+"doi": "10.1016/j.ijhydene.2026.158647",
+"x": "2026-11-14 17:51"
+},
+{
+"id": "10.1016_j.ijhydene.2026.158687",
+"t": "Transition-Metal Trichalcogenides as Low-Cost Catalysts for Hydrogen and Oxygen Evolution Reactions",
+"j": "International Journal of Hydrogen Energy",
+"f": [
+"ec-water"
+],
+"d": "2026-11-14",
+"doi": "10.1016/j.ijhydene.2026.158687",
+"x": "2026-11-14 17:51"
+},
+{
+"id": "10.1002_smll.76631",
+"t": "Rigid‐Flexible Synergized Semi‐Crystalline Polyimide Dielectrics for High‐Temperature Capacitive Energy Storage",
+"j": "Small",
+"f": [
+"ec-sc"
+],
+"d": "2026-11-14",
+"doi": "10.1002/smll.76631",
+"x": "2026-11-14 17:51",
+"hb": 1
+},
+{
+"id": "10.1002_anie.6281030",
+"t": "Activating Oxygen Radical Coupling via Ru–Mn Dual‐Site Electronic Regulation for Durable Acidic Oxygen Evolution",
+"j": "Angewandte Chemie International Edition",
+"f": [
+"ec-water"
+],
+"d": "2026-11-14",
+"doi": "10.1002/anie.6281030",
+"x": "2026-11-14 17:51",
+"hb": 1
+},
+{
+"id": "10.1002_anie.6121408",
+"t": "Unveiling the Intrinsic Disparity of Ethylene Carbonate and Fluoroethylene Carbonate in Lithium Metal Battery Exceeding 600 Wh kg −1",
+"j": "Angewandte Chemie International Edition",
+"f": [
+"ec-li"
+],
+"d": "2026-11-14",
+"doi": "10.1002/anie.6121408",
+"x": "2026-11-14 17:51",
+"hb": 1
+},
+{
+"id": "10.1002_anie.7952040",
+"t": "A Carbazole‐Cored Photocatalyst Enabled Cu‐Catalyzed Asymmetric Hydroalkynylation of Acyl Azetidines and Cyclopropanes Through Hydrogen‐Bond‐Donor‐Coupled Electron Transfer",
+"j": "Angewandte Chemie International Edition",
+"f": [
+"aop-gas"
+],
+"d": "2026-11-14",
+"doi": "10.1002/anie.7952040",
+"x": "2026-11-14 17:51",
+"hb": 1
+},
+{
+"id": "10.1002_anie.4815215",
+"t": "Beyond Lithiophilicity: Multistage Rate Matching in Lithium‐Metal Electrodeposition",
+"j": "Angewandte Chemie International Edition",
+"f": [
+"ec-corr"
+],
+"d": "2026-11-14",
+"doi": "10.1002/anie.4815215",
+"x": "2026-11-14 17:51",
+"hb": 1
+},
+{
+"id": "10.1002_anie.2900055",
+"t": "Ordered Atomic Channels Enable Ultrafast Hydrogen Spillover for Hydrogen Evolution at Industrial Current Densities",
+"j": "Angewandte Chemie International Edition",
+"f": [
+"ec-water"
+],
+"d": "2026-11-14",
+"doi": "10.1002/anie.2900055",
+"x": "2026-11-14 17:51",
+"hb": 1
+},
+{
+"id": "10.1002_anie.2759716",
+"t": "Anion‐Specific Concentration Effects Governing Ionic Additive Failure in Aqueous Zinc Batteries",
+"j": "Angewandte Chemie International Edition",
+"f": [
+"ec-beyond"
+],
+"d": "2026-11-14",
+"doi": "10.1002/anie.2759716",
+"x": "2026-11-14 17:51",
+"hb": 1
+},
+{
+"id": "10.1002_anie.3175239",
+"t": "Localized Geometric Frustration in One‐Dimensional Covalent Organic Frameworks for Photocoupled Electrocatalytic H 2 O 2 Production",
+"j": "Angewandte Chemie International Edition",
+"f": [
+"ec-other"
+],
+"d": "2026-11-14",
+"doi": "10.1002/anie.3175239",
+"x": "2026-11-14 17:51",
+"hb": 1
+},
+{
+"id": "10.1016_j.ces.2026.125609",
+"t": "O2-assisted photocatalytic degradation of ciprofloxacin over FeOOH-integrated donor–acceptor vinylene-linked COF composites",
+"j": "Chemical Engineering Science",
+"f": [
+"cof",
+"aop-water"
+],
+"d": "2026-11-14",
+"doi": "10.1016/j.ces.2026.125609",
+"x": "2026-11-14 17:51"
+},
+{
+"id": "10.1016_j.energy.2026.143098",
+"t": "Environmentally Aware Robust Game-Theoretic Coordination of Hydrogen Fuel Cell-Enabled Energy Communities under Carbon Tokenization and Digital-Twin-Synchronized Spatiotemporal Mobility Networks",
+"j": "Energy",
+"f": [
+"ec-fc"
+],
+"d": "2026-11-14",
+"doi": "10.1016/j.energy.2026.143098",
+"x": "2026-11-14 17:51"
+},
+{
+"id": "10.1016_j.energy.2026.143152",
+"t": "Pricing and Extended Warranty Strategies for Echelon-Utilized Batteries with Echelon Utilization Rate in a Dual-Stream Supply Chain",
+"j": "Energy",
+"f": [
+"ec-other"
+],
+"d": "2026-11-14",
+"doi": "10.1016/j.energy.2026.143152",
+"x": "2026-11-14 17:51"
+},
+{
+"id": "10.1016_j.jmrt.2026.11.143",
+"t": "High-Efficiency and Stable Contour Cutting of GH4169 via Helical-Electrode Discharge-Electrochemical Hybrid Machining",
+"j": "Journal of Materials Research and Technology",
+"f": [
+"ec-other"
+],
+"d": "2026-11-14",
+"doi": "10.1016/j.jmrt.2026.11.143",
+"x": "2026-11-14 17:51"
+},
+{
+"id": "10.1002_anie.1202075",
+"t": "Magnetic‐Field Modulation of Oxygen Evolution at Structurally Constrained Single‐Atom Sites With a Secondary Photoresponse",
+"j": "Angewandte Chemie International Edition",
+"f": [
+"ec-water"
+],
+"d": "2026-11-13",
+"doi": "10.1002/anie.1202075",
+"x": "2026-11-14 17:51",
+"hb": 1
+},
+{
+"id": "10.1002_anie.1949347",
+"t": "Electrochemical Hydrocarboxylation of Unactivated Alkyl Alkenes",
+"j": "Angewandte Chemie International Edition",
+"f": [
+"ec-other"
+],
+"d": "2026-11-13",
+"doi": "10.1002/anie.1949347",
+"x": "2026-11-14 17:51",
+"hb": 1
+},
 {
 "id": "10.1021_jacs.6c16437",
 "t": "Unraveling the Intrinsic Interfacial Chemistry of Fluoroethylene Carbonate on Lithium Metal Anodes via a Solvent-Free Model System",

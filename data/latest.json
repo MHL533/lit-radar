@@ -1,6 +1,163 @@
 {
-"updated": "2026-11-15 07:25",
+"updated": "2026-11-15 10:30",
 "papers": [
+{
+"id": "10.1016_j.watres.2026.127348",
+"t": "In-Situ Conversion of Pollutants into Catalysts: Revealing High-Valent Bimetallic Synergy for Self-catalytic Decomplexation of Heavy-Metal Complexes",
+"j": "Water Research",
+"f": [
+"aop-water"
+],
+"d": "2026-11-15",
+"doi": "10.1016/j.watres.2026.127348",
+"x": "2026-11-15 10:26"
+},
+{
+"id": "10.1016_j.ceramint.2026.11.182",
+"t": "Mechanism of Enhanced CMAS Corrosion Resistance of Ytterbium Silicate Environmental Barrier Coatings via Ultraviolet Picosecond Laser Glazing",
+"j": "Ceramics International",
+"f": [
+"ec-corr"
+],
+"d": "2026-11-15",
+"doi": "10.1016/j.ceramint.2026.11.182",
+"x": "2026-11-15 10:26"
+},
+{
+"id": "10.1016_j.ensm.2026.105650",
+"t": "Advanced data-driven surrogate modelling for high-fidelity P2D electrochemical simulation of Lithium-Ion batteries",
+"j": "Energy Storage Materials",
+"f": [
+"ec-li"
+],
+"d": "2026-11-15",
+"doi": "10.1016/j.ensm.2026.105650",
+"x": "2026-11-15 10:26"
+},
+{
+"id": "10.1016_j.ensm.2026.105652",
+"t": "The Double-Edged Sword of Dibutyl Ether in Hybrid Ether-based Electrolytes: Balancing Dissociation and Dilution of Salts for Li-SPAN Cells",
+"j": "Energy Storage Materials",
+"f": [
+"ec-other"
+],
+"d": "2026-11-15",
+"doi": "10.1016/j.ensm.2026.105652",
+"x": "2026-11-15 10:26"
+},
+{
+"id": "10.1016_j.ensm.2026.105653",
+"t": "Halide-Mediated Chemistry for Enhancing Wide-Temperature Performance of Zinc-Ion Batteries",
+"j": "Energy Storage Materials",
+"f": [
+"ec-beyond"
+],
+"d": "2026-11-15",
+"doi": "10.1016/j.ensm.2026.105653",
+"x": "2026-11-15 10:26"
+},
+{
+"id": "10.1016_j.ensm.2026.105655",
+"t": "Primary-solvation and free-state molecule design enables durable and safe lithium metal batteries",
+"j": "Energy Storage Materials",
+"f": [
+"ec-li"
+],
+"d": "2026-11-15",
+"doi": "10.1016/j.ensm.2026.105655",
+"x": "2026-11-15 10:26"
+},
+{
+"id": "10.1016_j.electacta.2026.150435",
+"t": "Interpretable machine learning of area-specific resistance in SOFC perovskite cathodes: coupled effects of composition, electrolyte, and processing conditions",
+"j": "Electrochimica Acta",
+"f": [
+"ec-fc"
+],
+"d": "2026-11-14",
+"doi": "10.1016/j.electacta.2026.150435",
+"x": "2026-11-15 10:26"
+},
+{
+"id": "10.1016_j.ijhydene.2026.158684",
+"t": "Toward Gigawatt-Scale Alkaline Water Electrolysis: Durability-Driven Materials and System Optimization",
+"j": "International Journal of Hydrogen Energy",
+"f": [
+"ec-water"
+],
+"d": "2026-11-14",
+"doi": "10.1016/j.ijhydene.2026.158684",
+"x": "2026-11-15 10:26"
+},
+{
+"id": "10.1016_j.ces.2026.125611",
+"t": "Coordinated design of flow channels and porous transport layers for AEM electrolysis cells",
+"j": "Chemical Engineering Science",
+"f": [
+"ec-water"
+],
+"d": "2026-11-14",
+"doi": "10.1016/j.ces.2026.125611",
+"x": "2026-11-15 10:26"
+},
+{
+"id": "10.1016_j.aca.2026.346399",
+"t": "Surface pretreatment governs receptor-layer stability, storage, and hybridization performance in SAM-based electrochemical DNA sensing on gold screen-printed electrodes",
+"j": "Analytica Chimica Acta",
+"f": [
+"ec-other"
+],
+"d": "2026-11-14",
+"doi": "10.1016/j.aca.2026.346399",
+"x": "2026-11-15 10:26"
+},
+{
+"id": "10.1016_j.ccr.2026.218760",
+"t": "Electrocatalytic reduction of nitrogen oxides for hydroxylamine and oxime derivatives: selective mechanisms and catalytic design",
+"j": "Coordination Chemistry Reviews",
+"f": [
+"ec-synth"
+],
+"d": "2026-11-14",
+"doi": "10.1016/j.ccr.2026.218760",
+"x": "2026-11-15 10:26"
+},
+{
+"id": "10.1016_j.ccr.2026.218764",
+"t": "Advances in single-atom catalytic ceramic membranes: mechanisms, transport synergy, and applications in water purification",
+"j": "Coordination Chemistry Reviews",
+"f": [
+"cat-ceramic",
+"cat-mem",
+"ceramic"
+],
+"d": "2026-11-14",
+"doi": "10.1016/j.ccr.2026.218764",
+"x": "2026-11-15 10:26"
+},
+{
+"id": "10.1016_j.ccr.2026.218768",
+"t": "Biological membrane-targeting fluorescent probes for long-term super-resolution imaging",
+"j": "Coordination Chemistry Reviews",
+"f": [
+"fouling"
+],
+"d": "2026-11-14",
+"doi": "10.1016/j.ccr.2026.218768",
+"x": "2026-11-15 10:26"
+},
+{
+"id": "10.1016_j.microc.2026.120284",
+"t": "Molecularly imprinted polymer-coated capillary electrophoresis with laser-induced fluorescence detection for enantioselective separation of chiral pesticide residues in complex food matrices",
+"j": "Microchemical Journal",
+"f": [
+"mip-sensor",
+"mip-sep"
+],
+"d": "2026-11-14",
+"doi": "10.1016/j.microc.2026.120284",
+"x": "2026-11-15 10:26"
+},
 {
 "id": "10.1016_j.ijhydene.2026.158596",
 "t": "In-Situ Investigation of the Effects of Inlet Humidity and Reactant Stoichiometry on Thermal and Water Management in a PEMFC Under Low-Load Operation",

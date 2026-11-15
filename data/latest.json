@@ -1,6 +1,28 @@
 {
-"updated": "2026-11-16 03:32",
+"updated": "2026-11-16 07:33",
 "papers": [
+{
+"id": "10.1016_j.fuel.2026.142079",
+"t": "Matching spontaneous oxidation to electrochemical regeneration of cobalt via a carbon shell for nitrate-to-ammonia electroreduction",
+"j": "Fuel",
+"f": [
+"ec-other"
+],
+"d": "2026-11-15",
+"doi": "10.1016/j.fuel.2026.142079",
+"x": "2026-11-16 07:31"
+},
+{
+"id": "10.1016_j.talanta.2026.130959",
+"t": "Ratiometric detection of liquiritin in Glycyrrhiza uralensis using an rGO/Ti3C2Tx-based electrochemical sensor",
+"j": "Talanta",
+"f": [
+"ec-sensor"
+],
+"d": "2026-11-15",
+"doi": "10.1016/j.talanta.2026.130959",
+"x": "2026-11-16 07:31"
+},
 {
 "id": "10.1021_acscatal.6c07912",
 "t": "Location-Dependent Phase Evolution of Nickel in Fe2O3@LaFeO3 Oxygen Carriers for Chemical Looping Hydrogen Production",

@@ -1,6 +1,17 @@
 {
-"updated": "2026-11-15 16:31",
+"updated": "2026-11-15 18:31",
 "papers": [
+{
+"id": "10.1038_s41467-026-79429-1",
+"t": "Facet-dependent anion adsorption for electrolyte-Cu interfacial stability in initially anode-free Li-metal batteries",
+"j": "Nature Communications",
+"f": [
+"ec-other"
+],
+"d": "2026-11-15",
+"doi": "10.1038/s41467-026-79429-1",
+"x": "2026-11-15 18:27"
+},
 {
 "id": "10.1016_j.watres.2026.127352",
 "t": "A Double-Edged Sword in Hybrid Nature-Based Systems: TiO2-Driven PFOA Defluorination and Secondary Resistome Risks in Bioelectrochemical Floating Beds",

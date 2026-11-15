@@ -1,6 +1,109 @@
 {
-"updated": "2026-11-15 10:30",
+"updated": "2026-11-15 16:31",
 "papers": [
+{
+"id": "10.1016_j.watres.2026.127352",
+"t": "A Double-Edged Sword in Hybrid Nature-Based Systems: TiO2-Driven PFOA Defluorination and Secondary Resistome Risks in Bioelectrochemical Floating Beds",
+"j": "Water Research",
+"f": [
+"ec-env"
+],
+"d": "2026-11-15",
+"doi": "10.1016/j.watres.2026.127352",
+"x": "2026-11-15 16:26"
+},
+{
+"id": "10.1016_j.jece.2026.125974",
+"t": "Magnetic Materials for Advanced Oxidation Processes in Wastewater Treatment: Recent Advances, Environmental Risks, and Perspectives",
+"j": "Journal of Environmental Chemical Engineering",
+"f": [
+"aop-water"
+],
+"d": "2026-11-15",
+"doi": "10.1016/j.jece.2026.125974",
+"x": "2026-11-15 16:26"
+},
+{
+"id": "10.1038_s41467-026-79620-4",
+"t": "Phosphorus-mediated reverse hydrogen spillover enables rate-matched nitrate-sulfate paired electrolysis for ammonium persulfate synthesis",
+"j": "Nature Communications",
+"f": [
+"ec-other"
+],
+"d": "2026-11-15",
+"doi": "10.1038/s41467-026-79620-4",
+"x": "2026-11-15 16:26"
+},
+{
+"id": "10.1039_d6ta06874j",
+"t": "Nitrogen-Directed Semi-Ionic C-F Bonding Enables LiF-Rich Interphase Formation for Fast-Charging Graphite Anodes",
+"j": "Journal of Materials Chemistry A",
+"f": [
+"ec-li"
+],
+"d": "2026-11-15",
+"doi": "10.1039/d6ta06874j",
+"x": "2026-11-15 16:26",
+"hb": 1
+},
+{
+"id": "10.1016_j.corsci.2026.114430",
+"t": "Improved corrosion resistance of AlCoCrFeNi2.1 eutectic high-entropy alloy via micro-laser powder bed fusion through microstructural homogenization",
+"j": "Corrosion Science",
+"f": [
+"ec-corr"
+],
+"d": "2026-11-15",
+"doi": "10.1016/j.corsci.2026.114430",
+"x": "2026-11-15 16:26"
+},
+{
+"id": "10.1016_j.ces.2026.125616",
+"t": "Integrated flexible microfluidic electrochemical system with dual molecularly imprinted interfaces for reagent-free simultaneous detection of sweat cortisol and epinephrine",
+"j": "Chemical Engineering Science",
+"f": [
+"ec-other",
+"mip-sensor"
+],
+"d": "2026-11-15",
+"doi": "10.1016/j.ces.2026.125616",
+"x": "2026-11-15 16:26"
+},
+{
+"id": "10.1038_s42003-026-11336-z",
+"t": "Maternal polystyrene nanoplastics exposure compromises ovarian reserve by disrupting oocyte adhesion and granulosa cell homeostasis",
+"j": "Communications Biology",
+"f": [
+"mp"
+],
+"d": "2026-11-15",
+"doi": "10.1038/s42003-026-11336-z",
+"x": "2026-11-15 16:26"
+},
+{
+"id": "10.1002_adma.75717",
+"t": "Non‐Precious Metal High‐Entropy Oxide Sub‐1 nm Nanowires for Li‐O 2 Batteries",
+"j": "Advanced Materials",
+"f": [
+"ec-other"
+],
+"d": "2026-11-14",
+"doi": "10.1002/adma.75717",
+"x": "2026-11-15 16:26",
+"hb": 1
+},
+{
+"id": "10.1002_adma.75716",
+"t": "Topological Superlattice Stabilized Layered Oxide Cathodes With Sustainable Anionic Redox",
+"j": "Advanced Materials",
+"f": [
+"ec-other"
+],
+"d": "2026-11-14",
+"doi": "10.1002/adma.75716",
+"x": "2026-11-15 16:26",
+"hb": 1
+},
 {
 "id": "10.1016_j.watres.2026.127348",
 "t": "In-Situ Conversion of Pollutants into Catalysts: Revealing High-Valent Bimetallic Synergy for Self-catalytic Decomplexation of Heavy-Metal Complexes",

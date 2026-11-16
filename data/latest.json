@@ -1,6 +1,204 @@
 {
-"updated": "2026-11-16 07:33",
+"updated": "2026-11-16 10:42",
 "papers": [
+{
+"id": "10.1016_j.fuel.2026.142171",
+"t": "A stirred-tank reactor with multi-tubular electrolytic cells for high-rate CO2-to-methane microbial electrosynthesis",
+"j": "Fuel",
+"f": [
+"ec-co2"
+],
+"d": "2026-11-16",
+"doi": "10.1016/j.fuel.2026.142171",
+"x": "2026-11-16 10:35"
+},
+{
+"id": "10.1016_j.desal.2026.121053",
+"t": "Interfacial and structural regulation of a LiMn0.5Fe0.5PO4@C electrode for selective Li+/Mg2+ separation via hybrid capacitive deionization",
+"j": "Desalination",
+"f": [
+"ec-env"
+],
+"d": "2026-11-15",
+"doi": "10.1016/j.desal.2026.121053",
+"x": "2026-11-16 10:35"
+},
+{
+"id": "10.1016_j.watres.2026.127347",
+"t": "Physical transport modulates river-sourced OAE efficiency: evidence from an extreme flood in a semi-enclosed estuary",
+"j": "Water Research",
+"f": [
+"flood"
+],
+"d": "2026-11-15",
+"doi": "10.1016/j.watres.2026.127347",
+"x": "2026-11-16 10:35"
+},
+{
+"id": "10.1016_j.cej.2026.184115",
+"t": "Three-dimensional electrocatalytic water treatment: Particle design, mechanistic evidence, and reactor scale-up",
+"j": "Chemical Engineering Journal",
+"f": [
+"ec-other"
+],
+"d": "2026-11-15",
+"doi": "10.1016/j.cej.2026.184115",
+"x": "2026-11-16 10:35"
+},
+{
+"id": "10.1016_j.cej.2026.184246",
+"t": "Tandem plasma-electrochemical processes for enhanced PFAS defluorination",
+"j": "Chemical Engineering Journal",
+"f": [
+"ec-other"
+],
+"d": "2026-11-15",
+"doi": "10.1016/j.cej.2026.184246",
+"x": "2026-11-16 10:35"
+},
+{
+"id": "10.1016_j.cej.2026.184307",
+"t": "Balancing zincophilicity and stability in zinc metal anodes via heteroatom-doped porous carbon coatings",
+"j": "Chemical Engineering Journal",
+"f": [
+"ec-beyond"
+],
+"d": "2026-11-15",
+"doi": "10.1016/j.cej.2026.184307",
+"x": "2026-11-16 10:35"
+},
+{
+"id": "10.1016_j.jece.2026.125982",
+"t": "Photoelectrochemical transformation of sulfonamido PFAS using a graphene oxide-modified TiO2 photoanode",
+"j": "Journal of Environmental Chemical Engineering",
+"f": [
+"ec-other"
+],
+"d": "2026-11-15",
+"doi": "10.1016/j.jece.2026.125982",
+"x": "2026-11-16 10:35"
+},
+{
+"id": "10.1016_j.jcis.2026.142001",
+"t": "Achieving highly reversible lithium storage in iron (II) oxalate-based anodes for full cells via a gradient-potential pre-lithiation strategy",
+"j": "Journal of Colloid and Interface Science",
+"f": [
+"ec-other"
+],
+"d": "2026-11-15",
+"doi": "10.1016/j.jcis.2026.142001",
+"x": "2026-11-16 10:35"
+},
+{
+"id": "10.1016_j.jcis.2026.141936",
+"t": "Synergy-driven electronic modulation in copper-nickel-cobalt-zinc quaternary alloy for enhanced electrocatalytic nitrate-to-ammonia production",
+"j": "Journal of Colloid and Interface Science",
+"f": [
+"ec-other"
+],
+"d": "2026-11-15",
+"doi": "10.1016/j.jcis.2026.141936",
+"x": "2026-11-16 10:35"
+},
+{
+"id": "10.1016_j.electacta.2026.150444",
+"t": "Lanthanum Oxide Modified QCM based Molecular Imprinted Polymer Sensor Approach: A Quantitative Determination of Citronellol in Different Essential Oils",
+"j": "Electrochimica Acta",
+"f": [
+"mip-sensor"
+],
+"d": "2026-11-15",
+"doi": "10.1016/j.electacta.2026.150444",
+"x": "2026-11-16 10:35"
+},
+{
+"id": "10.1016_j.ensm.2026.105656",
+"t": "Preferential-Site Anion Substitution Enhances O 2p–Mn 3d(t2g) Orbital Hybridization of Li-Rich Mn-Based Cathodes for High-Energy Li Batteries",
+"j": "Energy Storage Materials",
+"f": [
+"ec-li"
+],
+"d": "2026-11-15",
+"doi": "10.1016/j.ensm.2026.105656",
+"x": "2026-11-16 10:35"
+},
+{
+"id": "10.1016_j.snb.2026.141259",
+"t": "Vapor-phase engineering of ultrathin hydrogel interfaces for stable enzymatic electrochemical sensing",
+"j": "Sensors and Actuators B: Chemical",
+"f": [
+"ec-sensor"
+],
+"d": "2026-11-15",
+"doi": "10.1016/j.snb.2026.141259",
+"x": "2026-11-16 10:35"
+},
+{
+"id": "10.1016_j.ces.2026.125565",
+"t": "Cu‑MOF (HKUST‑1) for highly toxic PH3 removal and spent adsorbent recycling as CuO/Cu3P electrocatalyst",
+"j": "Chemical Engineering Science",
+"f": [
+"ec-other"
+],
+"d": "2026-11-15",
+"doi": "10.1016/j.ces.2026.125565",
+"x": "2026-11-16 10:35"
+},
+{
+"id": "10.1016_j.ces.2026.125618",
+"t": "Sensitivity assessment of cell voltage to design factors and operating conditions of proton exchange membrane water electrolyzers",
+"j": "Chemical Engineering Science",
+"f": [
+"ec-water"
+],
+"d": "2026-11-15",
+"doi": "10.1016/j.ces.2026.125618",
+"x": "2026-11-16 10:35"
+},
+{
+"id": "10.1016_j.ces.2026.125636",
+"t": "In-situ SEM investigation of compressive deformation in PEMFC gas diffusion layers",
+"j": "Chemical Engineering Science",
+"f": [
+"ec-fc"
+],
+"d": "2026-11-15",
+"doi": "10.1016/j.ces.2026.125636",
+"x": "2026-11-16 10:35"
+},
+{
+"id": "10.1016_j.jhydrol.2026.136816",
+"t": "Implementation of new, asset-specific damage curves for flood risk assessment in wastewater treatment plants: a methodological approach applied to the metropolitan area of Barcelona (Spain)",
+"j": "Journal of Hydrology",
+"f": [
+"flood"
+],
+"d": "2026-11-15",
+"doi": "10.1016/j.jhydrol.2026.136816",
+"x": "2026-11-16 10:35"
+},
+{
+"id": "10.1016_j.jhydrol.2026.136836",
+"t": "Hydrograph response spectra reveal representative flood modes and long-term changes in peak discharge and recession in a semi-arid urbanizing loess basin",
+"j": "Journal of Hydrology",
+"f": [
+"flood"
+],
+"d": "2026-11-15",
+"doi": "10.1016/j.jhydrol.2026.136836",
+"x": "2026-11-16 10:35"
+},
+{
+"id": "10.1016_j.jphotochem.2026.117870",
+"t": "Degradation efficiency and reaction mechanism of micro-H₂O₂-promoted Z-scheme heterojunction photo-Fenton system for refractory organic pollutant elimination",
+"j": "Journal of Photochemistry and Photobiology A: Chemistry",
+"f": [
+"aop-water"
+],
+"d": "2026-11-15",
+"doi": "10.1016/j.jphotochem.2026.117870",
+"x": "2026-11-16 10:35"
+},
 {
 "id": "10.1016_j.fuel.2026.142079",
 "t": "Matching spontaneous oxidation to electrochemical regeneration of cobalt via a carbon shell for nitrate-to-ammonia electroreduction",
@@ -37599,104 +37797,6 @@
 "Renewable Energy, Sustainability and the Environment"
 ],
 "tz": "电化学原位转化构建功能导向的无定形纳米催化剂"
-},
-{
-"id": "10.1007_s40820-026-02359-6",
-"t": "Interfacial Electronic Regulation in N-Doped Carbon-Encapsulated NiCo Alloy Enables High-Current Nitrate-to-Ammonia Electrosynthesis",
-"j": "Nano-Micro Letters",
-"f": [
-"ec-n"
-],
-"d": "2026-11-09",
-"doi": "10.1007/s40820-026-02359-6",
-"x": "2026-11-09 09:09",
-"tz": "N掺杂碳包覆NiCo合金界面电子调控实现高电流硝酸根到氨的电合成"
-},
-{
-"id": "10.1021_acs.est.6c09066",
-"t": "Dual Regulation of Monomer Transport Enables Ultrahigh Mg2+/Li+ Selectivity in Polyamide Nanofiltration Membranes",
-"j": "Environmental Science & Technology",
-"f": [
-"pa-nf",
-"uf-mf"
-],
-"d": "2026-11-08",
-"doi": "10.1021/acs.est.6c09066",
-"x": "2026-11-09 09:09",
-"tz": "单体传输的双重调节实现聚酰胺纳滤膜超高的Mg2+/Li+选择性"
-},
-{
-"id": "10.1016_j.marpolbul.2026.120554",
-"t": "Microplastic ingestion and polymer characterisation in commercial fish from a tropical coastal lagoon, Pulicat Lake, India and potential ecological risks",
-"j": "Marine Pollution Bulletin",
-"f": [
-"mp"
-],
-"d": "2026-11-08",
-"doi": "10.1016/j.marpolbul.2026.120554",
-"x": "2026-11-09 09:09",
-"tz": "印度普利卡特湖热带沿岸地区商业鱼类微塑料摄入及其聚合物特性分析与潜在生态风险"
-},
-{
-"id": "10.1016_j.ijhydene.2026.158586",
-"t": "Novel Heterostructure rGO@In2S3 Wedge-like Nanosheets Thin Films for Enhanced Photoelectrochemical Performance",
-"j": "International Journal of Hydrogen Energy",
-"f": [
-"ec-other"
-],
-"d": "2026-11-08",
-"doi": "10.1016/j.ijhydene.2026.158586",
-"x": "2026-11-09 09:09",
-"tz": "新型异质结构rGO@In2S3楔形纳米片薄膜以提升光电化学性能"
-},
-{
-"id": "10.1002_anie.4438070",
-"t": "Electrostatic Cation Intercalation Into Polymeric Self‐Assembled Monolayers Enables Ambient‐Air Fabrication of 32.73% Efficient Monolithic Perovskite/Silicon Tandem Solar Cells",
-"j": "Angewandte Chemie International Edition",
-"f": [
-"psc-tandem",
-"psc-int"
-],
-"d": "2026-11-08",
-"doi": "10.1002/anie.4438070",
-"x": "2026-11-09 09:09",
-"tz": "静电阳离子插入聚合自组装单层膜使室温下制备高效钙钛矿/硅叠层太阳能电池成为可能"
-},
-{
-"id": "10.1021_jacs.6c19292",
-"t": "Ambipolar Electrochemical Doping of CsPbBr 3 Nanocrystals",
-"j": "Journal of the American Chemical Society",
-"f": [
-"ec-other"
-],
-"d": "2026-11-08",
-"doi": "10.1021/jacs.6c19292",
-"x": "2026-11-09 09:09",
-"tz": "CsPbBr₃纳米晶的双极性电化学掺杂"
-},
-{
-"id": "10.1016_j.cities.2026.107713",
-"t": "Comparative analysis of barriers and opportunities for implementation of blue-green infrastructure for enhancing urban flood resilience in Uganda, Rwanda, and Sweden",
-"j": "Cities",
-"f": [
-"flood"
-],
-"d": "2026-11-08",
-"doi": "10.1016/j.cities.2026.107713",
-"x": "2026-11-09 09:09",
-"tz": "乌干达、卢旺达和瑞典增强城市洪灾 resilience 的蓝绿基础设施实施障碍与机遇比较分析"
-},
-{
-"id": "10.1007_s11426-026-3928-4",
-"t": "SSE-Bridge: an agentic workflow for constructing ionic conductivity and doping strategy databases for solid-state electrolytes",
-"j": "Science China Chemistry",
-"f": [
-"ec-other"
-],
-"d": "2026-11-03",
-"doi": "10.1007/s11426-026-3928-4",
-"x": "2026-11-09 09:09",
-"tz": "SSE-Bridge：一种构建固态电解质离子导电性和掺杂策略数据库的智能体工作流"
 }
 ]
 }

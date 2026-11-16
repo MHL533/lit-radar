@@ -1,6 +1,152 @@
 {
-"updated": "2026-11-16 16:49",
+"updated": "2026-11-16 19:03",
 "papers": [
+{
+"id": "10.1016_j.ecoenv.2026.121059",
+"t": "Polystyrene nanoplastics induce size-associated intestinal barrier dysfunction and immune activation in human organoid models",
+"j": "Ecotoxicology and Environmental Safety",
+"f": [
+"mp"
+],
+"d": "2026-11-16",
+"doi": "10.1016/j.ecoenv.2026.121059",
+"x": "2026-11-16 18:43"
+},
+{
+"id": "10.1016_j.est.2026.125496",
+"t": "State of health estimation of lithium-ion batteries via multi-modal wavelet fusion cumulative residual spectral entropy",
+"j": "Journal of Energy Storage",
+"f": [
+"ec-li"
+],
+"d": "2026-11-16",
+"doi": "10.1016/j.est.2026.125496",
+"x": "2026-11-16 18:43"
+},
+{
+"id": "10.1016_j.est.2026.125523",
+"t": "Data-driven predictive control of battery energy storage with physics-informed sequence modeling",
+"j": "Journal of Energy Storage",
+"f": [
+"ec-other"
+],
+"d": "2026-11-16",
+"doi": "10.1016/j.est.2026.125523",
+"x": "2026-11-16 18:43"
+},
+{
+"id": "10.1016_j.est.2026.125526",
+"t": "Fabrication of porous carbons via surface chemistry and pore structure regulation for wide voltage electrochemical performance",
+"j": "Journal of Energy Storage",
+"f": [
+"ec-other"
+],
+"d": "2026-11-16",
+"doi": "10.1016/j.est.2026.125526",
+"x": "2026-11-16 18:43"
+},
+{
+"id": "10.1016_j.est.2026.125532",
+"t": "Unveiling solid electrolyte interphase nano-structural doping",
+"j": "Journal of Energy Storage",
+"f": [
+"ec-li"
+],
+"d": "2026-11-16",
+"doi": "10.1016/j.est.2026.125532",
+"x": "2026-11-16 18:43"
+},
+{
+"id": "10.1016_j.est.2026.125569",
+"t": "Fracture behaviour in Si-based anodes depending on the morphology and lithiation parameters based on multiphysics simulations",
+"j": "Journal of Energy Storage",
+"f": [
+"ec-other"
+],
+"d": "2026-11-16",
+"doi": "10.1016/j.est.2026.125569",
+"x": "2026-11-16 18:43"
+},
+{
+"id": "10.1016_j.est.2026.125608",
+"t": "Solid waste-derived electric double-layer capacitors electrode from waste tire and aluminum electrolysis carbon dross: Preparation and electrochemical performance",
+"j": "Journal of Energy Storage",
+"f": [
+"ec-sc"
+],
+"d": "2026-11-16",
+"doi": "10.1016/j.est.2026.125608",
+"x": "2026-11-16 18:43"
+},
+{
+"id": "10.1016_j.est.2026.125616",
+"t": "Multiscale modeling of oil-water two-phase flow in zinc-bromine flow batteries",
+"j": "Journal of Energy Storage",
+"f": [
+"ec-beyond"
+],
+"d": "2026-11-16",
+"doi": "10.1016/j.est.2026.125616",
+"x": "2026-11-16 18:43"
+},
+{
+"id": "10.1002_adma.75724",
+"t": "Electrochemically Passivated Liquid Metal Printing for Two‐Dimensional Wafer‐Scale, Atomically‐Thin Non‐Layered Oxides",
+"j": "Advanced Materials",
+"f": [
+"ec-other"
+],
+"d": "2026-11-16",
+"doi": "10.1002/adma.75724",
+"x": "2026-11-16 18:43",
+"hb": 1
+},
+{
+"id": "10.1002_anie.7360635",
+"t": "In Situ Product Separation Suppresses Self‐Poisoning in 2‐Butanol Electrooxidation",
+"j": "Angewandte Chemie International Edition",
+"f": [
+"ec-other"
+],
+"d": "2026-11-16",
+"doi": "10.1002/anie.7360635",
+"x": "2026-11-16 18:43",
+"hb": 1
+},
+{
+"id": "10.1002_anie.9097834",
+"t": "Coking–Crosslinking Competition Shapes Alveolar Hard Carbon Formation From Heterogeneous Precursors for Wide‐Temperature Sodium Storage",
+"j": "Angewandte Chemie International Edition",
+"f": [
+"ec-beyond"
+],
+"d": "2026-11-16",
+"doi": "10.1002/anie.9097834",
+"x": "2026-11-16 18:43",
+"hb": 1
+},
+{
+"id": "10.1038_s41467-026-78720-5",
+"t": "Burst-like intracellular antibody infusion via membrane-permeabilizing peptide microcondensates",
+"j": "Nature Communications",
+"f": [
+"mem-other"
+],
+"d": "2026-11-16",
+"doi": "10.1038/s41467-026-78720-5",
+"x": "2026-11-16 18:43"
+},
+{
+"id": "10.1038_s41563-026-02799-w",
+"t": "Two-dimensional material membranes with precisely tunable interlayer spacing from nanometre to submillimetre",
+"j": "Nature Materials",
+"f": [
+"2d-mem"
+],
+"d": "2026-11-16",
+"doi": "10.1038/s41563-026-02799-w",
+"x": "2026-11-16 18:43"
+},
 {
 "id": "10.1016_j.memsci.2026.126415",
 "t": "Hierarchical interlayer engineering of Ti3C2Tx lamellar membranes for high-permeance and selective dye/salt separation",

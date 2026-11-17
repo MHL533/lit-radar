@@ -1,6 +1,63 @@
 {
-"updated": "2026-11-18 03:13",
+"updated": "2026-11-18 06:08",
 "papers": [
+{
+"id": "10.1021_acsami.6c19491",
+"t": "Boosting the HER Performance of La–MoOx@NF Electrocatalysts with La-Tailored Nanoporous Architectures",
+"j": "ACS Applied Materials &amp; Interfaces",
+"f": [
+"ec-water"
+],
+"d": "2026-11-18",
+"doi": "10.1021/acsami.6c19491",
+"x": "2026-11-18 05:53",
+"hb": 1
+},
+{
+"id": "10.1016_j.ijhydene.2026.158611",
+"t": "H2-Rich Syngas Production from Coconut Shell Biochar by CO2/O2 Gasification and Water–Gas Shift with Subsequent Metallic Membrane Separation",
+"j": "International Journal of Hydrogen Energy",
+"f": [
+"mem-other"
+],
+"d": "2026-11-17",
+"doi": "10.1016/j.ijhydene.2026.158611",
+"x": "2026-11-18 05:53"
+},
+{
+"id": "10.1016_j.ijhydene.2026.158765",
+"t": "Clarifying the Co-Coating Effect on Enhanced Electrochemical Performance of Hydrogen Storage Alloys",
+"j": "International Journal of Hydrogen Energy",
+"f": [
+"ec-other"
+],
+"d": "2026-11-17",
+"doi": "10.1016/j.ijhydene.2026.158765",
+"x": "2026-11-18 05:53"
+},
+{
+"id": "10.5194_acp-26-16341-2026",
+"t": "Airborne and marine microplastics in the Northern Indian Ocean: decoupled pathways traced by black carbon",
+"j": "Atmospheric Chemistry and Physics",
+"f": [
+"mp"
+],
+"d": "2026-11-17",
+"doi": "10.5194/acp-26-16341-2026",
+"x": "2026-11-18 05:53",
+"hb": 1
+},
+{
+"id": "10.1016_j.aqrep.2026.103918",
+"t": "Dietary polystyrene microplastics and broodstock reproduction: Ovulation, gamete quality and antioxidant enzymes in farmed brown trout (Salmo trutta)",
+"j": "Aquaculture Reports",
+"f": [
+"mp"
+],
+"d": "2026-11-17",
+"doi": "10.1016/j.aqrep.2026.103918",
+"x": "2026-11-18 05:53"
+},
 {
 "id": "10.1016_j.memsci.2026.126416",
 "t": "Carrier-decoupled ammonia permeation through PDMS membranes in aqueous microfluidic systems",
@@ -27964,278 +28021,6 @@
 "x": "2026-11-11 10:34",
 "hb": 1,
 "tz": "数据驱动的原子相互作用调控实现高熵合金双功能介质用于锂硫电池"
-},
-{
-"id": "10.1016_j.memsci.2026.126391",
-"t": "Dual-Functional Phosphorylated Cellulose Nanofibril Membranes for Proton-Conductive Microbial Fuel Cells",
-"j": "Journal of Membrane Science",
-"f": [
-"ec-fc",
-"ec-env"
-],
-"d": "2026-11-10",
-"doi": "10.1016/j.memsci.2026.126391",
-"x": "2026-11-11 04:36",
-"tz": "磷化细胞纳米纤维双功能膜在质子导电微生物燃料电池中的应用"
-},
-{
-"id": "10.1016_j.desal.2026.121043",
-"t": "MXene-based composite membranes for membrane distillation",
-"j": "Desalination",
-"f": [
-"md",
-"2d-mem"
-],
-"d": "2026-11-10",
-"doi": "10.1016/j.desal.2026.121043",
-"x": "2026-11-11 04:36",
-"tz": "基于MXene的复合膜在膜蒸馏中的应用"
-},
-{
-"id": "10.1016_j.cej.2026.184104",
-"t": "Calculation-guided design and experimental validation of ionic liquid electrolytes for boosting high CO generation rate in CO2 electroreduction",
-"j": "Chemical Engineering Journal",
-"f": [
-"ec-co2"
-],
-"d": "2026-11-10",
-"doi": "10.1016/j.cej.2026.184104",
-"x": "2026-11-11 04:36",
-"tz": "计算引导设计与实验验证：离子液体电解质促进CO2电还原产CO高生成速率"
-},
-{
-"id": "10.1016_j.jhazmat.2026.144170",
-"t": "Microplastics and Cyanobacterial Harmful Algal Blooms: Mechanistic Pathways, Cyanotoxin Dynamics, and Quantitative Evidence from Polystyrene (PS)-Microcystis Interactions",
-"j": "Journal of Hazardous Materials",
-"f": [
-"mp"
-],
-"d": "2026-11-10",
-"doi": "10.1016/j.jhazmat.2026.144170",
-"x": "2026-11-11 04:36",
-"tz": "聚苯乙烯与微囊藻有害藻华：机制途径、微囊藻毒素动力学及定量证据"
-},
-{
-"id": "10.1016_j.apcatb.2026.127777",
-"t": "Self-Sustaining Buffered Electron Shuttle Triggered by Core-Shell Ru/RuO2 Phase Evolution for High-Performance and Durable Anion Exchange Membrane Water Electrolyzers",
-"j": "Applied Catalysis B: Environment and Energy",
-"f": [
-"ec-water"
-],
-"d": "2026-11-10",
-"doi": "10.1016/j.apcatb.2026.127777",
-"x": "2026-11-11 04:36",
-"tz": "由核壳Ru/RuO2相演变触发的自维持缓冲电子穿梭剂在高性能和耐用阴离子交换膜水电解槽中的应用"
-},
-{
-"id": "10.1016_j.apcatb.2026.127773",
-"t": "Co–Fe Bimetallic Atom-Cluster Cascades Enable Rapid Hydroxyl Radical Generation for Efficient Electro-Fenton Water Purification",
-"j": "Applied Catalysis B: Environment and Energy",
-"f": [
-"aop-water",
-"ec-env"
-],
-"d": "2026-11-10",
-"doi": "10.1016/j.apcatb.2026.127773",
-"x": "2026-11-11 04:36",
-"tz": "Co–Fe 双金属原子簇级联促进快速羟基自由基生成以实现高效电芬顿水处理"
-},
-{
-"id": "10.1016_j.apcatb.2026.127774",
-"t": "Coordinatively Unsaturated Reciprocal Cu–Ni Atomic Sites Enable Complementary CO2 and Nitrate Activation for Low-Potential Urea Electrosynthesis",
-"j": "Applied Catalysis B: Environment and Energy",
-"f": [
-"ec-n"
-],
-"d": "2026-11-10",
-"doi": "10.1016/j.apcatb.2026.127774",
-"x": "2026-11-11 04:36",
-"tz": "协同不饱和互惠Cu–Ni原子位点促进低电压脲电合成中CO2和硝酸根的互补活化"
-},
-{
-"id": "10.1016_j.jeurceramsoc.2026.119036",
-"t": "Hot corrosion resistance of Cr2AlC MAX phase against Calcium-Magnesium-Aluminum-Silicate (CMAS)",
-"j": "Journal of the European Ceramic Society",
-"f": [
-"ec-corr"
-],
-"d": "2026-11-10",
-"doi": "10.1016/j.jeurceramsoc.2026.119036",
-"x": "2026-11-11 04:36",
-"tz": "Cr2AlC MAX相材料对钙-镁-铝-硅（CMAS）热腐蚀的抗性研究"
-},
-{
-"id": "10.1016_j.ceramint.2026.11.093",
-"t": "Effects of pulsed electrical parameters on the microstructural evolution and thermal shock behavior of YSZ thermal barrier coatings prepared via cathode plasma electrolytic deposition",
-"j": "Ceramics International",
-"f": [
-"ec-other"
-],
-"d": "2026-11-10",
-"doi": "10.1016/j.ceramint.2026.11.093",
-"x": "2026-11-11 04:36",
-"tz": "脉冲电参数对通过阴极等离子电解沉积制备的YSZ热障涂层微观结构演变及热冲击行为的影响"
-},
-{
-"id": "10.1016_j.ensm.2026.105649",
-"t": "Solvent-protect-solvent strategy enables fast-charging and low-temperature 1,3-dioxolane-based electrolytes in lithium-ion batteries",
-"j": "Energy Storage Materials",
-"f": [
-"ec-li"
-],
-"d": "2026-11-10",
-"doi": "10.1016/j.ensm.2026.105649",
-"x": "2026-11-11 04:36",
-"tz": "溶剂保护溶剂策略使1,3-二氧环己烷基电解质在锂离子电池中实现快速充电和低温性能"
-},
-{
-"id": "10.1021_acsenergylett.6c01693",
-"t": "A Self-Driving Laboratory for Accelerated Electrolyte Discovery",
-"j": "ACS Energy Letters",
-"f": [
-"ec-other"
-],
-"d": "2026-11-10",
-"doi": "10.1021/acsenergylett.6c01693",
-"x": "2026-11-11 04:36",
-"hb": 1,
-"tz": "自主驾驶实验室加速电解质发现"
-},
-{
-"id": "10.1021_jacs.6c11241",
-"t": "Multiphase Inorganic-Rich Interphases with Integrated Li-Ion Capture-Transport Ability for High-Rate Lithium Metal Batteries",
-"j": "Journal of the American Chemical Society",
-"f": [
-"ec-li"
-],
-"d": "2026-11-10",
-"doi": "10.1021/jacs.6c11241",
-"x": "2026-11-11 04:36",
-"hb": 1,
-"tz": "具有集成Li+捕获-传输能力的多相无机富相界面材料用于高比能锂金属电池"
-},
-{
-"id": "10.1021_jacs.6c15586",
-"t": "Tailoring Solid-State Reaction Pathways for Bulk Fluorination of Mn-Rich Rock-Salt Cathodes",
-"j": "Journal of the American Chemical Society",
-"f": [
-"ec-other"
-],
-"d": "2026-11-10",
-"doi": "10.1021/jacs.6c15586",
-"x": "2026-11-11 04:36",
-"hb": 1
-},
-{
-"id": "10.1021_acscatal.6c06712",
-"t": "Graph-Guided C–C Coupling Pathways from Reaction Networks to Excited-State Dynamics in CO2-to-C2H4 Photoelectroreduction",
-"j": "ACS Catalysis",
-"f": [
-"ec-co2"
-],
-"d": "2026-11-10",
-"doi": "10.1021/acscatal.6c06712",
-"x": "2026-11-11 04:36",
-"hb": 1,
-"tz": "基于图引导的C–C偶联路径从反应网络到CO2到C2H4光电还原的激发态动力学"
-},
-{
-"id": "10.1039_d6ta07552e",
-"t": "Structural Characterization of Low-Temperature Synthesized Cathodes, LT-LiMn x Ni 1-x O 2 (0.5 ≤x ≤ 0.75), for Li-ion Batteries",
-"j": "Journal of Materials Chemistry A",
-"f": [
-"ec-li"
-],
-"d": "2026-11-10",
-"doi": "10.1039/d6ta07552e",
-"x": "2026-11-11 04:36",
-"hb": 1,
-"tz": "低温合成锂离子电池正极材料LiMnₓNi₁⁻ˣO₂（0.5≤x≤0.75）的结构表征"
-},
-{
-"id": "10.1016_j.corsci.2026.114404",
-"t": "Remarkable corrosion and wear resistant Fe60Cr10Ni10Ti10Mo5Al5 high-entropy alloy coatings for carbon steel protection in harsh supercritical CO2 formation water environment",
-"j": "Corrosion Science",
-"f": [
-"ec-corr"
-],
-"d": "2026-11-10",
-"doi": "10.1016/j.corsci.2026.114404",
-"x": "2026-11-11 04:36",
-"tz": "优异的耐腐蚀耐磨Fe60Cr10Ni10Ti10Mo5Al5高熵合金涂层在严苛超临界CO2形成水环境中保护碳钢"
-},
-{
-"id": "10.1016_j.apenergy.2026.129239",
-"t": "Forecast-free real-time V2B control of battery swapping stations as distributed battery assets via imitation learning",
-"j": "Applied Energy",
-"f": [
-"ec-other"
-],
-"d": "2026-11-10",
-"doi": "10.1016/j.apenergy.2026.129239",
-"x": "2026-11-11 04:36",
-"tz": "基于模仿学习的电池换电站实时虚拟电池控制方法"
-},
-{
-"id": "10.1016_j.jhydrol.2026.136801",
-"t": "Exploring the mutual interactions among population, income and water resource availability using a coupled socio-hydrological model",
-"j": "Journal of Hydrology",
-"f": [
-"abm"
-],
-"d": "2026-11-10",
-"doi": "10.1016/j.jhydrol.2026.136801",
-"x": "2026-11-11 04:36",
-"tz": "基于耦合社会水文模型探索人口、收入与水资源可用性之间的相互作用"
-},
-{
-"id": "10.1016_j.jclepro.2026.149901",
-"t": "Techno-economic assessment of lithium recovery from spent batteries by nanofiltration: trade-offs between recovery, purity and cost",
-"j": "Journal of Cleaner Production",
-"f": [
-"pa-nf",
-"ec-other"
-],
-"d": "2026-11-10",
-"doi": "10.1016/j.jclepro.2026.149901",
-"x": "2026-11-11 04:36",
-"tz": "纳滤技术经济评估：锂回收、纯度与成本之间的权衡"
-},
-{
-"id": "10.1016_j.jallcom.2026.192383",
-"t": "Hollow CoP/Fe2P heterojunction via etching-phosphorization: Synergistic structure-interface engineering for durable bifunctional water electrolysis",
-"j": "Journal of Alloys and Compounds",
-"f": [
-"ec-water"
-],
-"d": "2026-11-10",
-"doi": "10.1016/j.jallcom.2026.192383",
-"x": "2026-11-11 04:36",
-"tz": "蚀刻磷化制备空心CoP/Fe2P异质结：协同结构-界面工程实现耐用的双功能水电解"
-},
-{
-"id": "10.1016_j.rineng.2026.114093",
-"t": "Bidirectional Thermal and Mass Coupling of Solid Oxide Electrolysis with an Oxy-Combustion Cycle for Low-Carbon Ammonia and Power Co-Production",
-"j": "Results in Engineering",
-"f": [
-"ec-fc"
-],
-"d": "2026-11-10",
-"doi": "10.1016/j.rineng.2026.114093",
-"x": "2026-11-11 04:36",
-"tz": "固体氧化物电解与富氧燃烧循环的双向热质耦合以实现低碳氨和电力联产"
-},
-{
-"id": "10.1016_j.jclepro.2026.149923",
-"t": "Development and optimization of rapid synthesized Ni-Fe electrodes for the OER in an alkaline electrolysis cell",
-"j": "Journal of Cleaner Production",
-"f": [
-"ec-water"
-],
-"d": "2026-11-10",
-"doi": "10.1016/j.jclepro.2026.149923",
-"x": "2026-11-11 04:36",
-"tz": "碱性电解池中快速合成Ni-Fe电极的开发与优化"
 }
 ]
 }

@@ -1,6 +1,63 @@
 {
-"updated": "2026-11-19 02:56",
+"updated": "2026-11-19 05:55",
 "papers": [
+{
+"id": "10.1126_sciadv.aei3786",
+"t": "Steering nanometric reductive-oxidative Fenton-like cycle for PFAS mineralization",
+"j": "Science Advances",
+"f": [
+"aop-water"
+],
+"d": "2026-11-20",
+"doi": "10.1126/sciadv.aei3786",
+"x": "2026-11-19 05:34",
+"hb": 1
+},
+{
+"id": "10.1016_j.est.2026.125422",
+"t": "A spatiotemporal dynamic feedback neural network for lithium-ion battery temperature prediction",
+"j": "Journal of Energy Storage",
+"f": [
+"ec-li"
+],
+"d": "2026-11-18",
+"doi": "10.1016/j.est.2026.125422",
+"x": "2026-11-19 05:34"
+},
+{
+"id": "10.1016_j.est.2026.125717",
+"t": "From molecular adsorption to thin carbon layer: In-situ coating enabled by isophthalic acid as a novel carbon source on LiFe0.5Mn0.5PO4 for advanced lithium-ion batteries",
+"j": "Journal of Energy Storage",
+"f": [
+"ec-li"
+],
+"d": "2026-11-18",
+"doi": "10.1016/j.est.2026.125717",
+"x": "2026-11-19 05:34"
+},
+{
+"id": "10.1016_j.est.2026.125749",
+"t": "Multi-criteria assessment of CAES and battery storage technologies for off-grid bifacial PV systems: A water-energy-economic-environmental nexus approach",
+"j": "Journal of Energy Storage",
+"f": [
+"ec-other"
+],
+"d": "2026-11-18",
+"doi": "10.1016/j.est.2026.125749",
+"x": "2026-11-19 05:34"
+},
+{
+"id": "10.1021_acscatal.6c07504",
+"t": "Dual Transition-Metal Electrocatalysis for Allylic Fluoroalkylation of Unactivated Alkenes Using Fluoroalkyl Carboxylic Acids",
+"j": "ACS Catalysis",
+"f": [
+"ec-other"
+],
+"d": "2026-11-18",
+"doi": "10.1021/acscatal.6c07504",
+"x": "2026-11-19 05:34",
+"hb": 1
+},
 {
 "id": "10.1016_j.memsci.2026.126429",
 "t": "Dual Regulation of Sub-Nanometer Channels in Graphene Oxide Membranes for Selective Separation of Radioactive Ions",

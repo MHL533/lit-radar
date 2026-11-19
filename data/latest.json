@@ -1,6 +1,63 @@
 {
-"updated": "2026-11-20 03:14",
+"updated": "2026-11-20 06:01",
 "papers": [
+{
+"id": "10.1021_acsenergylett.6c02523",
+"t": "Competitive Coordination of Solvent in Electrolyte to Stabilize Li-Rich Mn-Based Batteries",
+"j": "ACS Energy Letters",
+"f": [
+"ec-li"
+],
+"d": "2026-11-19",
+"doi": "10.1021/acsenergylett.6c02523",
+"x": "2026-11-20 05:46",
+"hb": 1
+},
+{
+"id": "10.1016_j.est.2026.125531",
+"t": "Selenium-based interfacial engineering toward enhanced electrochemical performance of ultrahigh-nickel cathodes",
+"j": "Journal of Energy Storage",
+"f": [
+"ec-li"
+],
+"d": "2026-11-19",
+"doi": "10.1016/j.est.2026.125531",
+"x": "2026-11-20 05:46"
+},
+{
+"id": "10.1016_j.est.2026.125877",
+"t": "A novel FeCoNiNx-modified Nb2O5@Nb4N5 heterostructure nanoflower as high-performance supercapacitor electrode",
+"j": "Journal of Energy Storage",
+"f": [
+"ec-sc"
+],
+"d": "2026-11-19",
+"doi": "10.1016/j.est.2026.125877",
+"x": "2026-11-20 05:46"
+},
+{
+"id": "10.1021_acsnano.6c16518",
+"t": "Efficient Membrane Separation of Rare Earth Ions in Engineered Macrocycle Channels",
+"j": "ACS Nano",
+"f": [
+"mem-other"
+],
+"d": "2026-11-19",
+"doi": "10.1021/acsnano.6c16518",
+"x": "2026-11-20 05:46",
+"hb": 1
+},
+{
+"id": "10.1016_j.fuel.2026.142254",
+"t": "Iron–Cobalt oxyhydroxide nanocomposite on nickel foam as bifunctional electrocatalyst for urea Electrolysis-Assisted hydrogen production",
+"j": "Fuel",
+"f": [
+"ec-water"
+],
+"d": "2026-11-19",
+"doi": "10.1016/j.fuel.2026.142254",
+"x": "2026-11-20 05:46"
+},
 {
 "id": "10.1126_sciadv.aeh3524",
 "t": "Engineering interfacial nucleation and growth for long-life, ultrahigh-rate anode-free sodium batteries",
@@ -29425,175 +29482,6 @@
 "doi": "10.1016/j.fuel.2026.142019",
 "x": "2026-11-13 11:11",
 "tz": "工程化Pt整合BaMnO3/rGO纳米杂化物以增强甲醇氧化"
-},
-{
-"id": "10.1021_acsenergylett.6c02917",
-"t": "Cu-Doped Highly Porous SnO2 for Long-Lasting Acidic CO2 Electroreduction at 1000 mA cm–2",
-"j": "ACS Energy Letters",
-"f": [
-"ec-co2"
-],
-"d": "2026-11-12",
-"doi": "10.1021/acsenergylett.6c02917",
-"x": "2026-11-13 05:05",
-"hb": 1,
-"tz": "Cu掺杂高孔隙率SnO2在1000 mA cm–2下的长效酸性CO2电还原"
-},
-{
-"id": "10.1021_acsenergylett.6c02703",
-"t": "Regulation of Anionic Redox Reaction Voltage by Energy Band Modulation for Li-Rich Cathodes",
-"j": "ACS Energy Letters",
-"f": [
-"ec-li"
-],
-"d": "2026-11-12",
-"doi": "10.1021/acsenergylett.6c02703",
-"x": "2026-11-13 05:05",
-"hb": 1,
-"tz": "通过能带调控调节阴离子氧化还原反应电压以优化锂丰富正极"
-},
-{
-"id": "10.1021_jacs.6c18729",
-"t": "Interfacial Confinement Enables Conformal IrOx Nanofilms for Low-Ir-Loading PEM Water Electrolysis",
-"j": "Journal of the American Chemical Society",
-"f": [
-"ec-water"
-],
-"d": "2026-11-12",
-"doi": "10.1021/jacs.6c18729",
-"x": "2026-11-13 05:05",
-"hb": 1,
-"tz": "界面限域实现柔性IrOx纳米薄膜 低铱载量PEM水电解槽"
-},
-{
-"id": "10.1021_jacs.6c17602",
-"t": "A Crystalline LaCl3 Reinforced Amorphous Oxyhalide Electrolyte for Thermally Stable All-Solid-State Batteries",
-"j": "Journal of the American Chemical Society",
-"f": [
-"ec-ss"
-],
-"d": "2026-11-12",
-"doi": "10.1021/jacs.6c17602",
-"x": "2026-11-13 05:05",
-"hb": 1,
-"tz": "一种晶态LaCl3增强的无定形 oxyhalide 固态电解质及其在热稳定全固态电池中的应用"
-},
-{
-"id": "10.1021_jacs.6c15743",
-"t": "General Synthesis of Functionalized 1,3-Diamines from Azoarenes and Enoates via Electrochemical Annulation and N–N Bond Cleavage Followed by Chemical Reduction",
-"j": "Journal of the American Chemical Society",
-"f": [
-"ec-other"
-],
-"d": "2026-11-12",
-"doi": "10.1021/jacs.6c15743",
-"x": "2026-11-13 05:05",
-"hb": 1,
-"tz": "功能化1,3-二胺的一般合成方法：通过电化学环合和N-N键断裂随后的化学还原从偶氮化合物和环酸酯制备"
-},
-{
-"id": "10.1021_jacs.6c17549",
-"t": "Solvent/Anion Codepleted Solvation Engineering Enables Low-Coordination Electrolytes for High-Energy and Low-Temperature Sodium-Ion Pouch Cells",
-"j": "Journal of the American Chemical Society",
-"f": [
-"ec-other"
-],
-"d": "2026-11-12",
-"doi": "10.1021/jacs.6c17549",
-"x": "2026-11-13 05:05",
-"hb": 1,
-"tz": "溶剂/阴离子共溶剂工程实现低配位电解质以提高钠离子软包电池的能量密度和低温性能"
-},
-{
-"id": "10.1021_jacs.6c18741",
-"t": "Breaking the “Micro-Size Inversion” Paradox via a Surface-Chemistry-Driven Molecular Sieving Membrane for Ambient Lithium–Air Batteries",
-"j": "Journal of the American Chemical Society",
-"f": [
-"ec-other"
-],
-"d": "2026-11-12",
-"doi": "10.1021/jacs.6c18741",
-"x": "2026-11-13 05:05",
-"hb": 1,
-"tz": "通过表面化学驱动的分子筛膜打破“微尺寸 inversion 倒置”悖论以实现室温锂-氧电池"
-},
-{
-"id": "10.1021_acscatal.6c07019",
-"t": "Brønsted Acid Site-Mediated Proton Injection and Redistribution Regulate Phosphoric Acid Electrochemical Interfaces",
-"j": "ACS Catalysis",
-"f": [
-"ec-other"
-],
-"d": "2026-11-12",
-"doi": "10.1021/acscatal.6c07019",
-"x": "2026-11-13 05:05",
-"hb": 1,
-"tz": "Brønsted 酸位点介导的质子注入与重分布调节磷酸酸性电化学界面"
-},
-{
-"id": "10.1021_acscatal.6c07220",
-"t": "Vacancy-Directed Phytate Coordination Couples Ni-Site Polarization with Interfacial Hydration for Durable Photoelectrochemical Seawater Oxidation",
-"j": "ACS Catalysis",
-"f": [
-"ec-water"
-],
-"d": "2026-11-12",
-"doi": "10.1021/acscatal.6c07220",
-"x": "2026-11-13 05:05",
-"hb": 1,
-"tz": "vacancy-导向的焦磷酸配位耦合Ni位极化与界面水化以实现耐用的光电化学海水氧化"
-},
-{
-"id": "10.1039_d6ta07537a",
-"t": "Photocatalytic Hydrogen Evolution with Single-Atom Cocatalyst-Loaded Graphitic Carbon Nitride: Understanding Electronic-Metal-Support Interaction-Mediated Charge-Transfer Dynamics",
-"j": "Journal of Materials Chemistry A",
-"f": [
-"ec-water"
-],
-"d": "2026-11-12",
-"doi": "10.1039/d6ta07537a",
-"x": "2026-11-13 05:05",
-"hb": 1,
-"tz": "单原子协催化剂负载石墨化碳氮化物的光催化产氢：理解电子-金属-支持体相互作用介导的电荷转移动力学"
-},
-{
-"id": "10.1109_tia.2026.3753219",
-"t": "Performance Assessment of Supercapacitor, Battery, and Hybrid Energy Storage Systems for Fuel Cell Electric Vehicles",
-"j": "IEEE Transactions on Industry Applications",
-"f": [
-"ec-sc",
-"ec-fc"
-],
-"d": "2026-11-12",
-"doi": "10.1109/tia.2026.3753219",
-"x": "2026-11-13 05:05",
-"tz": "超级电容器、电池及混合储能系统在燃料电池电动汽车中的性能评估"
-},
-{
-"id": "10.1073_pnas.2616212123",
-"t": "Diffusional depth profiling using electrochemiluminescence microscopy",
-"j": "Proceedings of the National Academy of Sciences",
-"f": [
-"ec-sensor"
-],
-"d": "2026-11-12",
-"doi": "10.1073/pnas.2616212123",
-"x": "2026-11-13 05:05",
-"hb": 1,
-"tz": "电化学发光显微镜下的扩散深度 profiling"
-},
-{
-"id": "10.1021_acs.langmuir.6c03980",
-"t": "Enzyme-Induced Photocurrent Polarity Reversal in a Zr-MOF/COF Photoelectrochemical Immunosensor for Ultrasensitive Detection of Cancer Markers",
-"j": "Langmuir",
-"f": [
-"ec-sensor"
-],
-"d": "2026-11-12",
-"doi": "10.1021/acs.langmuir.6c03980",
-"x": "2026-11-13 05:05",
-"hb": 1,
-"tz": "酶诱导的光电流极性反转在Zr-MOF/COF光电化学免疫传感器中实现超灵敏检测肿瘤标志物"
 }
 ]
 }

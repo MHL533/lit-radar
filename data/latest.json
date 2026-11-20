@@ -1,6 +1,97 @@
 {
-"updated": "2026-11-21 02:41",
+"updated": "2026-11-21 05:43",
 "papers": [
+{
+"id": "10.1016_j.est.2026.125276",
+"t": "Multi-heat source integration scheme for retrofitting decommissioned coal-fired power plants into Carnot batteries",
+"j": "Journal of Energy Storage",
+"f": [
+"ec-other"
+],
+"d": "2026-11-20",
+"doi": "10.1016/j.est.2026.125276",
+"x": "2026-11-21 05:31"
+},
+{
+"id": "10.1016_j.est.2026.125714",
+"t": "Magnesium ion transport in solid and gel polymer electrolytes and the plasticizing effects of residual solvent",
+"j": "Journal of Energy Storage",
+"f": [
+"ec-other"
+],
+"d": "2026-11-20",
+"doi": "10.1016/j.est.2026.125714",
+"x": "2026-11-21 05:31"
+},
+{
+"id": "10.1016_j.est.2026.125775",
+"t": "Glassy metal-organic frameworks as fillers enabling all-solid-state lithium metal batteries operating from room to elevated temperatures",
+"j": "Journal of Energy Storage",
+"f": [
+"ec-li",
+"ec-ss"
+],
+"d": "2026-11-20",
+"doi": "10.1016/j.est.2026.125775",
+"x": "2026-11-21 05:31"
+},
+{
+"id": "10.1016_j.est.2026.125841",
+"t": "Primary-side indirect control strategy for misalignment-tolerant wireless battery charging of autonomous unmanned aerial vehicles",
+"j": "Journal of Energy Storage",
+"f": [
+"ec-other"
+],
+"d": "2026-11-20",
+"doi": "10.1016/j.est.2026.125841",
+"x": "2026-11-21 05:31"
+},
+{
+"id": "10.1016_j.est.2026.125844",
+"t": "Nitrogen-doped carbon layer-engineered phenolic-resin-derived carbon microspheres with homojunction characteristics for high-performance supercapacitors",
+"j": "Journal of Energy Storage",
+"f": [
+"ec-sc"
+],
+"d": "2026-11-20",
+"doi": "10.1016/j.est.2026.125844",
+"x": "2026-11-21 05:31"
+},
+{
+"id": "10.1016_j.est.2026.125873",
+"t": "Self-assembly template strategy for in-situ confined construction of silicon nanoparticles@N-doped carbon nanotubes as high-performance lithium-ion battery anodes",
+"j": "Journal of Energy Storage",
+"f": [
+"ec-li"
+],
+"d": "2026-11-20",
+"doi": "10.1016/j.est.2026.125873",
+"x": "2026-11-21 05:31"
+},
+{
+"id": "10.1016_j.est.2026.125874",
+"t": "Anion-regulated solvation and interphase chemistry in locally concentrated ionic liquid electrolytes for lithium metal batteries",
+"j": "Journal of Energy Storage",
+"f": [
+"ec-li"
+],
+"d": "2026-11-20",
+"doi": "10.1016/j.est.2026.125874",
+"x": "2026-11-21 05:31"
+},
+{
+"id": "10.1021_acscatal.6c06138",
+"t": "Secondary-Shell Phosphorus Engineering of Fe Single-Atom Catalysts for Efficient Electro-Fenton Oxidation",
+"j": "ACS Catalysis",
+"f": [
+"sac",
+"ec-env"
+],
+"d": "2026-11-20",
+"doi": "10.1021/acscatal.6c06138",
+"x": "2026-11-21 05:31",
+"hb": 1
+},
 {
 "id": "10.1016_j.memsci.2026.126435",
 "t": "Reconciling Nucleation Kinetics with the Scaling of Calcium Sulfate in Membrane Distillation",
@@ -30167,169 +30258,6 @@
 "x": "2026-11-14 10:55",
 "hb": 1,
 "tz": "仿生多金属接力催化剂及其在硝酸根还原和Zn-NO3–电池性能中的高效应用"
-},
-{
-"id": "10.1016_j.cej.2026.184186",
-"t": "Hybrid membrane nanoparticles hijack T cell homing to allografts for targeted immunosuppression",
-"j": "Chemical Engineering Journal",
-"f": [
-"mem-process"
-],
-"d": "2026-11-13",
-"doi": "10.1016/j.cej.2026.184186",
-"x": "2026-11-14 04:39",
-"tz": "杂化膜纳米颗粒劫持T细胞归巢以实现靶向免疫抑制"
-},
-{
-"id": "10.1016_j.cej.2026.184227",
-"t": "Upcycling traditional Chinese medicine residue into magnetically separable FeMn biochar for ultrafast peroxymonosulfate activation and ciprofloxacin detoxification",
-"j": "Chemical Engineering Journal",
-"f": [
-"aop-water"
-],
-"d": "2026-11-13",
-"doi": "10.1016/j.cej.2026.184227",
-"x": "2026-11-14 04:39",
-"tz": "将传统中药残渣升级转化为可磁性分离的FeMn生物炭用于超快过一硫酸盐激活及ciprofloxacin解毒"
-},
-{
-"id": "10.1016_j.cej.2026.184231",
-"t": "Decoding biochar-enabled AnMBR adaptability to sulfadiazine shock via microbiome modulation and DIET promotion",
-"j": "Chemical Engineering Journal",
-"f": [
-"mbr"
-],
-"d": "2026-11-13",
-"doi": "10.1016/j.cej.2026.184231",
-"x": "2026-11-14 04:39",
-"tz": "生物炭赋能厌氧膜生物反应器对磺胺嘧啶冲击的适应性解码：微生物组调节与电容去离子促进"
-},
-{
-"id": "10.1021_acs.est.6c10774",
-"t": "Decoupling Ion Selectivity and Transport via Dual-Scale Interlayer Nanochannels in Reduced Graphene Oxide Membranes for Lithium Separation",
-"j": "Environmental Science & Technology",
-"f": [
-"2d-mem"
-],
-"d": "2026-11-13",
-"doi": "10.1021/acs.est.6c10774",
-"x": "2026-11-14 04:39",
-"hb": 1,
-"tz": "通过减薄 graphene oxide 膜中双尺度间层纳米通道实现锂离子选择性与传输的解耦"
-},
-{
-"id": "10.1016_j.jece.2026.125938",
-"t": "Deciphering Hydrothermal Temperature-Induced Morphological Evolution of Sea-Urchin NiCoS Microflowers with Enhanced Electrocatalytic Activity for Ultrasensitive Metol Detection in Environmental Waters",
-"j": "Journal of Environmental Chemical Engineering",
-"f": [
-"ec-other"
-],
-"d": "2026-11-13",
-"doi": "10.1016/j.jece.2026.125938",
-"x": "2026-11-14 04:39",
-"tz": "解析海胆状NiCoS微花在水热温度作用下的形态演变及其增强的电催化活性在环境水中超灵敏检测甲氧苄啶中的应用"
-},
-{
-"id": "10.1016_j.nanoen.2026.112620",
-"t": "Synergistic Electronic Push–Pull Modulation Enables Reversible Mn/O Redox in P2-Type Cathodes",
-"j": "Nano Energy",
-"f": [
-"ec-other"
-],
-"d": "2026-11-13",
-"doi": "10.1016/j.nanoen.2026.112620",
-"x": "2026-11-14 04:39",
-"tz": "协同电子推拉调制使P2型正极实现可逆的 Mn/O 氧化还原反应"
-},
-{
-"id": "10.1016_j.jechem.2026.10.074",
-"t": "An efficient hetero-structured misfit layer composite electrode enabling flexible and tunable CO2 to CO/CH4 conversion",
-"j": "Journal of Energy Chemistry",
-"f": [
-"ec-co2"
-],
-"d": "2026-11-13",
-"doi": "10.1016/j.jechem.2026.10.074",
-"x": "2026-11-14 04:39",
-"tz": "一种高效错配层异结构复合电极实现柔性可调的CO2到CO/CH4转化"
-},
-{
-"id": "10.1021_acsami.6c17789",
-"t": "Oscillatory Chemical Networks in Silicon Nanofluidic Chips for Ultra-low-power Computing",
-"j": "ACS Applied Materials &amp; Interfaces",
-"f": [
-"osmotic-energy"
-],
-"d": "2026-11-13",
-"doi": "10.1021/acsami.6c17789",
-"x": "2026-11-14 04:39",
-"hb": 1,
-"tz": "硅纳米流体芯片上的振荡化学网络实现超低功耗计算"
-},
-{
-"id": "10.1002_adfm.79644",
-"t": "Ether‐Oxygen‐Functionalized Ionic Liquid Electrolytes Enabling Intrinsically Safe 535 Wh Kg −1 Lithium Metal Batteries",
-"j": "Advanced Functional Materials",
-"f": [
-"ec-li"
-],
-"d": "2026-11-13",
-"doi": "10.1002/adfm.79644",
-"x": "2026-11-14 04:39",
-"hb": 1,
-"tz": "醚氧功能化离子液体电解质实现本征安全535 Wh/kg 锂金属电池"
-},
-{
-"id": "10.1002_adfm.79608",
-"t": "Prussian Blue Analogue Cathode Materials for Sodium‐Ion Batteries: A Comprehensive Review",
-"j": "Advanced Functional Materials",
-"f": [
-"ec-beyond"
-],
-"d": "2026-11-13",
-"doi": "10.1002/adfm.79608",
-"x": "2026-11-14 04:39",
-"hb": 1,
-"tz": "普鲁士蓝类似物正极材料用于钠离子电池：综述"
-},
-{
-"id": "10.1021_jacs.6c17896",
-"t": "Site-Selective and Deuterium-Programmable Electrochemical Synthesis of Deuterated Pharmaceuticals",
-"j": "Journal of the American Chemical Society",
-"f": [
-"ec-synth"
-],
-"d": "2026-11-13",
-"doi": "10.1021/jacs.6c17896",
-"x": "2026-11-14 04:39",
-"hb": 1,
-"tz": "选择性位点和氘标记可编程电化学合成氘代药物"
-},
-{
-"id": "10.1016_j.fuel.2026.142144",
-"t": "Dynamic carbon corrosion and mitigation in commercial-size fuel cells under localized anode flooding",
-"j": "Fuel",
-"f": [
-"ec-fc",
-"ec-corr",
-"flood"
-],
-"d": "2026-11-13",
-"doi": "10.1016/j.fuel.2026.142144",
-"x": "2026-11-14 04:39",
-"tz": "局部阴极淹没条件下商业规模燃料电池中的动态碳腐蚀及抑制"
-},
-{
-"id": "10.1016_j.eng.2026.09.016",
-"t": "A Fish Gill-Inspired Self-Breathing Dissolved Oxygen Seawater Battery with Ultrahigh Power Density",
-"j": "Engineering",
-"f": [
-"ec-other"
-],
-"d": "2026-11-13",
-"doi": "10.1016/j.eng.2026.09.016",
-"x": "2026-11-14 04:39",
-"tz": "受鱼鳃启发的自呼吸溶解氧海水电池超高功率密度"
 }
 ]
 }

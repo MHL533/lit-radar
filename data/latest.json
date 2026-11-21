@@ -1,6 +1,489 @@
 {
-"updated": "2026-11-21 12:02",
+"updated": "2026-11-21 16:58",
 "papers": [
+{
+"id": "10.1016_j.memsci.2026.126442",
+"t": "Synergistic Humidity and Plasma Pretreatment for Tailoring Pore Architecture in Composite Membranes for Durable Alkaline Water Electrolysis",
+"j": "Journal of Membrane Science",
+"f": [
+"ec-water"
+],
+"d": "2026-11-21",
+"doi": "10.1016/j.memsci.2026.126442",
+"x": "2026-11-21 16:44"
+},
+{
+"id": "10.1016_j.memsci.2026.126441",
+"t": "Microporous N-Boc-functionalized poly(isatin fluorene) thin-film composite membranes for hydrocarbon separations",
+"j": "Journal of Membrane Science",
+"f": [
+"mem-other"
+],
+"d": "2026-11-21",
+"doi": "10.1016/j.memsci.2026.126441",
+"x": "2026-11-21 16:44"
+},
+{
+"id": "10.1016_j.seppur.2026.141032",
+"t": "Unraveling the synergistic regulation mechanisms of iron-based composite spinel oxygen carriers for chemical looping negative‑carbon hydrogen production from waste plastics",
+"j": "Separation and Purification Technology",
+"f": [
+"cl-h2"
+],
+"d": "2026-11-21",
+"doi": "10.1016/j.seppur.2026.141032",
+"x": "2026-11-21 16:44"
+},
+{
+"id": "10.1016_j.seppur.2026.141034",
+"t": "Mitigating membrane fouling in black liquor electrolysis through a hybrid acidification–electrolysis process for lignin recovery and alkali regeneration",
+"j": "Separation and Purification Technology",
+"f": [
+"mem-process",
+"fouling",
+"ec-other"
+],
+"d": "2026-11-21",
+"doi": "10.1016/j.seppur.2026.141034",
+"x": "2026-11-21 16:44"
+},
+{
+"id": "10.1016_j.cej.2026.184219",
+"t": "Metal-dependent tuning of CO2 electroreduction selectivity in trinuclear metal cluster-based covalent organic frameworks",
+"j": "Chemical Engineering Journal",
+"f": [
+"ec-co2"
+],
+"d": "2026-11-21",
+"doi": "10.1016/j.cej.2026.184219",
+"x": "2026-11-21 16:44"
+},
+{
+"id": "10.1016_j.cej.2026.184554",
+"t": "Activating Li+ transport in polyimide through conformational regulation for solid-state lithium metal batteries",
+"j": "Chemical Engineering Journal",
+"f": [
+"ec-li",
+"ec-ss"
+],
+"d": "2026-11-21",
+"doi": "10.1016/j.cej.2026.184554",
+"x": "2026-11-21 16:44"
+},
+{
+"id": "10.1016_j.cej.2026.184535",
+"t": "Waste valorization for energy storage: Additive manufacturing of iron ore tailings-reinforced cementitious structural supercapacitors",
+"j": "Chemical Engineering Journal",
+"f": [
+"ec-sc"
+],
+"d": "2026-11-21",
+"doi": "10.1016/j.cej.2026.184535",
+"x": "2026-11-21 16:44"
+},
+{
+"id": "10.1016_j.cej.2026.184523",
+"t": "Nanoconfinement enables pollutant-assisted electron transfer for peroxymonosulfate activation and pathway modulation",
+"j": "Chemical Engineering Journal",
+"f": [
+"aop-water"
+],
+"d": "2026-11-21",
+"doi": "10.1016/j.cej.2026.184523",
+"x": "2026-11-21 16:44"
+},
+{
+"id": "10.1016_j.cej.2026.184569",
+"t": "Target-triggered structural collapse of Apt-CDs@MIL-101(Fe, Cu) for fluorescence/temperature dual-mode sensing and visible light-driven degradation of chlorpyrifos",
+"j": "Chemical Engineering Journal",
+"f": [
+"mof"
+],
+"d": "2026-11-21",
+"doi": "10.1016/j.cej.2026.184569",
+"x": "2026-11-21 16:44"
+},
+{
+"id": "10.1016_j.apcatb.2026.127821",
+"t": "Fe-Mn Dual-Site Mediated Intermediate Interactions and C-Cl Bond Activation for Low-Temperature Synergistic Removal of NOx and Chlorobenzenes",
+"j": "Applied Catalysis B: Environment and Energy",
+"f": [
+"aop-gas"
+],
+"d": "2026-11-21",
+"doi": "10.1016/j.apcatb.2026.127821",
+"x": "2026-11-21 16:44"
+},
+{
+"id": "10.1016_j.jece.2026.125983",
+"t": "Geometry-Dependent Photocatalytic Removal of Polystyrene Nanoplastics Using 3D-Printed CuₓO Photocatalysts under Visible Light",
+"j": "Journal of Environmental Chemical Engineering",
+"f": [
+"mp"
+],
+"d": "2026-11-21",
+"doi": "10.1016/j.jece.2026.125983",
+"x": "2026-11-21 16:44"
+},
+{
+"id": "10.1016_j.ceramint.2026.11.278",
+"t": "Holistic mechanism of magnesium-based material for advanced energy storage batteries",
+"j": "Ceramics International",
+"f": [
+"ec-other"
+],
+"d": "2026-11-21",
+"doi": "10.1016/j.ceramint.2026.11.278",
+"x": "2026-11-21 16:44"
+},
+{
+"id": "10.1016_j.ceramint.2026.11.276",
+"t": "Tuning of Electrochemical and Photocatalytic Characteristics of Calcium Ferrite Nanoparticles via Aliovalent and Isovalent doping",
+"j": "Ceramics International",
+"f": [
+"ec-other"
+],
+"d": "2026-11-21",
+"doi": "10.1016/j.ceramint.2026.11.276",
+"x": "2026-11-21 16:44"
+},
+{
+"id": "10.1016_j.electacta.2026.150495",
+"t": "Enhanced Stability and Electrochemical Performance of KI-Passivated Two-Dimensional Perovskite (iso-BA)₂PbI₄ as an Anode for Lithium-Ion Batteries",
+"j": "Electrochimica Acta",
+"f": [
+"ec-li"
+],
+"d": "2026-11-21",
+"doi": "10.1016/j.electacta.2026.150495",
+"x": "2026-11-21 16:44"
+},
+{
+"id": "10.1016_j.electacta.2026.150496",
+"t": "Unveiling p-Type Polymeric Organic Framework (POF) Based on Donor (PTZ)-Donor (PP) for High Energy Density and Pseudocapacitive Performance",
+"j": "Electrochimica Acta",
+"f": [
+"ec-sc"
+],
+"d": "2026-11-21",
+"doi": "10.1016/j.electacta.2026.150496",
+"x": "2026-11-21 16:44"
+},
+{
+"id": "10.1016_j.electacta.2026.150494",
+"t": "LiF-coated LiMn2O4 cathodes with enhanced high-temperature cycling stability",
+"j": "Electrochimica Acta",
+"f": [
+"ec-li"
+],
+"d": "2026-11-21",
+"doi": "10.1016/j.electacta.2026.150494",
+"x": "2026-11-21 16:44"
+},
+{
+"id": "10.1016_j.electacta.2026.150497",
+"t": "Carbon-capped and carbon-supported nickel-based nanoparticles: a strategy to design active and durable electrocatalyst for the hydrogen evolution and hydrogen oxidation reactions in low-temperature alkaline (membrane) water electrolyzers and fuel cells. A review",
+"j": "Electrochimica Acta",
+"f": [
+"ec-water",
+"ec-fc"
+],
+"d": "2026-11-21",
+"doi": "10.1016/j.electacta.2026.150497",
+"x": "2026-11-21 16:44"
+},
+{
+"id": "10.1016_j.est.2026.125718",
+"t": "The novel utilization of hybrid tidal energy storages with pumped hydro functions for addressing the electric vehicle battery charging bottlenecks in coastal communities",
+"j": "Journal of Energy Storage",
+"f": [
+"ec-other"
+],
+"d": "2026-11-21",
+"doi": "10.1016/j.est.2026.125718",
+"x": "2026-11-21 16:44"
+},
+{
+"id": "10.1016_j.est.2026.125839",
+"t": "Empowering lithium-ion batteries: High-capacity storage and rapid diffusion in Janus ZrSSe monolayer",
+"j": "Journal of Energy Storage",
+"f": [
+"ec-li"
+],
+"d": "2026-11-21",
+"doi": "10.1016/j.est.2026.125839",
+"x": "2026-11-21 16:44"
+},
+{
+"id": "10.1016_j.est.2026.125898",
+"t": "State-of-charge estimation of LiFePO₄ batteries via dynamic OCV reconstruction and physics-consistent correction",
+"j": "Journal of Energy Storage",
+"f": [
+"ec-other"
+],
+"d": "2026-11-21",
+"doi": "10.1016/j.est.2026.125898",
+"x": "2026-11-21 16:44"
+},
+{
+"id": "10.1016_j.est.2026.125757",
+"t": "Sustainable water-processable chitosan binder for graphite anodes in lithium-ion batteries",
+"j": "Journal of Energy Storage",
+"f": [
+"ec-li"
+],
+"d": "2026-11-21",
+"doi": "10.1016/j.est.2026.125757",
+"x": "2026-11-21 16:44"
+},
+{
+"id": "10.1016_j.est.2026.125785",
+"t": "Online decomposition of thermodynamic and kinetic capacity losses in series-connected lithium-ion battery clusters for cluster capacity assessment",
+"j": "Journal of Energy Storage",
+"f": [
+"ec-li"
+],
+"d": "2026-11-21",
+"doi": "10.1016/j.est.2026.125785",
+"x": "2026-11-21 16:44"
+},
+{
+"id": "10.1016_j.est.2026.125847",
+"t": "Side-chain-engineered triphenylamine-ethylenedioxythiophene polymers for flexible electrochromic supercapacitors",
+"j": "Journal of Energy Storage",
+"f": [
+"ec-sc"
+],
+"d": "2026-11-21",
+"doi": "10.1016/j.est.2026.125847",
+"x": "2026-11-21 16:44"
+},
+{
+"id": "10.1016_j.ijhydene.2026.158736",
+"t": "Influence of Hydrogen Charging Electrolyte on the Measured Hydrogen Embrittlement Susceptibility of AA7075 Aluminum Alloy",
+"j": "International Journal of Hydrogen Energy",
+"f": [
+"ec-other"
+],
+"d": "2026-11-21",
+"doi": "10.1016/j.ijhydene.2026.158736",
+"x": "2026-11-21 16:44"
+},
+{
+"id": "10.1016_j.ijhydene.2026.158794",
+"t": "Solvent-Induced Swelling and Support-dependent Failure Mechanisms of Reinforced PFSA Membranes in Direct Catalyst-Layer Coating",
+"j": "International Journal of Hydrogen Energy",
+"f": [
+"cat-mem"
+],
+"d": "2026-11-21",
+"doi": "10.1016/j.ijhydene.2026.158794",
+"x": "2026-11-21 16:44"
+},
+{
+"id": "10.1016_j.ijhydene.2026.158707",
+"t": "Multi-criteria assessment of an ammonia-driven fuel cell system for maritime propulsion",
+"j": "International Journal of Hydrogen Energy",
+"f": [
+"ec-fc"
+],
+"d": "2026-11-21",
+"doi": "10.1016/j.ijhydene.2026.158707",
+"x": "2026-11-21 16:44"
+},
+{
+"id": "10.1016_j.ces.2026.125661",
+"t": "Enhanced performance of a transition-metal-free nitrogen-doped carbon ORR electrocatalyst by a novel solid-in-gel surface doping strategy",
+"j": "Chemical Engineering Science",
+"f": [
+"ec-fc"
+],
+"d": "2026-11-21",
+"doi": "10.1016/j.ces.2026.125661",
+"x": "2026-11-21 16:44"
+},
+{
+"id": "10.1016_j.ces.2026.125670",
+"t": "FeC-mediated para-xylene biodegradation and electricity generation in microbial fuel cells: Enhanced extracellular electron transfer and microbial activity",
+"j": "Chemical Engineering Science",
+"f": [
+"ec-fc",
+"ec-env"
+],
+"d": "2026-11-21",
+"doi": "10.1016/j.ces.2026.125670",
+"x": "2026-11-21 16:44"
+},
+{
+"id": "10.1016_j.colsurfa.2026.142414",
+"t": "High-value utilization of anthracene to fabricate hierarchical porous carbon for low-cost zinc-ion hybrid supercapacitor cathodes",
+"j": "Colloids and Surfaces A: Physicochemical and Engineering Aspects",
+"f": [
+"ec-beyond",
+"ec-sc"
+],
+"d": "2026-11-21",
+"doi": "10.1016/j.colsurfa.2026.142414",
+"x": "2026-11-21 16:44"
+},
+{
+"id": "10.1016_j.jallcom.2026.192490",
+"t": "Engineering a bifunctional TiO2-CoOx hole transfer layer between BiVO4 and oxygen evolution cocatalyst interfaces for photoelectrochemical water oxidation",
+"j": "Journal of Alloys and Compounds",
+"f": [
+"ec-water"
+],
+"d": "2026-11-21",
+"doi": "10.1016/j.jallcom.2026.192490",
+"x": "2026-11-21 16:44"
+},
+{
+"id": "10.1002_adma.75711",
+"t": "Ni‐Embedded Carbon Fibers Enable Synergistic Confinement and Catalytic Conversion of Iodine Species for Zn–I 2 Batteries",
+"j": "Advanced Materials",
+"f": [
+"ec-other"
+],
+"d": "2026-11-20",
+"doi": "10.1002/adma.75711",
+"x": "2026-11-21 16:44",
+"hb": 1
+},
+{
+"id": "10.1002_anie.2320153",
+"t": "Steering C–C Coupling via Amorphous Nd 2 O 3 Pinning for Efficient CO 2 Electroreduction to Ethylene",
+"j": "Angewandte Chemie International Edition",
+"f": [
+"ec-other"
+],
+"d": "2026-11-20",
+"doi": "10.1002/anie.2320153",
+"x": "2026-11-21 16:44",
+"hb": 1
+},
+{
+"id": "10.1002_anie.7565410",
+"t": "Constructing Dynamic Interfacial Hydration Network Channel for Efficient Co‑Transport of OH − and H 2 in Water‑Electrolysis Cathodes",
+"j": "Angewandte Chemie International Edition",
+"f": [
+"ec-other"
+],
+"d": "2026-11-20",
+"doi": "10.1002/anie.7565410",
+"x": "2026-11-21 16:44",
+"hb": 1
+},
+{
+"id": "10.1002_anie.4101340",
+"t": "Stabilizing High‐Voltage Oxygen Holes via π‐Bonding Mediated Frontier‐Orbital Character Inversion in Intermediate‐Regime Oxide Cathodes",
+"j": "Angewandte Chemie International Edition",
+"f": [
+"ec-other"
+],
+"d": "2026-11-20",
+"doi": "10.1002/anie.4101340",
+"x": "2026-11-21 16:44",
+"hb": 1
+},
+{
+"id": "10.1002_anie.6742507",
+"t": "Bidirectional Sulfur Redox Regulation Enabling Ultra‐Stable High‐Sulfur‐Loading All‐Solid‐State Lithium‐Sulfur Batteries",
+"j": "Angewandte Chemie International Edition",
+"f": [
+"ec-ss",
+"ec-lis"
+],
+"d": "2026-11-20",
+"doi": "10.1002/anie.6742507",
+"x": "2026-11-21 16:44",
+"hb": 1
+},
+{
+"id": "10.1002_anie.2466347",
+"t": "Coupled Self‐Alkalization and Chelation Chemistry Enables Highly Reversible Zn Anodes and Rechargeable Alkaline Zn–I 2 Batteries",
+"j": "Angewandte Chemie International Edition",
+"f": [
+"ec-beyond"
+],
+"d": "2026-11-20",
+"doi": "10.1002/anie.2466347",
+"x": "2026-11-21 16:44",
+"hb": 1
+},
+{
+"id": "10.1002_anie.6024376",
+"t": "Autonomous Scanning Electrochemical Cell Microscopy Enables Rapid Exploration of Large Compositionally Complex Material Spaces",
+"j": "Angewandte Chemie International Edition",
+"f": [
+"ec-other"
+],
+"d": "2026-11-20",
+"doi": "10.1002/anie.6024376",
+"x": "2026-11-21 16:44",
+"hb": 1
+},
+{
+"id": "10.1002_anie.4657618",
+"t": "Covalent Organic Framework‐Templated Spatial Confinement of Self‐Assembled Monolayers for High‐Performance Perovskite Solar Cells",
+"j": "Angewandte Chemie International Edition",
+"f": [
+"psc-int"
+],
+"d": "2026-11-20",
+"doi": "10.1002/anie.4657618",
+"x": "2026-11-21 16:44",
+"hb": 1
+},
+{
+"id": "10.1002_anie.1330012",
+"t": "Selective Oxidation of Toluene to Benzaldehyde Driven by Electroreduction of Oxygen to Hydrogen Peroxide Coupled With In Situ Electro‐Fenton Reaction",
+"j": "Angewandte Chemie International Edition",
+"f": [
+"aop-gas",
+"ec-env"
+],
+"d": "2026-11-20",
+"doi": "10.1002/anie.1330012",
+"x": "2026-11-21 16:44",
+"hb": 1
+},
+{
+"id": "10.1002_anie.6252293",
+"t": "Short‐Range Molecular Ordering Enables Efficient and Stable Recombination Junction in Monolithic Perovskite/CIGS Tandem Solar Cells",
+"j": "Angewandte Chemie International Edition",
+"f": [
+"psc-tandem",
+"psc-stab"
+],
+"d": "2026-11-20",
+"doi": "10.1002/anie.6252293",
+"x": "2026-11-21 16:44",
+"hb": 1
+},
+{
+"id": "10.1002_anie.2444933",
+"t": "Concentration‐Driven Solvation Reorganization Featuring Viologen Clustering Enables Air‐Tolerant Aqueous Organic Redox Flow Batteries",
+"j": "Angewandte Chemie International Edition",
+"f": [
+"ec-beyond"
+],
+"d": "2026-11-20",
+"doi": "10.1002/anie.2444933",
+"x": "2026-11-21 16:44",
+"hb": 1
+},
+{
+"id": "10.1002_anie.7391422",
+"t": "Synergistic Lewis Base Organocatalysis and Electrocatalysis for the Enantioselective Construction of α‐Fluorinated Quaternary Stereocenters",
+"j": "Angewandte Chemie International Edition",
+"f": [
+"ec-other"
+],
+"d": "2026-11-20",
+"doi": "10.1002/anie.7391422",
+"x": "2026-11-21 16:44",
+"hb": 1
+},
 {
 "id": "10.1021_acssuschemeng.6c09380",
 "t": "Waste-Derived Zwitterionic Bacterial Cellulose Membranes with Enhanced Silica and Scaling Control for Sustainable Nanofiltration Pretreatment",
@@ -30138,453 +30621,6 @@
 "x": "2026-11-14 17:51",
 "hb": 1,
 "tz": "电化学未活化烷烯烃的羟基化反应"
-},
-{
-"id": "10.1021_jacs.6c16437",
-"t": "Unraveling the Intrinsic Interfacial Chemistry of Fluoroethylene Carbonate on Lithium Metal Anodes via a Solvent-Free Model System",
-"j": "Journal of the American Chemical Society",
-"f": [
-"ec-li"
-],
-"d": "2026-11-14",
-"doi": "10.1021/jacs.6c16437",
-"x": "2026-11-14 15:59",
-"hb": 1,
-"tz": "揭示氟乙腈在锂金属负极界面化学的内在机制——基于溶剂自由模型系统的研究"
-},
-{
-"id": "10.1021_acs.jpclett.6c02951",
-"t": "Beyond Intrinsic Size Effects: Regulating Multiphase Transport and Interfacial Microenvironments within Catalyst Layers for CO2 Electrolysis",
-"j": "The Journal of Physical Chemistry Letters",
-"f": [
-"ec-co2",
-"ec-fc"
-],
-"d": "2026-11-14",
-"doi": "10.1021/acs.jpclett.6c02951",
-"x": "2026-11-14 15:59",
-"hb": 1,
-"tz": "超越固有尺寸效应：调控催化剂层内的多相传输和界面微环境以用于CO2电解"
-},
-{
-"id": "10.1002_smll.76724",
-"t": "Coordination‐Chemistry‐Directed Nanofluidic Ion‐Channel Engineering Enables Trimodal Self‐Powered, Colorimetric, and Wireless Humidity Transduction in a Wet‐Spun Biopolymer Fiber",
-"j": "Small",
-"f": [
-"osmotic-energy"
-],
-"d": "2026-11-13",
-"doi": "10.1002/smll.76724",
-"x": "2026-11-14 15:59",
-"hb": 1,
-"tz": "配位化学导向的纳米流体离子通道工程实现湿纺生物聚合物纤维的三模态自供能、颜色响应和无线湿度转换"
-},
-{
-"id": "10.1002_smll.76723",
-"t": "Defect‐Rich Ultrathin CuO Nanosheets Promote Electrocatalytic Coupling of CO 2 With Ethylene Glycol",
-"j": "Small",
-"f": [
-"ec-other"
-],
-"d": "2026-11-13",
-"doi": "10.1002/smll.76723",
-"x": "2026-11-14 15:59",
-"hb": 1,
-"tz": "缺陷丰富的超薄CuO纳米片促进CO2与乙二醇的电催化耦合"
-},
-{
-"id": "10.1002_smll.76716",
-"t": "Breaking the Porosity‐Strength Trade‐Off in Hierarchical Current Collectors for Lithium Metal Batteries",
-"j": "Small",
-"f": [
-"ec-li"
-],
-"d": "2026-11-13",
-"doi": "10.1002/smll.76716",
-"x": "2026-11-14 15:59",
-"hb": 1,
-"tz": "打破分级电流集流体中孔隙率与强度的权衡关系以用于锂金属电池"
-},
-{
-"id": "10.1002_smll.76661",
-"t": "Rechargeable Metal‐Catalysis Batteries for Energy‐Storing Decoupled Electrosynthesis",
-"j": "Small",
-"f": [
-"ec-synth"
-],
-"d": "2026-11-13",
-"doi": "10.1002/smll.76661",
-"x": "2026-11-14 15:59",
-"hb": 1,
-"tz": "用于能量存储解耦电合成的可充电金属催化电池"
-},
-{
-"id": "10.1002_smll.76612",
-"t": "Multifunctional Design of 2D MoS 2‐x Se x /Carbon Heterostructures Enabling High‐Performance Lithium‐based Batteries",
-"j": "Small",
-"f": [
-"ec-other"
-],
-"d": "2026-11-13",
-"doi": "10.1002/smll.76612",
-"x": "2026-11-14 15:59",
-"hb": 1,
-"tz": "二维MoS2-xSex/碳异质结构的多功能设计及其在高性能锂基电池中的应用"
-},
-{
-"id": "10.1002_smll.76543",
-"t": "Nanoscale Interface Engineering of Solid‐State Electrolytes for High‐Performance Solid‐State Alkali Metal Sulfur Batteries",
-"j": "Small",
-"f": [
-"ec-ss"
-],
-"d": "2026-11-13",
-"doi": "10.1002/smll.76543",
-"x": "2026-11-14 15:59",
-"hb": 1,
-"tz": "固态电解质纳米界面工程及其在高性能固态碱金属硫电池中的应用"
-},
-{
-"id": "10.1002_smll.76717",
-"t": "Coordinative Organic–Inorganic Heterostructured Hierarchical Composite Gel Polymer Electrolytes Enabling Ultrahigh‐Power and Ultra‐Durable Solid‐State Zinc–Air Batteries",
-"j": "Small",
-"f": [
-"ec-ss",
-"ec-lis"
-],
-"d": "2026-11-13",
-"doi": "10.1002/smll.76717",
-"x": "2026-11-14 15:59",
-"hb": 1,
-"tz": "共价有机-无机异质结构分级复合凝胶聚合物电解质及其在超高功率和超耐用固态锌-空气电池中的应用"
-},
-{
-"id": "10.1002_smll.76688",
-"t": "Lattice Engineering of the Copper Sulfide Cathodes via Mn 2+ Substitution for High‐Rate Magnesium Storage",
-"j": "Small",
-"f": [
-"ec-other"
-],
-"d": "2026-11-13",
-"doi": "10.1002/smll.76688",
-"x": "2026-11-14 15:59",
-"hb": 1,
-"tz": "通过 Mn2+ 替代调控铜硫正极晶格实现高倍率镁存储"
-},
-{
-"id": "10.1002_smll.76709",
-"t": "Understanding and Steering NH 3 Crossover from NO Reduction in a Zero‐Gap Electrolyzer",
-"j": "Small",
-"f": [
-"ec-water"
-],
-"d": "2026-11-13",
-"doi": "10.1002/smll.76709",
-"x": "2026-11-14 15:59",
-"hb": 1,
-"tz": "理解并调控零间隙电解槽中NO还原过程中的NH₃ crossover"
-},
-{
-"id": "10.1002_smll.76657",
-"t": "Porous Nanotubular Array Cathode With Nanoengineered Triple‐Phase Boundaries Toward Local O 2 Permeation",
-"j": "Small",
-"f": [
-"ec-other"
-],
-"d": "2026-11-13",
-"doi": "10.1002/smll.76657",
-"x": "2026-11-14 15:59",
-"hb": 1,
-"tz": "纳米工程化三相界面的多孔纳米管阵列正极 toward 局部氧渗透"
-},
-{
-"id": "10.1002_smll.76750",
-"t": "Surface Hydroxylation‐Regulated Self‐Assembled Molecular Extrusion Enables Efficient Inverted Perovskite Solar Cells Without a Pre‐Deposited Hole‐Transport Layer",
-"j": "Small",
-"f": [
-"psc-int"
-],
-"d": "2026-11-13",
-"doi": "10.1002/smll.76750",
-"x": "2026-11-14 15:59",
-"hb": 1,
-"tz": "表面羟基化调控自组装分子挤出实现高效倒置钙钛矿太阳能电池无需预沉积空穴传输层"
-},
-{
-"id": "10.1002_smll.76735",
-"t": "Mitigating Failure Modes in Next‐Generation Batteries via High‐Entropy Materials: A Cross‐System Review",
-"j": "Small",
-"f": [
-"ec-other"
-],
-"d": "2026-11-13",
-"doi": "10.1002/smll.76735",
-"x": "2026-11-14 15:59",
-"hb": 1,
-"tz": "通过高熵材料缓解下一代电池失效模式：跨系统综述"
-},
-{
-"id": "10.1002_smll.76463",
-"t": "Dual‐Phase Perovskite Oxide as a Bifunctional Air Electrode for Reversible Ceramic Electrochemical Cells",
-"j": "Small",
-"f": [
-"ec-other"
-],
-"d": "2026-11-13",
-"doi": "10.1002/smll.76463",
-"x": "2026-11-14 15:59",
-"hb": 1,
-"tz": "双相钙钛矿氧化物作为多功能空气电极用于可逆陶瓷电化学电池"
-},
-{
-"id": "10.1002_smll.76712",
-"t": "Benzodithiophene‐Based Bolaamphiphiles With Highly Coordinated Cubic Network Structures for Efficient and Stable Perovskite Solar Cells",
-"j": "Small",
-"f": [
-"psc-stab"
-],
-"d": "2026-11-13",
-"doi": "10.1002/smll.76712",
-"x": "2026-11-14 15:59",
-"hb": 1,
-"tz": "基于苯并二硫酚的高配位立方网络结构 bola Amphiphiles 用于高效稳定的钙钛矿太阳能电池"
-},
-{
-"id": "10.1002_smll.76738",
-"t": "Gluconic Acid Ligand Enables Rapid Chemical Bath Deposition of SnO 2 for High‐Efficiency Perovskite Solar Cells",
-"j": "Small",
-"f": [
-"psc-other"
-],
-"d": "2026-11-13",
-"doi": "10.1002/smll.76738",
-"x": "2026-11-14 15:59",
-"hb": 1,
-"tz": "葡萄糖酸配体使SnO2的化学浴沉积快速高效，用于高效率钙钛矿太阳能电池"
-},
-{
-"id": "10.1002_smll.76771",
-"t": "Bicyclic 3‐Methyladenine‐Mediated Multifunctional Passivation for High‐Performance Flexible Perovskite Photovoltaics",
-"j": "Small",
-"f": [
-"psc-int",
-"psc-module"
-],
-"d": "2026-11-13",
-"doi": "10.1002/smll.76771",
-"x": "2026-11-14 15:59",
-"hb": 1,
-"tz": "双环3-甲基腺嘌呤介导的多功能钝化用于高性能柔性钙钛矿光伏器件"
-},
-{
-"id": "10.1002_smll.76713",
-"t": "Interfacial Chemo‐Mechanical Engineering of a Vertically Aligned Host for Reversible Anode‐Less Lithium Metal Batteries",
-"j": "Small",
-"f": [
-"ec-li"
-],
-"d": "2026-11-13",
-"doi": "10.1002/smll.76713",
-"x": "2026-11-14 15:59",
-"hb": 1,
-"tz": "界面化学机械工程制备垂直对齐宿主以实现可逆无负极锂金属电池"
-},
-{
-"id": "10.1002_smll.76504",
-"t": "A Multifunctional Epoxy–Polyether Network for Chemo‐Mechanical Stabilization of High‐Loading Ni‐Rich Cathodes",
-"j": "Small",
-"f": [
-"ec-li"
-],
-"d": "2026-11-13",
-"doi": "10.1002/smll.76504",
-"x": "2026-11-14 15:59",
-"hb": 1,
-"tz": "一种用于高负载镍富集正极的多功能环氧-聚醚网络化学-机械稳定化材料"
-},
-{
-"id": "10.1002_smll.76540",
-"t": "A Rapid Low Temperature Route to High‐Entropy Thiospinels for Efficient Electrocatalytic Hydrogen Evolution",
-"j": "Small",
-"f": [
-"ec-water"
-],
-"d": "2026-11-13",
-"doi": "10.1002/smll.76540",
-"x": "2026-11-14 15:59",
-"hb": 1,
-"tz": "一种快速低温制备高熵硫化尖晶石的方法及其高效的电催化析氢性能"
-},
-{
-"id": "10.1002_smll.76478",
-"t": "F‐Doped NiO/Ni@C Nanorods for Hydrazine Borane Electrooxidation: Enabling High‐Performance Fuel Cells and Energy‐Saving Hydrogen Production",
-"j": "Small",
-"f": [
-"ec-fc"
-],
-"d": "2026-11-13",
-"doi": "10.1002/smll.76478",
-"x": "2026-11-14 15:59",
-"hb": 1,
-"tz": "F掺杂NiO/Ni@C纳米棒用于肼硼烷电氧化：实现高性能燃料电池和节能制氢"
-},
-{
-"id": "10.1002_smll.76755",
-"t": "A Photo‐Charging Time Regulation Strategy for Enhancing the Solar‐to‐Electrochemical Energy Efficiency of Photo‐Rechargeable Devices",
-"j": "Small",
-"f": [
-"ec-other"
-],
-"d": "2026-11-13",
-"doi": "10.1002/smll.76755",
-"x": "2026-11-14 15:59",
-"hb": 1,
-"tz": "一种光充电时间调节策略以提高光充电可充电器件的太阳能到电化学能量效率"
-},
-{
-"id": "10.1002_adfm.79641",
-"t": "Precise Interlayer Ru─O─M Electronic Bridge Installation in Hydrotalcite‐Like Metal‐Organic Frameworks for Boosted Electrochemical Amine Oxidation",
-"j": "Advanced Functional Materials",
-"f": [
-"ec-other"
-],
-"d": "2026-11-13",
-"doi": "10.1002/adfm.79641",
-"x": "2026-11-14 15:59",
-"hb": 1,
-"tz": "在类似水滑石的金属有机框架中精确安装Ru─O─M电子桥以增强电化学胺氧化"
-},
-{
-"id": "10.1002_adfm.79462",
-"t": "Local Symmetry Engineering Unlocks Stable Multi‐Electron Chemistry in NASICON Cathodes for High‐Energy‐Density Sodium‐Ion Batteries",
-"j": "Advanced Functional Materials",
-"f": [
-"ec-ss",
-"ec-beyond"
-],
-"d": "2026-11-13",
-"doi": "10.1002/adfm.79462",
-"x": "2026-11-14 15:59",
-"hb": 1,
-"tz": "局部对称性工程解锁NASICON正极多电子化学稳定性以实现高能量密度钠离子电池"
-},
-{
-"id": "10.1002_adma.75735",
-"t": "High‐Efficiency Perovskite‐Organic Tandem Solar Cells Enabled by Perovskite Crystallization Optimization and Metal‐Free Interconnecting Layer",
-"j": "Advanced Materials",
-"f": [
-"psc-tandem"
-],
-"d": "2026-11-13",
-"doi": "10.1002/adma.75735",
-"x": "2026-11-14 15:59",
-"hb": 1,
-"tz": "高效率钙钛矿-有机串联太阳能电池：通过钙钛矿结晶优化和金属-free互连层实现"
-},
-{
-"id": "10.1002_adma.75687",
-"t": "A Scalable Protrusion‐Targeted Electrolyte Enables 500 Wh Kg −1 Lithium Metal Batteries With 500‐Cycle Stability",
-"j": "Advanced Materials",
-"f": [
-"ec-li"
-],
-"d": "2026-11-13",
-"doi": "10.1002/adma.75687",
-"x": "2026-11-14 15:59",
-"hb": 1,
-"tz": "一种可扩展的突起目标电解质使锂金属电池在500次循环后能量密度达500 Wh/kg"
-},
-{
-"id": "10.1002_adma.75703",
-"t": "Reconstructing Colloidal NiO x Contacts for Efficient and Lamination‐Resilient Perovskite Photovoltaics",
-"j": "Advanced Materials",
-"f": [
-"psc-int"
-],
-"d": "2026-11-13",
-"doi": "10.1002/adma.75703",
-"x": "2026-11-14 15:59",
-"hb": 1,
-"tz": "重构胶体NiOₓ接触层以实现高效且层压耐受的钙钛矿光伏器件"
-},
-{
-"id": "10.1002_adma.75642",
-"t": "Chain‐Regulated Degradation of Polyvinyl Chloride in UiO‐Type Metal–Organic Frameworks",
-"j": "Advanced Materials",
-"f": [
-"mof"
-],
-"d": "2026-11-13",
-"doi": "10.1002/adma.75642",
-"x": "2026-11-14 15:59",
-"hb": 1,
-"tz": "UiO型金属有机框架调控的聚氯乙烯降解"
-},
-{
-"id": "10.1002_adma.75747",
-"t": "Li–B–Mg Composite Foils With a LiB 0.88 Microrod Array Enable Ultrathin Self‐Supporting Lithium Metal Anodes",
-"j": "Advanced Materials",
-"f": [
-"ec-li"
-],
-"d": "2026-11-13",
-"doi": "10.1002/adma.75747",
-"x": "2026-11-14 15:59",
-"hb": 1,
-"tz": "Li–B–Mg 复合箔上微棒阵列 LiB0.88 使超薄自支撑锂金属负极得以实现"
-},
-{
-"id": "10.1002_adma.75718",
-"t": "Molecular Bridging Flexibility Enables Closed‐Pore Engineering in Hard Carbon for Enhanced Plateau Sodium Storage",
-"j": "Advanced Materials",
-"f": [
-"ec-beyond"
-],
-"d": "2026-11-13",
-"doi": "10.1002/adma.75718",
-"x": "2026-11-14 15:59",
-"hb": 1,
-"tz": "分子桥接灵活性使硬碳封闭孔道工程成为可能，从而提高平台钠存储性能"
-},
-{
-"id": "10.1002_adma.75714",
-"t": "Pulsed Electrosynthesis of Conformal High‐Entropy Metallic Glass Skins for Durable Industrial Water Electrolysis",
-"j": "Advanced Materials",
-"f": [
-"ec-water",
-"ec-synth"
-],
-"d": "2026-11-13",
-"doi": "10.1002/adma.75714",
-"x": "2026-11-14 15:59",
-"hb": 1,
-"tz": "脉冲电合成高熵金属玻璃薄膜用于耐用工业水电解"
-},
-{
-"id": "10.1002_adma.75721",
-"t": "Covalently Integrated MXene–Fluorinated Polymer Electrolytes for 714 Wh Kg −1 Lithium–Metal Batteries",
-"j": "Advanced Materials",
-"f": [
-"ec-ss"
-],
-"d": "2026-11-13",
-"doi": "10.1002/adma.75721",
-"x": "2026-11-14 15:59",
-"hb": 1,
-"tz": "共价整合的MXene-氟化聚合物电解质用于714 Wh/kg锂金属电池"
-},
-{
-"id": "10.1111_ejss.70455",
-"t": "Interactions Between Polyethylene Microplastics and Saline‐Alkali Gradients Shape Microbial Communities and Functions",
-"j": "European Journal of Soil Science",
-"f": [
-"mp"
-],
-"d": "2026-11-13",
-"doi": "10.1111/ejss.70455",
-"x": "2026-11-14 15:59",
-"hb": 1,
-"tz": "聚乙烯微塑料与盐碱梯度的相互作用塑造微生物群落及其功能"
 }
 ]
 }

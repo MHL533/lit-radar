@@ -1,6 +1,134 @@
 {
-"updated": "2026-11-22 11:11",
+"updated": "2026-11-22 17:02",
 "papers": [
+{
+"id": "10.1021_acsami.6c19237",
+"t": "Revealing Decomposition Pathways of an Ethylene Carbonate-Based Electrolyte with Fiber-Optic FTIR in NCM811 Li-Ion Cells",
+"j": "ACS Applied Materials &amp; Interfaces",
+"f": [
+"ec-li"
+],
+"d": "2026-11-23",
+"doi": "10.1021/acsami.6c19237",
+"x": "2026-11-22 16:47",
+"hb": 1
+},
+{
+"id": "10.1016_j.jhazmat.2026.144295",
+"t": "Oxygen vacancy-rich iron cathode for efficient degradation of polylactic acid microplastics via electro-Fenton",
+"j": "Journal of Hazardous Materials",
+"f": [
+"mp",
+"ec-env"
+],
+"d": "2026-11-22",
+"doi": "10.1016/j.jhazmat.2026.144295",
+"x": "2026-11-22 16:47"
+},
+{
+"id": "10.1016_j.apcatb.2026.127826",
+"t": "Design of carbon cloth-based molding catalyst for membrane catalytic reactor assembly and application in hospital wastewater",
+"j": "Applied Catalysis B: Environment and Energy",
+"f": [
+"cat-mem"
+],
+"d": "2026-11-22",
+"doi": "10.1016/j.apcatb.2026.127826",
+"x": "2026-11-22 16:47"
+},
+{
+"id": "10.1016_j.jece.2026.126053",
+"t": "Ag Nanoparticle Decorated CuFe2O4 for Electrochemical Detection of Sulfadiazine in Environmental Water and Food Matrices",
+"j": "Journal of Environmental Chemical Engineering",
+"f": [
+"ec-sensor"
+],
+"d": "2026-11-22",
+"doi": "10.1016/j.jece.2026.126053",
+"x": "2026-11-22 16:47"
+},
+{
+"id": "10.1016_j.est.2026.125784",
+"t": "Battery-health-informed energy management for electric bus depots with opportunity charging: Joint optimization of fast-charging strategy selection and charging-load scheduling",
+"j": "Journal of Energy Storage",
+"f": [
+"ec-other"
+],
+"d": "2026-11-22",
+"doi": "10.1016/j.est.2026.125784",
+"x": "2026-11-22 16:47"
+},
+{
+"id": "10.1016_j.ijhydene.2026.158746",
+"t": "Polyaniline-Based N-Doped Carbon Supports for PEM Fuel Cells",
+"j": "International Journal of Hydrogen Energy",
+"f": [
+"ec-fc"
+],
+"d": "2026-11-22",
+"doi": "10.1016/j.ijhydene.2026.158746",
+"x": "2026-11-22 16:47"
+},
+{
+"id": "10.1016_j.jtice.2026.107092",
+"t": "Enhanced hydrogen evolution activity of cobalt-copper sulfide through integration with N,S-doped carbon black-intercalated graphite frameworks",
+"j": "Journal of the Taiwan Institute of Chemical Engineers",
+"f": [
+"ec-water"
+],
+"d": "2026-11-22",
+"doi": "10.1016/j.jtice.2026.107092",
+"x": "2026-11-22 16:47"
+},
+{
+"id": "10.1021_acsenergylett.6c02642",
+"t": "Functionalized Interface Engineering of Cellulose-Based Electrolytes for Safety and Long-Life Li–Metal Batteries",
+"j": "ACS Energy Letters",
+"f": [
+"ec-other"
+],
+"d": "2026-11-21",
+"doi": "10.1021/acsenergylett.6c02642",
+"x": "2026-11-22 16:47",
+"hb": 1
+},
+{
+"id": "10.1002_anie.8373312",
+"t": "Coupling Iodine Regulation With Hole‐Selective Interfaces for Efficient and Stable Perovskite Solar Cells",
+"j": "Angewandte Chemie International Edition",
+"f": [
+"psc-stab",
+"psc-int"
+],
+"d": "2026-11-21",
+"doi": "10.1002/anie.8373312",
+"x": "2026-11-22 16:47",
+"hb": 1
+},
+{
+"id": "10.1002_anie.8467989",
+"t": "Entropy‐Compensated Electrolyte Enables Low‐Temperature 400 Wh Kg −1 Silicon‐Based Lithium‐Ion Batteries",
+"j": "Angewandte Chemie International Edition",
+"f": [
+"ec-li"
+],
+"d": "2026-11-21",
+"doi": "10.1002/anie.8467989",
+"x": "2026-11-22 16:47",
+"hb": 1
+},
+{
+"id": "10.1002_anie.2383251",
+"t": "[8+4]‐Connected Ether‐Oxygen‐Based 3D COF Redox Mediators for Durable Light‐Assisted Indirect Electrocatalysis",
+"j": "Angewandte Chemie International Edition",
+"f": [
+"ec-other"
+],
+"d": "2026-11-21",
+"doi": "10.1002/anie.2383251",
+"x": "2026-11-22 16:47",
+"hb": 1
+},
 {
 "id": "10.1016_j.est.2026.125794",
 "t": "A self-adaptive control strategy for battery thermal management system with cold plates",
@@ -30087,118 +30215,6 @@
 "doi": "10.1038/s41467-026-79429-1",
 "x": "2026-11-15 18:27",
 "tz": "不同晶面依赖的阴离子吸附对初始无负极锂金属电池电解质-铜界面稳定性的影响"
-},
-{
-"id": "10.1016_j.watres.2026.127352",
-"t": "A Double-Edged Sword in Hybrid Nature-Based Systems: TiO2-Driven PFOA Defluorination and Secondary Resistome Risks in Bioelectrochemical Floating Beds",
-"j": "Water Research",
-"f": [
-"ec-env"
-],
-"d": "2026-11-15",
-"doi": "10.1016/j.watres.2026.127352",
-"x": "2026-11-15 16:26",
-"tz": "双重作用：TiO2驱动的PFOA去氟化及其在生物电化学浮动床中的二次抗性基因风险"
-},
-{
-"id": "10.1016_j.jece.2026.125974",
-"t": "Magnetic Materials for Advanced Oxidation Processes in Wastewater Treatment: Recent Advances, Environmental Risks, and Perspectives",
-"j": "Journal of Environmental Chemical Engineering",
-"f": [
-"aop-water"
-],
-"d": "2026-11-15",
-"doi": "10.1016/j.jece.2026.125974",
-"x": "2026-11-15 16:26",
-"tz": "磁性材料在废水高级氧化处理中的应用：近期进展、环境风险与展望"
-},
-{
-"id": "10.1038_s41467-026-79620-4",
-"t": "Phosphorus-mediated reverse hydrogen spillover enables rate-matched nitrate-sulfate paired electrolysis for ammonium persulfate synthesis",
-"j": "Nature Communications",
-"f": [
-"ec-other"
-],
-"d": "2026-11-15",
-"doi": "10.1038/s41467-026-79620-4",
-"x": "2026-11-15 16:26",
-"tz": "磷介导的反氢溢出实现匹配速率的硝酸盐-硫酸盐配对电解合成过硫酸盐"
-},
-{
-"id": "10.1039_d6ta06874j",
-"t": "Nitrogen-Directed Semi-Ionic C-F Bonding Enables LiF-Rich Interphase Formation for Fast-Charging Graphite Anodes",
-"j": "Journal of Materials Chemistry A",
-"f": [
-"ec-li"
-],
-"d": "2026-11-15",
-"doi": "10.1039/d6ta06874j",
-"x": "2026-11-15 16:26",
-"hb": 1,
-"tz": "氮导向半离子C-F键合促进快速充电石墨负极的LiF-rich界面形成"
-},
-{
-"id": "10.1016_j.corsci.2026.114430",
-"t": "Improved corrosion resistance of AlCoCrFeNi2.1 eutectic high-entropy alloy via micro-laser powder bed fusion through microstructural homogenization",
-"j": "Corrosion Science",
-"f": [
-"ec-corr"
-],
-"d": "2026-11-15",
-"doi": "10.1016/j.corsci.2026.114430",
-"x": "2026-11-15 16:26",
-"tz": "通过微观结构均匀化改善AlCoCrFeNi2.1共晶高熵合金的腐蚀耐受性 via 微激光粉末床融合"
-},
-{
-"id": "10.1016_j.ces.2026.125616",
-"t": "Integrated flexible microfluidic electrochemical system with dual molecularly imprinted interfaces for reagent-free simultaneous detection of sweat cortisol and epinephrine",
-"j": "Chemical Engineering Science",
-"f": [
-"ec-other",
-"mip-sensor"
-],
-"d": "2026-11-15",
-"doi": "10.1016/j.ces.2026.125616",
-"x": "2026-11-15 16:26",
-"tz": "集成柔性微流控电化学系统，具有双分子印迹界面，实现汗液中皮质醇和肾上腺素的无试剂同时检测"
-},
-{
-"id": "10.1038_s42003-026-11336-z",
-"t": "Maternal polystyrene nanoplastics exposure compromises ovarian reserve by disrupting oocyte adhesion and granulosa cell homeostasis",
-"j": "Communications Biology",
-"f": [
-"mp"
-],
-"d": "2026-11-15",
-"doi": "10.1038/s42003-026-11336-z",
-"x": "2026-11-15 16:26",
-"tz": "母体聚苯乙烯纳米塑料暴露损害卵巢储备通过干扰卵母细胞黏附和颗粒细胞稳态"
-},
-{
-"id": "10.1002_adma.75717",
-"t": "Non‐Precious Metal High‐Entropy Oxide Sub‐1 nm Nanowires for Li‐O 2 Batteries",
-"j": "Advanced Materials",
-"f": [
-"ec-other"
-],
-"d": "2026-11-14",
-"doi": "10.1002/adma.75717",
-"x": "2026-11-15 16:26",
-"hb": 1,
-"tz": "非贵金属高熵氧化物亚1纳米纳米线用于Li-O₂电池"
-},
-{
-"id": "10.1002_adma.75716",
-"t": "Topological Superlattice Stabilized Layered Oxide Cathodes With Sustainable Anionic Redox",
-"j": "Advanced Materials",
-"f": [
-"ec-other"
-],
-"d": "2026-11-14",
-"doi": "10.1002/adma.75716",
-"x": "2026-11-15 16:26",
-"hb": 1,
-"tz": "拓扑超晶格稳定层状氧化物正极及其可持续的阴离子氧化还原"
 }
 ]
 }

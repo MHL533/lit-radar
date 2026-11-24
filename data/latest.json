@@ -1,6 +1,73 @@
 {
-"updated": "2026-11-25 04:42",
+"updated": "2026-11-25 07:26",
 "papers": [
+{
+"id": "10.1016_j.ijhydene.2026.158757",
+"t": "Demand-side MPPT in an islanded wind–heat–hydrogen system via coordinated electrolyzer and thermal loads",
+"j": "International Journal of Hydrogen Energy",
+"f": [
+"ec-water"
+],
+"d": "2026-11-24",
+"doi": "10.1016/j.ijhydene.2026.158757",
+"x": "2026-11-25 07:15"
+},
+{
+"id": "10.1016_j.ijhydene.2026.158897",
+"t": "Advanced Heteroatom-Doped Graphene-Like Nanosheets as Efficient Oxygen Reduction Electrocatalyst Assisted by Ionic Liquid Salt Precursor Design and Engineering",
+"j": "International Journal of Hydrogen Energy",
+"f": [
+"ec-fc"
+],
+"d": "2026-11-24",
+"doi": "10.1016/j.ijhydene.2026.158897",
+"x": "2026-11-25 07:15"
+},
+{
+"id": "10.1021_jacs.6c13111",
+"t": "An Allosteric CLR N-Terminal Swing-Out Mechanism for RAMP-Mediated Adrenomedullin Receptor Selectivity",
+"j": "Journal of the American Chemical Society",
+"f": [
+"cl-h2"
+],
+"d": "2026-11-24",
+"doi": "10.1021/jacs.6c13111",
+"x": "2026-11-25 07:15",
+"hb": 1
+},
+{
+"id": "10.1016_j.fuel.2026.142225",
+"t": "Orange II ligand-engineered cobalt phthalocyanine for electrocatalytic overall alkaline water splitting",
+"j": "Fuel",
+"f": [
+"ec-water"
+],
+"d": "2026-11-24",
+"doi": "10.1016/j.fuel.2026.142225",
+"x": "2026-11-25 07:15"
+},
+{
+"id": "10.1016_j.energy.2026.143196",
+"t": "Coupled Optimization of Material Segmentation and Structural Design for SiGe–Bi2Te3 Thermoelectric Modules in SOFC Exhaust Waste Heat Recovery",
+"j": "Energy",
+"f": [
+"ec-fc"
+],
+"d": "2026-11-24",
+"doi": "10.1016/j.energy.2026.143196",
+"x": "2026-11-25 07:15"
+},
+{
+"id": "10.1016_j.jhazmat.2026.144292",
+"t": "Efficient oxygen cycle driven by strong V–O–Nb interactions for enhanced catalytic oxidation of chlorobenzene",
+"j": "Journal of Hazardous Materials",
+"f": [
+"aop-gas"
+],
+"d": "2026-11-24",
+"doi": "10.1016/j.jhazmat.2026.144292",
+"x": "2026-11-25 07:15"
+},
 {
 "id": "10.1016_j.memsci.2026.126462",
 "t": "Gradient regulation of interfacial polymerization reveals the structure-performance relationship of nanofiltration membranes",
@@ -30493,68 +30560,6 @@
 "doi": "10.1016/j.jenvman.2026.131357",
 "x": "2026-11-18 12:02",
 "tz": "从塑料碎片到二次微塑料：沉积物-水界面长期聚合物老化及微生物功能响应"
-},
-{
-"id": "10.1021_acsami.6c19491",
-"t": "Boosting the HER Performance of La–MoOx@NF Electrocatalysts with La-Tailored Nanoporous Architectures",
-"j": "ACS Applied Materials &amp; Interfaces",
-"f": [
-"ec-water"
-],
-"d": "2026-11-18",
-"doi": "10.1021/acsami.6c19491",
-"x": "2026-11-18 05:53",
-"hb": 1,
-"tz": "La–MoOx@NF 电催化剂中 La 调制纳米孔结构以提升析氢性能"
-},
-{
-"id": "10.1016_j.ijhydene.2026.158611",
-"t": "H2-Rich Syngas Production from Coconut Shell Biochar by CO2/O2 Gasification and Water–Gas Shift with Subsequent Metallic Membrane Separation",
-"j": "International Journal of Hydrogen Energy",
-"f": [
-"mem-other"
-],
-"d": "2026-11-17",
-"doi": "10.1016/j.ijhydene.2026.158611",
-"x": "2026-11-18 05:53",
-"tz": "由椰壳生物炭通过CO2/O2气化和水气变换生成富H2合成气及其后续金属膜分离"
-},
-{
-"id": "10.1016_j.ijhydene.2026.158765",
-"t": "Clarifying the Co-Coating Effect on Enhanced Electrochemical Performance of Hydrogen Storage Alloys",
-"j": "International Journal of Hydrogen Energy",
-"f": [
-"ec-other"
-],
-"d": "2026-11-17",
-"doi": "10.1016/j.ijhydene.2026.158765",
-"x": "2026-11-18 05:53",
-"tz": "明确共涂层对氢存储合金电化学性能提升的作用机理"
-},
-{
-"id": "10.5194_acp-26-16341-2026",
-"t": "Airborne and marine microplastics in the Northern Indian Ocean: decoupled pathways traced by black carbon",
-"j": "Atmospheric Chemistry and Physics",
-"f": [
-"mp"
-],
-"d": "2026-11-17",
-"doi": "10.5194/acp-26-16341-2026",
-"x": "2026-11-18 05:53",
-"hb": 1,
-"tz": "北印度洋空气和海水中微塑料的分异迁移路径：以黑碳追踪"
-},
-{
-"id": "10.1016_j.aqrep.2026.103918",
-"t": "Dietary polystyrene microplastics and broodstock reproduction: Ovulation, gamete quality and antioxidant enzymes in farmed brown trout (Salmo trutta)",
-"j": "Aquaculture Reports",
-"f": [
-"mp"
-],
-"d": "2026-11-17",
-"doi": "10.1016/j.aqrep.2026.103918",
-"x": "2026-11-18 05:53",
-"tz": "饲料中聚苯乙烯微塑料对褐鳟（Salmo trutta）spawn繁殖的影响：排卵、生殖细胞质量及抗氧化酶活性"
 }
 ]
 }

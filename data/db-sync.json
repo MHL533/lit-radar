@@ -165,7 +165,7 @@
 "aop/2026-08.json": "a90aa7dc15ff78ec1a4f069c4fc48c3f",
 "aop/2026-09.json": "5ea90667227196c5d9392380e9edf301",
 "aop/2026-10.json": "a623f5ec8eff138aff52a10081c4a75c",
-"aop/2026-11.json": "76ac0f7577e15700ac4707aff4dc7878",
+"aop/2026-11.json": "4fbb777c523f628f7bd3ababff72ae18",
 "chemloop/2020-01.json": "c01cb6646fd12772dd9d6018de0ab64c",
 "chemloop/2020-02.json": "60b05bc7bd2887ba0718c0cd691a9ede",
 "chemloop/2020-03.json": "250bf41753e996bc7b4196eb9ed17b8c",
@@ -329,7 +329,7 @@
 "electrochem/2026-08.json": "1748a4b46f1c2bc55851003ed73020df",
 "electrochem/2026-09.json": "916b2ed87206d47a63e667b56693b412",
 "electrochem/2026-10.json": "651e7b786bafe7866f6d135388f879b6",
-"electrochem/2026-11.json": "f7f03a1000f89670fdc9f660f148ffbf",
+"electrochem/2026-11.json": "58de729ba0276c6cc519050a0effda23",
 "journals": "c07d9fd1f4fd650b2e4619eb02fcaf40",
 "kw_zh": "8f235d8f3b1b3aa0fffd7268ec2f3fe8",
 "membrane/2020-01.json": "8678a933f355b6a3d8344fbea1e86e36",
@@ -414,7 +414,7 @@
 "membrane/2026-08.json": "17133adbb051d31b950cf5c4dee1d35f",
 "membrane/2026-09.json": "d311ab9f081872372164a1ac0dc18205",
 "membrane/2026-10.json": "c6d92f0387cd06bca3c95dd1343859d9",
-"membrane/2026-11.json": "f2ebff1c99cad8888ea8d26ef6bf1d2f",
+"membrane/2026-11.json": "4b5ef63cb8baea1e5105a963bd9b915a",
 "microplastics/2020-01.json": "8360b4108800aa15a7b4c2698fdb883f",
 "microplastics/2020-02.json": "87a43ffaf7f0bd7e5f10f71af7688e3b",
 "microplastics/2020-03.json": "7389959780021a2301a04b57dc80f30c",
@@ -580,7 +580,7 @@
 "mip/2026-08.json": "b024622edc09c7e28dcf687c02feacc4",
 "mip/2026-09.json": "b048ec89b0e448eae519940d70e872f8",
 "mip/2026-10.json": "2e173be469ec9386ae1748ad83634be0",
-"mip/2026-11.json": "aadcc8999612508e80b00531eb93a0e8",
+"mip/2026-11.json": "72044255b050e2fe67e3d3e5b52a9746",
 "psc/2020-01.json": "236f6fa5e52fd937db32df546a902ab2",
 "psc/2020-02.json": "23123110f2c334e04116d1b66d6b18cb",
 "psc/2020-03.json": "0a1247929e1a7d42fcf430bb8acc1149",
@@ -663,5 +663,5 @@
 "psc/2026-08.json": "796ed8d4b62fa451f1075cfb0986c40d",
 "psc/2026-09.json": "7d0a0f2602aec8f399edda3fae94fae4",
 "psc/2026-10.json": "dbcb05992933a9add1dd296e3509429c",
-"psc/2026-11.json": "a058502b354ce864b41e7f2d58b3d6bb"
+"psc/2026-11.json": "d30cc06779a6c03df5699a9dc82ac5e5"
 }

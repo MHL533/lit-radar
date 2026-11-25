@@ -1,6 +1,187 @@
 {
-"updated": "2026-11-26 04:03",
+"updated": "2026-11-26 06:56",
 "papers": [
+{
+"id": "10.1021_acsenergylett.6c02741",
+"t": "Cathode-Generated Hydrogen Peroxide Contributes to Degradation of the Membrane Across Its Full Thickness in PEM Water Electrolyzers",
+"j": "ACS Energy Letters",
+"f": [
+"ec-water"
+],
+"d": "2026-11-25",
+"doi": "10.1021/acsenergylett.6c02741",
+"x": "2026-11-26 06:44",
+"hb": 1
+},
+{
+"id": "10.1016_j.est.2026.125977",
+"t": "An atomistic-level insight into ionic conductivity and electrochemical stability of LiSO₃F solid electrolyte",
+"j": "Journal of Energy Storage",
+"f": [
+"ec-other"
+],
+"d": "2026-11-25",
+"doi": "10.1016/j.est.2026.125977",
+"x": "2026-11-26 06:44"
+},
+{
+"id": "10.1016_j.ijhydene.2026.158758",
+"t": "Techno-Economic Optimization and Feasibility Assessment of SOFC-Supported Hydrogen-Electric Coupled Microgrids",
+"j": "International Journal of Hydrogen Energy",
+"f": [
+"ec-fc"
+],
+"d": "2026-11-25",
+"doi": "10.1016/j.ijhydene.2026.158758",
+"x": "2026-11-26 06:44"
+},
+{
+"id": "10.1016_j.ijhydene.2026.158819",
+"t": "Electrochemical Insights into Electron–Hole Pathways in Silver Phosphate/Cobalt–Manganese Oxide Nano-Heterostructure for Solar Water Splitting",
+"j": "International Journal of Hydrogen Energy",
+"f": [
+"ec-water"
+],
+"d": "2026-11-25",
+"doi": "10.1016/j.ijhydene.2026.158819",
+"x": "2026-11-26 06:44"
+},
+{
+"id": "10.1016_j.ijhydene.2026.158834",
+"t": "Multi-Stacks Solid Oxide Electrolysis Module: System Thermal Modeling Based on Reduced Order Model Approach",
+"j": "International Journal of Hydrogen Energy",
+"f": [
+"ec-fc"
+],
+"d": "2026-11-25",
+"doi": "10.1016/j.ijhydene.2026.158834",
+"x": "2026-11-26 06:44"
+},
+{
+"id": "10.1016_j.ijhydene.2026.158847",
+"t": "Synergistic Effect of MIL-68(Al) Supported PdxNiyFez Electrocatalysts in Hydrazine Electrooxidation",
+"j": "International Journal of Hydrogen Energy",
+"f": [
+"ec-other"
+],
+"d": "2026-11-25",
+"doi": "10.1016/j.ijhydene.2026.158847",
+"x": "2026-11-26 06:44"
+},
+{
+"id": "10.1002_advs.78902",
+"t": "Spike Sintering Tailored to Scrap Black Mass with a Low‐Defect Crystal Structure for Direct Single‐Crystal Upcycling of Layered Cathode Materials",
+"j": "Advanced Science",
+"f": [
+"ec-other"
+],
+"d": "2026-11-25",
+"doi": "10.1002/advs.78902",
+"x": "2026-11-26 06:44",
+"hb": 1
+},
+{
+"id": "10.1002_advs.78988",
+"t": "High‐Performance AEM Water Electrolysis via Robust Ru/MoC x Catalysts with Phase‐Dependent Hydrogen Spillover",
+"j": "Advanced Science",
+"f": [
+"ec-water"
+],
+"d": "2026-11-25",
+"doi": "10.1002/advs.78988",
+"x": "2026-11-26 06:44",
+"hb": 1
+},
+{
+"id": "10.1002_advs.78987",
+"t": "Electrocatalytic Coal Depolymerization to Graphene Quantum Dots via Bridge Bond Cleavage and Aromatic Radical Evolution",
+"j": "Advanced Science",
+"f": [
+"ec-other"
+],
+"d": "2026-11-25",
+"doi": "10.1002/advs.78987",
+"x": "2026-11-26 06:44",
+"hb": 1
+},
+{
+"id": "10.1002_advs.78974",
+"t": "Porphyrin Covalent Organic Frameworks as Interatomic Catalytic Messengers in Electrocatalysis: Recent Advances and Mechanistic Insights",
+"j": "Advanced Science",
+"f": [
+"ec-other"
+],
+"d": "2026-11-25",
+"doi": "10.1002/advs.78974",
+"x": "2026-11-26 06:44",
+"hb": 1
+},
+{
+"id": "10.1016_j.apenergy.2026.129316",
+"t": "Component-resolved voltage-loss monitoring of PEM water electrolyzers from routine operating data",
+"j": "Applied Energy",
+"f": [
+"ec-water"
+],
+"d": "2026-11-25",
+"doi": "10.1016/j.apenergy.2026.129316",
+"x": "2026-11-26 06:44"
+},
+{
+"id": "10.1016_j.apenergy.2026.129303",
+"t": "Consistency sorting of retired batteries using multidimensional health features derived from a simplified P2D model",
+"j": "Applied Energy",
+"f": [
+"ec-other"
+],
+"d": "2026-11-25",
+"doi": "10.1016/j.apenergy.2026.129303",
+"x": "2026-11-26 06:44"
+},
+{
+"id": "10.1016_j.fuel.2026.142226",
+"t": "Research trends, gaps, and emerging directions in electrocatalyst materials for water electrolysis",
+"j": "Fuel",
+"f": [
+"ec-water"
+],
+"d": "2026-11-25",
+"doi": "10.1016/j.fuel.2026.142226",
+"x": "2026-11-26 06:44"
+},
+{
+"id": "10.1016_j.fuel.2026.142351",
+"t": "Wood-derived carbonized cellulose supported Ni@NiCo core-shell heterostructure for efficient alkaline and neutral hydrogen evolution reaction",
+"j": "Fuel",
+"f": [
+"ec-water"
+],
+"d": "2026-11-25",
+"doi": "10.1016/j.fuel.2026.142351",
+"x": "2026-11-26 06:44"
+},
+{
+"id": "10.1016_j.fuel.2026.142344",
+"t": "Role of ammonia decomposition rate modeling in predicting coupled chemical, electrochemical, and thermal behavior in ammonia-utilizing solid oxide fuel cells",
+"j": "Fuel",
+"f": [
+"ec-fc"
+],
+"d": "2026-11-25",
+"doi": "10.1016/j.fuel.2026.142344",
+"x": "2026-11-26 06:44"
+},
+{
+"id": "10.1016_j.jenvman.2026.131452",
+"t": "Climate change impacts on overbank-flow conditions in floodplain wetlands across Poland: A national-scale modelling study",
+"j": "Journal of Environmental Management",
+"f": [
+"flood"
+],
+"d": "2026-11-25",
+"doi": "10.1016/j.jenvman.2026.131452",
+"x": "2026-11-26 06:44"
+},
 {
 "id": "10.1016_j.jhazmat.2026.144323",
 "t": "Amyloid fibril-ceramic membrane for efficient removal of lead from perovskite solar cells leachate",
@@ -29796,68 +29977,6 @@
 "x": "2026-11-19 11:59",
 "hb": 1,
 "tz": "生物质基氢炭/镍铁MOF复合电极用于水电解制氢"
-},
-{
-"id": "10.1126_sciadv.aei3786",
-"t": "Steering nanometric reductive-oxidative Fenton-like cycle for PFAS mineralization",
-"j": "Science Advances",
-"f": [
-"aop-water"
-],
-"d": "2026-11-20",
-"doi": "10.1126/sciadv.aei3786",
-"x": "2026-11-19 05:34",
-"hb": 1,
-"tz": "调控纳米尺度还原-氧化芬顿-like 循环用于 PFAS 矿化"
-},
-{
-"id": "10.1016_j.est.2026.125422",
-"t": "A spatiotemporal dynamic feedback neural network for lithium-ion battery temperature prediction",
-"j": "Journal of Energy Storage",
-"f": [
-"ec-li"
-],
-"d": "2026-11-18",
-"doi": "10.1016/j.est.2026.125422",
-"x": "2026-11-19 05:34",
-"tz": "基于时空动态反馈神经网络的锂离子电池温度预测"
-},
-{
-"id": "10.1016_j.est.2026.125717",
-"t": "From molecular adsorption to thin carbon layer: In-situ coating enabled by isophthalic acid as a novel carbon source on LiFe0.5Mn0.5PO4 for advanced lithium-ion batteries",
-"j": "Journal of Energy Storage",
-"f": [
-"ec-li"
-],
-"d": "2026-11-18",
-"doi": "10.1016/j.est.2026.125717",
-"x": "2026-11-19 05:34",
-"tz": "从分子吸附到薄碳层：异苯甲酸作为新型碳源实现LiFe0.5Mn0.5PO4的原位涂层以制备先进锂离子电池"
-},
-{
-"id": "10.1016_j.est.2026.125749",
-"t": "Multi-criteria assessment of CAES and battery storage technologies for off-grid bifacial PV systems: A water-energy-economic-environmental nexus approach",
-"j": "Journal of Energy Storage",
-"f": [
-"ec-other"
-],
-"d": "2026-11-18",
-"doi": "10.1016/j.est.2026.125749",
-"x": "2026-11-19 05:34",
-"tz": "基于水-能-经济-环境纽带的离网双面光伏系统储电技术多准则评估：压缩空气储能与电池储能技术对比"
-},
-{
-"id": "10.1021_acscatal.6c07504",
-"t": "Dual Transition-Metal Electrocatalysis for Allylic Fluoroalkylation of Unactivated Alkenes Using Fluoroalkyl Carboxylic Acids",
-"j": "ACS Catalysis",
-"f": [
-"ec-other"
-],
-"d": "2026-11-18",
-"doi": "10.1021/acscatal.6c07504",
-"x": "2026-11-19 05:34",
-"hb": 1,
-"tz": "使用氟代烷基羧酸实现未活化烯烃的 allylic fluoroalkylation 的双过渡金属电催化"
 }
 ]
 }

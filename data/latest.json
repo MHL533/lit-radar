@@ -1,6 +1,63 @@
 {
-"updated": "2026-11-27 03:48",
+"updated": "2026-11-27 06:52",
 "papers": [
+{
+"id": "10.1016_j.ecoenv.2026.121115",
+"t": "PMMA nanoplastics induce neurotoxicity in Caenorhabditis elegans associated with disruption of nicotinamide metabolism",
+"j": "Ecotoxicology and Environmental Safety",
+"f": [
+"mp"
+],
+"d": "2026-11-26",
+"doi": "10.1016/j.ecoenv.2026.121115",
+"x": "2026-11-27 06:34"
+},
+{
+"id": "10.1016_j.est.2026.125521",
+"t": "A three-port DC-AC converter with wide input voltage adaptability for hydrogen-supercapacitor hybrid energy storage system",
+"j": "Journal of Energy Storage",
+"f": [
+"ec-sc"
+],
+"d": "2026-11-26",
+"doi": "10.1016/j.est.2026.125521",
+"x": "2026-11-27 06:34"
+},
+{
+"id": "10.1016_j.ijhydene.2026.158865",
+"t": "Multifactorial Machine Learning Visualisation of Mass Transport Behaviour in Proton Exchange Membrane Electrolysers",
+"j": "International Journal of Hydrogen Energy",
+"f": [
+"ec-water"
+],
+"d": "2026-11-26",
+"doi": "10.1016/j.ijhydene.2026.158865",
+"x": "2026-11-27 06:34"
+},
+{
+"id": "10.1002_smll.76775",
+"t": "Programmable Nanostructured Polymer Electrolytes for Lithium‐Metal Batteries via Photopolymerization‐Induced Microphase Separation",
+"j": "Small",
+"f": [
+"ec-ss"
+],
+"d": "2026-11-26",
+"doi": "10.1002/smll.76775",
+"x": "2026-11-27 06:34",
+"hb": 1
+},
+{
+"id": "10.1002_smll.76855",
+"t": "Cyano‐Mediated Design Enabling Fully Fluorine‐Free Lithium Batteries",
+"j": "Small",
+"f": [
+"ec-li"
+],
+"d": "2026-11-26",
+"doi": "10.1002/smll.76855",
+"x": "2026-11-27 06:34",
+"hb": 1
+},
 {
 "id": "10.1016_j.memsci.2026.126471",
 "t": "Symmetric scandia-stabilized zirconia-based electrochemical oxygen pump with straight-pore electrode scaffolds for oxygen production from air",
@@ -30266,68 +30323,6 @@
 "doi": "10.1016/j.trac.2026.119281",
 "x": "2026-11-20 11:53",
 "tz": "超越单一读出：基于丝网印刷电极的智能双模式传感用于分散分析"
-},
-{
-"id": "10.1021_acsenergylett.6c02523",
-"t": "Competitive Coordination of Solvent in Electrolyte to Stabilize Li-Rich Mn-Based Batteries",
-"j": "ACS Energy Letters",
-"f": [
-"ec-li"
-],
-"d": "2026-11-19",
-"doi": "10.1021/acsenergylett.6c02523",
-"x": "2026-11-20 05:46",
-"hb": 1,
-"tz": "电解质中溶剂的竞争性配位以稳定富锂锰基电池"
-},
-{
-"id": "10.1016_j.est.2026.125531",
-"t": "Selenium-based interfacial engineering toward enhanced electrochemical performance of ultrahigh-nickel cathodes",
-"j": "Journal of Energy Storage",
-"f": [
-"ec-li"
-],
-"d": "2026-11-19",
-"doi": "10.1016/j.est.2026.125531",
-"x": "2026-11-20 05:46",
-"tz": "硒基界面工程提升超高镍正极的电化学性能"
-},
-{
-"id": "10.1016_j.est.2026.125877",
-"t": "A novel FeCoNiNx-modified Nb2O5@Nb4N5 heterostructure nanoflower as high-performance supercapacitor electrode",
-"j": "Journal of Energy Storage",
-"f": [
-"ec-sc"
-],
-"d": "2026-11-19",
-"doi": "10.1016/j.est.2026.125877",
-"x": "2026-11-20 05:46",
-"tz": "一种新型FeCoNiNx改性Nb2O5@Nb4N5异质结构纳米花作为高性能超级电容器电极"
-},
-{
-"id": "10.1021_acsnano.6c16518",
-"t": "Efficient Membrane Separation of Rare Earth Ions in Engineered Macrocycle Channels",
-"j": "ACS Nano",
-"f": [
-"mem-other"
-],
-"d": "2026-11-19",
-"doi": "10.1021/acsnano.6c16518",
-"x": "2026-11-20 05:46",
-"hb": 1,
-"tz": "高效分离工程大环通道中稀土离子的膜分离技术"
-},
-{
-"id": "10.1016_j.fuel.2026.142254",
-"t": "Iron–Cobalt oxyhydroxide nanocomposite on nickel foam as bifunctional electrocatalyst for urea Electrolysis-Assisted hydrogen production",
-"j": "Fuel",
-"f": [
-"ec-water"
-],
-"d": "2026-11-19",
-"doi": "10.1016/j.fuel.2026.142254",
-"x": "2026-11-20 05:46",
-"tz": "镍泡沫上负载的铁钴氧羟酸纳米复合材料作为 bifunctional 电催化剂用于尿素电解助产氢"
 }
 ]
 }

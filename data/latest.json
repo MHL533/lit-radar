@@ -1,6 +1,83 @@
 {
-"updated": "2026-11-28 03:36",
+"updated": "2026-11-28 06:30",
 "papers": [
+{
+"id": "10.1016_j.est.2026.125888",
+"t": "Regulation of hydroxide release kinetics governs the Ni(OH)2 microstructure for high-performance supercapacitors",
+"j": "Journal of Energy Storage",
+"f": [
+"ec-sc"
+],
+"d": "2026-11-27",
+"doi": "10.1016/j.est.2026.125888",
+"x": "2026-11-28 06:19"
+},
+{
+"id": "10.1016_j.est.2026.125958",
+"t": "Recent developments in carbon and transition-metal-based components of next-generation zinc-ion batteries: Mechanistic insights, engineered strategies, and prospects",
+"j": "Journal of Energy Storage",
+"f": [
+"ec-beyond"
+],
+"d": "2026-11-27",
+"doi": "10.1016/j.est.2026.125958",
+"x": "2026-11-28 06:19"
+},
+{
+"id": "10.1016_j.est.2026.126071",
+"t": "Conversion of selectively recovered manganese ions from spent primary ZnC batteries into manganese malate for supercapacitors",
+"j": "Journal of Energy Storage",
+"f": [
+"ec-sc"
+],
+"d": "2026-11-27",
+"doi": "10.1016/j.est.2026.126071",
+"x": "2026-11-28 06:19"
+},
+{
+"id": "10.1016_j.apenergy.2026.129334",
+"t": "Hourly clean-electricity matching and carbon-provenance inventory: Joint optimization of flexible production and battery storage",
+"j": "Applied Energy",
+"f": [
+"ec-other"
+],
+"d": "2026-11-27",
+"doi": "10.1016/j.apenergy.2026.129334",
+"x": "2026-11-28 06:19"
+},
+{
+"id": "10.1016_j.apenergy.2026.129363",
+"t": "Beyond lithium: sodium-ion, zinc-ion, and aluminum-ion batteries for sustainable energy storage and net-zero transition",
+"j": "Applied Energy",
+"f": [
+"ec-beyond"
+],
+"d": "2026-11-27",
+"doi": "10.1016/j.apenergy.2026.129363",
+"x": "2026-11-28 06:19"
+},
+{
+"id": "10.1016_j.enconman.2026.122425",
+"t": "Optimal operation of an off-grid offshore wind-powered centralized alkaline water electrolysis system with thermodynamically feasible waste heat recovery",
+"j": "Energy Conversion and Management",
+"f": [
+"ec-water"
+],
+"d": "2026-11-27",
+"doi": "10.1016/j.enconman.2026.122425",
+"x": "2026-11-28 06:19"
+},
+{
+"id": "10.1007_s00604-026-08587-2",
+"t": "Engineering of metal–organic framework nano-interfaces for electrochemical point-of-care detection of protein biomarkers",
+"j": "Microchimica Acta",
+"f": [
+"ec-other"
+],
+"d": "2026-11-27",
+"doi": "10.1007/s00604-026-08587-2",
+"x": "2026-11-28 06:19"
+},
 {
 "id": "10.1016_j.seppur.2026.141076",
 "t": "Thiol-Michael addition click reaction for ultrafast wettability regulation of SiC membranes towards in-air hydrophilic and oleophobic surface",
@@ -30308,105 +30385,6 @@
 "x": "2026-11-21 11:48",
 "hb": 1,
 "tz": "钌基纳米结构的相工程设计以实现高效的电催化"
-},
-{
-"id": "10.1016_j.est.2026.125276",
-"t": "Multi-heat source integration scheme for retrofitting decommissioned coal-fired power plants into Carnot batteries",
-"j": "Journal of Energy Storage",
-"f": [
-"ec-other"
-],
-"d": "2026-11-20",
-"doi": "10.1016/j.est.2026.125276",
-"x": "2026-11-21 05:31",
-"tz": "退役煤电厂改造为卡诺电池的多热源集成方案"
-},
-{
-"id": "10.1016_j.est.2026.125714",
-"t": "Magnesium ion transport in solid and gel polymer electrolytes and the plasticizing effects of residual solvent",
-"j": "Journal of Energy Storage",
-"f": [
-"ec-other"
-],
-"d": "2026-11-20",
-"doi": "10.1016/j.est.2026.125714",
-"x": "2026-11-21 05:31",
-"tz": "镁离子在固体和凝胶聚合物电解质中的传输及其残余溶剂的塑化效应"
-},
-{
-"id": "10.1016_j.est.2026.125775",
-"t": "Glassy metal-organic frameworks as fillers enabling all-solid-state lithium metal batteries operating from room to elevated temperatures",
-"j": "Journal of Energy Storage",
-"f": [
-"ec-li",
-"ec-ss"
-],
-"d": "2026-11-20",
-"doi": "10.1016/j.est.2026.125775",
-"x": "2026-11-21 05:31",
-"tz": "玻璃状金属有机框架作为填料，使室温至高温均可工作的全固态锂金属电池"
-},
-{
-"id": "10.1016_j.est.2026.125841",
-"t": "Primary-side indirect control strategy for misalignment-tolerant wireless battery charging of autonomous unmanned aerial vehicles",
-"j": "Journal of Energy Storage",
-"f": [
-"ec-other"
-],
-"d": "2026-11-20",
-"doi": "10.1016/j.est.2026.125841",
-"x": "2026-11-21 05:31",
-"tz": "适用于自主无人机的容错无线电池充电的一次侧间接控制策略"
-},
-{
-"id": "10.1016_j.est.2026.125844",
-"t": "Nitrogen-doped carbon layer-engineered phenolic-resin-derived carbon microspheres with homojunction characteristics for high-performance supercapacitors",
-"j": "Journal of Energy Storage",
-"f": [
-"ec-sc"
-],
-"d": "2026-11-20",
-"doi": "10.1016/j.est.2026.125844",
-"x": "2026-11-21 05:31",
-"tz": "氮掺杂碳层工程化酚树脂衍生碳微球的同质结特性用于高性能超级电容器"
-},
-{
-"id": "10.1016_j.est.2026.125873",
-"t": "Self-assembly template strategy for in-situ confined construction of silicon nanoparticles@N-doped carbon nanotubes as high-performance lithium-ion battery anodes",
-"j": "Journal of Energy Storage",
-"f": [
-"ec-li"
-],
-"d": "2026-11-20",
-"doi": "10.1016/j.est.2026.125873",
-"x": "2026-11-21 05:31",
-"tz": "自组装模板策略构建硅纳米颗粒@氮掺杂碳纳米管作为高性能锂离子电池负极"
-},
-{
-"id": "10.1016_j.est.2026.125874",
-"t": "Anion-regulated solvation and interphase chemistry in locally concentrated ionic liquid electrolytes for lithium metal batteries",
-"j": "Journal of Energy Storage",
-"f": [
-"ec-li"
-],
-"d": "2026-11-20",
-"doi": "10.1016/j.est.2026.125874",
-"x": "2026-11-21 05:31",
-"tz": "阴离子调控的局部浓集离子液体电解质中的溶剂化与界面化学研究"
-},
-{
-"id": "10.1021_acscatal.6c06138",
-"t": "Secondary-Shell Phosphorus Engineering of Fe Single-Atom Catalysts for Efficient Electro-Fenton Oxidation",
-"j": "ACS Catalysis",
-"f": [
-"sac",
-"ec-env"
-],
-"d": "2026-11-20",
-"doi": "10.1021/acscatal.6c06138",
-"x": "2026-11-21 05:31",
-"hb": 1,
-"tz": "Fe单原子催化剂的次壳层磷工程化及其在高效电芬顿氧化中的应用"
 }
 ]
 }
